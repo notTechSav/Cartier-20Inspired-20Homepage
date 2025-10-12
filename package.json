@@ -24,6 +24,8 @@
   "dependencies": {
     "@ai-sdk/anthropic": "^2.0.23",
     "@anthropic-ai/sdk": "^0.65.0",
+    "@builder.io/react": "^8.2.8",
+    "@builder.io/sdk": "^6.1.2",
     "ai": "^5.0.60",
     "dotenv": "^17.2.1",
     "express": "^5.1.0",
