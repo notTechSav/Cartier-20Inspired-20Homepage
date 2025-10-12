@@ -3,7 +3,7 @@ import { H2, H3 } from "@/components/ui/luxury-typography";
 import { useEffect, useRef, useState } from "react";
 
 const HERO_VIDEO_SRC =
-  "https://cdn.coverr.co/videos/coverr-macro-shot-of-a-golden-watch-1665503983791?download=1";
+  "https://res.cloudinary.com/katherine-taylor-escort-video/video/upload/v1760237084/MAYA_2_cnpwna.mp4";
 
 const Hero = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -45,7 +45,7 @@ const Hero = () => {
         muted={isMuted}
         playsInline
         preload="auto"
-        poster="https://images.pexels.com/photos/15969264/pexels-photo-15969264.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=1260"
+        poster="https://res.cloudinary.com/katherine-taylor-escort-video/image/upload/v1760237084/MAYA_2_cnpwna.jpg"
       >
         <source src={HERO_VIDEO_SRC} type="video/mp4" />
       </video>

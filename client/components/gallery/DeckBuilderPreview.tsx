@@ -467,7 +467,7 @@ function PrimaryButton({
       disabled={disabled}
       aria-label={ariaLabel}
       aria-busy={ariaBusy}
-      className={`inline-flex items-center justify-center uppercase tracking-[0.15em] text-[13px] sm:text-[14px] font-light px-10 sm:px-12 py-4 sm:py-5 bg-[var(--color-ink)] text-white rounded-none duration-250 ease-out hover:opacity-90 disabled:opacity-60 ${
+      className={`inline-flex items-center justify-center uppercase tracking-[0.15em] text-[13px] sm:text-[14px] font-light px-12 sm:px-14 py-5 sm:py-6 bg-[var(--color-ink)] text-white rounded-none duration-250 ease-out hover:opacity-90 hover:scale-[1.01] hover:shadow-[var(--shadow-elevation-md)] disabled:opacity-60 ${
         className ?? ""
       }`}
     >
@@ -494,7 +494,7 @@ function SecondaryButton({
       onClick={onClick}
       aria-label={ariaLabel}
       disabled={disabled}
-      className={`inline-flex items-center justify-center uppercase tracking-[0.15em] text-[13px] sm:text-[14px] font-light px-10 sm:px-12 py-4 sm:py-5 border border-[var(--color-ink)] text-[color:var(--color-ink)] rounded-none duration-250 ease-out hover:bg-[var(--color-ink)] hover:text-[color:var(--color-paper)] disabled:opacity-60 ${
+      className={`inline-flex items-center justify-center uppercase tracking-[0.15em] text-[13px] sm:text-[14px] font-light px-12 sm:px-14 py-5 sm:py-6 border border-[var(--color-ink)] text-[color:var(--color-ink)] rounded-none duration-250 ease-out hover:bg-[var(--color-ink)] hover:text-[color:var(--color-paper)] hover:scale-[1.01] hover:shadow-[var(--shadow-elevation-md)] disabled:opacity-60 ${
         className ?? ""
       }`}
     >
@@ -511,19 +511,19 @@ function Hub({
   onIntent: (slug: string) => void;
 }) {
   return (
-    <section className="mx-auto max-w-[1180px] px-6 md:px-12 py-24 md:py-40">
-      <header className="mx-auto mb-16 max-w-[720px] md:mb-20">
-        <h1 className="text-4xl sm:text-5xl md:text-[58px] font-extralight tracking-[-0.03em] leading-[1.05]">
+    <section className="mx-auto max-w-[1180px] px-6 md:px-12 pt-32 pb-32 md:pt-40 md:pb-48">
+      <header className="mx-auto mb-14 max-w-[720px] sm:mb-24">
+        <h1 className="text-[56px] sm:text-[68px] md:text-[84px] font-extralight tracking-[-0.03em] leading-[0.95]">
           Private Collections
         </h1>
         <h2 className="sr-only">Katherine Taylor escort</h2>
         <h2 className="sr-only">Sacramento escort · Bay Area escort</h2>
-        <p className="mt-4 max-w-[36ch] text-sm sm:text-base font-light leading-[1.75] text-neutral-600">
-          Three rooms, three stories. Choose where to begin �� each collection
-          opens into its own space.
+        <h2 className="sr-only">High-end escorts near me · Private companionship Northern California</h2>
+        <p className="mt-3 sm:mt-4 max-w-prose text-sm sm:text-base font-light leading-[1.75] text-neutral-700">
+          Intimate documentation from Northern California to Los Angeles — three collections, three moments in time. Each room holds its own story, from available light in San Francisco to saturated dusk on the coast.
         </p>
       </header>
-      <div className="grid grid-cols-1 justify-items-start gap-y-16 sm:grid-cols-2 sm:gap-x-16 lg:grid-cols-3 lg:gap-x-20 lg:gap-y-20">
+      <div className="grid grid-cols-1 md:grid-cols-3 justify-items-start gap-y-16 sm:gap-y-24 gap-x-12 md:gap-x-16">
         {DATA.map((c) => (
           <article key={c.slug} className="group w-full max-w-[360px]">
             <button
@@ -535,7 +535,7 @@ function Hub({
               aria-describedby={`${c.slug}-desc`}
             >
               <div
-                className="aspect-[4/5] overflow-hidden"
+                className="aspect-[4/5] overflow-hidden duration-400 ease-out group-hover:scale-[1.02]"
                 style={{ boxShadow: "var(--shadow-elevation-md)" }}
               >
                 {(() => {
@@ -551,13 +551,13 @@ function Hub({
                       alt={c.hero?.alt ?? `${c.title} hero`}
                       loading="lazy"
                       decoding="async"
-                      className="h-full w-full object-cover"
+                      className="h-full w-full object-cover duration-400 ease-out group-hover:scale-105"
                     />
                   );
                 })()}
               </div>
               <div className="mt-5 space-y-2">
-                <h2 className="text-xl sm:text-2xl md:text-[28px] font-extralight tracking-[-0.02em]">
+                <h2 className="text-[22px] sm:text-[26px] md:text-[32px] font-extralight tracking-[-0.02em] leading-[1.15] duration-250 group-hover:text-[var(--color-stone)]">
                   {c.title}
                 </h2>
                 <p
@@ -566,7 +566,7 @@ function Hub({
                 >
                   {c.statement}
                 </p>
-                <span className="inline-block text-[11px] sm:text-xs tracking-[0.18em] uppercase">
+                <span className="inline-block text-[10px] sm:text-[11px] tracking-[0.18em] uppercase duration-250 group-hover:text-[var(--color-stone)]">
                   View Collection
                 </span>
               </div>
@@ -589,16 +589,16 @@ function CollectionHeader({
 }) {
   const totalFrames = frameCount(c);
   return (
-    <section className="mx-auto max-w-[1180px] px-6 md:px-12 py-24 md:py-36">
+    <section className="mx-auto max-w-[1180px] px-6 md:px-12 pt-32 pb-24 md:pt-40 md:pb-36">
       <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(320px,360px)] lg:items-start">
         <div className="space-y-8">
           <button
             onClick={onBack}
-            className="inline-flex h-10 items-center text-xs uppercase tracking-[0.15em] text-neutral-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-300/60"
+            className="inline-flex h-11 items-center gap-2 text-xs uppercase tracking-[0.15em] text-[var(--color-stone)] duration-250 hover:text-[var(--color-ink)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-stone)]/40"
             aria-label="Back to Gallery"
             title="Back to Gallery"
           >
-            Back to Collections
+            <span className="text-base">←</span> Back to Collections
           </button>
           <div className="space-y-4">
             <h1 className="text-3xl sm:text-4xl md:text-[48px] font-extralight tracking-[-0.025em] leading-[1.05]">
@@ -909,14 +909,6 @@ function DeckBuilder({ c, onClose }: { c: Collection; onClose: () => void }) {
               placeholder="Optional email for share link"
               className="w-full border border-neutral-300 px-4 py-3 text-sm font-light rounded-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-300/60"
             />
-            <label className="inline-flex items-center gap-2 text-xs font-light text-neutral-700">
-              <input
-                type="checkbox"
-                checked={includeWatermark}
-                onChange={(e) => setIncludeWatermark(e.target.checked)}
-              />
-              Include subtle watermark in deck (optional)
-            </label>
             <PrimaryButton
               onClick={build}
               disabled={building || frames.length === 0}
@@ -1122,6 +1114,11 @@ export default function DeckBuilderPreview() {
   );
   const meta = useCollectionMeta(current);
   const currentFrameCount = frameCount(current);
+
+  // Scroll to top when view changes
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [view]);
 
   useEffect(() => {
     const el = document.documentElement;

@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 
 const VIDEO_SRC =
-  "https://cdn.coverr.co/videos/coverr-sunrise-over-new-york-city-1578921443792?download=1";
+  "https://res.cloudinary.com/katherine-taylor-escort-video/video/upload/v1760237961/Maya_3_iyvftk.mp4";
 
 const ImmersiveVideoSection = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -51,7 +51,7 @@ const ImmersiveVideoSection = () => {
         muted={isMuted}
         playsInline
         preload="auto"
-        poster="https://images.pexels.com/photos/1610123/pexels-photo-1610123.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=1260"
+        poster="https://res.cloudinary.com/katherine-taylor-escort-video/video/upload/v1760237961/Maya_3_iyvftk.jpg"
       >
         <source src={VIDEO_SRC} type="video/mp4" />
       </video>

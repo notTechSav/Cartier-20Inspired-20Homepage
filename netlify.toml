@@ -7,11 +7,10 @@
   NPM_FLAGS = "--version"
   NODE_VERSION = "18"
 
-
 [functions]
   external_node_modules = ["express"]
   node_bundler = "esbuild"
-  
+
 [[redirects]]
   force = true
   from = "/api/*"

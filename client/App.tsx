@@ -1,5 +1,6 @@
 import "./global.css";
 
+import "./setup/patchViteOverlay";
 import { Toaster } from "@/components/ui/toaster";
 import { createRoot, type Root } from "react-dom/client";
 import { Toaster as Sonner } from "@/components/ui/sonner";
