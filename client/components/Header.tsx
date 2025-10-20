@@ -131,6 +131,7 @@ const Header = ({ isOverlayActive = false }: HeaderProps) => {
         )}
         style={{
           backgroundColor: isOverlay ? "transparent" : "white",
+          color: isOverlay ? "white" : "black",
         }}
       >
         <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-16">
