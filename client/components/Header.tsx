@@ -33,9 +33,7 @@ const Header = ({ isOverlayActive = false }: HeaderProps) => {
   // Detect overlay state using Intersection Observer
   useEffect(() => {
     // Try to find the hero section (first full-height section)
-    const heroElement = document.querySelector(
-      "[data-hero='true'], section:first-of-type"
-    );
+    const heroElement = document.querySelector("[data-hero='true']");
     heroSectionRef.current = heroElement as HTMLElement | null;
 
     if (!heroElement) {
@@ -45,11 +43,12 @@ const Header = ({ isOverlayActive = false }: HeaderProps) => {
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        // Header is in overlay zone when hero section is in viewport
-        setIsOverlay(entry.isIntersecting);
+        // Header is in overlay zone when hero section is at top of viewport
+        // Use top edge of intersection to detect when we're over the hero
+        setIsOverlay(entry.isIntersecting && entry.boundingClientRect.top <= 0);
       },
       {
-        threshold: 0.5,
+        threshold: [0, 0.25, 0.5, 0.75, 1],
       }
     );
 
