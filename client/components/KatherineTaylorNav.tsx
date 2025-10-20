@@ -386,10 +386,10 @@ const MenuLabel = styled.span`
   display: block;
   font-family: ${DesignTokens.font.primary};
   font-size: ${DesignTokens.font.size.menuLabel};
-  font-weight: ${DesignTokens.font.weight.regular};
-  letter-spacing: ${DesignTokens.font.tracking.wide};
+  font-weight: ${DesignTokens.font.weight.light};
+  letter-spacing: ${DesignTokens.font.tracking.wider};
   text-transform: uppercase;
-  color: rgba(0, 0, 0, 0.40);
+  color: rgba(0, 0, 0, 0.55);
   margin-top: 8px;
 `;
 
