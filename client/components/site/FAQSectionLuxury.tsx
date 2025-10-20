@@ -152,7 +152,7 @@ const FAQSectionLuxury = () => {
           isOpen ? "max-h-96 pb-8" : "max-h-0"
         }`}
       >
-        <div className="pr-12 md:pr-24">
+        <div className="pr-6 md:pr-24 max-md:pr-6">
           <p className="max-w-[65ch] text-base font-light leading-relaxed tracking-luxury text-gray-600">
             {item.answer}
           </p>
@@ -181,9 +181,9 @@ const FAQSectionLuxury = () => {
         alignment="left"
       />
 
-      <section className="relative bg-luxury-white py-24 md:py-32 lg:py-40">
-        <div className="mx-auto max-w-luxury px-8 md:px-12">
-          <div className="mx-auto mb-20 max-w-[65ch] text-center text-base font-light leading-relaxed tracking-luxury text-gray-600 md:mb-24">
+      <section className="relative bg-luxury-white py-16 md:py-32 lg:py-40 max-md:py-16">
+        <div className="mx-auto max-w-luxury px-6 md:px-12 max-md:px-6">
+          <div className="mx-auto mb-16 max-w-[65ch] text-center text-base font-light leading-relaxed tracking-luxury text-gray-600 md:mb-24 max-md:mb-12">
             The following answers distill the questions I receive most often
             from clients balancing public visibility with private lives.
           </div>
@@ -216,7 +216,7 @@ const FAQSectionLuxury = () => {
                 type="button"
                 onClick={() => setShowHidden((prev) => !prev)}
                 aria-expanded={showHidden}
-                className="w-full sm:w-auto"
+                className="max-md:w-full md:w-auto"
               >
                 {showHidden ? "Show Less" : "View All Questions"}
               </Button>
