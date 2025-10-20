@@ -127,7 +127,7 @@ const MenuButton = styled.button<{ $isDark?: boolean }>`
   font-weight: ${DesignTokens.font.weight.light};
   letter-spacing: ${DesignTokens.font.tracking.widest};
   text-transform: uppercase;
-  color: ${props => props.$isDark ? '#fff' : '#000'};
+  color: ${(props) => (props.$isDark ? "#fff" : "#000")};
   background: none;
   border: none;
   padding: 0 2px;
@@ -147,7 +147,7 @@ const MenuButton = styled.button<{ $isDark?: boolean }>`
   }
 
   &:hover {
-    color: ${props => props.$isDark ? '#fff' : '#000'};
+    color: ${(props) => (props.$isDark ? "#fff" : "#000")};
 
     &::after {
       left: 0;
@@ -156,7 +156,9 @@ const MenuButton = styled.button<{ $isDark?: boolean }>`
   }
 
   &:focus-visible {
-    outline: 1.5px solid ${props => props.$isDark ? 'rgba(255, 255, 255, 0.3)' : 'rgba(0, 0, 0, 0.3)'};
+    outline: 1.5px solid
+      ${(props) =>
+        props.$isDark ? "rgba(255, 255, 255, 0.3)" : "rgba(0, 0, 0, 0.3)"};
     outline-offset: 6px;
   }
 `;
@@ -171,17 +173,20 @@ const Logo = styled.a<{ $isDark?: boolean }>`
   font-weight: ${DesignTokens.font.weight.ultraLight};
   letter-spacing: ${DesignTokens.font.tracking.widest};
   text-transform: uppercase;
-  color: ${props => props.$isDark ? '#fff' : '#000'};
+  color: ${(props) => (props.$isDark ? "#fff" : "#000")};
   text-decoration: none;
   white-space: nowrap;
   transition: color 240ms ${DesignTokens.ease.gentle};
 
   &:hover {
-    color: ${props => props.$isDark ? 'rgba(255, 255, 255, 0.8)' : 'rgba(0, 0, 0, 0.8)'};
+    color: ${(props) =>
+      props.$isDark ? "rgba(255, 255, 255, 0.8)" : "rgba(0, 0, 0, 0.8)"};
   }
 
   &:focus-visible {
-    outline: 1.5px solid ${props => props.$isDark ? 'rgba(255, 255, 255, 0.3)' : 'rgba(0, 0, 0, 0.3)'};
+    outline: 1.5px solid
+      ${(props) =>
+        props.$isDark ? "rgba(255, 255, 255, 0.3)" : "rgba(0, 0, 0, 0.3)"};
     outline-offset: 6px;
   }
 `;
@@ -196,7 +201,7 @@ const BellButton = styled.button<{ $isDark?: boolean }>`
   padding: 0;
   background: none;
   border: none;
-  color: ${props => props.$isDark ? '#fff' : '#000'};
+  color: ${(props) => (props.$isDark ? "#fff" : "#000")};
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -204,7 +209,7 @@ const BellButton = styled.button<{ $isDark?: boolean }>`
   transition: all 280ms ${DesignTokens.ease.gentle};
 
   &:hover {
-    color: ${props => props.$isDark ? '#fff' : '#000'};
+    color: ${(props) => (props.$isDark ? "#fff" : "#000")};
     transform: scale(1.1);
   }
 
@@ -213,7 +218,9 @@ const BellButton = styled.button<{ $isDark?: boolean }>`
   }
 
   &:focus-visible {
-    outline: 1.5px solid ${props => props.$isDark ? 'rgba(255, 255, 255, 0.3)' : 'rgba(0, 0, 0, 0.3)'};
+    outline: 1.5px solid
+      ${(props) =>
+        props.$isDark ? "rgba(255, 255, 255, 0.3)" : "rgba(0, 0, 0, 0.3)"};
     outline-offset: 6px;
   }
 
@@ -507,7 +514,9 @@ const KatherineTaylorNav: React.FC<KatherineTaylorNavProps> = ({
           </LeftSection>
 
           <CenterSection>
-            <Logo $isDark={isDarkSlide} href="/">Katherine Taylor</Logo>
+            <Logo $isDark={isDarkSlide} href="/">
+              Katherine Taylor
+            </Logo>
           </CenterSection>
 
           <RightSection>
