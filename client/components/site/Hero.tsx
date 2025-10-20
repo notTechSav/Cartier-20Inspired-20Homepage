@@ -50,7 +50,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative isolate flex min-h-screen w-full overflow-hidden bg-luxury-black">
+    <section className="relative isolate flex min-h-screen w-full overflow-hidden bg-luxury-black" data-hero="true">
       {/* Video Background */}
       <video
         ref={videoRef}
