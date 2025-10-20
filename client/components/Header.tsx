@@ -227,10 +227,13 @@ const Header = ({ isOverlayActive = false }: HeaderProps) => {
         <div
           className={cn(
             "fixed inset-0 md:hidden z-[997] top-16",
-            "bg-white w-full h-[calc(100vh-64px)] overflow-y-auto"
+            "bg-white w-full overflow-y-auto"
           )}
+          style={{
+            height: "calc(100vh - 64px)",
+          }}
         >
-          <nav className="max-w-7xl mx-auto px-4">
+          <nav className="w-full px-4">
             <ul className="flex flex-col">
               {navigationLinks.map((link, index) => (
                 <li key={link.label}>
