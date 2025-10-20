@@ -107,22 +107,18 @@ const Styles = () => (
     }
 
     .brand a {
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
       text-decoration: none;
+      text-transform: uppercase;
       color: inherit;
       transition: opacity 0.3s var(--ease-standard);
-      display: inline-flex;
-      align-items: center;
-      height: 32px;
+      display: inline-block;
     }
 
     .brand a:hover {
       opacity: 0.7;
-    }
-
-    .brand img {
-      height: 100%;
-      width: auto;
-      display: block;
     }
 
     /* Primary navigation */
