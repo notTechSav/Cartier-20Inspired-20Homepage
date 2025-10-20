@@ -111,7 +111,7 @@ const RightSection = styled.div`
   justify-content: flex-end;
 `;
 
-// ═══════════════════════════════════════════════════════════════════
+// ═══════════════════════════════════════════��═══════════════════════
 // MENU BUTTON
 // ═══════════════════════════════════════════════════════════════════
 
@@ -156,27 +156,27 @@ const MenuButton = styled.button`
   }
 `;
 
-// ═══════════════════════════════════════════════════════════════════
+// ═══════════════════════════════════════════════════════���═══════════
 // LOGO
 // ═══════════════════════════════════════════════════════════════════
 
 const Logo = styled.a`
   font-family: ${DesignTokens.font.primary};
   font-size: ${DesignTokens.font.size.logo};
-  font-weight: ${DesignTokens.font.weight.light};
+  font-weight: ${DesignTokens.font.weight.ultraLight};
   letter-spacing: ${DesignTokens.font.tracking.widest};
   text-transform: uppercase;
   color: #000;
   text-decoration: none;
   white-space: nowrap;
-  transition: opacity 240ms ${DesignTokens.ease.gentle};
+  transition: color 240ms ${DesignTokens.ease.gentle};
 
   &:hover {
-    opacity: 0.64;
+    color: rgba(0, 0, 0, 0.8);
   }
 
   &:focus-visible {
-    outline: 1px solid rgba(0, 0, 0, 0.2);
+    outline: 1.5px solid rgba(0, 0, 0, 0.3);
     outline-offset: 6px;
   }
 `;
@@ -395,7 +395,7 @@ const MenuLabel = styled.span`
 
 // ═══════════════════════════════════════════════════════════════════
 // COMPONENT
-// ═════════════════════════════════════════════════════════════���═════
+// ═══════════════════════════════════���═══════════════════════════════
 
 interface KatherineTaylorNavProps {
   onInquireClick?: () => void;
