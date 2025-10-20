@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import VideoUnmuteButton from "@/components/site/VideoUnmuteButton";
 
 const HERO_VIDEO_SRC =
-  "https://res.cloudinary.com/katherine-taylor-escort-video/video/upload/v1760237084/MAYA_2_cnpwna.mp4";
+  "https://res.cloudinary.com/katherine-taylor-escort-video/video/upload/f_auto,q_auto,w_1920,h_1080,c_fill/v1760237084/MAYA_2_cnpwna.mp4";
 
 const Hero = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
