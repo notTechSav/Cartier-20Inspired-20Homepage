@@ -2,12 +2,12 @@ import { Button } from "@/components/ui/button";
 
 const EmailSignupSection = () => {
   return (
-    <section className="bg-luxury-white py-24 md:py-32">
-      <div className="mx-auto flex max-w-luxury flex-col items-center px-8 text-center">
+    <section className="bg-luxury-white py-16 md:py-32 max-md:py-16">
+      <div className="mx-auto flex max-w-luxury flex-col items-center px-6 text-center md:px-8 max-md:px-6">
         <h2 className="text-sm font-light uppercase tracking-uppercase text-gray-700">
           Latest from Tiffany
         </h2>
-        <form className="mt-12 flex w-full max-w-2xl flex-col gap-4 sm:flex-row sm:items-center">
+        <form className="mt-8 flex w-full max-w-2xl flex-col gap-3 md:flex-row md:items-center md:mt-12 max-md:gap-3 max-md:mt-8">
           <label htmlFor="email-signup" className="sr-only">
             Email address
           </label>
@@ -22,7 +22,7 @@ const EmailSignupSection = () => {
           <Button
             type="submit"
             variant="ctaPrimary"
-            className="w-full sm:w-auto"
+            className="max-md:w-full md:w-auto"
           >
             Sign Up
           </Button>
