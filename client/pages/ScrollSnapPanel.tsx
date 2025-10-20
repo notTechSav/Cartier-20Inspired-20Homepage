@@ -11,10 +11,17 @@ const ScrollSnapPanel: React.FC<ScrollSnapPanelProps> = ({
 }) => {
   return (
     <div
-      className={`scroll-snap-panel w-full ${className}`}
+      className={`w-full flex-none ${className}`}
       style={{
+        minHeight: "100vh",
+        minHeight: "100dvh",
+        height: "100vh",
+        height: "100dvh",
         scrollSnapAlign: "start",
         scrollSnapStop: "always",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
       }}
     >
       {children}
