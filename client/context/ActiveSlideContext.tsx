@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, ReactNode } from "react";
 
-type SlideMeta = {
+export type SlideMeta = {
   id: string;
   dark?: boolean;
   tabletDark?: boolean;
@@ -18,7 +18,11 @@ const ActiveSlideContext = createContext<ActiveSlideContextType | undefined>(
   undefined
 );
 
-export function ActiveSlideProvider({ children }: { children: ReactNode }) {
+export const ActiveSlideProvider = ({
+  children,
+}: {
+  children: ReactNode;
+}) => {
   const [activeSlide, setActiveSlide] = useState<SlideMeta | undefined>();
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -29,9 +33,9 @@ export function ActiveSlideProvider({ children }: { children: ReactNode }) {
       {children}
     </ActiveSlideContext.Provider>
   );
-}
+};
 
-export function useActiveSlide() {
+export const useActiveSlide = () => {
   const context = useContext(ActiveSlideContext);
   if (!context) {
     throw new Error(
@@ -39,6 +43,4 @@ export function useActiveSlide() {
     );
   }
   return context;
-}
-
-export type { SlideMeta };
+};
