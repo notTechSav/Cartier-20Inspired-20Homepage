@@ -42,7 +42,7 @@ const ImmersiveVideoSection = () => {
   };
 
   return (
-    <section className="relative min-h-screen w-full overflow-hidden bg-luxury-black">
+    <section className="absolute inset-0 w-full overflow-hidden bg-luxury-black">
       <video
         ref={videoRef}
         className="absolute inset-0 h-full w-full object-cover"
@@ -56,7 +56,7 @@ const ImmersiveVideoSection = () => {
         <source src={VIDEO_SRC} type="video/mp4" />
       </video>
       <div className="absolute inset-0 bg-luxury-black/55" />
-      <div className="relative z-10 flex h-full min-h-screen flex-col justify-end px-6 pb-24 md:px-8 md:pb-32 max-md:pb-16">
+      <div className="absolute inset-0 flex flex-col justify-end px-6 pb-16 md:px-8 md:pb-24 max-md:pb-12">
         <div className="mx-auto flex w-full max-w-luxury flex-col items-start gap-6 text-luxury-white max-md:gap-4">
           <span className="text-xs font-light uppercase tracking-uppercase text-white/70">
             An Immersive Viewpoint
