@@ -2,22 +2,22 @@ import { useEffect, useRef, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-// Navigation links
+// Navigation links - ALL CAPS for display
 const navigationLinks = [
-  { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
-  { label: "Gifts", href: "/gifts" },
-  { label: "Journal", href: "/journal" },
-  { label: "Rates", href: "/rates" },
-  { label: "Gallery", href: "/gallery" },
+  { label: "HOME", href: "/" },
+  { label: "ABOUT", href: "/about" },
+  { label: "GIFTS", href: "/gifts" },
+  { label: "JOURNAL", href: "/journal" },
+  { label: "RATES", href: "/rates" },
+  { label: "GALLERY", href: "/gallery" },
   { label: "FAQ", href: "/faq" },
-  { label: "Inquire", href: "/inquire-luxury" },
+  { label: "INQUIRE", href: "/inquire-luxury" },
 ];
 
-// Utility bar links (desktop only)
+// Utility bar links (desktop only) - ALL CAPS
 const utilityLinks = [
-  { label: "Contact", href: "/contact" },
-  { label: "Appointments", href: "/appointments" },
+  { label: "CONTACT", href: "/contact" },
+  { label: "APPOINTMENTS", href: "/appointments" },
 ];
 
 interface HeaderProps {
@@ -32,7 +32,6 @@ const Header = ({ isOverlayActive = false }: HeaderProps) => {
 
   // Detect overlay state using Intersection Observer
   useEffect(() => {
-    // Try to find the hero section (first full-height section)
     const heroElement = document.querySelector("[data-hero='true']");
     heroSectionRef.current = heroElement as HTMLElement | null;
 
@@ -43,8 +42,6 @@ const Header = ({ isOverlayActive = false }: HeaderProps) => {
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        // Header is in overlay zone when hero section is at top of viewport
-        // Use top edge of intersection to detect when we're over the hero
         setIsOverlay(entry.isIntersecting && entry.boundingClientRect.top <= 0);
       },
       {
@@ -91,7 +88,7 @@ const Header = ({ isOverlayActive = false }: HeaderProps) => {
       {/* Top Utility Bar - Desktop Only */}
       <div
         className={cn(
-          "hidden md:block sticky top-0 left-0 right-0 z-[999] bg-white",
+          "hidden md:block sticky top-0 left-0 right-0 z-[1000] bg-white",
           "transition-colors duration-300 ease-out"
         )}
         style={{
@@ -107,8 +104,8 @@ const Header = ({ isOverlayActive = false }: HeaderProps) => {
                   href={link.href}
                   className={cn(
                     "text-xs font-light uppercase whitespace-nowrap",
-                    "text-black transition-opacity duration-300 ease-out",
-                    "hover:opacity-60"
+                    "text-black transition-all duration-300 ease-out",
+                    "hover:text-gray-600 hover:underline hover:underline-offset-2"
                   )}
                   style={{
                     letterSpacing: "0.1em",
@@ -126,8 +123,8 @@ const Header = ({ isOverlayActive = false }: HeaderProps) => {
       <header
         ref={headerRef}
         className={cn(
-          "sticky top-0 left-0 right-0 md:top-12 z-[998] w-full",
-          "transition-colors duration-300 ease-out"
+          "sticky top-0 left-0 right-0 md:top-12 z-[999] w-full",
+          "transition-all duration-300 ease-out"
         )}
         style={{
           backgroundColor: isOverlay ? "transparent" : "white",
@@ -139,41 +136,58 @@ const Header = ({ isOverlayActive = false }: HeaderProps) => {
           <div
             className={cn(
               "hidden md:flex items-center justify-between",
-              "h-20 md:h-20"
+              "h-20"
             )}
+            style={{
+              alignItems: "center",
+            }}
           >
-            {/* Logo - Distinct serif, larger, bolder */}
+            {/* Logo - Editorial serif hierarchy */}
             <a
               href="/"
               className={cn(
-                "flex-shrink-0 text-2xl md:text-3xl transition-colors duration-300 ease-out",
-                isOverlay ? "text-white" : "text-black"
+                "flex-shrink-0 transition-colors duration-300 ease-out"
               )}
               style={{
                 fontFamily: "'Cormorant Garamond', serif",
                 fontWeight: 700,
+                fontSize: "2rem",
                 letterSpacing: "0.05em",
                 lineHeight: "1.2",
+                color: isOverlay ? "white" : "black",
               }}
             >
               Katherine Taylor
             </a>
 
-            {/* Center Navigation */}
-            <nav className="flex items-center gap-4 md:gap-6" style={{ alignItems: "center" }}>
-              <ul className="flex items-center" style={{ gap: "24px" }}>
+            {/* Center Navigation with proper spacing */}
+            <nav
+              className="flex items-center"
+              style={{
+                alignItems: "center",
+              }}
+            >
+              <ul
+                className="flex items-center"
+                style={{
+                  gap: "24px",
+                  alignItems: "center",
+                }}
+              >
                 {navigationLinks.map((link) => (
                   <li key={link.label}>
                     <a
                       href={link.href}
                       className={cn(
-                        "text-xs md:text-sm font-extralight uppercase transition-opacity duration-300 ease-out",
-                        isOverlay ? "text-white hover:opacity-60" : "text-black hover:opacity-60"
+                        "text-sm font-light uppercase transition-all duration-300 ease-out",
+                        isOverlay
+                          ? "text-white hover:opacity-70"
+                          : "text-black hover:text-gray-600 hover:underline hover:underline-offset-2"
                       )}
                       style={{
-                        letterSpacing: "0.2em",
-                        fontWeight: 200,
-                        fontSize: "13px",
+                        letterSpacing: "0.15em",
+                        fontWeight: 300,
+                        fontSize: "14px",
                       }}
                     >
                       {link.label}
@@ -188,48 +202,55 @@ const Header = ({ isOverlayActive = false }: HeaderProps) => {
           <div
             className={cn(
               "md:hidden flex items-center justify-between",
-              "h-16 md:h-20"
+              "h-16"
             )}
             style={{
               backgroundColor: isOverlay ? "transparent" : "white",
               alignItems: "center",
             }}
           >
-            {/* Logo - Distinct serif, mobile-optimized */}
+            {/* Empty space on left for now */}
+            <div className="flex-1" />
+
+            {/* Logo - Mobile optimized */}
             <a
               href="/"
               className={cn(
-                "flex-1 text-center transition-colors duration-300 ease-out",
-                isOverlay ? "text-white" : "text-black"
+                "flex-1 text-center transition-colors duration-300 ease-out"
               )}
               style={{
                 fontFamily: "'Cormorant Garamond', serif",
                 fontWeight: 700,
-                fontSize: "20px",
+                fontSize: "1.5rem",
                 letterSpacing: "0.05em",
                 lineHeight: "1.2",
+                color: isOverlay ? "white" : "black",
               }}
             >
               Katherine Taylor
             </a>
 
-            {/* Hamburger Menu Button */}
-            <button
-              type="button"
-              onClick={toggleMenu}
-              className={cn(
-                "flex-shrink-0 p-2 transition-colors duration-300 ease-out",
-                isOverlay ? "text-white" : "text-black"
-              )}
-              aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
-              aria-expanded={isMenuOpen}
-            >
-              {isMenuOpen ? (
-                <X className="h-5 w-5" />
-              ) : (
-                <Menu className="h-5 w-5" />
-              )}
-            </button>
+            {/* Hamburger Menu Button - Right aligned */}
+            <div className="flex-1 flex justify-end">
+              <button
+                type="button"
+                onClick={toggleMenu}
+                className={cn(
+                  "flex-shrink-0 p-2 transition-colors duration-300 ease-out"
+                )}
+                style={{
+                  color: isOverlay ? "white" : "black",
+                }}
+                aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+                aria-expanded={isMenuOpen}
+              >
+                {isMenuOpen ? (
+                  <X className="h-5 w-5" />
+                ) : (
+                  <Menu className="h-5 w-5" />
+                )}
+              </button>
+            </div>
           </div>
         </div>
       </header>
@@ -238,7 +259,7 @@ const Header = ({ isOverlayActive = false }: HeaderProps) => {
       {isMenuOpen && (
         <div
           className={cn(
-            "fixed inset-0 md:hidden z-[997] top-16",
+            "fixed inset-0 md:hidden z-[998] top-16",
             "bg-white w-full overflow-y-auto"
           )}
           style={{
@@ -253,8 +274,8 @@ const Header = ({ isOverlayActive = false }: HeaderProps) => {
                     href={link.href}
                     onClick={handleLinkClick}
                     className={cn(
-                      "block text-base font-light uppercase transition-opacity duration-300 ease-out",
-                      "text-black hover:opacity-60",
+                      "block text-base font-light uppercase transition-all duration-300 ease-out",
+                      "text-black hover:text-gray-600 hover:underline hover:underline-offset-2",
                       index !== navigationLinks.length - 1 ? "border-b" : ""
                     )}
                     style={{
