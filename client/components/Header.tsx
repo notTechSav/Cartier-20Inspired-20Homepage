@@ -91,8 +91,8 @@ const Header = ({ isOverlayActive = false }: HeaderProps) => {
       {/* Top Utility Bar - Desktop Only */}
       <div
         className={cn(
-          "hidden md:block sticky top-0 left-0 right-0 z-[999] h-auto transition-colors duration-300 ease-out",
-          isOverlay ? "bg-white" : "bg-white"
+          "hidden md:block sticky top-0 left-0 right-0 z-[999] h-auto bg-white",
+          "transition-colors duration-300 ease-out"
         )}
       >
         <div className="max-w-7xl mx-auto px-8 md:px-12 lg:px-16 py-3">
@@ -102,11 +102,12 @@ const Header = ({ isOverlayActive = false }: HeaderProps) => {
                 <a
                   href={link.href}
                   className={cn(
-                    "text-xs font-normal uppercase transition-colors duration-300 ease-out whitespace-nowrap hover:text-gray-600"
+                    "text-xs font-light uppercase whitespace-nowrap",
+                    "text-black transition-opacity duration-300 ease-out",
+                    "hover:opacity-60"
                   )}
                   style={{
                     letterSpacing: "0.1em",
-                    color: isOverlay ? "black" : "black",
                   }}
                 >
                   {link.label}
