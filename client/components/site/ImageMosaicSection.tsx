@@ -54,15 +54,18 @@ const ImageMosaicSection = ({
   const displayTiles = tiles ?? defaultTiles;
 
   return (
-    <section className="bg-luxury-white py-16 md:py-32 lg:py-40 max-md:py-16">
+    <section
+      className="bg-luxury-white py-16 md:py-32 lg:py-40 max-md:py-16"
+      aria-label="Image gallery collection showcase"
+    >
       <div className="mx-auto flex max-w-luxury flex-col gap-12 px-8">
         <div className="space-y-4 text-center">
-          <h1 className="text-xs font-light uppercase tracking-uppercase text-gray-600">
+          <p className="text-xs font-light uppercase tracking-uppercase text-gray-600">
             {title}
-          </h1>
-          <h2 className="mx-auto max-w-[65ch] text-base font-light leading-relaxed tracking-luxury text-gray-700">
+          </p>
+          <h1 className="mx-auto max-w-[65ch] text-2xl md:text-3xl font-light leading-relaxed tracking-luxury text-gray-700">
             {subtitle}
-          </h2>
+          </h1>
         </div>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-12 lg:grid-cols-4 lg:gap-16 max-md:gap-6">
           {displayTiles.map((tile) => {
