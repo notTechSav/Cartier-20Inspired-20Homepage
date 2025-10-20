@@ -50,8 +50,8 @@ const Hero = () => {
         <source src={HERO_VIDEO_SRC} type="video/mp4" />
       </video>
       <div className="pointer-events-none absolute inset-0 bg-luxury-black/60" />
-      <div className="relative z-10 flex w-full flex-1 flex-col items-center justify-end px-8 pb-24 pt-32 sm:justify-center sm:pb-32">
-        <div className="flex w-full max-w-luxury flex-col items-start gap-8 text-luxury-white">
+      <div className="relative z-10 flex w-full flex-1 flex-col items-start justify-end px-8 pb-24 pt-32 sm:items-center sm:justify-center sm:pb-32">
+        <div className="flex w-full max-w-luxury flex-col items-start gap-8 text-luxury-white mb-0 lg:mb-8">
           <H3 as="p" aria-hidden="true" className="mb-0 text-luxury-white/70">
             Love, Elevated
           </H3>
