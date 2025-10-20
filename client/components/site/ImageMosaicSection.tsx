@@ -66,7 +66,7 @@ const ImageMosaicSection = ({
   const displayTiles = tiles ?? defaultTiles;
 
   return (
-    <section className="bg-luxury-white py-24 md:py-32 lg:py-40">
+    <section className="bg-luxury-white py-16 md:py-32 lg:py-40 max-md:py-16">
       <div className="mx-auto flex max-w-luxury flex-col gap-12 px-8">
         <div className="space-y-4 text-center">
           <h1 className="text-xs font-light uppercase tracking-uppercase text-gray-600">
@@ -76,7 +76,7 @@ const ImageMosaicSection = ({
             {subtitle}
           </h2>
         </div>
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:gap-12 lg:grid-cols-4 lg:gap-16">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-12 lg:grid-cols-4 lg:gap-16 max-md:gap-6">
           {displayTiles.map((tile) => {
             const overlayKey =
               tile.overlay ??
@@ -88,7 +88,7 @@ const ImageMosaicSection = ({
             return (
               <article
                 key={tile.src}
-                className="group bg-luxury-white p-8 shadow-luxury-md transition-shadow duration-400 ease-out md:p-10 lg:p-12 hover:shadow-luxury-lg"
+                className="group bg-luxury-white p-4 shadow-luxury-md transition-shadow duration-400 ease-out md:p-10 lg:p-12 max-md:p-4 hover:shadow-luxury-lg"
               >
                 <div className="relative mb-6 aspect-[4/5] overflow-hidden">
                   <img
@@ -134,7 +134,7 @@ const ImageMosaicSection = ({
         </div>
         {footerHeading || (footerLinkHref && footerLinkLabel) ? (
           <div className="border-t border-gray-100 pt-8 text-left">
-            <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between">
+            <div className="flex flex-col items-start gap-3 md:flex-row md:items-center md:justify-between max-md:gap-3 max-md:flex-col">
               {footerHeading ? (
                 <span className="text-xs font-light uppercase tracking-uppercase text-gray-600">
                   {footerHeading}
