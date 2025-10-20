@@ -452,7 +452,10 @@ export default function HeaderYSLRefined() {
           className={`header-bar ${openId || isMobileMenuOpen ? "header--solid" : ""}`}
         >
           {/* Left zone: Primary navigation */}
-          <nav aria-label="Primary navigation" className="navPrimary hidden md:flex">
+          <nav
+            aria-label="Primary navigation"
+            className="navPrimary hidden md:flex"
+          >
             {primaryNavLinks.map((link) => (
               <li key={link.id}>
                 <button
@@ -481,7 +484,10 @@ export default function HeaderYSLRefined() {
           </div>
 
           {/* Right zone: Utility links */}
-          <nav aria-label="Utility navigation" className="navUtility hidden md:flex">
+          <nav
+            aria-label="Utility navigation"
+            className="navUtility hidden md:flex"
+          >
             {utilLinks.map((link) => (
               <li key={link.id}>
                 <button
@@ -518,9 +524,7 @@ export default function HeaderYSLRefined() {
         </div>
 
         {/* Mega menu backdrop */}
-        <div
-          className={`megaTopPanel ${openId ? "megaTopPanel--open" : ""}`}
-        />
+        <div className={`megaTopPanel ${openId ? "megaTopPanel--open" : ""}`} />
 
         {/* Mega menu grid */}
         <div

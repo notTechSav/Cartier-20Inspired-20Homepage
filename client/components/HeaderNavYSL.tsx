@@ -58,10 +58,12 @@ const navigationLinks: TopLink[] = [
 const shouldInvertFromSlide = (
   s?: SlideMeta,
   isTablet = false,
-  isMobile = false
+  isMobile = false,
 ) => {
   if (!s) return false;
-  return Boolean(s.dark || (isTablet && s.tabletDark) || (isMobile && s.mobileDark));
+  return Boolean(
+    s.dark || (isTablet && s.tabletDark) || (isMobile && s.mobileDark),
+  );
 };
 
 const Styles = () => (
@@ -295,7 +297,10 @@ function Header({
     setInverse(shouldInvertFromSlide(activeSlide, isTablet, isMobile));
   }, [activeSlide, isTablet, isMobile]);
 
-  useEffect(() => setSolid(Boolean(openId) || isMenuOpen), [openId, isMenuOpen]);
+  useEffect(
+    () => setSolid(Boolean(openId) || isMenuOpen),
+    [openId, isMenuOpen],
+  );
 
   useEffect(() => {
     const px = openId && gridRef.current ? gridRef.current.offsetHeight : 0;
@@ -364,9 +369,7 @@ function Header({
           </button>
         </div>
 
-        <div
-          className={`megaTopPanel ${openId ? "megaTopPanel--open" : ""}`}
-        />
+        <div className={`megaTopPanel ${openId ? "megaTopPanel--open" : ""}`} />
         <div
           ref={gridRef}
           className={`megaGrid ${openId ? "megaGrid--open" : ""}`}

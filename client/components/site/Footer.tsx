@@ -6,7 +6,6 @@ interface FooterProps {
 }
 
 const Footer = ({ isSwiperLayout = false, totalSections = 6 }: FooterProps) => {
-
   return (
     <footer className="w-full bg-luxury-white">
       {/* Email Signup Section */}
@@ -37,7 +36,6 @@ const Footer = ({ isSwiperLayout = false, totalSections = 6 }: FooterProps) => {
           </form>
         </div>
       </section>
-
 
       {/* Footer Links */}
       <section className="py-12 px-6 border-t border-gray-100 md:py-16 md:px-8 max-md:py-12 max-md:px-6">

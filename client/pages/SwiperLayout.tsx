@@ -27,17 +27,20 @@ const SwiperLayout: React.FC<SwiperLayoutProps> = ({ children, slides }) => {
       { id: "journal", dark: false },
       { id: "inquire", dark: true },
     ],
-    []
+    [],
   );
 
   const slideMetadata = slides || defaultSlides;
 
-  const handleSlideChange = useCallback((swiper: SwiperType) => {
-    setActiveIndex(swiper.activeIndex);
-    if (slideMetadata[swiper.activeIndex]) {
-      setActiveSlide(slideMetadata[swiper.activeIndex]);
-    }
-  }, [slideMetadata, setActiveIndex, setActiveSlide]);
+  const handleSlideChange = useCallback(
+    (swiper: SwiperType) => {
+      setActiveIndex(swiper.activeIndex);
+      if (slideMetadata[swiper.activeIndex]) {
+        setActiveSlide(slideMetadata[swiper.activeIndex]);
+      }
+    },
+    [slideMetadata, setActiveIndex, setActiveSlide],
+  );
 
   return (
     <div className="relative h-screen w-full overflow-hidden bg-luxury-white">

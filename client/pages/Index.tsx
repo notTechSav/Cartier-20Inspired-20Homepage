@@ -19,7 +19,7 @@ const Index = () => {
       { id: "journal", dark: false }, // Journal is light
       { id: "inquire", dark: true }, // Video is dark
     ],
-    []
+    [],
   );
 
   return (
@@ -57,9 +57,12 @@ const Index = () => {
       {/* 05. Journal */}
       <div className="flex h-full min-h-screen w-full items-center justify-center bg-luxury-white">
         <div className="w-full max-w-luxury px-6 md:px-8 text-center">
-          <h2 className="text-4xl font-light mb-4 text-luxury-black">Journal</h2>
+          <h2 className="text-4xl font-light mb-4 text-luxury-black">
+            Journal
+          </h2>
           <p className="text-gray-700 mb-8 max-w-2xl mx-auto">
-            Insights, stories, and perspectives on companionship, luxury, and the art of connection.
+            Insights, stories, and perspectives on companionship, luxury, and
+            the art of connection.
           </p>
           <a
             href="/journal"

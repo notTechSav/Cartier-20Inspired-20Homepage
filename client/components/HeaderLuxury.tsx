@@ -460,7 +460,9 @@ export default function HeaderLuxury() {
   return (
     <>
       <Styles />
-      <header className={`header-luxury ${isScrolled ? "header-scrolled" : ""}`}>
+      <header
+        className={`header-luxury ${isScrolled ? "header-scrolled" : ""}`}
+      >
         <div className="header-container">
           {/* Brand */}
           <div className="brand">

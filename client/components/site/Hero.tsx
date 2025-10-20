@@ -69,13 +69,25 @@ const Hero = () => {
       <div className="pointer-events-none absolute inset-0 bg-luxury-black/60" />
       <div className="relative z-10 flex w-full flex-1 flex-col items-center justify-end px-6 pb-16 pt-24 md:px-8 md:pb-32 md:pt-32 max-md:items-start">
         <div className="flex w-full max-w-luxury flex-col items-start gap-6 text-luxury-white md:gap-8">
-          <H3 as="p" aria-hidden="true" className="mb-0 text-luxury-white/70 max-md:text-center">
+          <H3
+            as="p"
+            aria-hidden="true"
+            className="mb-0 text-luxury-white/70 max-md:text-center"
+          >
             Love, Elevated
           </H3>
-          <H2 as="p" aria-hidden="true" className="text-luxury-white max-md:text-center">
+          <H2
+            as="p"
+            aria-hidden="true"
+            className="text-luxury-white max-md:text-center"
+          >
             An Experience That Reflects Your Highest Qualities
           </H2>
-          <Button asChild variant="ctaPrimary" className="max-md:w-full max-md:text-center">
+          <Button
+            asChild
+            variant="ctaPrimary"
+            className="max-md:w-full max-md:text-center"
+          >
             <a href="/inquire">Reserve an Evening</a>
           </Button>
         </div>
