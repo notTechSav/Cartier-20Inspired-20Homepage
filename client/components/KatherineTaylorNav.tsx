@@ -59,7 +59,7 @@ const DesignTokens = {
 
 // ══════════��════════════════════════════════════════════════════════
 // STYLED COMPONENTS — HEADER
-// ═══════════════════════════════════════════════════════════════════
+// ═════════════════��═════════════════════════════════════════════════
 
 const HeaderContainer = styled.header<{ $hidden: boolean }>`
   position: fixed;
@@ -183,7 +183,7 @@ const Logo = styled.a`
 
 // ═══════════════════════════════════════════════════════════════════
 // CONCIERGE BELL — Harry Winston Inspired
-// ═══════════════════════════════════════════════════════════════════
+// ════════════════════════════════���══════════════════════════════════
 
 const BellButton = styled.button`
   width: 24px;
@@ -393,7 +393,7 @@ const MenuLabel = styled.span`
   margin-top: 8px;
 `;
 
-// ═══════════════════════════════════════════════════════════════════
+// ═══════════════════════════════════════════════════════════���═══════
 // COMPONENT
 // ═══════════════════════════════════════════════════════════════════
 
@@ -475,21 +475,6 @@ const KatherineTaylorNav: React.FC<KatherineTaylorNavProps> = ({ onInquireClick 
 
         <HeaderContent>
           <LeftSection>
-            <MenuButton
-              onClick={() => setIsMenuOpen(true)}
-              aria-label="Open menu"
-            >
-              Menu
-            </MenuButton>
-          </LeftSection>
-
-          <CenterSection>
-            <Logo href="/">
-              Katherine Taylor
-            </Logo>
-          </CenterSection>
-
-          <RightSection>
             <BellButton
               onClick={handleBellClick}
               aria-label="Inquire"
@@ -499,14 +484,29 @@ const KatherineTaylorNav: React.FC<KatherineTaylorNavProps> = ({ onInquireClick 
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                strokeWidth="1.2"
+                strokeWidth="1.1"
               >
-                <path d="M6 10c0-3.3 2.7-6 6-6s6 2.7 6 6v4c0 1.1.9 2 2 2H4c1.1 0 2-.9 2-2v-4z" />
-                <circle cx="12" cy="18" r="1.5" />
-                <path d="M3 16h18" />
-                <circle cx="12" cy="2.5" r="1" />
+                <path d="M12 2c0 0 0 2 0 2" />
+                <path d="M12 4c2.2 0 4 1.8 4 4v3c0 0 2 1 2 3v2H2v-2c0-2 2-3 2-3V8c0-2.2 1.8-4 4-4z" />
+                <ellipse cx="12" cy="18.5" rx="2.5" ry="1.5" />
+                <path d="M8.5 20h7" />
               </svg>
             </BellButton>
+          </LeftSection>
+
+          <CenterSection>
+            <Logo href="/">
+              Katherine Taylor
+            </Logo>
+          </CenterSection>
+
+          <RightSection>
+            <MenuButton
+              onClick={() => setIsMenuOpen(true)}
+              aria-label="Open menu"
+            >
+              Menu
+            </MenuButton>
           </RightSection>
         </HeaderContent>
       </HeaderContainer>
