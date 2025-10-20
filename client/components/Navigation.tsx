@@ -75,19 +75,19 @@ const Navigation = () => {
           href="/"
           className="flex items-center gap-3 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-2"
         >
-          <span className="text-3xl font-serif font-extralight uppercase tracking-uppercase leading-[1.1] text-luxury-black">
+          <span className="text-2xl font-serif font-extralight uppercase tracking-uppercase leading-[1.1] text-luxury-black max-md:text-xl">
             KATHERINE TAYLOR
           </span>
         </a>
         <button
           type="button"
           onClick={toggleMenu}
-          className="text-sm font-light uppercase tracking-uppercase text-luxury-black transition-opacity duration-250 ease-out hover:opacity-60 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-2 md:hidden"
+          className="text-sm font-light uppercase tracking-uppercase text-luxury-black transition-opacity duration-250 ease-out hover:opacity-60 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-2 max-md:block hidden"
           aria-label={isMenuOpen ? "Close navigation" : "Open navigation"}
         >
           {isMenuOpen ? "Close" : "Menu"}
         </button>
-        <ul className="hidden items-center gap-12 md:flex">
+        <ul className="max-md:hidden flex items-center gap-12">
           {navigationLinks.map((link) => (
             <li key={link.label}>
               <a
@@ -102,7 +102,7 @@ const Navigation = () => {
         </ul>
       </div>
       {isMenuOpen && (
-        <div className="mt-6 border-t border-gray-200 px-2 pt-6 md:hidden">
+        <div className="mt-6 border-t border-gray-200 px-2 pt-6 max-md:block hidden">
           <ul className="flex flex-col gap-4">
             {navigationLinks.map((link) => (
               <li key={link.label}>
