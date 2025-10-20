@@ -10,27 +10,27 @@ import ScrollSnapPanel from "./ScrollSnapPanel";
 const Index = () => {
   return (
     <ScrollSnapLayout>
-      <ScrollSnapPanel className="relative !flex-none">
+      <ScrollSnapPanel className="relative">
         <Hero />
       </ScrollSnapPanel>
-      <ScrollSnapPanel className="bg-luxury-white !flex-none">
-        <div className="w-full px-6 py-16 md:py-32">
+      <ScrollSnapPanel className="bg-luxury-white">
+        <div className="w-full max-w-luxury px-6 md:px-8">
           <ImageMosaicSection />
         </div>
       </ScrollSnapPanel>
-      <ScrollSnapPanel className="relative !flex-none">
+      <ScrollSnapPanel className="relative">
         <LegendReinventedSection />
       </ScrollSnapPanel>
-      <ScrollSnapPanel className="relative !flex-none">
+      <ScrollSnapPanel className="relative">
         <ImmersiveVideoSection />
       </ScrollSnapPanel>
-      <ScrollSnapPanel className="bg-luxury-white !flex-none">
-        <div className="w-full px-6 py-16 md:py-32">
+      <ScrollSnapPanel className="bg-luxury-white">
+        <div className="w-full max-w-luxury px-6 md:px-8">
           <DesignInMotionSection />
         </div>
       </ScrollSnapPanel>
-      <ScrollSnapPanel className="bg-luxury-black !flex-none">
-        <div className="w-full px-6 py-16 md:py-32">
+      <ScrollSnapPanel className="bg-luxury-black">
+        <div className="w-full max-w-luxury px-6 md:px-8">
           <VideoSection />
         </div>
       </ScrollSnapPanel>
