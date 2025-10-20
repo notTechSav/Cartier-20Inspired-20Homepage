@@ -91,9 +91,13 @@ const Header = ({ isOverlayActive = false }: HeaderProps) => {
       {/* Top Utility Bar - Desktop Only */}
       <div
         className={cn(
-          "hidden md:block sticky top-0 left-0 right-0 z-[999] h-auto bg-white",
+          "hidden md:block sticky top-0 left-0 right-0 z-[999] bg-white",
           "transition-colors duration-300 ease-out"
         )}
+        style={{
+          minHeight: "32px",
+          paddingTop: "4px",
+        }}
       >
         <div className="max-w-7xl mx-auto px-8 md:px-12 lg:px-16 py-3">
           <ul className="flex justify-end gap-8 items-center">
