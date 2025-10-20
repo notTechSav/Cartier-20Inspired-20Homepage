@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState, useCallback } from "react";
 import { Swiper as SwiperType } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Keyboard } from "swiper/modules";
@@ -8,10 +8,17 @@ import "swiper/css/pagination";
 
 interface SwiperLayoutProps {
   children: React.ReactElement[];
+  onSlideChange?: (index: number) => void;
 }
 
-const SwiperLayout: React.FC<SwiperLayoutProps> = ({ children }) => {
+const SwiperLayout: React.FC<SwiperLayoutProps> = ({ children, onSlideChange }) => {
   const swiperRef = useRef<SwiperType>();
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const handleSlideChange = useCallback((swiper: SwiperType) => {
+    setActiveIndex(swiper.activeIndex);
+    onSlideChange?.(swiper.activeIndex);
+  }, [onSlideChange]);
 
   return (
     <div className="relative h-screen w-full overflow-hidden bg-luxury-white">
@@ -19,6 +26,7 @@ const SwiperLayout: React.FC<SwiperLayoutProps> = ({ children }) => {
         onSwiper={(swiper) => {
           swiperRef.current = swiper;
         }}
+        onSlideChange={handleSlideChange}
         modules={[Navigation, Pagination, Keyboard]}
         direction="vertical"
         slidesPerView={1}
