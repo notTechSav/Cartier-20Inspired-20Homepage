@@ -45,14 +45,17 @@ const Header = ({ isOverlayActive = false }: HeaderProps) => {
       setIsOverlay(isHeroVisible);
     };
 
-    // Initial check
-    checkOverlayState();
+    // Delay initial check to ensure DOM is fully rendered
+    const initialCheckTimer = setTimeout(() => {
+      checkOverlayState();
+    }, 100);
 
     // Listen to scroll and resize events
     window.addEventListener("scroll", checkOverlayState, { passive: true });
     window.addEventListener("resize", checkOverlayState, { passive: true });
 
     return () => {
+      clearTimeout(initialCheckTimer);
       window.removeEventListener("scroll", checkOverlayState);
       window.removeEventListener("resize", checkOverlayState);
     };
