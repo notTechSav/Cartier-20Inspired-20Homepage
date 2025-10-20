@@ -31,7 +31,7 @@ const SiteLayoutContent = ({ children }: PropsWithChildren) => {
   if (isSwiperLayout || hasSwiperProps) {
     return (
       <div className="relative flex h-screen w-full flex-col bg-luxury-white text-gray-700 overflow-hidden">
-        <HeaderLuxury />
+        <KatherineTaylorNav />
         <div className="flex-1 overflow-hidden">{children}</div>
         <Footer isSwiperLayout={true} totalSections={6} />
       </div>
@@ -40,8 +40,8 @@ const SiteLayoutContent = ({ children }: PropsWithChildren) => {
 
   return (
     <div className="flex min-h-screen flex-col bg-luxury-white text-gray-700">
-      <HeaderLuxury />
-      <main className="flex-1 pt-20">{children}</main>
+      <KatherineTaylorNav />
+      <main className="flex-1">{children}</main>
       <Footer />
     </div>
   );
