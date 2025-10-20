@@ -8,14 +8,14 @@ const LegendReinventedSection = () => {
   return (
     <section className="relative isolate overflow-hidden bg-luxury-black">
       <div
-        className="relative flex min-h-[520px] w-full items-center justify-start bg-cover bg-center px-8 py-24 sm:min-h-[640px] md:py-32 lg:py-40"
+        className="relative flex min-h-[520px] w-full items-center justify-start bg-cover bg-center px-6 py-24 md:min-h-[640px] md:py-32 lg:py-40 max-md:min-h-[400px] max-md:px-6 max-md:py-16"
         style={{ backgroundImage: `url(${backgroundImage})` }}
       >
         <div
           className="absolute inset-0 bg-luxury-black/60"
           aria-hidden="true"
         />
-        <div className="relative z-10 max-w-[560px] space-y-8 text-left text-luxury-white">
+        <div className="relative z-10 max-w-[560px] space-y-6 text-left text-luxury-white max-md:space-y-4">
           <H2 as="p" className="mb-0 text-luxury-white">
             Katherine Taylor — Elegant San Francisco & Sacramento Escort
           </H2>
