@@ -59,7 +59,7 @@ const DesignTokens = {
 
 // ══════════��════════════════════════════════════════════════════════
 // STYLED COMPONENTS — HEADER
-// ═════════════════��═════════════════════════════════════════════════
+// ═══════════════════════════════════════════════════════════════════
 
 const HeaderContainer = styled.header<{ $hidden: boolean }>`
   position: fixed;
@@ -111,7 +111,7 @@ const RightSection = styled.div`
   justify-content: flex-end;
 `;
 
-// ═══════════════════════════════════════════════════════════════════
+// ══════════════════════════���════════════════════════════════════════
 // MENU BUTTON
 // ═══════════════════════════════════════════════════════════════════
 
@@ -183,7 +183,7 @@ const Logo = styled.a`
 
 // ═══════════════════════════════════════════════════════════════════
 // CONCIERGE BELL — Harry Winston Inspired
-// ════════════════════════════════���══════════════════════════════════
+// ═══════════════════════════════════════════════════════════════════
 
 const BellButton = styled.button`
   width: 24px;
@@ -337,10 +337,11 @@ const MenuItem = styled.li<{ $isOpen: boolean; $delay: number }>`
   width: 100%;
   text-align: center;
   opacity: ${props => props.$isOpen ? 1 : 0};
-  transform: translateY(${props => props.$isOpen ? '0' : '16px'});
+  transform: translateY(${props => props.$isOpen ? '0' : '20px'});
   transition:
-    opacity 520ms ${DesignTokens.ease.luxe} ${props => props.$delay}ms,
-    transform 520ms ${DesignTokens.ease.luxe} ${props => props.$delay}ms;
+    opacity 620ms ${DesignTokens.ease.luxe} ${props => props.$delay}ms,
+    transform 620ms ${DesignTokens.ease.luxe} ${props => props.$delay}ms;
+  will-change: opacity, transform;
 `;
 
 const MenuLink = styled.a`
@@ -393,9 +394,9 @@ const MenuLabel = styled.span`
   margin-top: 8px;
 `;
 
-// ═══════════════════════════════════════════════════════════���═══════
-// COMPONENT
 // ═══════════════════════════════════════════════════════════════════
+// COMPONENT
+// ══════════════════════════════════���════════════════════════════════
 
 interface KatherineTaylorNavProps {
   onInquireClick?: () => void;
