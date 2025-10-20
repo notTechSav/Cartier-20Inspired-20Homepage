@@ -242,20 +242,21 @@ const Header = ({ isOverlayActive = false }: HeaderProps) => {
         >
           <nav className="w-full px-4">
             <ul className="flex flex-col">
-              {navigationLinks.map((link, index) => (
+              {navigationLinks.map((link) => (
                 <li key={link.label}>
                   <a
                     href={link.href}
                     onClick={handleLinkClick}
                     className={cn(
-                      "block py-4 text-base font-normal uppercase transition-colors duration-300 ease-out",
-                      "text-black hover:text-gray-600",
-                      "border-b border-gray-100",
-                      index === navigationLinks.length - 1 ? "border-b-0" : ""
+                      "block text-base font-light uppercase transition-opacity duration-300 ease-out",
+                      "text-black hover:opacity-60"
                     )}
                     style={{
                       letterSpacing: "0.15em",
                       lineHeight: "1.5em",
+                      padding: "16px 0",
+                      fontWeight: 300,
+                      borderBottom: "1px solid #f0f0f0",
                     }}
                   >
                     {link.label}
