@@ -16,7 +16,7 @@ const Inquire = () => {
   }, []);
 
   return (
-    <div className="bg-luxury-white text-luxury-black">
+    <div className="bg-luxury-white text-luxury-black" id="inquire" data-section="inquire">
       <PageHeroOverlay
         title="Inquire"
         subtitle="I keep a limited calendar—typically three to four engagements each month—so every meeting receives the preparation it deserves."
@@ -27,7 +27,7 @@ const Inquire = () => {
       />
 
       {/* Content Section */}
-      <section className="bg-luxury-white px-6 pb-24 pt-8 text-luxury-black sm:px-10">
+      <section className="bg-luxury-white px-6 pb-24 pt-8 text-luxury-black sm:px-10" data-section="inquire-content">
         <div className="mx-auto max-w-[680px] space-y-16">
           {/* Introduction */}
           <div className="space-y-6">
