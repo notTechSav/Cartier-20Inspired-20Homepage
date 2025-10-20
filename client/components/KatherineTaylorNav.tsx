@@ -7,23 +7,23 @@ import styled from 'styled-components';
 
 const DesignTokens = {
   font: {
-    primary: '"Futura PT", "Helvetica Neue", Arial, sans-serif',
+    primary: '"Helvetica Neue", "Helvetica", Arial, sans-serif',
     weight: {
-      ultraLight: 100,
-      light: 200,
-      regular: 300,
-      medium: 400,
+      ultraLight: 25,
+      light: 35,
+      regular: 45,
+      medium: 55,
     },
     size: {
-      nav: 'clamp(10px, 0.65vw, 11px)',
-      logo: 'clamp(13px, 0.85vw, 15px)',
-      menuItem: 'clamp(28px, 2.4vw, 42px)',
-      menuLabel: 'clamp(9px, 0.6vw, 10px)',
+      nav: 'clamp(9px, 0.55vw, 10px)',
+      logo: 'clamp(12px, 0.75vw, 14px)',
+      menuItem: 'clamp(24px, 2.2vw, 36px)',
+      menuLabel: 'clamp(8px, 0.5vw, 9px)',
     },
     tracking: {
-      wide: '0.18em',
-      wider: '0.24em',
-      widest: '0.32em',
+      wide: '0.22em',
+      wider: '0.28em',
+      widest: '0.36em',
     },
   },
 
@@ -156,7 +156,7 @@ const MenuButton = styled.button`
   }
 `;
 
-// ═══════════════════════════════════════════════════════════════════
+// ═════════════════════���═════════════════════════════════════════════
 // LOGO
 // ═══════════════════════════════════════════════════════════════════
 
