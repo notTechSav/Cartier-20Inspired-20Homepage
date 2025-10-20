@@ -56,9 +56,10 @@ const VideoSection = () => {
         loop
         playsInline
         preload="auto"
+        poster="https://res.cloudinary.com/katherine-taylor-escort-video/image/upload/v1760237961/golden_hour_opn5pm.jpg"
       >
         <source
-          src="https://res.cloudinary.com/katherine-taylor-escort-video/video/upload/f_auto,q_auto/golden_hour_opn5pm.mp4"
+          src="https://res.cloudinary.com/katherine-taylor-escort-video/video/upload/f_auto,q_auto,w_1920,h_1080,c_fill/golden_hour_opn5pm.mp4"
           type="video/mp4"
         />
         Your browser does not support the video tag.
