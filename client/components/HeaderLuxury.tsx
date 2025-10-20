@@ -468,7 +468,9 @@ export default function HeaderLuxury() {
         <div className="header-container">
           {/* Brand */}
           <div className="brand">
-            <a href="/">Katherine Taylor</a>
+            <a href="/" aria-label="Katherine Taylor">
+              <img src="/logo.svg" alt="Katherine Taylor" />
+            </a>
           </div>
 
           {/* Primary Navigation (Desktop) */}
