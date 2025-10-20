@@ -182,4 +182,25 @@
   .tracking-uppercase {
     letter-spacing: 0.15em;
   }
+
+  /* Scroll-snap styles */
+  .scroll-snap-container {
+    height: 100vh;
+    height: 100dvh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .scroll-snap-panel {
+    min-height: 100vh;
+    min-height: 100dvh;
+    height: 100vh;
+    height: 100dvh;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
