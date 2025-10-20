@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
-import styled from 'styled-components';
+import React, { useState, useEffect, useRef } from "react";
+import styled from "styled-components";
 
 // ═══════════════════════════════════════════════════════════════════
 // DESIGN SYSTEM: De Beers × Hermès — Katherine Taylor Edition
@@ -15,40 +15,42 @@ const DesignTokens = {
       medium: 55,
     },
     size: {
-      nav: 'clamp(9px, 0.55vw, 10px)',
-      logo: 'clamp(12px, 0.75vw, 14px)',
-      menuItem: 'clamp(24px, 2.2vw, 36px)',
-      menuLabel: 'clamp(8px, 0.5vw, 9px)',
+      nav: "clamp(9px, 0.55vw, 10px)",
+      logo: "clamp(12px, 0.75vw, 14px)",
+      menuItem: "clamp(24px, 2.2vw, 36px)",
+      menuLabel: "clamp(8px, 0.5vw, 9px)",
     },
     tracking: {
-      wide: '0.22em',
-      wider: '0.28em',
-      widest: '0.36em',
+      wide: "0.22em",
+      wider: "0.28em",
+      widest: "0.36em",
     },
   },
 
   spacing: {
-    header: 'clamp(60px, 4.8vh, 72px)',
-    menuPadding: 'clamp(80px, 8vh, 120px)',
+    header: "clamp(60px, 4.8vh, 72px)",
+    menuPadding: "clamp(80px, 8vh, 120px)",
   },
 
   effect: {
-    blur: 'blur(32px) saturate(180%)',
+    blur: "blur(32px) saturate(180%)",
     shadow: {
-      header: '0 1px 0 rgba(0, 0, 0, 0.04)',
-      bell: '0 2px 12px rgba(0, 0, 0, 0.08)',
+      header: "0 1px 0 rgba(0, 0, 0, 0.04)",
+      bell: "0 2px 12px rgba(0, 0, 0, 0.08)",
     },
     gradient: {
-      backdrop: 'linear-gradient(180deg, rgba(255, 255, 255, 0.92) 0%, rgba(255, 255, 255, 0.88) 100%)',
-      overlay: 'linear-gradient(135deg, rgba(250, 250, 250, 0.98) 0%, rgba(255, 255, 255, 0.96) 100%)',
+      backdrop:
+        "linear-gradient(180deg, rgba(255, 255, 255, 0.92) 0%, rgba(255, 255, 255, 0.88) 100%)",
+      overlay:
+        "linear-gradient(135deg, rgba(250, 250, 250, 0.98) 0%, rgba(255, 255, 255, 0.96) 100%)",
     },
   },
 
   ease: {
-    smooth: 'cubic-bezier(0.32, 0, 0.24, 1)',
-    gentle: 'cubic-bezier(0.4, 0, 0.2, 1)',
-    exit: 'cubic-bezier(0.6, 0, 0.8, 1)',
-    luxe: 'cubic-bezier(0.22, 1, 0.36, 1)',
+    smooth: "cubic-bezier(0.32, 0, 0.24, 1)",
+    gentle: "cubic-bezier(0.4, 0, 0.2, 1)",
+    exit: "cubic-bezier(0.6, 0, 0.8, 1)",
+    luxe: "cubic-bezier(0.22, 1, 0.36, 1)",
   },
 
   z: {
@@ -68,7 +70,7 @@ const HeaderContainer = styled.header<{ $hidden: boolean }>`
   right: 0;
   z-index: ${DesignTokens.z.header};
   height: ${DesignTokens.spacing.header};
-  transform: translateY(${props => props.$hidden ? '-100%' : '0'});
+  transform: translateY(${(props) => (props.$hidden ? "-100%" : "0")});
   transition: transform 420ms ${DesignTokens.ease.smooth};
   will-change: transform;
 `;
@@ -76,10 +78,14 @@ const HeaderContainer = styled.header<{ $hidden: boolean }>`
 const HeaderBackdrop = styled.div<{ $transparent: boolean }>`
   position: absolute;
   inset: 0;
-  background: ${props => props.$transparent ? 'transparent' : DesignTokens.effect.gradient.backdrop};
-  backdrop-filter: ${props => props.$transparent ? 'none' : DesignTokens.effect.blur};
-  -webkit-backdrop-filter: ${props => props.$transparent ? 'none' : DesignTokens.effect.blur};
-  box-shadow: ${props => props.$transparent ? 'none' : DesignTokens.effect.shadow.header};
+  background: ${(props) =>
+    props.$transparent ? "transparent" : DesignTokens.effect.gradient.backdrop};
+  backdrop-filter: ${(props) =>
+    props.$transparent ? "none" : DesignTokens.effect.blur};
+  -webkit-backdrop-filter: ${(props) =>
+    props.$transparent ? "none" : DesignTokens.effect.blur};
+  box-shadow: ${(props) =>
+    props.$transparent ? "none" : DesignTokens.effect.shadow.header};
   transition: all 340ms ${DesignTokens.ease.gentle};
   will-change: opacity;
 `;
@@ -129,7 +135,7 @@ const MenuButton = styled.button`
   transition: color 280ms ${DesignTokens.ease.gentle};
 
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: -3px;
     left: 50%;
@@ -229,11 +235,11 @@ const MenuOverlay = styled.div<{ $isOpen: boolean }>`
   background: ${DesignTokens.effect.gradient.overlay};
   backdrop-filter: blur(40px);
   -webkit-backdrop-filter: blur(40px);
-  opacity: ${props => props.$isOpen ? 1 : 0};
-  visibility: ${props => props.$isOpen ? 'visible' : 'hidden'};
+  opacity: ${(props) => (props.$isOpen ? 1 : 0)};
+  visibility: ${(props) => (props.$isOpen ? "visible" : "hidden")};
   transition:
     opacity 560ms ${DesignTokens.ease.luxe},
-    visibility 0s ${props => props.$isOpen ? '0s' : '560ms'};
+    visibility 0s ${(props) => (props.$isOpen ? "0s" : "560ms")};
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -263,7 +269,7 @@ const CloseButton = styled.button`
   transition: color 280ms ${DesignTokens.ease.gentle};
 
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: -3px;
     left: 50%;
@@ -333,11 +339,11 @@ const MenuList = styled.ul`
 const MenuItem = styled.li<{ $isOpen: boolean; $delay: number }>`
   width: 100%;
   text-align: center;
-  opacity: ${props => props.$isOpen ? 1 : 0};
-  transform: translateY(${props => props.$isOpen ? '0' : '20px'});
+  opacity: ${(props) => (props.$isOpen ? 1 : 0)};
+  transform: translateY(${(props) => (props.$isOpen ? "0" : "20px")});
   transition:
-    opacity 620ms ${DesignTokens.ease.luxe} ${props => props.$delay}ms,
-    transform 620ms ${DesignTokens.ease.luxe} ${props => props.$delay}ms;
+    opacity 620ms ${DesignTokens.ease.luxe} ${(props) => props.$delay}ms,
+    transform 620ms ${DesignTokens.ease.luxe} ${(props) => props.$delay}ms;
   will-change: opacity, transform;
 `;
 
@@ -354,7 +360,7 @@ const MenuLink = styled.a`
   transition: all 300ms ${DesignTokens.ease.gentle};
 
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: -6px;
     left: 50%;
@@ -399,22 +405,24 @@ interface KatherineTaylorNavProps {
   onInquireClick?: () => void;
 }
 
-const KatherineTaylorNav: React.FC<KatherineTaylorNavProps> = ({ onInquireClick }) => {
+const KatherineTaylorNav: React.FC<KatherineTaylorNavProps> = ({
+  onInquireClick,
+}) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isHeaderHidden, setIsHeaderHidden] = useState(false);
   const [isHeaderTransparent, setIsHeaderTransparent] = useState(true);
   const lastScrollY = useRef(0);
 
   const navigationItems = [
-    { label: 'About', url: '/about' },
-    { label: 'Gallery', url: '/gallery' },
-    { label: 'FAQ', url: '/faq' },
-    { label: 'Journal', url: '/journal' },
-    { label: 'Rates', url: '/rates' },
-    { label: 'SAC', url: '/sacramento', subtitle: 'Sacramento' },
-    { label: 'SF', url: '/san-francisco', subtitle: 'San Francisco' },
-    { label: 'Gifts', url: '/gifts' },
-    { label: 'Inquire', url: '/inquire', isHighlight: true },
+    { label: "About", url: "/about" },
+    { label: "Gallery", url: "/gallery" },
+    { label: "FAQ", url: "/faq" },
+    { label: "Journal", url: "/journal" },
+    { label: "Rates", url: "/rates" },
+    { label: "SAC", url: "/sacramento", subtitle: "Sacramento" },
+    { label: "SF", url: "/san-francisco", subtitle: "San Francisco" },
+    { label: "Gifts", url: "/gifts" },
+    { label: "Inquire", url: "/inquire", isHighlight: true },
   ];
 
   useEffect(() => {
@@ -431,38 +439,38 @@ const KatherineTaylorNav: React.FC<KatherineTaylorNavProps> = ({ onInquireClick 
       lastScrollY.current = currentScrollY;
     };
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
     if (isMenuOpen) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = '';
+      document.body.style.overflow = "";
     }
 
     return () => {
-      document.body.style.overflow = '';
+      document.body.style.overflow = "";
     };
   }, [isMenuOpen]);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape' && isMenuOpen) {
+      if (e.key === "Escape" && isMenuOpen) {
         setIsMenuOpen(false);
       }
     };
 
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
   }, [isMenuOpen]);
 
   const handleBellClick = () => {
     if (onInquireClick) {
       onInquireClick();
     } else {
-      window.location.href = '/inquire';
+      window.location.href = "/inquire";
     }
   };
 
@@ -493,9 +501,7 @@ const KatherineTaylorNav: React.FC<KatherineTaylorNavProps> = ({ onInquireClick 
           </LeftSection>
 
           <CenterSection>
-            <Logo href="/">
-              Katherine Taylor
-            </Logo>
+            <Logo href="/">Katherine Taylor</Logo>
           </CenterSection>
 
           <RightSection>
@@ -519,9 +525,7 @@ const KatherineTaylorNav: React.FC<KatherineTaylorNavProps> = ({ onInquireClick 
               Close
             </CloseButton>
           </div>
-          <Logo href="/">
-            Katherine Taylor
-          </Logo>
+          <Logo href="/">Katherine Taylor</Logo>
           <div />
         </MenuHeader>
 
@@ -537,7 +541,7 @@ const KatherineTaylorNav: React.FC<KatherineTaylorNavProps> = ({ onInquireClick 
                   <MenuLink
                     href={item.url}
                     onClick={(e) => {
-                      if (item.label === 'Inquire') {
+                      if (item.label === "Inquire") {
                         e.preventDefault();
                         setIsMenuOpen(false);
                         handleBellClick();
@@ -548,9 +552,7 @@ const KatherineTaylorNav: React.FC<KatherineTaylorNavProps> = ({ onInquireClick 
                   >
                     {item.label}
                   </MenuLink>
-                  {item.subtitle && (
-                    <MenuLabel>{item.subtitle}</MenuLabel>
-                  )}
+                  {item.subtitle && <MenuLabel>{item.subtitle}</MenuLabel>}
                 </MenuItem>
               ))}
             </MenuList>
