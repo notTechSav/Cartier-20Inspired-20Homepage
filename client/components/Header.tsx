@@ -29,7 +29,7 @@ const Header = ({ isOverlayActive = false }: HeaderProps) => {
   const [isOverlay, setIsOverlay] = useState(isOverlayActive);
   const headerRef = useRef<HTMLDivElement>(null);
 
-  // Detect overlay state using scroll position
+  // Detect overlay state - works with both scroll and scroll-snap layouts
   useEffect(() => {
     const checkOverlayState = () => {
       const heroElement = document.querySelector("[data-hero='true']");
@@ -39,25 +39,48 @@ const Header = ({ isOverlayActive = false }: HeaderProps) => {
         return;
       }
 
+      // Check if hero element is in viewport
       const heroRect = heroElement.getBoundingClientRect();
-      // Hero is in viewport if its top is above viewport bottom and bottom is below viewport top
-      const isHeroVisible = heroRect.top < window.innerHeight && heroRect.bottom > 0;
-      setIsOverlay(isHeroVisible);
+      const isHeroInViewport =
+        heroRect.top < window.innerHeight && heroRect.bottom > 0;
+
+      setIsOverlay(isHeroInViewport);
     };
 
-    // Delay initial check to ensure DOM is fully rendered
+    // Initial check with delay to ensure DOM is ready
     const initialCheckTimer = setTimeout(() => {
       checkOverlayState();
-    }, 100);
+    }, 50);
 
-    // Listen to scroll and resize events
+    // Listen to scroll events (works for normal scroll)
     window.addEventListener("scroll", checkOverlayState, { passive: true });
+
+    // Listen to resize events
     window.addEventListener("resize", checkOverlayState, { passive: true });
+
+    // For scroll-snap containers, observe scroll position on the main scroll container
+    // Check all potential scroll containers
+    const scrollContainers = document.querySelectorAll(
+      ".scroll-snap-container, main, [role='main']"
+    );
+
+    const handleContainerScroll = () => {
+      requestAnimationFrame(checkOverlayState);
+    };
+
+    scrollContainers.forEach((container) => {
+      container.addEventListener("scroll", handleContainerScroll, {
+        passive: true,
+      });
+    });
 
     return () => {
       clearTimeout(initialCheckTimer);
       window.removeEventListener("scroll", checkOverlayState);
       window.removeEventListener("resize", checkOverlayState);
+      scrollContainers.forEach((container) => {
+        container.removeEventListener("scroll", handleContainerScroll);
+      });
     };
   }, [isOverlayActive]);
 
