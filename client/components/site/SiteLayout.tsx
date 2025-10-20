@@ -7,7 +7,7 @@ const SiteLayout = ({ children }: PropsWithChildren) => {
   return (
     <div className="flex min-h-screen flex-col bg-luxury-white text-gray-700">
       <Navigation />
-      <main className="flex-1 pt-40 md:pt-44 lg:pt-48">{children}</main>
+      <main className="flex-1 pt-28 md:pt-44 lg:pt-48 max-md:pt-24">{children}</main>
       <Footer />
     </div>
   );
