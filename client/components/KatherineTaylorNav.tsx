@@ -111,7 +111,7 @@ const RightSection = styled.div`
   justify-content: flex-end;
 `;
 
-// ═══════════════════════════════════════════��═══════════════════════
+// ═══════════════════════════════════════════════════════════════════
 // MENU BUTTON
 // ═══════════════════════════════════════════════════════════════════
 
@@ -156,7 +156,7 @@ const MenuButton = styled.button`
   }
 `;
 
-// ═══════════════════════════════════════════════════════���═══════════
+// ═══════════════════════════════════════════════════════════════════
 // LOGO
 // ═══════════════════════════════════════════════════════════════════
 
@@ -191,7 +191,7 @@ const BellButton = styled.button`
   padding: 0;
   background: none;
   border: none;
-  color: rgba(0, 0, 0, 0.68);
+  color: #000;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -199,16 +199,16 @@ const BellButton = styled.button`
   transition: all 280ms ${DesignTokens.ease.gentle};
 
   &:hover {
-    color: rgba(0, 0, 0, 0.92);
-    transform: scale(1.08);
+    color: #000;
+    transform: scale(1.1);
   }
 
   &:active {
-    transform: scale(0.96);
+    transform: scale(0.95);
   }
 
   &:focus-visible {
-    outline: 1px solid rgba(0, 0, 0, 0.2);
+    outline: 1.5px solid rgba(0, 0, 0, 0.3);
     outline-offset: 6px;
   }
 
@@ -395,7 +395,7 @@ const MenuLabel = styled.span`
 
 // ═══════════════════════════════════════════════════════════════════
 // COMPONENT
-// ═══════════════════════════════════���═══════════════════════════════
+// ═══════════════════════════════════════════════════════════════════
 
 interface KatherineTaylorNavProps {
   onInquireClick?: () => void;
