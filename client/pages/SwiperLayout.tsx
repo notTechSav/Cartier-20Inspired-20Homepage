@@ -1,7 +1,7 @@
 import React, { useRef, useCallback, useMemo } from "react";
 import { Swiper as SwiperType } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Keyboard } from "swiper/modules";
+import { Navigation, Pagination, Keyboard, Mousewheel } from "swiper/modules";
 import { useActiveSlide } from "@/context/ActiveSlideContext";
 import { SlideMeta } from "@/context/types";
 import "swiper/css";
