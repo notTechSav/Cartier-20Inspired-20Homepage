@@ -117,7 +117,7 @@ const RightSection = styled.div`
   justify-content: flex-end;
 `;
 
-// ═══════════════════════════════════════════════════════════════════
+// ═════════════��═════════════════════════════════════════════════════
 // MENU BUTTON
 // ═══════════════════════════════════════════════════════════════════
 
@@ -400,7 +400,7 @@ const MenuLabel = styled.span`
 
 // ═══════════════════════════════════════════════════════════════════
 // COMPONENT
-// ════════════════════════════════════════════════════════��══════════
+// ═════════════════════════════════════════���══════════════��══════════
 
 interface KatherineTaylorNavProps {
   onInquireClick?: () => void;
@@ -413,6 +413,10 @@ const KatherineTaylorNav: React.FC<KatherineTaylorNavProps> = ({
   const [isHeaderHidden, setIsHeaderHidden] = useState(false);
   const [isHeaderTransparent, setIsHeaderTransparent] = useState(true);
   const lastScrollY = useRef(0);
+  const { activeSlide } = useActiveSlide();
+
+  // Determine if current slide is dark
+  const isDarkSlide = activeSlide?.dark === true;
 
   const navigationItems = [
     { label: "About", url: "/about" },
