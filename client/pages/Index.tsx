@@ -61,9 +61,9 @@ const Index = () => {
       </ScrollSnapPanel>
 
       {/* 06. Inquire (video section linking to /inquire) */}
-      <ScrollSnapPanel className="relative !flex-none !items-end !justify-start pb-24 md:pb-32">
+      <ScrollSnapPanel className="relative !flex-none !items-end !justify-start pb-16 md:pb-24">
         <VideoSection />
-        <div className="absolute bottom-24 left-6 z-20 md:bottom-32 md:left-8">
+        <div className="absolute bottom-16 left-6 z-20 md:bottom-24 md:left-8">
           <a
             href="/inquire"
             className="inline-flex items-center justify-center rounded-[2px] border border-white/50 bg-white/10 px-8 py-4 text-sm font-light uppercase tracking-uppercase text-white transition-all duration-250 ease-out hover:border-white hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2"
