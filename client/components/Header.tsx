@@ -28,25 +28,25 @@ const Header = ({ isOverlayActive = false }: HeaderProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isOverlay, setIsOverlay] = useState(isOverlayActive);
   const headerRef = useRef<HTMLDivElement>(null);
-  const heroSectionRef = useRef<HTMLElement | null>(null);
 
-  // Detect overlay state using Intersection Observer
+  // Detect overlay state using scroll position and Intersection Observer
   useEffect(() => {
     const heroElement = document.querySelector("[data-hero='true']");
-    heroSectionRef.current = heroElement as HTMLElement | null;
 
     if (!heroElement) {
       setIsOverlay(isOverlayActive);
       return;
     }
 
+    // Use Intersection Observer to detect when hero is in viewport
     const observer = new IntersectionObserver(
       ([entry]) => {
-        // Header is in overlay state when hero section is visible in viewport
+        // Hero is intersecting = we're in the overlay zone
         setIsOverlay(entry.isIntersecting);
       },
       {
         threshold: 0,
+        rootMargin: "0px 0px 0px 0px",
       }
     );
 
@@ -120,7 +120,7 @@ const Header = ({ isOverlayActive = false }: HeaderProps) => {
         </div>
       </div>
 
-      {/* Primary Header - Desktop + Mobile */}
+      {/* Primary Header - Centered Logo, Distributed Nav */}
       <header
         ref={headerRef}
         className={cn(
@@ -133,21 +133,27 @@ const Header = ({ isOverlayActive = false }: HeaderProps) => {
         }}
       >
         <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-16">
-          {/* Desktop Navigation */}
+          {/* Desktop Navigation - Centered Layout */}
           <div
             className={cn(
-              "hidden md:flex items-center justify-between",
+              "hidden md:grid items-center justify-center",
               "h-20"
             )}
             style={{
+              gridTemplateColumns: "1fr auto 1fr",
+              gap: "24px",
               alignItems: "center",
+              justifyItems: "center",
             }}
           >
-            {/* Logo - Editorial serif hierarchy */}
+            {/* Left Navigation (empty for now, can add links later) */}
+            <div className="w-full" />
+
+            {/* Center Logo - Editorial serif hierarchy */}
             <a
               href="/"
               className={cn(
-                "flex-shrink-0 transition-colors duration-300 ease-out"
+                "flex-shrink-0 whitespace-nowrap transition-colors duration-300 ease-out"
               )}
               style={{
                 fontFamily: "'Cormorant Garamond', serif",
@@ -161,17 +167,17 @@ const Header = ({ isOverlayActive = false }: HeaderProps) => {
               Katherine Taylor
             </a>
 
-            {/* Center Navigation with proper spacing */}
+            {/* Right Navigation */}
             <nav
-              className="flex items-center"
+              className="flex items-center justify-center w-full"
               style={{
                 alignItems: "center",
               }}
             >
               <ul
-                className="flex items-center"
+                className="flex items-center justify-center flex-wrap"
                 style={{
-                  gap: "24px",
+                  gap: "16px",
                   alignItems: "center",
                 }}
               >
@@ -180,7 +186,7 @@ const Header = ({ isOverlayActive = false }: HeaderProps) => {
                     <a
                       href={link.href}
                       className={cn(
-                        "text-sm font-light uppercase transition-all duration-300 ease-out",
+                        "text-xs font-light uppercase transition-all duration-300 ease-out",
                         isOverlay
                           ? "text-white hover:opacity-70"
                           : "text-black hover:text-gray-600 hover:underline hover:underline-offset-2"
@@ -188,7 +194,7 @@ const Header = ({ isOverlayActive = false }: HeaderProps) => {
                       style={{
                         letterSpacing: "0.15em",
                         fontWeight: 300,
-                        fontSize: "14px",
+                        fontSize: "12px",
                       }}
                     >
                       {link.label}
@@ -213,7 +219,7 @@ const Header = ({ isOverlayActive = false }: HeaderProps) => {
             {/* Empty space on left for now */}
             <div className="flex-1" />
 
-            {/* Logo - Mobile optimized */}
+            {/* Logo - Mobile optimized, centered */}
             <a
               href="/"
               className={cn(
