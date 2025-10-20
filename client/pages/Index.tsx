@@ -1,3 +1,4 @@
+import { useState, useMemo } from "react";
 import Hero from "@/components/site/Hero";
 import ImageMosaicSection from "@/components/site/ImageMosaicSection";
 import FAQSectionLuxury from "@/components/site/FAQSectionLuxury";
@@ -5,10 +6,28 @@ import ImmersiveVideoSection from "@/components/site/ImmersiveVideoSection";
 import DesignInMotionSection from "@/components/site/DesignInMotionSection";
 import VideoSection from "@/components/site/VideoSection";
 import SwiperLayout from "./SwiperLayout";
+import { SlideMeta } from "@/components/HeaderNavYSL";
 
 const Index = () => {
+  const [activeSlideIndex, setActiveSlideIndex] = useState(0);
+
+  // Define slide metadata for header inversion
+  const slides: SlideMeta[] = useMemo(
+    () => [
+      { id: "hero", dark: true }, // Hero has dark background
+      { id: "mosaic", dark: false }, // Mosaic is light
+      { id: "immersive", dark: true }, // Video is dark
+      { id: "faq", dark: false }, // FAQ is light
+      { id: "journal", dark: false }, // Journal is light
+      { id: "inquire", dark: true }, // Video is dark
+    ],
+    []
+  );
+
+  const activeSlide = slides[activeSlideIndex];
+
   return (
-    <SwiperLayout>
+    <SwiperLayout onSlideChange={setActiveSlideIndex} data-active-slide={JSON.stringify(activeSlide)}>
       {/* 01. Hero */}
       <Hero />
 
