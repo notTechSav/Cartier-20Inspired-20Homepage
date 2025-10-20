@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
+import { useActiveSlide } from "@/context/ActiveSlideContext";
 
 // ═══════════════════════════════════════════════════════════════════
 // DESIGN SYSTEM: De Beers × Hermès — Katherine Taylor Edition
-// ══════════════════════════════════════════════════��════════════════
+// ═══════════════════════════════════════���══════════��════════════════
 
 const DesignTokens = {
   font: {
