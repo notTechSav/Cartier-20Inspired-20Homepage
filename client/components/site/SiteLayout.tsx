@@ -2,21 +2,19 @@ import { PropsWithChildren } from "react";
 
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/site/Footer";
-import ScrollSnapProgress from "@/components/site/ScrollSnapProgress";
 
 const SiteLayout = ({ children }: PropsWithChildren) => {
-  // Check if children is ScrollSnapLayout (from Index page)
+  // Check if children is SwiperLayout (from Index page)
   const childrenArray = Array.isArray(children) ? children : [children];
   const firstChild = childrenArray[0] as any;
-  const isScrollSnapLayout = firstChild?.type?.name === "ScrollSnapLayout";
+  const isSwiperLayout = firstChild?.type?.name === "SwiperLayout";
 
-  if (isScrollSnapLayout) {
+  if (isSwiperLayout) {
     return (
-      <div className="relative flex h-screen w-full flex-col bg-luxury-white text-gray-700">
+      <div className="relative flex h-screen w-full flex-col bg-luxury-white text-gray-700 overflow-hidden">
         <Navigation />
-        <ScrollSnapProgress totalSections={6} />
         <div className="flex-1 overflow-hidden">{children}</div>
-        <Footer isScrollSnapLayout={true} totalSections={6} />
+        <Footer isSwiperLayout={true} totalSections={6} />
       </div>
     );
   }
