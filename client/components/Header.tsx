@@ -187,19 +187,22 @@ const Header = ({ isOverlayActive = false }: HeaderProps) => {
             )}
             style={{
               backgroundColor: isOverlay ? "transparent" : "white",
+              alignItems: "center",
             }}
           >
-            {/* Logo - Centered above hamburger on mobile */}
+            {/* Logo - Distinct serif, mobile-optimized */}
             <a
               href="/"
               className={cn(
-                "flex-1 text-center font-bold text-base transition-colors duration-300 ease-out",
+                "flex-1 text-center transition-colors duration-300 ease-out",
                 isOverlay ? "text-white" : "text-black"
               )}
               style={{
                 fontFamily: "'Cormorant Garamond', serif",
                 fontWeight: 700,
                 fontSize: "20px",
+                letterSpacing: "0.05em",
+                lineHeight: "1.2",
               }}
             >
               Katherine Taylor
