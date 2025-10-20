@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 
 const VIDEO_SRC =
-  "https://res.cloudinary.com/katherine-taylor-escort-video/video/upload/v1760237961/Maya_3_iyvftk.mp4";
+  "https://res.cloudinary.com/katherine-taylor-escort-video/video/upload/v1760312600/The_Story_Continues_Katherine_Taylor_Escort_slmfra.mov";
 
 const ImmersiveVideoSection = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
