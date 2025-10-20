@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import VideoUnmuteButton from "@/components/site/VideoUnmuteButton";
 
 const VIDEO_SRC =
   "https://res.cloudinary.com/katherine-taylor-escort-video/video/upload/v1760237961/Maya_3_iyvftk.mp4";
@@ -6,30 +7,28 @@ const VIDEO_SRC =
 const ImmersiveVideoSection = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isMuted, setIsMuted] = useState(true);
-  const [isPaused, setIsPaused] = useState(false);
 
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
     video.muted = isMuted;
-    if (!isPaused && video.paused) {
+    if (!isMuted && video.paused) {
       video.play().catch((err) => {
         console.log("Immersive video play error:", err);
       });
     }
-  }, [isMuted, isPaused]);
+  }, [isMuted]);
 
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
 
-    // Ensure video starts playing on mount
+    // Ensure video starts playing on mount (muted)
     const playVideo = async () => {
       try {
         video.muted = true;
         await video.play();
         setIsMuted(true);
-        setIsPaused(false);
       } catch (err) {
         console.log("Immersive video play error:", err);
       }
@@ -38,32 +37,20 @@ const ImmersiveVideoSection = () => {
     playVideo();
   }, []);
 
-  const toggleMute = () => {
+  const toggleUnmute = () => {
     const video = videoRef.current;
     if (!video) return;
-    const nextMuted = !isMuted;
-    video.muted = nextMuted;
+    video.muted = false;
     if (video.paused) {
-      void video.play();
-      setIsPaused(false);
+      video.play().catch((err) => {
+        console.log("Immersive video play error:", err);
+      });
     }
-    setIsMuted(nextMuted);
-  };
-
-  const togglePlay = () => {
-    const video = videoRef.current;
-    if (!video) return;
-    if (video.paused) {
-      void video.play();
-      setIsPaused(false);
-    } else {
-      video.pause();
-      setIsPaused(true);
-    }
+    setIsMuted(false);
   };
 
   return (
-    <section className="absolute inset-0 w-full overflow-hidden bg-luxury-black">
+    <section className="relative h-full min-h-screen w-full overflow-hidden bg-luxury-black">
       <video
         ref={videoRef}
         className="absolute inset-0 h-full w-full object-cover"
@@ -77,7 +64,7 @@ const ImmersiveVideoSection = () => {
         <source src={VIDEO_SRC} type="video/mp4" />
       </video>
       <div className="absolute inset-0 bg-luxury-black/55" />
-      <div className="absolute inset-0 flex flex-col justify-end px-6 pb-16 md:px-8 md:pb-24 max-md:pb-12">
+      <div className="relative z-10 flex h-full min-h-screen flex-col justify-end px-6 pb-16 md:px-8 md:pb-24 max-md:pb-12">
         <div className="mx-auto flex w-full max-w-luxury flex-col items-start gap-6 text-luxury-white max-md:gap-4">
           <span className="text-xs font-light uppercase tracking-uppercase text-white/70">
             An Immersive Viewpoint
@@ -90,30 +77,9 @@ const ImmersiveVideoSection = () => {
             timeless brilliance of every piece as the city awakens to golden
             light.
           </p>
-          <div className="flex items-center gap-3 max-md:gap-2">
-            <button
-              type="button"
-              onClick={togglePlay}
-              aria-label={
-                isPaused ? "Play immersive video" : "Pause immersive video"
-              }
-              className="inline-flex items-center justify-center rounded-[2px] border border-white/50 bg-white/10 px-6 py-3 text-xs font-light uppercase tracking-uppercase text-luxury-white transition-all duration-250 ease-out hover:border-white hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-2 max-md:px-4 max-md:py-2"
-            >
-              {isPaused ? "Play" : "Pause"}
-            </button>
-            <button
-              type="button"
-              onClick={toggleMute}
-              aria-label={
-                isMuted ? "Unmute immersive video" : "Mute immersive video"
-              }
-              className="inline-flex items-center justify-center rounded-[2px] border border-white/50 bg-white/10 px-6 py-3 text-xs font-light uppercase tracking-uppercase text-luxury-white transition-all duration-250 ease-out hover:border-white hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-2 max-md:px-4 max-md:py-2"
-            >
-              {isMuted ? "Unmute" : "Mute"}
-            </button>
-          </div>
         </div>
       </div>
+      <VideoUnmuteButton isMuted={isMuted} onClick={toggleUnmute} />
     </section>
   );
 };
