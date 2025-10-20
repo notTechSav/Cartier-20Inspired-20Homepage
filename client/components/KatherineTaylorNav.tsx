@@ -257,7 +257,7 @@ const CloseButton = styled.button`
   color: #000;
   background: none;
   border: none;
-  padding: 0;
+  padding: 0 2px;
   cursor: pointer;
   position: relative;
   transition: color 280ms ${DesignTokens.ease.gentle};
@@ -266,20 +266,19 @@ const CloseButton = styled.button`
     content: '';
     position: absolute;
     bottom: -3px;
-    left: 0;
-    right: 0;
+    left: 50%;
+    right: 50%;
     height: 1.5px;
     background: currentColor;
-    transform: scaleX(0);
-    transform-origin: center;
-    transition: transform 320ms ${DesignTokens.ease.smooth};
+    transition: all 320ms ${DesignTokens.ease.smooth};
   }
 
   &:hover {
     color: #000;
 
     &::after {
-      transform: scaleX(1);
+      left: 0;
+      right: 0;
     }
   }
 
@@ -394,7 +393,7 @@ const MenuLabel = styled.span`
 
 // ═══════════════════════════════════════════════════════════════════
 // COMPONENT
-// ═══════════════════════════════════════════════════════════════════
+// ════════════════════════════════════════════════════════��══════════
 
 interface KatherineTaylorNavProps {
   onInquireClick?: () => void;
