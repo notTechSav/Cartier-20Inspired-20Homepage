@@ -417,7 +417,8 @@ const Styles = () => (
 );
 
 export default function HeaderLuxury() {
-  const { activeSlide } = useActiveSlide();
+  const context = useContext(ActiveSlideContext);
+  const activeSlide = context?.activeSlide;
   const [isScrolled, setIsScrolled] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
