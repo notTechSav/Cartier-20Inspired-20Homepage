@@ -1,7 +1,7 @@
 import { PropsWithChildren } from "react";
 
 import { ActiveSlideProvider } from "@/context/ActiveSlideContext";
-import HeaderNavYSLWrapper from "@/components/HeaderNavYSLWrapper";
+import HeaderYSLRefined from "@/components/HeaderYSLRefined";
 import Footer from "@/components/site/Footer";
 
 const SiteLayout = ({ children }: PropsWithChildren) => {
@@ -31,7 +31,7 @@ const SiteLayoutContent = ({ children }: PropsWithChildren) => {
   if (isSwiperLayout || hasSwiperProps) {
     return (
       <div className="relative flex h-screen w-full flex-col bg-luxury-white text-gray-700 overflow-hidden">
-        <HeaderNavYSLWrapper />
+        <HeaderYSLRefined />
         <div className="flex-1 overflow-hidden">{children}</div>
         <Footer isSwiperLayout={true} totalSections={6} />
       </div>
@@ -40,8 +40,8 @@ const SiteLayoutContent = ({ children }: PropsWithChildren) => {
 
   return (
     <div className="flex min-h-screen flex-col bg-luxury-white text-gray-700">
-      <HeaderNavYSLWrapper />
-      <main className="flex-1 pt-28 md:pt-44 lg:pt-48 max-md:pt-24">{children}</main>
+      <HeaderYSLRefined />
+      <main className="flex-1 pt-16 md:pt-20">{children}</main>
       <Footer />
     </div>
   );
