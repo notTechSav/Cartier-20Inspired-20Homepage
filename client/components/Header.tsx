@@ -48,7 +48,7 @@ const Header = ({ isOverlayActive = false }: HeaderProps) => {
         setIsOverlay(entry.isIntersecting && entry.boundingClientRect.top <= 0);
       },
       {
-        threshold: [0, 0.25, 0.5, 0.75, 1],
+        threshold: 0.25,
       }
     );
 
