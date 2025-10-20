@@ -13,9 +13,30 @@ const ImmersiveVideoSection = () => {
     if (!video) return;
     video.muted = isMuted;
     if (!isPaused && video.paused) {
-      void video.play();
+      video.play().catch((err) => {
+        console.log("Immersive video play error:", err);
+      });
     }
   }, [isMuted, isPaused]);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    // Ensure video starts playing on mount
+    const playVideo = async () => {
+      try {
+        video.muted = true;
+        await video.play();
+        setIsMuted(true);
+        setIsPaused(false);
+      } catch (err) {
+        console.log("Immersive video play error:", err);
+      }
+    };
+
+    playVideo();
+  }, []);
 
   const toggleMute = () => {
     const video = videoRef.current;

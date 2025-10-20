@@ -17,9 +17,29 @@ const Hero = () => {
 
     element.muted = isMuted;
     if (element.paused) {
-      void element.play();
+      element.play().catch((err) => {
+        console.log("Hero video autoplay blocked:", err);
+      });
     }
   }, [isMuted]);
+
+  useEffect(() => {
+    const element = videoRef.current;
+    if (!element) return;
+
+    // Ensure video starts playing on mount
+    const playVideo = async () => {
+      try {
+        element.muted = true;
+        await element.play();
+        setIsMuted(true);
+      } catch (err) {
+        console.log("Hero video play error:", err);
+      }
+    };
+
+    playVideo();
+  }, []);
 
   const toggleMute = () => {
     const element = videoRef.current;
