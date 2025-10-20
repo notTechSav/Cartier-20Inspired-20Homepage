@@ -62,7 +62,7 @@ const DesignTokens = {
 
 // ══════════��════════════════════════════════════════════════════════
 // STYLED COMPONENTS — HEADER
-// ═══════════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════��════════════════════════
 
 const HeaderContainer = styled.header<{ $hidden: boolean }>`
   position: fixed;
@@ -121,13 +121,13 @@ const RightSection = styled.div`
 // MENU BUTTON
 // ═══════════════════════════════════════════════════════════════════
 
-const MenuButton = styled.button`
+const MenuButton = styled.button<{ $isDark?: boolean }>`
   font-family: ${DesignTokens.font.primary};
   font-size: ${DesignTokens.font.size.nav};
   font-weight: ${DesignTokens.font.weight.light};
   letter-spacing: ${DesignTokens.font.tracking.widest};
   text-transform: uppercase;
-  color: #000;
+  color: ${props => props.$isDark ? '#fff' : '#000'};
   background: none;
   border: none;
   padding: 0 2px;
@@ -147,7 +147,7 @@ const MenuButton = styled.button`
   }
 
   &:hover {
-    color: #000;
+    color: ${props => props.$isDark ? '#fff' : '#000'};
 
     &::after {
       left: 0;
@@ -156,7 +156,7 @@ const MenuButton = styled.button`
   }
 
   &:focus-visible {
-    outline: 1.5px solid rgba(0, 0, 0, 0.3);
+    outline: 1.5px solid ${props => props.$isDark ? 'rgba(255, 255, 255, 0.3)' : 'rgba(0, 0, 0, 0.3)'};
     outline-offset: 6px;
   }
 `;
@@ -165,23 +165,23 @@ const MenuButton = styled.button`
 // LOGO
 // ═══════════════════════════════════════════════════════════════════
 
-const Logo = styled.a`
+const Logo = styled.a<{ $isDark?: boolean }>`
   font-family: ${DesignTokens.font.primary};
   font-size: ${DesignTokens.font.size.logo};
   font-weight: ${DesignTokens.font.weight.ultraLight};
   letter-spacing: ${DesignTokens.font.tracking.widest};
   text-transform: uppercase;
-  color: #000;
+  color: ${props => props.$isDark ? '#fff' : '#000'};
   text-decoration: none;
   white-space: nowrap;
   transition: color 240ms ${DesignTokens.ease.gentle};
 
   &:hover {
-    color: rgba(0, 0, 0, 0.8);
+    color: ${props => props.$isDark ? 'rgba(255, 255, 255, 0.8)' : 'rgba(0, 0, 0, 0.8)'};
   }
 
   &:focus-visible {
-    outline: 1.5px solid rgba(0, 0, 0, 0.3);
+    outline: 1.5px solid ${props => props.$isDark ? 'rgba(255, 255, 255, 0.3)' : 'rgba(0, 0, 0, 0.3)'};
     outline-offset: 6px;
   }
 `;
@@ -190,13 +190,13 @@ const Logo = styled.a`
 // CONCIERGE BELL — Harry Winston Inspired
 // ═══════════════════════════════════════════════════════��═══════════
 
-const BellButton = styled.button`
+const BellButton = styled.button<{ $isDark?: boolean }>`
   width: 24px;
   height: 24px;
   padding: 0;
   background: none;
   border: none;
-  color: #000;
+  color: ${props => props.$isDark ? '#fff' : '#000'};
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -204,7 +204,7 @@ const BellButton = styled.button`
   transition: all 280ms ${DesignTokens.ease.gentle};
 
   &:hover {
-    color: #000;
+    color: ${props => props.$isDark ? '#fff' : '#000'};
     transform: scale(1.1);
   }
 
@@ -213,7 +213,7 @@ const BellButton = styled.button`
   }
 
   &:focus-visible {
-    outline: 1.5px solid rgba(0, 0, 0, 0.3);
+    outline: 1.5px solid ${props => props.$isDark ? 'rgba(255, 255, 255, 0.3)' : 'rgba(0, 0, 0, 0.3)'};
     outline-offset: 6px;
   }
 
@@ -487,6 +487,7 @@ const KatherineTaylorNav: React.FC<KatherineTaylorNavProps> = ({
         <HeaderContent>
           <LeftSection>
             <BellButton
+              $isDark={isDarkSlide}
               onClick={handleBellClick}
               aria-label="Inquire"
               title="Ring for inquiry"
@@ -506,11 +507,12 @@ const KatherineTaylorNav: React.FC<KatherineTaylorNavProps> = ({
           </LeftSection>
 
           <CenterSection>
-            <Logo href="/">Katherine Taylor</Logo>
+            <Logo $isDark={isDarkSlide} href="/">Katherine Taylor</Logo>
           </CenterSection>
 
           <RightSection>
             <MenuButton
+              $isDark={isDarkSlide}
               onClick={() => setIsMenuOpen(true)}
               aria-label="Open menu"
             >
