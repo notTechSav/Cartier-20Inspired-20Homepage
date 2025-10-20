@@ -1,24 +1,42 @@
-import React, { useRef, useState, useCallback } from "react";
+import React, { useRef, useCallback, useMemo } from "react";
 import { Swiper as SwiperType } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Keyboard } from "swiper/modules";
+import { useActiveSlide, SlideMeta } from "@/context/ActiveSlideContext";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 interface SwiperLayoutProps {
   children: React.ReactElement[];
-  onSlideChange?: (index: number) => void;
+  slides?: SlideMeta[];
 }
 
-const SwiperLayout: React.FC<SwiperLayoutProps> = ({ children, onSlideChange }) => {
+const SwiperLayout: React.FC<SwiperLayoutProps> = ({ children, slides }) => {
   const swiperRef = useRef<SwiperType>();
-  const [activeIndex, setActiveIndex] = useState(0);
+  const { setActiveIndex, setActiveSlide } = useActiveSlide();
+
+  // Define default slides if not provided
+  const defaultSlides: SlideMeta[] = useMemo(
+    () => [
+      { id: "hero", dark: true },
+      { id: "mosaic", dark: false },
+      { id: "immersive", dark: true },
+      { id: "faq", dark: false },
+      { id: "journal", dark: false },
+      { id: "inquire", dark: true },
+    ],
+    []
+  );
+
+  const slideMetadata = slides || defaultSlides;
 
   const handleSlideChange = useCallback((swiper: SwiperType) => {
     setActiveIndex(swiper.activeIndex);
-    onSlideChange?.(swiper.activeIndex);
-  }, [onSlideChange]);
+    if (slideMetadata[swiper.activeIndex]) {
+      setActiveSlide(slideMetadata[swiper.activeIndex]);
+    }
+  }, [slideMetadata, setActiveIndex, setActiveSlide]);
 
   return (
     <div className="relative h-screen w-full overflow-hidden bg-luxury-white">
