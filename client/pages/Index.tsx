@@ -4,28 +4,25 @@ import FAQSectionLuxury from "@/components/site/FAQSectionLuxury";
 import ImmersiveVideoSection from "@/components/site/ImmersiveVideoSection";
 import DesignInMotionSection from "@/components/site/DesignInMotionSection";
 import VideoSection from "@/components/site/VideoSection";
-import ScrollSnapLayout from "./ScrollSnapLayout";
-import ScrollSnapPanel from "./ScrollSnapPanel";
+import SwiperLayout from "./SwiperLayout";
 
 const Index = () => {
   return (
-    <ScrollSnapLayout>
+    <SwiperLayout>
       {/* 01. Hero */}
-      <ScrollSnapPanel className="relative">
-        <Hero />
-      </ScrollSnapPanel>
+      <Hero />
 
       {/* 02. About */}
-      <ScrollSnapPanel className="bg-luxury-white">
+      <div className="flex h-full min-h-screen w-full items-center justify-center bg-luxury-white">
         <div className="w-full max-w-luxury px-6 md:px-8">
           <ImageMosaicSection />
         </div>
-      </ScrollSnapPanel>
+      </div>
 
-      {/* 03. Rates (video section linking to /rates) */}
-      <ScrollSnapPanel className="relative !flex-none !items-end !justify-start pb-16 md:pb-24">
+      {/* 03. Rates */}
+      <div className="relative h-full min-h-screen w-full">
         <ImmersiveVideoSection />
-        <div className="absolute bottom-16 left-6 z-20 md:bottom-24 md:left-8">
+        <div className="absolute bottom-6 left-6 z-20 md:bottom-8 md:left-8">
           <a
             href="/rates"
             className="inline-flex items-center justify-center rounded-[2px] border border-white/50 bg-white/10 px-8 py-4 text-sm font-light uppercase tracking-uppercase text-white transition-all duration-250 ease-out hover:border-white hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2"
@@ -33,37 +30,35 @@ const Index = () => {
             View Rates →
           </a>
         </div>
-      </ScrollSnapPanel>
+      </div>
 
       {/* 04. FAQ */}
-      <ScrollSnapPanel className="bg-luxury-white !flex-none !items-stretch !justify-start overflow-y-auto py-8 md:py-12">
-        <div className="w-full">
+      <div className="flex h-full min-h-screen w-full items-center justify-center overflow-y-auto bg-luxury-white">
+        <div className="w-full py-8 md:py-12 max-md:py-8">
           <FAQSectionLuxury />
         </div>
-      </ScrollSnapPanel>
+      </div>
 
-      {/* 05. Journal (featured content preview) */}
-      <ScrollSnapPanel className="bg-luxury-white">
-        <div className="w-full max-w-luxury px-6 md:px-8">
-          <div className="text-center">
-            <h2 className="text-4xl font-light mb-4 text-luxury-black">Journal</h2>
-            <p className="text-gray-700 mb-8 max-w-2xl mx-auto">
-              Insights, stories, and perspectives on companionship, luxury, and the art of connection.
-            </p>
-            <a
-              href="/journal"
-              className="inline-flex items-center justify-center rounded-[2px] border border-gray-400 bg-transparent px-8 py-4 text-sm font-light uppercase tracking-uppercase text-gray-700 transition-all duration-250 ease-out hover:border-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2"
-            >
-              Read Journal →
-            </a>
-          </div>
+      {/* 05. Journal */}
+      <div className="flex h-full min-h-screen w-full items-center justify-center bg-luxury-white">
+        <div className="w-full max-w-luxury px-6 md:px-8 text-center">
+          <h2 className="text-4xl font-light mb-4 text-luxury-black">Journal</h2>
+          <p className="text-gray-700 mb-8 max-w-2xl mx-auto">
+            Insights, stories, and perspectives on companionship, luxury, and the art of connection.
+          </p>
+          <a
+            href="/journal"
+            className="inline-flex items-center justify-center rounded-[2px] border border-gray-400 bg-transparent px-8 py-4 text-sm font-light uppercase tracking-uppercase text-gray-700 transition-all duration-250 ease-out hover:border-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2"
+          >
+            Read Journal →
+          </a>
         </div>
-      </ScrollSnapPanel>
+      </div>
 
-      {/* 06. Inquire (video section linking to /inquire) */}
-      <ScrollSnapPanel className="relative !flex-none !items-end !justify-start pb-16 md:pb-24">
+      {/* 06. Inquire */}
+      <div className="relative h-full min-h-screen w-full">
         <VideoSection />
-        <div className="absolute bottom-16 left-6 z-20 md:bottom-24 md:left-8">
+        <div className="absolute bottom-6 left-6 z-20 md:bottom-8 md:left-8">
           <a
             href="/inquire"
             className="inline-flex items-center justify-center rounded-[2px] border border-white/50 bg-white/10 px-8 py-4 text-sm font-light uppercase tracking-uppercase text-white transition-all duration-250 ease-out hover:border-white hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2"
@@ -71,8 +66,8 @@ const Index = () => {
             Send Inquiry →
           </a>
         </div>
-      </ScrollSnapPanel>
-    </ScrollSnapLayout>
+      </div>
+    </SwiperLayout>
   );
 };
 
