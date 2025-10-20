@@ -150,21 +150,18 @@ const Header = ({ isOverlayActive = false }: HeaderProps) => {
         }}
       >
         <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-16">
-          {/* Desktop Navigation - Centered Layout */}
+          {/* Desktop Navigation - Compact centered layout */}
           <div
             className={cn(
-              "hidden md:grid items-center justify-center",
-              "h-20"
+              "hidden md:flex items-center justify-between",
+              "h-16"
             )}
             style={{
-              gridTemplateColumns: "1fr auto 1fr",
-              gap: "24px",
               alignItems: "center",
-              justifyItems: "center",
             }}
           >
-            {/* Left Navigation (empty for now, can add links later) */}
-            <div className="w-full" />
+            {/* Left empty space */}
+            <div className="flex-1" />
 
             {/* Center Logo - Editorial serif hierarchy */}
             <a
@@ -175,7 +172,7 @@ const Header = ({ isOverlayActive = false }: HeaderProps) => {
               style={{
                 fontFamily: "'Cormorant Garamond', serif",
                 fontWeight: 700,
-                fontSize: "2rem",
+                fontSize: "1.75rem",
                 letterSpacing: "0.05em",
                 lineHeight: "1.2",
                 color: isOverlay ? "white" : "black",
@@ -186,13 +183,14 @@ const Header = ({ isOverlayActive = false }: HeaderProps) => {
 
             {/* Right Navigation */}
             <nav
-              className="flex items-center justify-center w-full"
+              className="flex-1 flex items-center justify-end"
               style={{
                 alignItems: "center",
+                gap: "20px",
               }}
             >
               <ul
-                className="flex items-center justify-center flex-wrap"
+                className="flex items-center"
                 style={{
                   gap: "16px",
                   alignItems: "center",
@@ -211,7 +209,7 @@ const Header = ({ isOverlayActive = false }: HeaderProps) => {
                       style={{
                         letterSpacing: "0.15em",
                         fontWeight: 300,
-                        fontSize: "12px",
+                        fontSize: "11px",
                       }}
                     >
                       {link.label}
