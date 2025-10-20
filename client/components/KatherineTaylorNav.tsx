@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 
-// ═══════════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════���════════════════════════
 // DESIGN SYSTEM: De Beers × Hermès — Katherine Taylor Edition
 // ══════════════════════════════════════════════════��════════════════
 
@@ -220,7 +220,7 @@ const BellButton = styled.button`
   }
 `;
 
-// ═══════════════════════════════════════════════════════════════════
+// ═══════════════════════════════��═══════════════════════════════════
 // FULL-SCREEN MENU OVERLAY
 // ════════════════════════════════════════��══════════════════════════
 
@@ -253,10 +253,10 @@ const MenuHeader = styled.div`
 const CloseButton = styled.button`
   font-family: ${DesignTokens.font.primary};
   font-size: ${DesignTokens.font.size.nav};
-  font-weight: ${DesignTokens.font.weight.regular};
-  letter-spacing: ${DesignTokens.font.tracking.wider};
+  font-weight: ${DesignTokens.font.weight.light};
+  letter-spacing: ${DesignTokens.font.tracking.widest};
   text-transform: uppercase;
-  color: rgba(0, 0, 0, 0.72);
+  color: #000;
   background: none;
   border: none;
   padding: 0;
@@ -267,18 +267,18 @@ const CloseButton = styled.button`
   &::after {
     content: '';
     position: absolute;
-    bottom: -2px;
+    bottom: -3px;
     left: 0;
     right: 0;
-    height: 1px;
+    height: 1.5px;
     background: currentColor;
     transform: scaleX(0);
-    transform-origin: left;
+    transform-origin: center;
     transition: transform 320ms ${DesignTokens.ease.smooth};
   }
 
   &:hover {
-    color: rgba(0, 0, 0, 0.96);
+    color: #000;
 
     &::after {
       transform: scaleX(1);
@@ -286,7 +286,7 @@ const CloseButton = styled.button`
   }
 
   &:focus-visible {
-    outline: 1px solid rgba(0, 0, 0, 0.2);
+    outline: 1.5px solid rgba(0, 0, 0, 0.3);
     outline-offset: 6px;
   }
 `;
