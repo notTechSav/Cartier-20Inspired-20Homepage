@@ -6,7 +6,7 @@ import ImmersiveVideoSection from "@/components/site/ImmersiveVideoSection";
 import DesignInMotionSection from "@/components/site/DesignInMotionSection";
 import VideoSection from "@/components/site/VideoSection";
 import SwiperLayout from "./SwiperLayout";
-import { SlideMeta } from "@/context/ActiveSlideContext";
+import { SlideMeta } from "@/context/types";
 
 const Index = () => {
   // Define slide metadata for header inversion
