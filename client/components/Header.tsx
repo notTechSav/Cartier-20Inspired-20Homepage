@@ -155,19 +155,20 @@ const Header = ({ isOverlayActive = false }: HeaderProps) => {
             </a>
 
             {/* Center Navigation */}
-            <nav className="flex items-center" style={{ alignItems: "center" }}>
+            <nav className="flex items-center gap-4 md:gap-6" style={{ alignItems: "center" }}>
               <ul className="flex items-center" style={{ gap: "24px" }}>
                 {navigationLinks.map((link) => (
                   <li key={link.label}>
                     <a
                       href={link.href}
                       className={cn(
-                        "text-sm font-light uppercase transition-opacity duration-300 ease-out",
+                        "text-xs md:text-sm font-extralight uppercase transition-opacity duration-300 ease-out",
                         isOverlay ? "text-white hover:opacity-60" : "text-black hover:opacity-60"
                       )}
                       style={{
-                        letterSpacing: "0.15em",
-                        fontWeight: 300,
+                        letterSpacing: "0.2em",
+                        fontWeight: 200,
+                        fontSize: "13px",
                       }}
                     >
                       {link.label}
