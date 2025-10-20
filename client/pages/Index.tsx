@@ -10,20 +10,32 @@ import ScrollSnapPanel from "./ScrollSnapPanel";
 const Index = () => {
   return (
     <ScrollSnapLayout>
-      {/* 01. Hero */}
-      <ScrollSnapPanel className="relative">
+      {/* 01. Hero - Main introduction */}
+      <ScrollSnapPanel 
+        id="hero-section"
+        ariaLabel="Hero section with introduction and call to action"
+        className="relative"
+      >
         <Hero />
       </ScrollSnapPanel>
 
-      {/* 02. About */}
-      <ScrollSnapPanel className="bg-luxury-white">
+      {/* 02. Gallery - Image mosaic collection */}
+      <ScrollSnapPanel 
+        id="gallery-section"
+        ariaLabel="Gallery section featuring intimate collections and photography"
+        className="bg-luxury-white"
+      >
         <div className="w-full max-w-luxury px-6 md:px-8">
           <ImageMosaicSection />
         </div>
       </ScrollSnapPanel>
 
-      {/* 03. Rates (video section linking to /rates) */}
-      <ScrollSnapPanel className="relative !flex-none !items-end !justify-start pb-16 md:pb-24">
+      {/* 03. Rates - Video showcase with rates information */}
+      <ScrollSnapPanel 
+        id="rates-section"
+        ariaLabel="Rates section with immersive video and pricing information"
+        className="relative !flex-none !items-end !justify-start pb-16 md:pb-24"
+      >
         <ImmersiveVideoSection />
         <div className="absolute bottom-16 left-6 z-20 md:bottom-24 md:left-8">
           <a
@@ -35,15 +47,23 @@ const Index = () => {
         </div>
       </ScrollSnapPanel>
 
-      {/* 04. FAQ */}
-      <ScrollSnapPanel className="bg-luxury-white !flex-none !items-stretch !justify-start overflow-y-auto py-8 md:py-12">
+      {/* 04. FAQ - Frequently asked questions */}
+      <ScrollSnapPanel 
+        id="faq-section"
+        ariaLabel="FAQ section with frequently asked questions"
+        className="bg-luxury-white !flex-none !items-stretch !justify-start overflow-y-auto py-8 md:py-12"
+      >
         <div className="w-full">
           <FAQSectionLuxury />
         </div>
       </ScrollSnapPanel>
 
-      {/* 05. Journal (featured content preview) */}
-      <ScrollSnapPanel className="bg-luxury-white">
+      {/* 05. Journal - Featured content and articles */}
+      <ScrollSnapPanel 
+        id="journal-section"
+        ariaLabel="Journal section with featured articles and insights"
+        className="bg-luxury-white"
+      >
         <div className="w-full max-w-luxury px-6 md:px-8">
           <div className="text-center">
             <h2 className="text-4xl font-light mb-4 text-luxury-black">Journal</h2>
@@ -60,8 +80,12 @@ const Index = () => {
         </div>
       </ScrollSnapPanel>
 
-      {/* 06. Inquire (video section linking to /inquire) */}
-      <ScrollSnapPanel className="relative !flex-none !items-end !justify-start pb-16 md:pb-24">
+      {/* 06. Inquire - Contact and engagement video */}
+      <ScrollSnapPanel 
+        id="inquire-section"
+        ariaLabel="Inquire section with engagement video and contact call to action"
+        className="relative !flex-none !items-end !justify-start pb-16 md:pb-24"
+      >
         <VideoSection />
         <div className="absolute bottom-16 left-6 z-20 md:bottom-24 md:left-8">
           <a
