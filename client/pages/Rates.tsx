@@ -24,7 +24,7 @@ const RatesPage = () => {
         alignment="left"
       />
 
-      <section className="bg-luxury-white">
+      <section id="rates" className="bg-luxury-white" data-section="rates">
         <div className="container mx-auto px-6 pb-20 pt-16 md:px-8 md:pt-20">
           <div className="mx-auto max-w-2xl space-y-6 text-center">
             <p className="text-base font-light leading-[1.85] tracking-[0.01em] text-gray-700 md:text-lg">
