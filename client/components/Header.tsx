@@ -29,60 +29,41 @@ const Header = ({ isOverlayActive = false }: HeaderProps) => {
   const [isOverlay, setIsOverlay] = useState(isOverlayActive);
   const headerRef = useRef<HTMLDivElement>(null);
 
-  // Detect overlay state - works with both scroll and scroll-snap layouts
+  // Detect overlay state using Intersection Observer
   useEffect(() => {
-    const checkOverlayState = () => {
+    const setupObserver = () => {
       const heroElement = document.querySelector("[data-hero='true']");
 
       if (!heroElement) {
-        setIsOverlay(isOverlayActive);
-        return;
+        // If hero doesn't exist yet, retry in a moment
+        const retryTimer = setTimeout(setupObserver, 200);
+        return () => clearTimeout(retryTimer);
       }
 
-      // Check if hero element is in viewport
-      const heroRect = heroElement.getBoundingClientRect();
-      const isHeroInViewport =
-        heroRect.top < window.innerHeight && heroRect.bottom > 0;
+      // Use Intersection Observer to detect when hero is in viewport
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          // Set overlay state when hero is intersecting with viewport
+          setIsOverlay(entry.isIntersecting);
+        },
+        {
+          threshold: 0,
+          rootMargin: "0px 0px 0px 0px",
+        }
+      );
 
-      setIsOverlay(isHeroInViewport);
+      observer.observe(heroElement);
+
+      return () => {
+        observer.disconnect();
+      };
     };
 
-    // Initial check with delay to ensure DOM is ready
-    const initialCheckTimer = setTimeout(() => {
-      checkOverlayState();
-    }, 50);
+    // Wait for DOM to be fully ready
+    const timer = setTimeout(setupObserver, 100);
 
-    // Listen to scroll events (works for normal scroll)
-    window.addEventListener("scroll", checkOverlayState, { passive: true });
-
-    // Listen to resize events
-    window.addEventListener("resize", checkOverlayState, { passive: true });
-
-    // For scroll-snap containers, observe scroll position on the main scroll container
-    // Check all potential scroll containers
-    const scrollContainers = document.querySelectorAll(
-      ".scroll-snap-container, main, [role='main']"
-    );
-
-    const handleContainerScroll = () => {
-      requestAnimationFrame(checkOverlayState);
-    };
-
-    scrollContainers.forEach((container) => {
-      container.addEventListener("scroll", handleContainerScroll, {
-        passive: true,
-      });
-    });
-
-    return () => {
-      clearTimeout(initialCheckTimer);
-      window.removeEventListener("scroll", checkOverlayState);
-      window.removeEventListener("resize", checkOverlayState);
-      scrollContainers.forEach((container) => {
-        container.removeEventListener("scroll", handleContainerScroll);
-      });
-    };
-  }, [isOverlayActive]);
+    return () => clearTimeout(timer);
+  }, []);
 
   // Close menu on escape
   useEffect(() => {
