@@ -181,7 +181,10 @@ const FAQSectionLuxury = () => {
         alignment="left"
       />
 
-      <section className="relative bg-luxury-white py-16 md:py-32 lg:py-40 max-md:py-16">
+      <section
+        className="relative bg-luxury-white py-16 md:py-32 lg:py-40 max-md:py-16"
+        aria-label="Frequently asked questions about escort services and engagement details"
+      >
         <div className="mx-auto max-w-luxury px-6 md:px-12 max-md:px-6">
           <div className="mx-auto mb-16 max-w-[65ch] text-center text-base font-light leading-relaxed tracking-luxury text-gray-600 md:mb-24 max-md:mb-12">
             The following answers distill the questions I receive most often
@@ -189,7 +192,7 @@ const FAQSectionLuxury = () => {
           </div>
 
           <div className="mx-auto max-w-4xl">
-            <div>
+            <div role="region" aria-label="FAQ items list">
               {featuredFaqs.map((item) => (
                 <FAQItem
                   key={item.id}
