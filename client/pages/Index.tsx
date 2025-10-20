@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useMemo } from "react";
 import Hero from "@/components/site/Hero";
 import ImageMosaicSection from "@/components/site/ImageMosaicSection";
 import FAQSectionLuxury from "@/components/site/FAQSectionLuxury";
@@ -6,11 +6,9 @@ import ImmersiveVideoSection from "@/components/site/ImmersiveVideoSection";
 import DesignInMotionSection from "@/components/site/DesignInMotionSection";
 import VideoSection from "@/components/site/VideoSection";
 import SwiperLayout from "./SwiperLayout";
-import { SlideMeta } from "@/components/HeaderNavYSL";
+import { SlideMeta } from "@/context/ActiveSlideContext";
 
 const Index = () => {
-  const [activeSlideIndex, setActiveSlideIndex] = useState(0);
-
   // Define slide metadata for header inversion
   const slides: SlideMeta[] = useMemo(
     () => [
@@ -24,10 +22,8 @@ const Index = () => {
     []
   );
 
-  const activeSlide = slides[activeSlideIndex];
-
   return (
-    <SwiperLayout onSlideChange={setActiveSlideIndex} data-active-slide={JSON.stringify(activeSlide)}>
+    <SwiperLayout slides={slides}>
       {/* 01. Hero */}
       <Hero />
 
