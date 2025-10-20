@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 
-// ══════════════════════════════════════════���════════════════════════
+// ═══════════════════════════════════════════════════════════════════
 // DESIGN SYSTEM: De Beers × Hermès — Katherine Taylor Edition
 // ══════════════════════════════════════════════════��════════════════
 
@@ -220,7 +220,7 @@ const BellButton = styled.button`
   }
 `;
 
-// ═══════════════════════════════��═══════════════════════════════════
+// ═══════════════════════════════════════════════════════════════════
 // FULL-SCREEN MENU OVERLAY
 // ════════════════════════════════════════��══════════════════════════
 
@@ -349,35 +349,35 @@ const MenuLink = styled.a`
   font-weight: ${DesignTokens.font.weight.light};
   letter-spacing: ${DesignTokens.font.tracking.widest};
   text-transform: uppercase;
-  color: rgba(0, 0, 0, 0.84);
+  color: #000;
   text-decoration: none;
   display: inline-block;
   position: relative;
-  transition: color 320ms ${DesignTokens.ease.gentle};
+  transition: all 300ms ${DesignTokens.ease.gentle};
 
   &::after {
     content: '';
     position: absolute;
-    bottom: -4px;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: currentColor;
-    transform: scaleX(0);
-    transform-origin: center;
-    transition: transform 380ms ${DesignTokens.ease.smooth};
+    bottom: -6px;
+    left: 50%;
+    right: 50%;
+    height: 1.5px;
+    background: #000;
+    transition: all 320ms ${DesignTokens.ease.smooth};
   }
 
   &:hover {
-    color: rgba(0, 0, 0, 1);
+    color: #000;
+    letter-spacing: ${DesignTokens.font.tracking.widest};
 
     &::after {
-      transform: scaleX(1);
+      left: 0;
+      right: 0;
     }
   }
 
   &:focus-visible {
-    outline: 1px solid rgba(0, 0, 0, 0.2);
+    outline: 1.5px solid rgba(0, 0, 0, 0.3);
     outline-offset: 8px;
   }
 `;
