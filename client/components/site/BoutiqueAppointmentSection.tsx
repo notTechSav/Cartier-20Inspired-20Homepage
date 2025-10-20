@@ -7,14 +7,14 @@ const BoutiqueAppointmentSection = () => {
   return (
     <section className="relative isolate overflow-hidden bg-luxury-black">
       <div
-        className="relative flex min-h-[480px] w-full items-center bg-cover bg-center px-8 py-24 sm:min-h-[560px] md:py-32 lg:py-40"
+        className="relative flex min-h-[480px] w-full items-center bg-cover bg-center px-6 py-16 md:min-h-[560px] md:py-32 lg:py-40 max-md:min-h-[360px] max-md:px-6 max-md:py-14"
         style={{ backgroundImage: `url(${boutiqueImage})` }}
       >
         <div
           className="absolute inset-0 bg-luxury-black/60"
           aria-hidden="true"
         />
-        <div className="relative z-10 max-w-[440px] space-y-8 text-luxury-white">
+        <div className="relative z-10 max-w-[440px] space-y-6 text-luxury-white max-md:space-y-4">
           <span className="text-xs font-light uppercase tracking-uppercase text-white/70">
             Your Love Story Awaits
           </span>
