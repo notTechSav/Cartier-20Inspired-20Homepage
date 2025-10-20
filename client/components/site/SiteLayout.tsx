@@ -2,6 +2,7 @@ import { PropsWithChildren } from "react";
 
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/site/Footer";
+import ScrollSnapProgress from "@/components/site/ScrollSnapProgress";
 
 const SiteLayout = ({ children }: PropsWithChildren) => {
   // Check if children is ScrollSnapLayout (from Index page)
@@ -13,6 +14,7 @@ const SiteLayout = ({ children }: PropsWithChildren) => {
     return (
       <div className="relative flex h-screen w-full flex-col bg-luxury-white text-gray-700">
         <Navigation />
+        <ScrollSnapProgress totalSections={6} />
         {children}
       </div>
     );
