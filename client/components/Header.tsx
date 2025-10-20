@@ -26,53 +26,21 @@ interface HeaderProps {
 
 const Header = ({ isOverlayActive = false }: HeaderProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isOverlay, setIsOverlay] = useState(true); // Default to true since hero is on home page
+  const [isOverlay, setIsOverlay] = useState(true); // Default to true - forces white text on dark overlays
   const headerRef = useRef<HTMLDivElement>(null);
-  const observerRef = useRef<IntersectionObserver | null>(null);
 
-  // Detect overlay state using Intersection Observer
+  // On non-hero pages, detect if we should show normal header
   useEffect(() => {
-    const checkAndSetupObserver = () => {
-      // If there's already an observer, disconnect it
-      if (observerRef.current) {
-        observerRef.current.disconnect();
-      }
+    const heroElement = document.querySelector("[data-hero='true']");
 
-      const heroElement = document.querySelector("[data-hero='true']");
-
-      if (!heroElement) {
-        // No hero element found, use default state
-        setIsOverlay(isOverlayActive);
-        return;
-      }
-
-      // Use Intersection Observer for hero element visibility detection
-      observerRef.current = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            // When hero is visible in viewport, show overlay header
-            setIsOverlay(entry.isIntersecting);
-          });
-        },
-        {
-          threshold: 0,
-          root: null,
-        }
-      );
-
-      observerRef.current.observe(heroElement);
-    };
-
-    // Small delay to ensure DOM is fully mounted
-    const timer = setTimeout(checkAndSetupObserver, 150);
-
-    return () => {
-      clearTimeout(timer);
-      if (observerRef.current) {
-        observerRef.current.disconnect();
-      }
-    };
-  }, [isOverlayActive]);
+    // If no hero section exists (non-home pages), set overlay to false
+    if (!heroElement) {
+      setIsOverlay(false);
+    } else {
+      // Hero exists, use overlay mode
+      setIsOverlay(true);
+    }
+  }, []);
 
   // Close menu on escape
   useEffect(() => {
