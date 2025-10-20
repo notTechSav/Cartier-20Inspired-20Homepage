@@ -124,7 +124,7 @@
     height: 100%;
     overflow: hidden;
     background-color: var(--luxury-white);
-    color: var(--gray-700);
+    color: inherit;
     font-family: "Work Sans", sans-serif;
     font-weight: var(--font-weight-body);
     letter-spacing: 0.025em;
