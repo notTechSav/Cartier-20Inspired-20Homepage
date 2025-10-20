@@ -437,4 +437,4 @@ function Header({
 }
 
 export default Header;
-export type { HeaderNavYSLProps };
+export type { HeaderNavYSLProps, SlideMeta };
