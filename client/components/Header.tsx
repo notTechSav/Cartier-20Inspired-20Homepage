@@ -141,13 +141,12 @@ const Header = ({ isOverlayActive = false }: HeaderProps) => {
             <a
               href="/"
               className={cn(
-                "flex-shrink-0 transition-colors duration-300 ease-out",
+                "flex-shrink-0 text-2xl md:text-3xl transition-colors duration-300 ease-out",
                 isOverlay ? "text-white" : "text-black"
               )}
               style={{
                 fontFamily: "'Cormorant Garamond', serif",
                 fontWeight: 700,
-                fontSize: "28px",
                 letterSpacing: "0.05em",
                 lineHeight: "1.2",
               }}
