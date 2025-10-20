@@ -116,10 +116,13 @@
   }
 
   html {
-    scroll-behavior: smooth;
+    height: 100%;
+    overflow: hidden;
   }
 
   body {
+    height: 100%;
+    overflow: hidden;
     background-color: var(--luxury-white);
     color: var(--gray-700);
     font-family: "Work Sans", sans-serif;
@@ -183,12 +186,21 @@
     letter-spacing: 0.15em;
   }
 
-  /* Scroll-snap styles */
+  /* Scroll-snap container */
   .scroll-snap-container {
     height: 100vh;
     height: 100dvh;
-    overflow-y: scroll;
+    overflow-y: auto;
+    overflow-x: hidden;
     scroll-snap-type: y mandatory;
     -webkit-overflow-scrolling: touch;
+  }
+
+  /* Scroll-snap items */
+  .scroll-snap-item {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    min-height: 100vh;
+    min-height: 100dvh;
   }
 }
