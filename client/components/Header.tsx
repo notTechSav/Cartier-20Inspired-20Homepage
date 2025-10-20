@@ -137,35 +137,38 @@ const Header = ({ isOverlayActive = false }: HeaderProps) => {
               "h-20 md:h-20"
             )}
           >
-            {/* Logo */}
+            {/* Logo - Distinct serif, larger, bolder */}
             <a
               href="/"
               className={cn(
-                "flex-shrink-0 font-bold text-lg md:text-xl transition-colors duration-300 ease-out",
+                "flex-shrink-0 transition-colors duration-300 ease-out",
                 isOverlay ? "text-white" : "text-black"
               )}
               style={{
                 fontFamily: "'Cormorant Garamond', serif",
                 fontWeight: 700,
-                letterSpacing: "0.02em",
+                fontSize: "28px",
+                letterSpacing: "0.05em",
+                lineHeight: "1.2",
               }}
             >
               Katherine Taylor
             </a>
 
             {/* Center Navigation */}
-            <nav className="flex items-center gap-8 lg:gap-12">
-              <ul className="flex items-center gap-6 lg:gap-8">
+            <nav className="flex items-center" style={{ alignItems: "center" }}>
+              <ul className="flex items-center" style={{ gap: "24px" }}>
                 {navigationLinks.map((link) => (
                   <li key={link.label}>
                     <a
                       href={link.href}
                       className={cn(
-                        "text-sm font-normal uppercase transition-colors duration-300 ease-out",
-                        isOverlay ? "text-white hover:text-gray-300" : "text-black hover:text-gray-600"
+                        "text-sm font-light uppercase transition-opacity duration-300 ease-out",
+                        isOverlay ? "text-white hover:opacity-60" : "text-black hover:opacity-60"
                       )}
                       style={{
                         letterSpacing: "0.15em",
+                        fontWeight: 300,
                       }}
                     >
                       {link.label}
