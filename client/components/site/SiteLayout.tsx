@@ -4,14 +4,20 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/site/Footer";
 
 const SiteLayout = ({ children }: PropsWithChildren) => {
-  // Check if children is a scroll-snap layout (Index page) or regular layout
-  const isScrollSnap = Array.isArray(children);
+  // Check if children has scroll-snap-container class (ScrollSnapLayout from Index)
+  // by examining the first child
+  const childrenArray = Array.isArray(children) ? children : [children];
+  const firstChild = childrenArray[0] as any;
+  const isScrollSnapLayout =
+    firstChild?.type?.name === "ScrollSnapLayout" ||
+    (firstChild?.props?.className &&
+      firstChild.props.className.includes("scroll-snap-container"));
 
-  if (isScrollSnap) {
+  if (isScrollSnapLayout) {
     return (
       <div className="relative h-screen w-full bg-luxury-white text-gray-700">
         <Navigation />
-        <div className="h-full pt-28 md:pt-44 lg:pt-48 max-md:pt-24">
+        <div className="h-[calc(100vh-var(--nav-height))] pt-28 md:pt-44 lg:pt-48 max-md:pt-24">
           {children}
         </div>
       </div>
