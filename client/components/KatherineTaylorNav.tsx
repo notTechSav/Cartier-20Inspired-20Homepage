@@ -111,7 +111,7 @@ const RightSection = styled.div`
   justify-content: flex-end;
 `;
 
-// ══════════════════════════���════════════════════════════════════════
+// ═══════════════════════════════════════════════════════════════════
 // MENU BUTTON
 // ═══════════════════════════════════════════════════════════════════
 
@@ -183,7 +183,7 @@ const Logo = styled.a`
 
 // ═══════════════════════════════════════════════════════════════════
 // CONCIERGE BELL — Harry Winston Inspired
-// ═══════════════════════════════════════════════════════════════════
+// ═══════════════════════════════════════════════════════��═══════════
 
 const BellButton = styled.button`
   width: 24px;
@@ -234,8 +234,8 @@ const MenuOverlay = styled.div<{ $isOpen: boolean }>`
   opacity: ${props => props.$isOpen ? 1 : 0};
   visibility: ${props => props.$isOpen ? 'visible' : 'hidden'};
   transition:
-    opacity 480ms ${DesignTokens.ease.luxe},
-    visibility 0s ${props => props.$isOpen ? '0s' : '480ms'};
+    opacity 560ms ${DesignTokens.ease.luxe},
+    visibility 0s ${props => props.$isOpen ? '0s' : '560ms'};
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -396,7 +396,7 @@ const MenuLabel = styled.span`
 
 // ═══════════════════════════════════════════════════════════════════
 // COMPONENT
-// ══════════════════════════════════���════════════════════════════════
+// ═══════════════════════════════════════════════════════════════════
 
 interface KatherineTaylorNavProps {
   onInquireClick?: () => void;
