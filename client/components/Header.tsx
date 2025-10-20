@@ -42,10 +42,11 @@ const Header = ({ isOverlayActive = false }: HeaderProps) => {
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        setIsOverlay(entry.isIntersecting && entry.boundingClientRect.top <= 0);
+        // Header is in overlay state when hero section is visible in viewport
+        setIsOverlay(entry.isIntersecting);
       },
       {
-        threshold: 0.25,
+        threshold: 0,
       }
     );
 
