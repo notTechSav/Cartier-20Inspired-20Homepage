@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import VideoUnmuteButton from "@/components/site/VideoUnmuteButton";
 
 const VIDEO_SRC =
-  "https://res.cloudinary.com/katherine-taylor-escort-video/video/upload/v1760237961/Maya_3_iyvftk.mp4";
+  "https://res.cloudinary.com/katherine-taylor-escort-video/video/upload/f_auto,q_auto,w_1920,h_1080,c_fill/v1760237961/Maya_3_iyvftk.mp4";
 
 const ImmersiveVideoSection = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
