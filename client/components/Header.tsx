@@ -29,31 +29,32 @@ const Header = ({ isOverlayActive = false }: HeaderProps) => {
   const [isOverlay, setIsOverlay] = useState(isOverlayActive);
   const headerRef = useRef<HTMLDivElement>(null);
 
-  // Detect overlay state using scroll position and Intersection Observer
+  // Detect overlay state using scroll position
   useEffect(() => {
-    const heroElement = document.querySelector("[data-hero='true']");
+    const checkOverlayState = () => {
+      const heroElement = document.querySelector("[data-hero='true']");
 
-    if (!heroElement) {
-      setIsOverlay(isOverlayActive);
-      return;
-    }
-
-    // Use Intersection Observer to detect when hero is in viewport
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        // Hero is intersecting = we're in the overlay zone
-        setIsOverlay(entry.isIntersecting);
-      },
-      {
-        threshold: 0,
-        rootMargin: "0px 0px 0px 0px",
+      if (!heroElement) {
+        setIsOverlay(isOverlayActive);
+        return;
       }
-    );
 
-    observer.observe(heroElement);
+      const heroRect = heroElement.getBoundingClientRect();
+      // Hero is in viewport if its top is above viewport bottom and bottom is below viewport top
+      const isHeroVisible = heroRect.top < window.innerHeight && heroRect.bottom > 0;
+      setIsOverlay(isHeroVisible);
+    };
+
+    // Initial check
+    checkOverlayState();
+
+    // Listen to scroll and resize events
+    window.addEventListener("scroll", checkOverlayState, { passive: true });
+    window.addEventListener("resize", checkOverlayState, { passive: true });
 
     return () => {
-      observer.disconnect();
+      window.removeEventListener("scroll", checkOverlayState);
+      window.removeEventListener("resize", checkOverlayState);
     };
   }, [isOverlayActive]);
 
