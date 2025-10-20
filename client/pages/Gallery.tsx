@@ -5,7 +5,7 @@ const GALLERY_HERO_IMAGE = "/rose-hero.png";
 
 const Gallery = () => {
   return (
-    <div className="bg-luxury-white text-luxury-black">
+    <div className="bg-luxury-white text-luxury-black" id="gallery" data-section="gallery">
       <PageHeroOverlay
         title="Private Collections"
         subtitle="Intimate documentation from Northern California to Los Angeles — three collections, three moments in time."
