@@ -24,7 +24,7 @@ const SiteLayout = ({ children }: PropsWithChildren) => {
   return (
     <div className="flex min-h-screen flex-col bg-luxury-white text-gray-700">
       <Header />
-      <main className="flex-1 pt-20 md:pt-32 lg:pt-40">{children}</main>
+      <main className="flex-1">{children}</main>
       <Footer />
     </div>
   );
