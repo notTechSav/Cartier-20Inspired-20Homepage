@@ -12,7 +12,7 @@ const LegendReinventedSection = () => {
         style={{ backgroundImage: `url(${backgroundImage})` }}
       >
         <div
-          className="absolute inset-0 bg-luxury-black/60"
+          className="absolute inset-0 bg-luxury-black/60 max-sm:bg-white/60 max-sm:left-[221px] max-sm:top-[65px]"
           aria-hidden="true"
         />
         <div className="relative z-10 max-w-[560px] space-y-6 text-left text-luxury-white max-md:space-y-4">
