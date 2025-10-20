@@ -6,9 +6,9 @@ const featureImage =
 
 const DesignInMotionSection = () => {
   return (
-    <section className="bg-luxury-white py-24 md:py-32 lg:py-40">
-      <div className="mx-auto grid max-w-luxury items-center gap-8 px-8 md:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] md:gap-12 lg:gap-16">
-        <div className="space-y-8 text-left">
+    <section className="bg-luxury-white py-16 md:py-32 lg:py-40 max-md:py-16">
+      <div className="mx-auto grid max-w-luxury items-center gap-6 px-6 md:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] md:gap-12 lg:gap-16 max-md:gap-6 max-md:px-6">
+        <div className="space-y-6 text-left max-md:space-y-4">
           <H2 as="p">SF Escorts | Framed Side-By-Side</H2>
           <H3 as="p">
             What sets Katherine Taylor Apart From Other Escorts Near Me?
