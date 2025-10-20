@@ -49,7 +49,7 @@ const SwiperLayout: React.FC<SwiperLayoutProps> = ({ children, slides }) => {
           swiperRef.current = swiper;
         }}
         onSlideChange={handleSlideChange}
-        modules={[Navigation, Pagination, Keyboard]}
+        modules={[Navigation, Pagination, Keyboard, Mousewheel]}
         direction="vertical"
         slidesPerView={1}
         spaceBetween={0}
@@ -59,8 +59,17 @@ const SwiperLayout: React.FC<SwiperLayoutProps> = ({ children, slides }) => {
           pageUp: true,
           pageDown: true,
         }}
+        mousewheel={{
+          forceToAxis: true,
+          sensitivity: 1,
+          thresholdDelta: 10,
+        }}
         speed={800}
         grabCursor={true}
+        touchEventsTarget="container"
+        touchRatio={1}
+        touchAngle={45}
+        simulateTouch={true}
         className="h-full w-full"
         style={{
           height: "100vh",
