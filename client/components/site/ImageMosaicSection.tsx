@@ -55,8 +55,10 @@ const ImageMosaicSection = ({
 
   return (
     <section
+      id="gallery"
       className="bg-luxury-white py-16 md:py-32 lg:py-40 max-md:py-16"
       aria-label="Image gallery collection showcase"
+      data-section="gallery"
     >
       <div className="mx-auto flex max-w-luxury flex-col gap-12 px-8">
         <div className="space-y-4 text-center">
