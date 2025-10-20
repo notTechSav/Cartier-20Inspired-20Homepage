@@ -1,18 +1,5 @@
 import React, { createContext, useContext, useState, ReactNode } from "react";
-
-export type SlideMeta = {
-  id: string;
-  dark?: boolean;
-  tabletDark?: boolean;
-  mobileDark?: boolean;
-};
-
-interface ActiveSlideContextType {
-  activeSlide?: SlideMeta;
-  setActiveSlide: (slide: SlideMeta | undefined) => void;
-  activeIndex: number;
-  setActiveIndex: (index: number) => void;
-}
+import { SlideMeta, ActiveSlideContextType } from "./types";
 
 const ActiveSlideContext = createContext<ActiveSlideContextType | undefined>(
   undefined
