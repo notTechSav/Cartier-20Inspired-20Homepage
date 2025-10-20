@@ -7,6 +7,7 @@ import ImmersiveVideoSection from "@/components/site/ImmersiveVideoSection";
 import LegendReinventedSection from "@/components/site/LegendReinventedSection";
 import LimitedAvailabilitySection from "@/components/site/LimitedAvailabilitySection";
 import LoveStorySection from "@/components/site/LoveStorySection";
+import VideoSection from "@/components/site/VideoSection";
 import EmailSignupSection from "@/components/site/EmailSignupSection";
 
 const Index = () => {
@@ -51,6 +52,7 @@ const Index = () => {
       <BoutiqueAppointmentSection />
       <LimitedAvailabilitySection />
       <LoveStorySection />
+      <VideoSection />
       <EmailSignupSection />
     </div>
   );
