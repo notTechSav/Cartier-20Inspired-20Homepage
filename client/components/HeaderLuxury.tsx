@@ -1,5 +1,5 @@
-import React, { useEffect, useRef, useState, useMemo } from "react";
-import { useActiveSlide } from "@/context/ActiveSlideContext";
+import React, { useEffect, useRef, useState, useMemo, useContext } from "react";
+import { ActiveSlideContext } from "@/context/ActiveSlideContext";
 
 type NavItem = {
   id: string;
