@@ -40,3 +40,5 @@ export function useActiveSlide() {
   }
   return context;
 }
+
+export type { SlideMeta };
