@@ -26,44 +26,53 @@ interface HeaderProps {
 
 const Header = ({ isOverlayActive = false }: HeaderProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isOverlay, setIsOverlay] = useState(isOverlayActive);
+  const [isOverlay, setIsOverlay] = useState(true); // Default to true since hero is on home page
   const headerRef = useRef<HTMLDivElement>(null);
+  const observerRef = useRef<IntersectionObserver | null>(null);
 
   // Detect overlay state using Intersection Observer
   useEffect(() => {
-    const setupObserver = () => {
+    const checkAndSetupObserver = () => {
+      // If there's already an observer, disconnect it
+      if (observerRef.current) {
+        observerRef.current.disconnect();
+      }
+
       const heroElement = document.querySelector("[data-hero='true']");
 
       if (!heroElement) {
-        // If hero doesn't exist yet, retry in a moment
-        const retryTimer = setTimeout(setupObserver, 200);
-        return () => clearTimeout(retryTimer);
+        // No hero element found, use default state
+        setIsOverlay(isOverlayActive);
+        return;
       }
 
-      // Use Intersection Observer to detect when hero is in viewport
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          // Set overlay state when hero is intersecting with viewport
-          setIsOverlay(entry.isIntersecting);
+      // Use Intersection Observer for hero element visibility detection
+      observerRef.current = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            // When hero is visible in viewport, show overlay header
+            setIsOverlay(entry.isIntersecting);
+          });
         },
         {
           threshold: 0,
-          rootMargin: "0px 0px 0px 0px",
+          root: null,
         }
       );
 
-      observer.observe(heroElement);
-
-      return () => {
-        observer.disconnect();
-      };
+      observerRef.current.observe(heroElement);
     };
 
-    // Wait for DOM to be fully ready
-    const timer = setTimeout(setupObserver, 100);
+    // Small delay to ensure DOM is fully mounted
+    const timer = setTimeout(checkAndSetupObserver, 150);
 
-    return () => clearTimeout(timer);
-  }, []);
+    return () => {
+      clearTimeout(timer);
+      if (observerRef.current) {
+        observerRef.current.disconnect();
+      }
+    };
+  }, [isOverlayActive]);
 
   // Close menu on escape
   useEffect(() => {
