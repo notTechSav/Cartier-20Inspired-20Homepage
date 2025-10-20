@@ -76,12 +76,11 @@ const HeaderContainer = styled.header<{ $hidden: boolean }>`
 const HeaderBackdrop = styled.div<{ $transparent: boolean }>`
   position: absolute;
   inset: 0;
-  background: ${DesignTokens.effect.gradient.backdrop};
-  backdrop-filter: ${DesignTokens.effect.blur};
-  -webkit-backdrop-filter: ${DesignTokens.effect.blur};
-  box-shadow: ${DesignTokens.effect.shadow.header};
-  opacity: ${props => props.$transparent ? 0 : 1};
-  transition: opacity 340ms ${DesignTokens.ease.gentle};
+  background: ${props => props.$transparent ? 'transparent' : DesignTokens.effect.gradient.backdrop};
+  backdrop-filter: ${props => props.$transparent ? 'none' : DesignTokens.effect.blur};
+  -webkit-backdrop-filter: ${props => props.$transparent ? 'none' : DesignTokens.effect.blur};
+  box-shadow: ${props => props.$transparent ? 'none' : DesignTokens.effect.shadow.header};
+  transition: all 340ms ${DesignTokens.ease.gentle};
   will-change: opacity;
 `;
 
@@ -113,7 +112,7 @@ const RightSection = styled.div`
 
 // ═══════════════════════════════════════════════════════════════════
 // MENU BUTTON
-// ═══════════════════════════════════════════════════════════════════
+// ════════════════════════���══════════════════════════════════════════
 
 const MenuButton = styled.button`
   font-family: ${DesignTokens.font.primary};
@@ -158,7 +157,7 @@ const MenuButton = styled.button`
 
 // ═══════════════════════════════════════════════════════════════════
 // LOGO
-// ═══════════════════════════════════════════════════════════════════
+// ══════════════════════════════════════���════════════════════════════
 
 const Logo = styled.a`
   font-family: ${DesignTokens.font.primary};
