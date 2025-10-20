@@ -1,6 +1,22 @@
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
+import { useScrollSnapNavigation } from "@/hooks/useScrollSnapNavigation";
 
-const Footer = () => {
+interface FooterProps {
+  isScrollSnapLayout?: boolean;
+  totalSections?: number;
+}
+
+const Footer = ({ isScrollSnapLayout = false, totalSections = 6 }: FooterProps) => {
+  const [isVisible, setIsVisible] = useState(false);
+  const { nextSection, prevSection, canGoNext, canGoPrev } =
+    useScrollSnapNavigation(totalSections);
+
+  // Only show navigation in scroll-snap layout
+  useEffect(() => {
+    setIsVisible(isScrollSnapLayout);
+  }, [isScrollSnapLayout]);
+
   return (
     <footer className="w-full bg-luxury-white">
       {/* Email Signup Section */}
@@ -31,6 +47,30 @@ const Footer = () => {
           </form>
         </div>
       </section>
+
+      {/* Section Navigation (Scroll-snap only) */}
+      {isVisible && (
+        <section className="border-t border-gray-100 py-8 md:py-12 max-md:py-8">
+          <div className="mx-auto flex max-w-luxury items-center justify-between px-6 md:px-8 max-md:px-6">
+            <button
+              onClick={prevSection}
+              disabled={!canGoPrev}
+              aria-label="Go to previous section"
+              className="inline-flex items-center justify-center rounded-[2px] border border-gray-400 bg-transparent px-6 py-3 text-sm font-light uppercase tracking-uppercase text-gray-700 transition-all duration-250 ease-out disabled:opacity-40 disabled:cursor-not-allowed hover:enabled:border-gray-700 hover:enabled:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2"
+            >
+              ← Back
+            </button>
+            <button
+              onClick={nextSection}
+              disabled={!canGoNext}
+              aria-label="Go to next section"
+              className="inline-flex items-center justify-center rounded-[2px] border border-gray-400 bg-transparent px-6 py-3 text-sm font-light uppercase tracking-uppercase text-gray-700 transition-all duration-250 ease-out disabled:opacity-40 disabled:cursor-not-allowed hover:enabled:border-gray-700 hover:enabled:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2"
+            >
+              Next →
+            </button>
+          </div>
+        </section>
+      )}
 
       {/* Footer Links */}
       <section className="py-12 px-6 border-t border-gray-100 md:py-16 md:px-8 max-md:py-12 max-md:px-6">

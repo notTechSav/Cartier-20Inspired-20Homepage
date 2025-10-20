@@ -16,7 +16,7 @@ const SiteLayout = ({ children }: PropsWithChildren) => {
         <Navigation />
         <ScrollSnapProgress totalSections={6} />
         <div className="flex-1 overflow-hidden">{children}</div>
-        <Footer />
+        <Footer isScrollSnapLayout={true} totalSections={6} />
       </div>
     );
   }
