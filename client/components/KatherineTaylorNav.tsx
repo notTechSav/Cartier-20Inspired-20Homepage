@@ -118,10 +118,10 @@ const RightSection = styled.div`
 const MenuButton = styled.button`
   font-family: ${DesignTokens.font.primary};
   font-size: ${DesignTokens.font.size.nav};
-  font-weight: ${DesignTokens.font.weight.regular};
-  letter-spacing: ${DesignTokens.font.tracking.wider};
+  font-weight: ${DesignTokens.font.weight.light};
+  letter-spacing: ${DesignTokens.font.tracking.widest};
   text-transform: uppercase;
-  color: rgba(0, 0, 0, 0.72);
+  color: #000;
   background: none;
   border: none;
   padding: 0;
@@ -132,18 +132,18 @@ const MenuButton = styled.button`
   &::after {
     content: '';
     position: absolute;
-    bottom: -2px;
+    bottom: -3px;
     left: 0;
     right: 0;
-    height: 1px;
+    height: 1.5px;
     background: currentColor;
     transform: scaleX(0);
-    transform-origin: left;
+    transform-origin: center;
     transition: transform 320ms ${DesignTokens.ease.smooth};
   }
 
   &:hover {
-    color: rgba(0, 0, 0, 0.96);
+    color: #000;
 
     &::after {
       transform: scaleX(1);
@@ -151,12 +151,12 @@ const MenuButton = styled.button`
   }
 
   &:focus-visible {
-    outline: 1px solid rgba(0, 0, 0, 0.2);
+    outline: 1.5px solid rgba(0, 0, 0, 0.3);
     outline-offset: 6px;
   }
 `;
 
-// ═════════════════════���═════════════════════════════════════════════
+// ═══════════════════════════════════════════════════════════════════
 // LOGO
 // ═══════════════════════════════════════════════════════════════════
 
@@ -395,7 +395,7 @@ const MenuLabel = styled.span`
 
 // ═══════════════════════════════════════════════════════════════════
 // COMPONENT
-// ═══════════════════════════════════════════════════════════════════
+// ═════════════════════════════════════════════════════════════���═════
 
 interface KatherineTaylorNavProps {
   onInquireClick?: () => void;
