@@ -3,15 +3,27 @@ import { useEffect, useState } from "react";
 
 import { cn } from "@/lib/utils";
 
+// Route prefetch mapping for lazy-loaded pages
+const routePrefetchMap: Record<string, () => Promise<any>> = {
+  "/about": () => import("@/pages/About"),
+  "/gifts": () => import("@/pages/Gifts"),
+  "/journal": () => import("@/pages/Journal"),
+  "/rates": () => import("@/pages/Rates"),
+  "/gallery": () => import("@/pages/Gallery"),
+  "/faq": () => import("@/pages/FAQ"),
+  "/inquire": () => import("@/pages/Inquire"),
+  "/inquire-luxury": () => import("@/pages/InquireLuxury"),
+};
+
 const navigationLinks = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
-  { label: "Gallery", href: "/gallery" },
   { label: "Gifts", href: "/gifts" },
   { label: "Journal", href: "/journal" },
   { label: "Rates", href: "/rates" },
+  { label: "Gallery", href: "/gallery" },
   { label: "FAQ", href: "/faq" },
-  { label: "Inquire", href: "/inquire" },
+  { label: "Inquire", href: "/inquire-luxury" },
 ];
 
 const Navigation = () => {
@@ -39,13 +51,23 @@ const Navigation = () => {
     setIsMenuOpen(false);
   };
 
+  // Prefetch route on hover for instant navigation
+  const handleMouseEnter = (href: string) => {
+    const prefetch = routePrefetchMap[href];
+    if (prefetch) {
+      prefetch().catch(() => {
+        // Silently fail if prefetch errors
+      });
+    }
+  };
+
   return (
     <nav
       className={cn(
-        "fixed top-0 z-50 w-full px-8 transition-all duration-luxury",
+        "fixed top-0 z-50 w-full px-8 transition-all duration-400 ease-out",
         scrolled
-          ? "bg-white/95 py-4 backdrop-blur-sm shadow-luxury-sm"
-          : "bg-transparent py-8",
+          ? "bg-luxury-white/95 py-4 backdrop-blur-sm shadow-luxury-sm"
+          : "bg-luxury-white/80 py-8 backdrop-blur-sm",
       )}
     >
       <div className="mx-auto flex max-w-luxury items-center justify-between">
@@ -53,24 +75,25 @@ const Navigation = () => {
           href="/"
           className="flex items-center gap-3 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-2"
         >
-          <span className="text-3xl font-serif font-extralight uppercase tracking-[0.15em] leading-[1.1] text-luxury-black">
+          <span className="text-2xl font-serif font-extralight uppercase tracking-uppercase leading-[1.1] text-luxury-black max-md:text-xl">
             KATHERINE TAYLOR
           </span>
         </a>
         <button
           type="button"
           onClick={toggleMenu}
-          className="text-sm font-light uppercase tracking-widest text-luxury-black transition-opacity duration-luxury-fast ease-luxury-in hover:opacity-60 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-2 md:hidden"
+          className="text-sm font-light uppercase tracking-uppercase text-luxury-black transition-opacity duration-250 ease-out hover:opacity-60 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-2 max-md:block hidden"
           aria-label={isMenuOpen ? "Close navigation" : "Open navigation"}
         >
           {isMenuOpen ? "Close" : "Menu"}
         </button>
-        <ul className="hidden items-center gap-12 md:flex">
+        <ul className="max-md:hidden flex items-center gap-12">
           {navigationLinks.map((link) => (
             <li key={link.label}>
               <a
                 href={link.href}
-                className="text-sm font-extralight uppercase tracking-widest text-luxury-black transition-opacity duration-luxury-fast ease-luxury-in hover:opacity-60 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-2"
+                onMouseEnter={() => handleMouseEnter(link.href)}
+                className="text-sm font-light uppercase tracking-uppercase text-luxury-black transition-opacity duration-250 ease-out hover:opacity-60 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-2"
               >
                 {link.label}
               </a>
@@ -79,14 +102,14 @@ const Navigation = () => {
         </ul>
       </div>
       {isMenuOpen && (
-        <div className="mt-6 border-t border-gray-200 px-2 pt-6 md:hidden">
+        <div className="mt-6 border-t border-gray-200 px-2 pt-6 max-md:block hidden">
           <ul className="flex flex-col gap-4">
             {navigationLinks.map((link) => (
               <li key={link.label}>
                 <a
                   href={link.href}
                   onClick={handleLinkClick}
-                  className="block py-4 text-2xl font-extralight tracking-tight text-luxury-black transition-opacity duration-luxury-fast ease-luxury-in hover:opacity-60 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-2"
+                  className="block py-4 text-sm font-light uppercase tracking-uppercase text-luxury-black transition-opacity duration-250 ease-out hover:opacity-60 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-2"
                 >
                   {link.label}
                 </a>

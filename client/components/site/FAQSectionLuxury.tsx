@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 
 import { cn } from "@/lib/utils";
 
+import PageHeroOverlay from "@/components/site/PageHeroOverlay";
 import { Button } from "@/components/ui/button";
 
 type FaqItem = {
@@ -64,6 +65,11 @@ const hiddenFaqs: FaqItem[] = [
   },
 ];
 
+const FAQ_HERO_IMAGE = {
+  src: "https://cdn.builder.io/api/v1/image/assets%2F5b9cc53f5f324d22a1f8c88faaaa270c%2F4161d5d2b2b34093861f89a5d37e6c34?format=webp&width=1200",
+  alt: "Clear glass vase with olive branch beside sealed envelope in warm afternoon light",
+};
+
 const FAQSectionLuxury = () => {
   const [openFaq, setOpenFaq] = useState<string | null>(null);
   const [showHidden, setShowHidden] = useState(false);
@@ -114,25 +120,25 @@ const FAQSectionLuxury = () => {
   };
 
   const FAQItem = ({ item, isOpen }: { item: FaqItem; isOpen: boolean }) => (
-    <div className="border-t border-stone-200">
+    <div className="border-t border-gray-200">
       <button
         onClick={() => handleToggle(item.id)}
-        className="group flex w-full items-start justify-between py-8 transition-all duration-luxury-fast ease-luxury-in focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-2 md:py-10"
+        className="group flex w-full items-start justify-between py-8 transition-all duration-250 ease-out focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-2 md:py-10"
         aria-expanded={isOpen}
         aria-controls={`faq-answer-${item.id}`}
         ref={(el) => {
           faqRefs.current[item.id] = el;
         }}
       >
-        <h3 className="pr-8 text-left text-[0.9rem] font-light tracking-[0.05em] text-stone-900 transition-colors duration-300 group-hover:text-stone-600 sm:text-base">
+        <h3 className="pr-8 text-left text-base font-light tracking-luxury text-luxury-black transition-colors duration-250 ease-out group-hover:text-gray-600">
           {item.question}
         </h3>
         <div className="mt-1">
           <span
             aria-hidden="true"
             className={cn(
-              "inline-block text-base leading-none text-stone-400 transition-colors",
-              isOpen && "group-hover:text-stone-600",
+              "inline-block text-base leading-none text-gray-400 transition-colors duration-250 ease-out",
+              isOpen && "text-gray-600",
             )}
           >
             {isOpen ? "–" : "+"}
@@ -142,19 +148,19 @@ const FAQSectionLuxury = () => {
 
       <div
         id={`faq-answer-${item.id}`}
-        className={`overflow-hidden transition-all duration-500 ${
+        className={`overflow-hidden transition-all duration-400 ease-out ${
           isOpen ? "max-h-96 pb-8" : "max-h-0"
         }`}
       >
-        <div className="pr-12 md:pr-24">
-          <p className="max-w-[65ch] text-[0.82rem] font-light leading-7 tracking-wide text-stone-600/90 sm:text-sm">
+        <div className="pr-6 md:pr-24 max-md:pr-6">
+          <p className="max-w-[65ch] text-base font-light leading-relaxed tracking-luxury text-gray-600">
             {item.answer}
           </p>
 
           <div className="mt-6">
             <a
               href="/booking"
-              className="inline-block border-b border-stone-900 pb-1 text-[0.68rem] uppercase tracking-[0.38em] text-stone-900 transition-all duration-luxury-fast ease-luxury-in hover:border-stone-600 hover:text-stone-600"
+              className="inline-flex items-center text-xs font-light uppercase tracking-uppercase text-gray-800 underline underline-offset-4 transition-opacity duration-250 ease-out hover:opacity-70"
             >
               Learn More
             </a>
@@ -165,30 +171,26 @@ const FAQSectionLuxury = () => {
   );
 
   return (
-    <section className="relative bg-luxury-white py-24 md:py-32 lg:py-40">
-      <div className="mx-auto max-w-luxury px-8 md:px-12">
-        <div className="mb-20 text-center md:mb-28">
-          <span className="mb-4 block text-[0.78rem] uppercase tracking-[0.4em] text-stone-500">
-            Insights & Guidance
-          </span>
-          <h2 className="mb-6 font-serif text-4xl tracking-[0.04em] text-stone-900 md:text-5xl">
-            Frequently Asked Questions
-          </h2>
-          <div className="mx-auto mb-6 h-px w-24 bg-stone-300" />
-          <p className="mx-auto max-w-[65ch] text-[0.82rem] leading-7 text-stone-600/90 sm:text-sm">
-            After over a decade as Katherine Taylor escort in San Francisco and
-            Sacramento, I answer what "escorts near me" searches won't tell you.
-          </p>
-        </div>
+    <div className="bg-luxury-white">
+      <PageHeroOverlay
+        title="Frequently Asked Questions"
+        subtitle="After more than a decade in this practice, I answer what quick searches never cover—standards, discretion, and how engagements actually unfold."
+        eyebrow="Insights & Guidance"
+        imageSrc={FAQ_HERO_IMAGE.src}
+        imageAlt={FAQ_HERO_IMAGE.alt}
+        alignment="left"
+      />
 
-        <div className="mx-auto max-w-4xl">
-          <div>
-            {featuredFaqs.map((item) => (
-              <FAQItem key={item.id} item={item} isOpen={openFaq === item.id} />
-            ))}
+      <section className="relative bg-luxury-white py-16 md:py-32 lg:py-40 max-md:py-16">
+        <div className="mx-auto max-w-luxury px-6 md:px-12 max-md:px-6">
+          <div className="mx-auto mb-16 max-w-[65ch] text-center text-base font-light leading-relaxed tracking-luxury text-gray-600 md:mb-24 max-md:mb-12">
+            The following answers distill the questions I receive most often
+            from clients balancing public visibility with private lives.
+          </div>
 
-            {showHidden &&
-              hiddenFaqs.map((item) => (
+          <div className="mx-auto max-w-4xl">
+            <div>
+              {featuredFaqs.map((item) => (
                 <FAQItem
                   key={item.id}
                   item={item}
@@ -196,22 +198,33 @@ const FAQSectionLuxury = () => {
                 />
               ))}
 
-            <div className="border-t border-stone-200" />
-          </div>
+              {showHidden &&
+                hiddenFaqs.map((item) => (
+                  <FAQItem
+                    key={item.id}
+                    item={item}
+                    isOpen={openFaq === item.id}
+                  />
+                ))}
 
-          <div className="mt-12 text-center">
-            <Button
-              variant="ctaSecondary"
-              type="button"
-              onClick={() => setShowHidden((prev) => !prev)}
-              aria-expanded={showHidden}
-            >
-              {showHidden ? "Show Less" : "View All Questions"}
-            </Button>
+              <div className="border-t border-gray-200" />
+            </div>
+
+            <div className="mt-12 text-center">
+              <Button
+                variant="ctaSecondary"
+                type="button"
+                onClick={() => setShowHidden((prev) => !prev)}
+                aria-expanded={showHidden}
+                className="max-md:w-full md:w-auto"
+              >
+                {showHidden ? "Show Less" : "View All Questions"}
+              </Button>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   );
 };
 

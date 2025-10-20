@@ -5,17 +5,20 @@ const boutiqueImage =
 
 const BoutiqueAppointmentSection = () => {
   return (
-    <section className="relative isolate overflow-hidden bg-black">
+    <section className="relative isolate overflow-hidden bg-luxury-black">
       <div
-        className="relative flex min-h-[480px] w-full items-center bg-cover bg-center px-6 py-24 md:py-32 lg:py-40 sm:min-h-[560px]"
+        className="relative flex min-h-[480px] w-full items-center bg-cover bg-center px-6 py-16 md:min-h-[560px] md:py-32 lg:py-40 max-md:min-h-[360px] max-md:px-6 max-md:py-14"
         style={{ backgroundImage: `url(${boutiqueImage})` }}
       >
-        <div className="absolute inset-0 bg-black/55" aria-hidden="true" />
-        <div className="relative z-10 max-w-[440px] space-y-6 text-white">
-          <span className="text-[0.78rem] uppercase tracking-[0.4em] text-white/70">
+        <div
+          className="absolute inset-0 bg-luxury-black/60"
+          aria-hidden="true"
+        />
+        <div className="relative z-10 max-w-[440px] space-y-6 text-luxury-white max-md:space-y-4">
+          <span className="text-xs font-light uppercase tracking-uppercase text-white/70">
             Your Love Story Awaits
           </span>
-          <p className="max-w-[65ch] text-[0.82rem] leading-7 text-white/80 sm:text-sm">
+          <p className="max-w-[65ch] text-base font-light leading-relaxed tracking-luxury text-white/85">
             Take a closer look at the latest LOVE creations with a private
             appointment at your preferred boutique.
           </p>

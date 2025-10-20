@@ -79,24 +79,35 @@ export default {
         serif: ["'Cormorant Garamond'", "serif"],
         brand: ["'Cormorant Garamond'", "serif"],
       },
+      fontWeight: {
+        thin: "100",
+        hairline: "100",
+        extralight: "200",
+        light: "300",
+        normal: "300",
+        medium: "400",
+        semibold: "500",
+        bold: "600",
+      },
       transitionDuration: {
+        "250": "250ms",
+        "400": "400ms",
         luxury: "400ms",
         "luxury-fast": "250ms",
       },
       transitionTimingFunction: {
-        "luxury-in": "cubic-bezier(0, 0, 0.58, 1.0)", // ease-out
-        "luxury-out": "cubic-bezier(0.42, 0, 1.0, 1.0)", // ease-in
+        "ease-out": "cubic-bezier(0, 0, 0.58, 1)",
+        "ease-in": "cubic-bezier(0.42, 0, 1, 1)",
+        "luxury-in": "cubic-bezier(0, 0, 0.58, 1)",
+        "luxury-out": "cubic-bezier(0.42, 0, 1, 1)",
       },
       maxWidth: {
         luxury: "1120px",
       },
       boxShadow: {
-        "luxury-sm":
-          "0 10px 30px -20px rgba(17, 24, 39, 0.25), 0 8px 16px -18px rgba(17, 24, 39, 0.18)",
-        "luxury-md":
-          "0 24px 60px -40px rgba(17, 24, 39, 0.36), 0 14px 28px -24px rgba(17, 24, 39, 0.22)",
-        "luxury-lg":
-          "0 30px 90px -45px rgba(17, 24, 39, 0.4), 0 18px 36px -26px rgba(17, 24, 39, 0.24)",
+        "luxury-sm": "var(--shadow-elevation-low)",
+        "luxury-md": "var(--shadow-elevation-medium)",
+        "luxury-lg": "var(--shadow-elevation-high)",
       },
       borderRadius: {
         lg: "var(--radius)",

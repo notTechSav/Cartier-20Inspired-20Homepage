@@ -1,126 +1,184 @@
-'use client';
+"use client";
 
-import { useCallback, useMemo, useState } from "react";
-
-const BACKGROUND_IMAGE_URL =
-  "https://cdn.builder.io/api/v1/image/assets%2F5b9cc53f5f324d22a1f8c88faaaa270c%2Fe8959b4139fc4dd9a3ce4786c1b4e8dc?format=webp&width=1600";
-
-const GUIDANCE_COPY = [
-  "I don't expect gifts. When they happen, they feel like punctuation — a quiet thank-you, a gesture that marks continuity, not transaction.",
-  "The most meaningful ones usually reflect the texture of what we've talked about: a book that deepened a conversation, a bottle tied to a story, a small object that travels well, or an experience that creates calm. Anything chosen with thought rather than size always lands right.",
-  "I don't accept extravagant or public gifts. The intention matters more than the scale, and privacy always comes first. If you're uncertain, ask — I'll answer honestly.",
-  "The best gift, though, is time well spent. Continuity itself — the ongoing conversation, the trust that builds when you realize I remember the details you didn't need to repeat — that's the one that stays.",
-];
+import { useEffect, useState, useCallback } from "react";
 
 const Gifts = () => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   const toggleGuidance = useCallback(() => {
-    setIsExpanded((previous) => !previous);
+    setIsExpanded((prev) => !prev);
   }, []);
 
-  const revealButtonLabel = useMemo(
-    () => (isExpanded ? "Hide guidance" : "Show guidance"),
-    [isExpanded],
-  );
+  useEffect(() => {
+    document.title =
+      "Gifts | Katherine Taylor Escort - San Francisco & Sacramento";
+  }, []);
+
+  const guidance = [
+    "The most meaningful ones usually reflect the texture of what we've talked about: a book that deepened a conversation, a bottle tied to a story, a small object that travels well, or an experience that creates calm.",
+    "I don't accept extravagant or public gifts. The intention matters more than the scale, and privacy always comes first. If you're uncertain, ask — I'll answer honestly.",
+    "The best gift, though, is time well spent. Continuity itself — the ongoing conversation, the trust that builds when you realize I remember the details you didn't need to repeat — that's the one that stays.",
+  ];
 
   return (
-    <div className="bg-[#faf8f5] text-[#1a1a1a]">
-      <section className="relative isolate min-h-[60vh]">
-        <div
-          className="absolute inset-0 -z-20"
-          aria-hidden
-          style={{
-            backgroundImage: `url(${BACKGROUND_IMAGE_URL})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center 35%",
-            filter: "grayscale(8%)",
-            opacity: 0.18,
-          }}
-        />
-        <div
-          className="absolute inset-0 -z-10"
-          aria-hidden
-          style={{
-            background: "linear-gradient(180deg, rgba(250, 248, 245, 0.4) 0%, rgba(250, 248, 245, 0.2) 100%)",
-          }}
-        />
+    <div className="bg-luxury-white text-luxury-black">
+      {/* Hero Section - matching journal's hero exactly */}
+      <section className="relative bg-luxury-white">
+        <figure className="relative h-[48vh] min-h-[280px] w-full overflow-hidden sm:h-[52vh]">
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets%2F5b9cc53f5f324d22a1f8c88faaaa270c%2Fe8959b4139fc4dd9a3ce4786c1b4e8dc?format=webp&width=1600"
+            alt="Gifts"
+            className="h-full w-full object-cover"
+            loading="eager"
+          />
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "linear-gradient(180deg, rgba(26,26,26,0.05) 0%, rgba(26,26,26,0.65) 100%)",
+            }}
+            aria-hidden
+          />
 
-        <div className="relative mx-auto max-w-[620px]">
-          <div className="flex flex-col px-10 pb-[60px] pt-[120px] sm:px-12">
-            <header className="mb-8">
+          {/* Desktop overlay */}
+          <figcaption className="pointer-events-none absolute inset-0 hidden items-end sm:flex">
+            <div className="mx-auto w-full max-w-[1120px] px-12 pb-14">
+              <div className="max-w-xl text-left text-luxury-white">
+                <p
+                  className="mb-3 text-sm font-light uppercase tracking-[0.12em] text-luxury-white/75"
+                  style={{ letterSpacing: "0.12em", fontWeight: 200 }}
+                >
+                  A QUIET PROTOCOL
+                </p>
+                <h1
+                  className="text-4xl font-extralight leading-[1.1] tracking-[-0.02em] sm:text-[50px]"
+                  style={{ fontWeight: 200 }}
+                >
+                  Gifts
+                </h1>
+                <p className="mt-5 text-base font-light text-luxury-white/80">
+                  A quiet page, by request
+                </p>
+              </div>
+            </div>
+          </figcaption>
+
+          {/* Mobile overlay */}
+          <figcaption className="pointer-events-none absolute inset-0 flex items-end sm:hidden">
+            <div className="w-full px-8 pb-10">
+              <p
+                className="mb-2 text-xs font-light uppercase tracking-[0.12em] text-luxury-white/75"
+                style={{ letterSpacing: "0.12em", fontWeight: 200 }}
+              >
+                A QUIET PROTOCOL
+              </p>
               <h1
-                className="font-light"
-                style={{
-                  fontWeight: 200,
-                  fontSize: "48px",
-                  letterSpacing: "-0.02em",
-                  lineHeight: 1.1,
-                  color: "#1A1A1A",
-                  marginBottom: "16px",
-                }}
+                className="text-[32px] font-extralight leading-[1.15] tracking-[-0.02em] text-luxury-white"
+                style={{ fontWeight: 200 }}
               >
                 Gifts
               </h1>
-              <p
-                className="font-light"
-                style={{
-                  fontSize: "16px",
-                  letterSpacing: "0.01em",
-                  lineHeight: 1.6,
-                  color: "rgba(26, 26, 26, 0.72)",
-                  marginBottom: "32px",
-                }}
-              >
-                A quiet page, by request.
+              <p className="mt-4 text-sm font-light leading-[1.8] text-luxury-white/80">
+                A quiet page, by request
               </p>
-            </header>
+            </div>
+          </figcaption>
+        </figure>
+      </section>
 
-            <div className="mb-10">
+      {/* Content Section - matching journal's grid section */}
+      <section className="bg-luxury-white px-6 pb-24 pt-16 text-luxury-black sm:px-10">
+        <div className="mx-auto flex max-w-[680px] flex-col gap-16 sm:gap-20">
+          {/* Microline */}
+          <p
+            className="text-center text-[12px] font-light uppercase tracking-[0.16em] text-gray-600"
+            style={{ letterSpacing: "0.16em" }}
+          >
+            I don't expect gifts. They're punctuation, not purpose.
+          </p>
+
+          {/* Main Content */}
+          <div className="space-y-16">
+            <article className="group space-y-4 border-t border-gray-200 pt-10 text-left first:border-t-0 first:pt-0">
+              <header>
+                <h2
+                  className="text-[28px] font-extralight leading-[1.25] tracking-[-0.02em] text-luxury-black"
+                  style={{ fontWeight: 200 }}
+                >
+                  On Thoughtful Gestures
+                </h2>
+              </header>
+              <p className="max-w-[62ch] text-[18px] font-light leading-[1.75] text-gray-600">
+                When they happen, they feel like punctuation — a quiet
+                thank-you, a gesture that marks continuity, not transaction.
+              </p>
               <button
                 type="button"
                 onClick={toggleGuidance}
-                aria-expanded={isExpanded}
-                aria-controls="gifts-guidance"
-                className="inline-flex items-center justify-center border border-[rgba(26,26,26,0.15)] bg-transparent px-7 py-3 text-[14px] font-light tracking-[0.02em] text-[#1A1A1A] transition-all duration-[480ms] ease-[cubic-bezier(0.4,0,0.2,1)] hover:-translate-y-[1px] hover:border-[rgba(26,26,26,0.32)] hover:bg-[rgba(26,26,26,0.02)] hover:shadow-[0_4px_12px_rgba(0,0,0,0.04)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[rgba(26,26,26,0.32)]"
+                className="inline-flex items-center text-[14px] font-light tracking-[0.01em] text-luxury-black transition-all focus:outline-none focus-visible:ring-1 focus-visible:ring-luxury-black/40 focus-visible:ring-offset-4 focus-visible:ring-offset-luxury-white"
+                style={{
+                  transitionDuration: "350ms",
+                  letterSpacing: "0.01em",
+                }}
               >
-                {revealButtonLabel}
-              </button>
-            </div>
-          </div>
-
-          <div
-            id="gifts-guidance"
-            style={{
-              opacity: isExpanded ? 1 : 0,
-              maxHeight: isExpanded ? "1200px" : "0px",
-              transition:
-                "opacity 580ms cubic-bezier(0.4, 0, 0.2, 1), max-height 580ms cubic-bezier(0.4, 0, 0.2, 1)",
-              paddingTop: isExpanded ? "48px" : "0px",
-              paddingBottom: isExpanded ? "120px" : "0px",
-            }}
-            className="overflow-hidden px-10 sm:px-12"
-            aria-hidden={!isExpanded}
-          >
-            <div className="space-y-[28px]">
-              {GUIDANCE_COPY.map((paragraph) => (
-                <p
-                  key={paragraph}
-                  className="font-light"
-                  style={{
-                    fontSize: "17px",
-                    letterSpacing: "0.008em",
-                    lineHeight: 1.85,
-                    color: "rgba(26, 26, 26, 0.88)",
-                  }}
+                <span
+                  className="underline-offset-[6px] transition-all hover:underline"
+                  style={{ transitionDuration: "350ms" }}
                 >
-                  {paragraph}
+                  {isExpanded ? "Hide guidance" : "Read guidance"}
+                </span>
+              </button>
+            </article>
+
+            {/* Expandable Content */}
+            {isExpanded && (
+              <div className="space-y-6 border-t border-gray-200 pt-10">
+                {guidance.map((paragraph, index) => (
+                  <p
+                    key={index}
+                    className="max-w-[62ch] text-[16px] font-light leading-[1.75] text-gray-600"
+                  >
+                    {paragraph}
+                  </p>
+                ))}
+                <p className="max-w-[62ch] text-[14px] font-light italic leading-[1.75] text-gray-500 pt-4">
+                  The most meaningful gesture is often the most considered one.
                 </p>
-              ))}
-            </div>
+              </div>
+            )}
           </div>
         </div>
       </section>
+
+      {/* Footer - matching journal footer exactly */}
+      <footer className="border-t border-gray-200 bg-luxury-white px-6 py-16 sm:py-20">
+        <div className="mx-auto max-w-[620px] space-y-4 text-left">
+          <p className="text-[14px] font-light leading-[1.7] text-gray-600">
+            This page exists by request. Not expectation, not protocol — just
+            quiet consideration for those who asked.
+          </p>
+          <nav className="flex flex-wrap gap-3 text-[14px] font-light text-luxury-black">
+            <a
+              href="/journal"
+              className="underline-offset-[4px] transition-colors duration-300 hover:text-gray-600 hover:underline"
+            >
+              The High-End Edition
+            </a>
+            <a
+              href="/rates"
+              className="underline-offset-[4px] transition-colors duration-300 hover:text-gray-600 hover:underline"
+            >
+              Rates & Registry
+            </a>
+            <a
+              href="/about"
+              className="underline-offset-[4px] transition-colors duration-300 hover:text-gray-600 hover:underline"
+            >
+              About
+            </a>
+          </nav>
+        </div>
+      </footer>
     </div>
   );
 };

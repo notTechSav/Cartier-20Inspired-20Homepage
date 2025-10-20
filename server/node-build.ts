@@ -1,24 +1,31 @@
 import path from "path";
+import { fileURLToPath } from "url";
 import { createServer } from "./index";
 import * as express from "express";
+import rateLimit from "express-rate-limit";
 
 const app = createServer();
 const port = process.env.PORT || 3000;
 
 // In production, serve the built SPA files
-const __dirname = import.meta.dirname;
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 const distPath = path.join(__dirname, "../spa");
 
 // Serve static files
 app.use(express.static(distPath));
 
-// Handle React Router - serve index.html for all non-API routes
-app.get("*", (req, res) => {
-  // Don't serve index.html for API routes
-  if (req.path.startsWith("/api/") || req.path.startsWith("/health")) {
-    return res.status(404).json({ error: "API endpoint not found" });
-  }
+// Rate limiter for file system access (catch-all route)
+const htmlRateLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 100, // Limit each IP to 100 requests per windowMs
+  standardHeaders: true, // Return rate limit info in the `RateLimit-*` headers
+  legacyHeaders: false, // Disable the `X-RateLimit-*` headers
+  message: "Too many requests from this IP, please try again later.",
+});
 
+// Handle React Router - serve index.html for all non-API routes
+app.get(/^\/(?!api\/).*/, htmlRateLimiter, (req, res) => {
   res.sendFile(path.join(distPath, "index.html"));
 });
 

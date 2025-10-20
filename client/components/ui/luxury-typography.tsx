@@ -28,10 +28,10 @@ const createHeading = <TDefault extends ElementType>(
 
 export const H2 = createHeading(
   "h2",
-  "text-3xl md:text-4xl lg:text-5xl font-extralight tracking-[-0.02em] leading-[1.15] mb-6 md:mb-8 text-luxury-black dark:text-luxury-black",
+  "text-4xl md:text-5xl lg:text-6xl font-extralight tracking-display leading-[1.15] mb-8 text-luxury-black",
 );
 
 export const H3 = createHeading(
   "h3",
-  "text-2xl md:text-3xl font-light tracking-[-0.01em] leading-[1.25] mb-4 md:mb-6 text-luxury-black dark:text-luxury-black",
+  "text-2xl md:text-3xl font-light tracking-display leading-[1.2] mb-6 text-luxury-black",
 );

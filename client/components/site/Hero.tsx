@@ -3,7 +3,7 @@ import { H2, H3 } from "@/components/ui/luxury-typography";
 import { useEffect, useRef, useState } from "react";
 
 const HERO_VIDEO_SRC =
-  "https://cdn.coverr.co/videos/coverr-macro-shot-of-a-golden-watch-1665503983791?download=1";
+  "https://res.cloudinary.com/katherine-taylor-escort-video/video/upload/v1760237084/MAYA_2_cnpwna.mp4";
 
 const Hero = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -36,7 +36,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative isolate flex min-h-screen w-full overflow-hidden bg-black">
+    <section className="relative isolate flex min-h-screen w-full overflow-hidden bg-luxury-black">
       <video
         ref={videoRef}
         className="absolute inset-0 h-full w-full object-cover"
@@ -45,20 +45,20 @@ const Hero = () => {
         muted={isMuted}
         playsInline
         preload="auto"
-        poster="https://images.pexels.com/photos/15969264/pexels-photo-15969264.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=1260"
+        poster="https://res.cloudinary.com/katherine-taylor-escort-video/image/upload/v1760237084/MAYA_2_cnpwna.jpg"
       >
         <source src={HERO_VIDEO_SRC} type="video/mp4" />
       </video>
-      <div className="pointer-events-none absolute inset-0 bg-black/45" />
-      <div className="relative z-10 flex w-full flex-1 flex-col items-center justify-end px-6 pb-10 pt-24 sm:justify-center sm:pb-24">
-        <div className="flex w-full max-w-[960px] flex-col items-start gap-6 sm:gap-8 text-white">
-          <H3 as="p" aria-hidden="true" className="mb-0 md:mb-0 text-white/70">
+      <div className="pointer-events-none absolute inset-0 bg-luxury-black/60" />
+      <div className="relative z-10 flex w-full flex-1 flex-col items-center justify-end px-8 pb-64 pt-32 max-md:items-start max-md:pb-[102px]">
+        <div className="flex w-full max-w-luxury flex-col items-start gap-8 text-luxury-white">
+          <H3 as="p" aria-hidden="true" className="mb-0 text-luxury-white/70 max-md:text-center">
             Love, Elevated
           </H3>
-          <H2 as="p" aria-hidden="true" className="text-white">
+          <H2 as="p" aria-hidden="true" className="text-luxury-white max-md:text-center">
             An Experience That Reflects Your Highest Qualities
           </H2>
-          <Button asChild variant="ctaPrimary">
+          <Button asChild variant="ctaPrimary" className="max-md:w-full max-md:text-center">
             <a href="/inquire">Reserve an Evening</a>
           </Button>
         </div>
@@ -68,7 +68,7 @@ const Hero = () => {
         onClick={toggleMute}
         aria-pressed={!isMuted}
         aria-label={isMuted ? "Unmute hero video" : "Mute hero video"}
-        className="absolute left-4 top-4 inline-flex items-center justify-center gap-2 rounded-full border border-white/60 bg-white/80 px-4 py-2 text-xs text-foreground shadow-lg backdrop-blur transition-all duration-luxury-fast ease-luxury-in hover:bg-white focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-2 md:left-6 md:top-auto md:bottom-6 md:px-5 md:py-2 md:text-sm"
+        className="absolute right-8 bottom-8 inline-flex items-center justify-center gap-2 rounded-[2px] border border-white/60 bg-white/85 px-5 py-3 text-xs font-light uppercase tracking-uppercase text-luxury-black shadow-luxury-sm backdrop-blur transition-all duration-250 ease-out hover:bg-white focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-2 md:right-10 md:text-sm"
       >
         <span>{isMuted ? "Unmute" : "Mute"}</span>
       </button>

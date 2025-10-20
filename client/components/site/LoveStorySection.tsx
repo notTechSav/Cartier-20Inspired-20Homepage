@@ -5,9 +5,9 @@ const braceletImage =
 
 const LoveStorySection = () => {
   return (
-    <section className="bg-luxury-white py-24 md:py-32 lg:py-40">
-      <div className="mx-auto grid max-w-luxury items-center gap-8 px-6 md:grid-cols-[minmax(0,1.05fr)_minmax(0,1fr)] md:gap-12 lg:gap-16">
-        <div className="relative flex items-center justify-center overflow-hidden border border-gray-200 bg-muted/40">
+    <section className="bg-luxury-white py-16 md:py-32 lg:py-40 max-md:py-16">
+      <div className="mx-auto grid max-w-luxury items-center gap-6 px-6 md:grid-cols-[minmax(0,1.05fr)_minmax(0,1fr)] md:gap-12 lg:gap-16 max-md:gap-6 max-md:px-6">
+        <div className="relative flex items-center justify-center overflow-hidden border border-gray-200 bg-gray-50 shadow-luxury-md transition-shadow duration-400 ease-out hover:shadow-luxury-lg">
           <div
             className="aspect-[4/5] w-full bg-cover bg-center"
             style={{ backgroundImage: `url(${braceletImage})` }}
@@ -15,11 +15,11 @@ const LoveStorySection = () => {
             aria-label="Cartier Love bracelets against Brooklyn Bridge"
           />
         </div>
-        <div className="space-y-4 text-left">
-          <span className="text-[0.75rem] uppercase tracking-[0.45em] text-gray-500">
+        <div className="space-y-6 text-left max-md:space-y-4">
+          <span className="text-xs font-light uppercase tracking-uppercase text-gray-600">
             A Love Story Without Limits
           </span>
-          <p className="max-w-[65ch] text-[0.82rem] leading-7 text-gray-700 sm:text-sm">
+          <p className="max-w-[65ch] text-base font-light leading-relaxed tracking-luxury text-gray-700">
             A true feat of innovation, the bracelet is the result of over one
             hundred trials and prototypes by the Manufacture and the
             Maison&apos;s design studios. Radiant as one or linked to another

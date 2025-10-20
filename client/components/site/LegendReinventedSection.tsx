@@ -6,17 +6,20 @@ const backgroundImage =
 
 const LegendReinventedSection = () => {
   return (
-    <section className="relative isolate overflow-hidden bg-black">
+    <section className="relative isolate overflow-hidden bg-luxury-black">
       <div
-        className="relative flex min-h-[520px] w-full items-center justify-start bg-cover bg-center px-6 py-24 md:py-32 lg:py-40 sm:min-h-[640px]"
+        className="relative flex min-h-[520px] w-full items-center justify-start bg-cover bg-center px-6 py-24 md:min-h-[640px] md:py-32 lg:py-40 max-md:min-h-[400px] max-md:px-6 max-md:py-16"
         style={{ backgroundImage: `url(${backgroundImage})` }}
       >
-        <div className="absolute inset-0 bg-black/55" aria-hidden="true" />
-        <div className="relative z-10 max-w-[560px] space-y-6 text-left text-white">
-          <H2 as="p" className="mb-0 text-white">
+        <div
+          className="absolute inset-0 bg-luxury-black/60 max-sm:bg-white/60 max-sm:left-[221px] max-sm:top-[65px]"
+          aria-hidden="true"
+        />
+        <div className="relative z-10 max-w-[560px] space-y-6 text-left text-luxury-white max-md:space-y-4">
+          <H2 as="p" className="mb-0 text-luxury-white">
             Katherine Taylor — Elegant San Francisco & Sacramento Escort
           </H2>
-          <p className="max-w-[65ch] text-sm leading-loose text-white/80">
+          <p className="max-w-[65ch] text-base font-light leading-relaxed tracking-luxury text-white/85">
             Is it possible to find a genuine connection when searching for
             escorts near me? Katherine Taylor is an elegant San Francisco escort
             who transforms uncertainty into warm, authentic companionship that

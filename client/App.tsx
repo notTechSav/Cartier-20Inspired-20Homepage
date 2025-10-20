@@ -1,32 +1,63 @@
 import "./global.css";
 
+import "./setup/patchViteOverlay";
 import { Toaster } from "@/components/ui/toaster";
 import { createRoot, type Root } from "react-dom/client";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter,
+  Route,
+  Routes,
+  useLocation,
+  type Location,
+} from "react-router-dom";
+import { lazy, Suspense } from "react";
 import SiteLayout from "@/components/site/SiteLayout";
-import About from "./pages/About";
-import FAQ from "./pages/FAQ";
-import Gallery from "./pages/Gallery";
-import Gifts from "./pages/Gifts";
+import JournalModalRoute from "@/components/journal/JournalModalRoute";
+
+// Eager load: Index page only (needed immediately)
 import Index from "./pages/Index";
-import Inquire from "./pages/Inquire";
-import Journal from "./pages/Journal";
-import Maison from "./pages/Maison";
-import Rates from "./pages/Rates";
-import NotFound from "./pages/NotFound";
+
+// Lazy load all other routes (code splitting for better performance)
+const About = lazy(() => import("./pages/About"));
+const FAQ = lazy(() => import("./pages/FAQ"));
+const Gifts = lazy(() => import("./pages/Gifts"));
+const Gallery = lazy(() => import("./pages/Gallery"));
+const Inquire = lazy(() => import("./pages/Inquire"));
+const InquireLuxury = lazy(() => import("./pages/InquireLuxury"));
+const InquiryConfirmed = lazy(() => import("./pages/InquiryConfirmed"));
+const Journal = lazy(() => import("./pages/Journal"));
+const JournalArticle = lazy(() => import("./pages/JournalArticle"));
+const Maison = lazy(() => import("./pages/Maison"));
+const Rates = lazy(() => import("./pages/Rates"));
+const ContentGenerator = lazy(() => import("./pages/ContentGenerator"));
+const BuilderPage = lazy(() => import("./pages/BuilderPage"));
+const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Routes>
+type RouterState = {
+  backgroundLocation?: Location;
+};
+
+// Loading fallback for lazy-loaded routes
+const RouteLoader = () => (
+  <div className="flex min-h-screen items-center justify-center bg-luxury-white">
+    <div className="h-8 w-8 animate-spin rounded-full border-2 border-luxury-black border-t-transparent" />
+  </div>
+);
+
+const AppRoutes = () => {
+  const location = useLocation();
+  const state = location.state as RouterState | undefined;
+  const backgroundLocation = state?.backgroundLocation ?? location;
+
+  return (
+    <>
+      <Suspense fallback={<RouteLoader />}>
+        <Routes location={backgroundLocation}>
           <Route
             path="/"
             element={
@@ -40,14 +71,6 @@ const App = () => (
             element={
               <SiteLayout>
                 <About />
-              </SiteLayout>
-            }
-          />
-          <Route
-            path="/gallery"
-            element={
-              <SiteLayout>
-                <Gallery />
               </SiteLayout>
             }
           />
@@ -68,10 +91,26 @@ const App = () => (
             }
           />
           <Route
+            path="/journal/:slug"
+            element={
+              <SiteLayout>
+                <JournalArticle />
+              </SiteLayout>
+            }
+          />
+          <Route
             path="/rates"
             element={
               <SiteLayout>
                 <Rates />
+              </SiteLayout>
+            }
+          />
+          <Route
+            path="/gallery"
+            element={
+              <SiteLayout>
+                <Gallery />
               </SiteLayout>
             }
           />
@@ -92,6 +131,22 @@ const App = () => (
             }
           />
           <Route
+            path="/inquire-luxury"
+            element={
+              <SiteLayout>
+                <InquireLuxury />
+              </SiteLayout>
+            }
+          />
+          <Route
+            path="/inquiry-confirmed"
+            element={
+              <SiteLayout>
+                <InquiryConfirmed />
+              </SiteLayout>
+            }
+          />
+          <Route
             path="/maison"
             element={
               <SiteLayout>
@@ -99,16 +154,42 @@ const App = () => (
               </SiteLayout>
             }
           />
+          <Route
+            path="/content-generator"
+            element={
+              <SiteLayout>
+                <ContentGenerator />
+              </SiteLayout>
+            }
+          />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          {/* Builder.io catch-all route - tries to render Builder.io content before 404 */}
           <Route
             path="*"
             element={
               <SiteLayout>
-                <NotFound />
+                <BuilderPage />
               </SiteLayout>
             }
           />
         </Routes>
+      </Suspense>
+      {state?.backgroundLocation ? (
+        <Routes>
+          <Route path="/journal/:slug" element={<JournalModalRoute />} />
+        </Routes>
+      ) : null}
+    </>
+  );
+};
+
+const App = () => (
+  <QueryClientProvider client={queryClient}>
+    <TooltipProvider>
+      <Toaster />
+      <Sonner />
+      <BrowserRouter>
+        <AppRoutes />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

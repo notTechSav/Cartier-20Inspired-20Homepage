@@ -1,357 +1,362 @@
-'use client';
+"use client";
 
 import { useState } from "react";
+import { ChevronDown } from "lucide-react";
+
+import PageHeroOverlay from "@/components/site/PageHeroOverlay";
+
+const heroImage = {
+  src: "https://cdn.builder.io/api/v1/image/assets%2F5b9cc53f5f324d22a1f8c88faaaa270c%2Fff453c7ff48442fc8efd2f475a954ade?format=webp&width=800",
+  alt: "Warm afternoon light casting shadows over a solitary wooden knight chess piece on linen",
+};
 
 const RatesPage = () => {
   const [isRevealed, setIsRevealed] = useState(false);
 
   return (
-    <div className="min-h-screen bg-neutral-50">
-      <section className="relative px-6 pt-32 pb-20 md:pt-40 md:pb-28">
-        <div className="mx-auto max-w-2xl">
-          <h1 className="mb-8 text-[2.75rem] font-extralight tracking-[0.02em] text-neutral-900 leading-[1.15] md:text-6xl">
-            Rates
-          </h1>
-          <p className="mb-12 text-[1.0625rem] font-light tracking-[0.01em] text-neutral-700 leading-[1.85]">
-            Every figure on this page exists to protect one idea: you never have to explain yourself twice.
-          </p>
-          <p className="mb-6 text-[1.0625rem] font-light tracking-[0.01em] text-neutral-700 leading-[1.85]">
-            My work is cumulative, not transactional. Each engagement carries forward the full history of your context—professional, personal, logistical—so nothing resets. The premium reflects continuity, discretion, and the scarcity discipline required to deliver them without compromise.
-          </p>
-        </div>
-      </section>
+    <div className="bg-luxury-white text-luxury-black">
+      <PageHeroOverlay
+        title="Rates"
+        subtitle="Every figure on this page exists to protect one idea: you never have to explain yourself twice."
+        eyebrow="Rate Structure"
+        imageSrc={heroImage.src}
+        imageAlt={heroImage.alt}
+        alignment="left"
+      />
 
-      <section className="px-6 pb-16">
-        <div className="mx-auto max-w-2xl">
-          <button
-            onClick={() => setIsRevealed((prev) => !prev)}
-            className="group relative inline-flex items-center gap-3 bg-neutral-900 px-8 py-4 text-sm font-light tracking-[0.03em] text-neutral-50 transition-all duration-500 hover:bg-neutral-800"
-            style={{
-              boxShadow: isRevealed
-                ? "0 1px 2px rgba(0,0,0,0.05)"
-                : "0 2px 8px rgba(0,0,0,0.12), 0 1px 3px rgba(0,0,0,0.08)",
-            }}
-          >
-            <span className="transition-opacity duration-300">
-              {isRevealed ? "Conceal structure" : "Show current structure"}
-            </span>
-            <svg
-              className={`h-3 w-3 transition-transform duration-500 ${isRevealed ? "rotate-180" : ""}`}
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={1.5}
+      <section className="bg-luxury-white">
+        <div className="container mx-auto px-6 pb-20 pt-16 md:px-8 md:pt-20">
+          <div className="mx-auto max-w-2xl space-y-6 text-center">
+            <p className="text-base font-light leading-[1.85] tracking-[0.01em] text-gray-700 md:text-lg">
+              My work is cumulative, not transactional. Each engagement carries
+              forward the full history of your context—professional, personal,
+              logistical—so nothing resets.
+            </p>
+            <p className="text-base font-light leading-[1.85] tracking-[0.01em] text-gray-700 md:text-lg">
+              The premium reflects continuity, discretion, and the scarcity
+              discipline required to deliver them without compromise.
+            </p>
+          </div>
+
+          <div className="mt-12 text-center">
+            <button
+              onClick={() => setIsRevealed(!isRevealed)}
+              className="group inline-flex items-center gap-3 border border-gray-300 px-8 py-4 text-sm font-medium tracking-[0.1em] text-gray-700 transition-all duration-300 hover:-translate-y-0.5 hover:border-gray-400 hover:text-luxury-black hover:shadow-[0_4px_8px_rgba(0,0,0,0.08)]"
+              style={{ fontWeight: 300 }}
             >
-              <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-            </svg>
-          </button>
+              <span>
+                {isRevealed ? "CONCEAL STRUCTURE" : "SHOW CURRENT STRUCTURE"}
+              </span>
+              <ChevronDown
+                className={`h-4 w-4 transition-all duration-300 ${isRevealed ? "rotate-180" : ""}`}
+              />
+            </button>
+          </div>
         </div>
       </section>
 
+      {/* Expandable Rates Content */}
       <div
-        className="overflow-hidden transition-all duration-700 ease-in-out"
-        style={{
-          maxHeight: isRevealed ? "10000px" : "0",
-          opacity: isRevealed ? 1 : 0,
-        }}
+        className={`overflow-hidden transition-all duration-700 ease-in-out ${
+          isRevealed ? "max-h-[20000px] opacity-100" : "max-h-0 opacity-0"
+        }`}
       >
-        <section className="border-t border-neutral-200 px-6 py-16">
-          <div className="mx-auto max-w-2xl">
-            <div className="mb-10">
-              <p className="mb-3 text-xs font-light uppercase tracking-[0.08em] text-neutral-500">
-                Tier One
-              </p>
-              <h2 className="mb-4 text-[1.75rem] font-extralight tracking-[0.01em] text-neutral-900 leading-[1.2] md:text-4xl">
-                New Clients / Trial Engagements
-              </h2>
-              <p className="text-sm font-light italic tracking-[0.02em] text-neutral-600">
-                For first meetings and compatibility evaluations.
-              </p>
-            </div>
-            <div className="mb-10 space-y-6">
-              <div className="flex items-baseline justify-between border-b border-neutral-200 pb-3">
-                <span className="text-base font-light text-neutral-700">Overnight (up to 14 hours)</span>
-                <span className="text-lg font-light tracking-[0.02em] text-neutral-900">$25,000</span>
-              </div>
-              <div className="flex items-baseline justify-between border-b border-neutral-200 pb-3">
-                <span className="text-base font-light text-neutral-700">24 Hours</span>
-                <span className="text-lg font-light tracking-[0.02em] text-neutral-900">$45,000</span>
-              </div>
-              <div className="flex items-baseline justify-between border-b border-neutral-200 pb-3">
-                <span className="text-base font-light text-neutral-700">48 Hours</span>
-                <span className="text-lg font-light tracking-[0.02em] text-neutral-900">$75,000</span>
-              </div>
-            </div>
-            <p className="mb-6 text-[1.0625rem] font-light tracking-[0.01em] text-neutral-700 leading-[1.85]">
-              At this stage, I'm mapping how you think—your cadence, your thresholds, the specific decisions that keep you awake. These hours are as much reconnaissance as experience. I listen, learn, and build the early architecture of institutional memory.
+        {/* Tier One */}
+        <section className="border-t border-gray-200 py-16 md:py-20 bg-luxury-white">
+          <div className="container mx-auto px-6 md:px-8 max-w-2xl">
+            <p
+              className="mb-3 text-xs font-light uppercase tracking-[0.12em] text-gray-500"
+              style={{ fontWeight: 200 }}
+            >
+              TIER ONE
             </p>
-            <p className="text-sm font-light italic tracking-[0.01em] text-neutral-600 leading-[1.8]">
-              New partnerships open twice per quarter and are limited to a small number of invitations.
-            </p>
-          </div>
-        </section>
-
-        <section className="border-t border-neutral-200 bg-gradient-to-b from-transparent to-neutral-100/30 px-6 py-16">
-          <div className="mx-auto max-w-2xl">
-            <div className="mb-10">
-              <p className="mb-3 text-xs font-light uppercase tracking-[0.08em] text-neutral-500">
-                Tier Two
-              </p>
-              <h2 className="mb-4 text-[1.75rem] font-extralight tracking-[0.01em] text-neutral-900 leading-[1.2] md:text-4xl">
-                Established Clients
-              </h2>
-              <p className="text-sm font-light italic tracking-[0.02em] text-neutral-600">
-                For clients with at least four engagements or six months of continuity.
-              </p>
-            </div>
-            <div className="mb-10 space-y-6">
-              <div className="flex items-baseline justify-between border-b border-neutral-200 pb-3">
-                <span className="text-base font-light text-neutral-700">Overnight (up to 14 hours)</span>
-                <span className="text-lg font-light tracking-[0.02em] text-neutral-900">$28,000</span>
-              </div>
-              <div className="flex items-baseline justify-between border-b border-neutral-200 pb-3">
-                <span className="text-base font-light text-neutral-700">24 Hours</span>
-                <span className="text-lg font-light tracking-[0.02em] text-neutral-900">$50,000</span>
-              </div>
-              <div className="flex items-baseline justify-between border-b border-neutral-200 pb-3">
-                <span className="text-base font-light text-neutral-700">48 Hours</span>
-                <span className="text-lg font-light tracking-[0.02em] text-neutral-900">$80,000</span>
-              </div>
-            </div>
-            <p className="mb-6 text-[1.0625rem] font-light tracking-[0.01em] text-neutral-700 leading-[1.85]">
-              By now, context is embedded. I arrive briefed on your current landscape—board politics, family logistics, the deal that's gone sideways. You no longer waste time reintroducing yourself. The conversation starts where the last one ended.
-            </p>
-            <p className="text-[1.0625rem] font-light tracking-[0.01em] text-neutral-700 leading-[1.85]">
-              Continuity is the true luxury here. These rates protect the hours of preparation that happen before I arrive—the research, the recall, and the calibration that make each meeting feel immediate.
-            </p>
-          </div>
-        </section>
-
-        <section className="border-t border-neutral-200 bg-gradient-to-b from-neutral-100/30 to-transparent px-6 py-16">
-          <div className="mx-auto max-w-2xl">
-            <div className="mb-10">
-              <p className="mb-3 text-xs font-light uppercase tracking-[0.08em] text-neutral-500">
-                Tier Three
-              </p>
-              <h2 className="mb-4 text-[1.75rem] font-extralight tracking-[0.01em] text-neutral-900 leading-[1.2] md:text-4xl">
-                Strategic Partnerships
-              </h2>
-              <p className="text-sm font-light italic tracking-[0.02em] text-neutral-600">Annual Retainer</p>
-            </div>
-            <div className="mb-10 border-b border-neutral-300 pb-6">
-              <p className="text-2xl font-light tracking-[0.02em] text-neutral-900">
-                $240,000 <span className="text-base text-neutral-600">annually</span>
-              </p>
-            </div>
-            <div className="mb-10">
-              <p className="mb-4 text-sm font-light uppercase tracking-[0.04em] text-neutral-600">
-                Includes
-              </p>
-              <ul className="space-y-4 text-[1.0625rem] font-light tracking-[0.01em] text-neutral-700 leading-[1.85]">
-                <li className="border-l-2 border-neutral-300 pl-6">Four 48-hour engagements annually (priority scheduling)</li>
-                <li className="border-l-2 border-neutral-300 pl-6">Unlimited strategic dialogue between meetings</li>
-                <li className="border-l-2 border-neutral-300 pl-6">Anticipatory preparation for each engagement, based on your current environment</li>
-                <li className="border-l-2 border-neutral-300 pl-6">Discretionary outreach when developments arise that intersect with your interests</li>
-              </ul>
-            </div>
-            <p className="text-[1.0625rem] font-light tracking-[0.01em] text-neutral-700 leading-[1.85]">
-              This tier formalizes what many of my long-term clients already practice: a relationship where counsel and presence are continuous. I maintain no more than twenty active partnerships at a time. When that number is reached, I raise rates rather than expand volume.
-            </p>
-          </div>
-        </section>
-
-        <section className="border-t border-neutral-200 px-6 py-16">
-          <div className="mx-auto max-w-2xl">
-            <h2 className="mb-10 text-[1.75rem] font-extralight tracking-[0.01em] text-neutral-900 leading-[1.2] md:text-4xl">
-              The Rationale
+            <h2
+              className="mb-4 text-3xl md:text-4xl font-extralight tracking-[-0.02em] text-luxury-black"
+              style={{ fontWeight: 200 }}
+            >
+              New Clients
             </h2>
-            <div className="space-y-8">
-              <div>
-                <h3 className="mb-3 text-base font-normal tracking-[0.02em] text-neutral-900">Time</h3>
-                <p className="text-[1.0625rem] font-light tracking-[0.01em] text-neutral-700 leading-[1.85]">
-                  Institutional memory takes years to accumulate. Each engagement compounds on that archive, compressing decision cycles and removing friction.
-                </p>
+            <p className="text-sm font-light italic text-gray-600 mb-8">
+              For first meetings and compatibility evaluations.
+            </p>
+
+            <div className="space-y-4 mb-8">
+              <div className="flex items-baseline justify-between border-b border-gray-200 pb-3">
+                <span className="text-base font-light text-gray-700">
+                  Overnight (up to 14 hours)
+                </span>
+                <span className="text-lg font-light text-luxury-black">
+                  $25,000
+                </span>
               </div>
-              <div>
-                <h3 className="mb-3 text-base font-normal tracking-[0.02em] text-neutral-900">Rarity</h3>
-                <p className="text-[1.0625rem] font-light tracking-[0.01em] text-neutral-700 leading-[1.85]">
-                  Scarcity is deliberate. A capped roster ensures the quality of recall and attention remains exact.
-                </p>
+              <div className="flex items-baseline justify-between border-b border-gray-200 pb-3">
+                <span className="text-base font-light text-gray-700">
+                  24 Hours
+                </span>
+                <span className="text-lg font-light text-luxury-black">
+                  $45,000
+                </span>
               </div>
-              <div>
-                <h3 className="mb-3 text-base font-normal tracking-[0.02em] text-neutral-900">Endeavor</h3>
-                <p className="text-[1.0625rem] font-light tracking-[0.01em] text-neutral-700 leading-[1.85]">
-                  Preparation is the invisible labor that defines this work: research, risk mapping, and anticipatory alignment.
-                </p>
+              <div className="flex items-baseline justify-between border-b border-gray-200 pb-3">
+                <span className="text-base font-light text-gray-700">
+                  48 Hours
+                </span>
+                <span className="text-lg font-light text-luxury-black">
+                  $75,000
+                </span>
               </div>
             </div>
-            <p className="mt-10 text-[1.0625rem] font-light italic tracking-[0.01em] text-neutral-700 leading-[1.85]">
-              You're not paying more for the same experience—you're paying to preserve the conditions that make the experience possible.
+
+            <p className="text-base font-light leading-[1.8] text-gray-700 mb-4">
+              At this stage, I'm mapping how you think—your cadence, your
+              thresholds, the specific decisions that keep you awake. These
+              hours are as much reconnaissance as experience.
+            </p>
+            <p className="text-sm font-light italic text-gray-600">
+              New partnerships open twice per quarter and are limited to a small
+              number of invitations.
             </p>
           </div>
         </section>
 
-        <section className="border-t border-neutral-200 bg-gradient-to-b from-transparent to-neutral-100/30 px-6 py-16">
-          <div className="mx-auto max-w-2xl">
-            <h2 className="mb-10 text-[1.75rem] font-extralight tracking-[0.01em] text-neutral-900 leading-[1.2] md:text-4xl">
-              Quantified Value
+        {/* Tier Two */}
+        <section className="border-t border-gray-200 py-16 md:py-20 bg-luxury-gray-50">
+          <div className="container mx-auto px-6 md:px-8 max-w-2xl">
+            <p
+              className="mb-3 text-xs font-light uppercase tracking-[0.12em] text-gray-500"
+              style={{ fontWeight: 200 }}
+            >
+              TIER TWO
+            </p>
+            <h2
+              className="mb-4 text-3xl md:text-4xl font-extralight tracking-[-0.02em] text-luxury-black"
+              style={{ fontWeight: 200 }}
+            >
+              Established Clients
             </h2>
-            <div className="mb-10 space-y-6">
-              <div className="flex items-start gap-8 justify-between border-b border-neutral-200 pb-4">
-                <span className="flex-1 text-sm font-light text-neutral-700">
-                  Strategic Dialogue: 4–6 hours of peer-level conversation per engagement
+            <p className="text-sm font-light italic text-gray-600 mb-8">
+              For clients with at least four engagements or six months of
+              continuity.
+            </p>
+
+            <div className="space-y-4 mb-8">
+              <div className="flex items-baseline justify-between border-b border-gray-200 pb-3">
+                <span className="text-base font-light text-gray-700">
+                  Overnight (up to 14 hours)
                 </span>
-                <span className="whitespace-nowrap text-sm font-light text-neutral-900">
-                  $1,500–$3,000/hour
-                </span>
-              </div>
-              <div className="flex items-start gap-8 justify-between border-b border-neutral-200 pb-4">
-                <span className="flex-1 text-sm font-light text-neutral-700">
-                  Time Efficiency: 2–3 hours saved per engagement by eliminating re-explanation
-                </span>
-                <span className="whitespace-nowrap text-sm font-light text-neutral-900">
-                  $2,000–$3,000
+                <span className="text-lg font-light text-luxury-black">
+                  $28,000
                 </span>
               </div>
-              <div className="flex items-start gap-8 justify-between border-b border-neutral-200 pb-4">
-                <span className="flex-1 text-sm font-light text-neutral-700">
-                  Certainty and Continuity: Known quality, no risk of mismatch
+              <div className="flex items-baseline justify-between border-b border-gray-200 pb-3">
+                <span className="text-base font-light text-gray-700">
+                  24 Hours
                 </span>
-                <span className="whitespace-nowrap text-sm font-light text-neutral-900">
-                  $5,000–$10,000
+                <span className="text-lg font-light text-luxury-black">
+                  $50,000
                 </span>
               </div>
-              <div className="flex items-start gap-8 justify-between border-b border-neutral-200 pb-4">
-                <span className="flex-1 text-sm font-light text-neutral-700">
-                  Depth and Anticipation: Relationship history that produces insight before it's requested
+              <div className="flex items-baseline justify-between border-b border-gray-200 pb-3">
+                <span className="text-base font-light text-gray-700">
+                  48 Hours
                 </span>
-                <span className="whitespace-nowrap text-sm font-light text-neutral-900">
-                  $10,000–$15,000
+                <span className="text-lg font-light text-luxury-black">
+                  $80,000
                 </span>
               </div>
             </div>
-            <div className="border-t-2 border-neutral-300 pt-6">
-              <div className="mb-2 flex items-baseline justify-between">
-                <span className="text-base font-light text-neutral-700">
-                  Typical value delivered per 24-hour engagement
-                </span>
-                <span className="text-lg font-light text-neutral-900">$28,000–$56,000</span>
-              </div>
-              <div className="flex items-baseline justify-between">
-                <span className="text-base font-light text-neutral-700">Rate charged</span>
-                <span className="text-lg font-light text-neutral-900">$45,000–$50,000</span>
-              </div>
-            </div>
-            <p className="mt-8 text-base font-light tracking-[0.02em] text-neutral-900">The math holds.</p>
+
+            <p className="text-base font-light leading-[1.8] text-gray-700">
+              By now, context is embedded. I arrive briefed on your current
+              landscape. You no longer waste time reintroducing yourself. The
+              conversation starts where the last one ended.
+            </p>
           </div>
         </section>
 
-        <section className="border-t border-neutral-200 px-6 py-16">
-          <div className="mx-auto max-w-2xl">
-            <h2 className="mb-8 text-[1.75rem] font-extralight tracking-[0.01em] text-neutral-900 leading-[1.2] md:text-4xl">
-              Availability
+        {/* Tier Three */}
+        <section className="border-t border-gray-200 py-16 md:py-20 bg-luxury-white">
+          <div className="container mx-auto px-6 md:px-8 max-w-2xl">
+            <p
+              className="mb-3 text-xs font-light uppercase tracking-[0.12em] text-gray-500"
+              style={{ fontWeight: 200 }}
+            >
+              TIER THREE
+            </p>
+            <h2
+              className="mb-4 text-3xl md:text-4xl font-extralight tracking-[-0.02em] text-luxury-black"
+              style={{ fontWeight: 200 }}
+            >
+              Strategic Partnerships
             </h2>
-            <p className="mb-6 text-[1.0625rem] font-light tracking-[0.01em] text-neutral-700 leading-[1.85]">
-              I maintain a limited client roster. New partnerships are reviewed quarterly and only when an existing one concludes.
+            <p className="text-sm font-light italic text-gray-600 mb-8">
+              Annual Retainer
             </p>
-            <p className="text-[1.0625rem] font-light italic tracking-[0.01em] text-neutral-700 leading-[1.85]">
-              If continuity matters to you, inquire before the next review window.
+
+            <div className="mb-8 border-b border-gray-300 pb-6">
+              <p className="text-2xl font-light text-luxury-black">
+                $240,000{" "}
+                <span className="text-base text-gray-600">annually</span>
+              </p>
+            </div>
+
+            <p className="mb-4 text-sm font-light uppercase tracking-[0.08em] text-gray-600">
+              INCLUDES
+            </p>
+            <ul className="space-y-3 text-base font-light leading-[1.8] text-gray-700 mb-8">
+              <li className="border-l-2 border-gray-300 pl-4">
+                Four 48-hour engagements annually (priority scheduling)
+              </li>
+              <li className="border-l-2 border-gray-300 pl-4">
+                Unlimited strategic dialogue between meetings
+              </li>
+              <li className="border-l-2 border-gray-300 pl-4">
+                Anticipatory preparation for each engagement
+              </li>
+              <li className="border-l-2 border-gray-300 pl-4">
+                Discretionary outreach when developments arise
+              </li>
+            </ul>
+
+            <p className="text-base font-light leading-[1.8] text-gray-700">
+              This tier formalizes what many of my long-term clients already
+              practice. I maintain no more than twenty active partnerships at a
+              time.
             </p>
           </div>
         </section>
 
-        <section className="border-t border-neutral-200 bg-gradient-to-b from-transparent to-neutral-100/30 px-6 py-16">
-          <div className="mx-auto max-w-2xl">
-            <h2 className="mb-10 text-[1.75rem] font-extralight tracking-[0.01em] text-neutral-900 leading-[1.2] md:text-4xl">
+        {/* Travel */}
+        <section className="border-t border-gray-200 py-16 md:py-20 bg-luxury-gray-50">
+          <div className="container mx-auto px-6 md:px-8 max-w-2xl">
+            <h2
+              className="mb-8 text-3xl md:text-4xl font-extralight tracking-[-0.02em] text-luxury-black"
+              style={{ fontWeight: 200 }}
+            >
               Travel
             </h2>
+
             <div className="space-y-6">
-              <div className="border-b border-neutral-200 pb-4">
-                <p className="mb-2 text-base font-light text-neutral-900">Bay Area / Northern California</p>
-                <p className="text-sm font-light text-neutral-600">No fee.</p>
+              <div className="border-b border-gray-200 pb-4">
+                <p className="mb-2 text-base font-light text-luxury-black">
+                  Bay Area / Northern California
+                </p>
+                <p className="text-sm font-light text-gray-600">No fee.</p>
               </div>
-              <div className="border-b border-neutral-200 pb-4">
-                <p className="mb-2 text-base font-light text-neutral-900">West Coast (LA, Seattle, Portland, San Diego)</p>
-                <p className="text-sm font-light text-neutral-700">
-                  Overnight $28,000 / 24 hours $50,000 + first-class travel and accommodation.
+              <div className="border-b border-gray-200 pb-4">
+                <p className="mb-2 text-base font-light text-luxury-black">
+                  West Coast
+                </p>
+                <p className="text-sm font-light text-gray-700">
+                  Overnight $28,000 / 24 hours $50,000 + first-class travel
                 </p>
               </div>
-              <div className="border-b border-neutral-200 pb-4">
-                <p className="mb-2 text-base font-light text-neutral-900">National (NYC, Miami, Chicago, Austin)</p>
-                <p className="text-sm font-light text-neutral-700">
-                  24 hours $55,000 / 48 hours $80,000 + first-class travel and accommodation.
+              <div className="border-b border-gray-200 pb-4">
+                <p className="mb-2 text-base font-light text-luxury-black">
+                  National
+                </p>
+                <p className="text-sm font-light text-gray-700">
+                  24 hours $55,000 / 48 hours $80,000 + first-class travel
                 </p>
               </div>
               <div className="pb-4">
-                <p className="mb-2 text-base font-light text-neutral-900">International</p>
-                <p className="text-sm font-light text-neutral-600">By arrangement.</p>
+                <p className="mb-2 text-base font-light text-luxury-black">
+                  International
+                </p>
+                <p className="text-sm font-light text-gray-600">
+                  By arrangement.
+                </p>
               </div>
             </div>
-            <p className="mt-10 text-sm font-light italic tracking-[0.02em] text-neutral-700">
+
+            <p className="mt-8 text-sm font-light italic text-gray-700">
               Discretion is embedded, not billed.
             </p>
           </div>
         </section>
 
-        <section className="border-t border-neutral-200 px-6 py-16">
-          <div className="mx-auto max-w-2xl">
-            <h2 className="mb-8 text-[1.75rem] font-extralight tracking-[0.01em] text-neutral-900 leading-[1.2] md:text-4xl">
+        {/* Payment */}
+        <section className="border-t border-gray-200 py-16 md:py-20 bg-luxury-white">
+          <div className="container mx-auto px-6 md:px-8 max-w-2xl">
+            <h2
+              className="mb-8 text-3xl md:text-4xl font-extralight tracking-[-0.02em] text-luxury-black"
+              style={{ fontWeight: 200 }}
+            >
               Payment
             </h2>
-            <p className="mb-6 text-[1.0625rem] font-light tracking-[0.01em] text-neutral-700 leading-[1.85]">
-              A 50% deposit secures preparation time; the balance is due in advance so neither of us spends the engagement managing logistics.
-            </p>
-            <p className="mb-6 text-[1.0625rem] font-light tracking-[0.01em] text-neutral-700 leading-[1.85]">
-              I accept bank transfer, Zelle, PayPal Merchant, Visa, and MasterCard.
-            </p>
-            <div className="mb-8 border-l-2 border-neutral-300 pl-6">
-              <p className="mb-3 text-[1.0625rem] font-light tracking-[0.01em] text-neutral-700 leading-[1.85]">
-                I also accept Amex, with the following policy:
+
+            <div className="space-y-4">
+              <p className="text-base font-light leading-[1.8] text-gray-700">
+                A 50% deposit secures preparation time; the balance is due in
+                advance.
               </p>
-              <p className="mb-2 text-sm font-light tracking-[0.01em] text-neutral-600 leading-[1.8]">
-                For Amex transactions exceeding $10,000, a 3% processing fee applies.
+              <p className="text-base font-light leading-[1.8] text-gray-700">
+                I accept bank transfer, Zelle, PayPal, Visa, and MasterCard.
               </p>
-              <p className="text-sm font-light tracking-[0.01em] text-neutral-600 leading-[1.8]">
-                Direct wire or ACH is preferred for transactions above that threshold.
+              <div className="border-l-2 border-gray-300 pl-4 py-2">
+                <p className="text-sm font-light text-gray-600">
+                  Amex: 3% processing fee applies for transactions exceeding
+                  $10,000.
+                </p>
+              </div>
+              <p className="text-sm font-light text-gray-600">
+                Cancellations are non-refundable but can be rescheduled within
+                ninety days.
               </p>
             </div>
-            <p className="mb-6 text-[1.0625rem] font-light tracking-[0.01em] text-neutral-700 leading-[1.85]">
-              S-Corp invoicing is available for clients who classify this as consultancy or strategic advisory.
-            </p>
-            <p className="text-sm font-light tracking-[0.01em] text-neutral-600 leading-[1.8]">
-              Cancellations are non-refundable but can be rescheduled within ninety days.
-            </p>
-          </div>
-        </section>
-
-        <section className="border-t border-neutral-200 bg-gradient-to-b from-transparent to-neutral-100/30 px-6 py-16">
-          <div className="mx-auto max-w-2xl">
-            <h2 className="mb-8 text-[1.75rem] font-extralight tracking-[0.01em] text-neutral-900 leading-[1.2] md:text-4xl">
-              Rate Transition
-            </h2>
-            <p className="mb-6 text-[1.0625rem] font-light tracking-[0.01em] text-neutral-700 leading-[1.85]">
-              Rates are scheduled to adjust fully to this 2–2.5× structure over the next twelve months.
-            </p>
-            <p className="mb-6 text-[1.0625rem] font-light tracking-[0.01em] text-neutral-700 leading-[1.85]">
-              Existing relationships receive six to twelve months' notice and priority scheduling to secure preferred dates at their current rate.
-            </p>
-            <p className="text-[1.0625rem] font-light tracking-[0.01em] text-neutral-700 leading-[1.85]">
-              This isn't a rate increase for its own sake—it's a formal acknowledgment of what the work already represents: limited capacity, high consequence, and continuity that compounds.
-            </p>
           </div>
         </section>
       </div>
 
-      <section className="border-t border-neutral-200 px-6 py-20">
-        <div className="mx-auto max-w-2xl">
-          <p className="mb-4 text-xl font-extralight tracking-[0.01em] text-neutral-900 leading-[1.5] md:text-2xl">
+      {/* Closing Statement */}
+      <section className="border-t border-gray-200 py-20 bg-luxury-white">
+        <div className="container mx-auto px-6 md:px-8 max-w-2xl text-center">
+          <p
+            className="text-xl md:text-2xl font-extralight leading-[1.5] text-luxury-black mb-4"
+            style={{ fontWeight: 200 }}
+          >
             I don't sell time.
           </p>
-          <p className="text-xl font-extralight tracking-[0.01em] text-neutral-700 leading-[1.5] md:text-2xl">
-            I reserve attention, continuity, and discretion for the few who understand their value.
+          <p
+            className="text-xl md:text-2xl font-extralight leading-[1.5] text-gray-700"
+            style={{ fontWeight: 200 }}
+          >
+            I reserve attention, continuity, and discretion for the few who
+            understand their value.
           </p>
         </div>
       </section>
+
+      {/* Footer */}
+      <footer className="border-t border-gray-200 bg-luxury-white px-6 py-16">
+        <div className="mx-auto max-w-[620px] space-y-4 text-left">
+          <p className="text-[14px] font-light leading-[1.7] text-gray-600">
+            Among San Francisco escorts and Sacramento escorts, these rates
+            reflect a decade of refinement. For those searching "escorts near
+            me" with serious intent, this structure ensures quality over volume.
+          </p>
+          <nav className="flex flex-wrap gap-3 text-[14px] font-light text-luxury-black">
+            <a
+              href="/inquire"
+              className="underline-offset-[4px] transition-colors duration-300 hover:text-gray-600 hover:underline"
+            >
+              Inquire
+            </a>
+            <a
+              href="/faq"
+              className="underline-offset-[4px] transition-colors duration-300 hover:text-gray-600 hover:underline"
+            >
+              FAQ
+            </a>
+            <a
+              href="/about"
+              className="underline-offset-[4px] transition-colors duration-300 hover:text-gray-600 hover:underline"
+            >
+              About
+            </a>
+          </nav>
+        </div>
+      </footer>
     </div>
   );
 };

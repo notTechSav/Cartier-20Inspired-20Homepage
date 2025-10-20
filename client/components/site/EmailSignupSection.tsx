@@ -1,11 +1,13 @@
+import { Button } from "@/components/ui/button";
+
 const EmailSignupSection = () => {
   return (
-    <section className="bg-white py-24">
-      <div className="mx-auto flex max-w-luxury flex-col items-center px-6 text-center sm:px-10">
-        <h2 className="text-lg font-light tracking-[0.3em] text-gray-900 sm:text-xl">
+    <section className="bg-luxury-white py-16 md:py-32 max-md:py-16">
+      <div className="mx-auto flex max-w-luxury flex-col items-center px-6 text-center md:px-8 max-md:px-6">
+        <h2 className="text-sm font-light uppercase tracking-uppercase text-gray-700">
           Latest from Tiffany
         </h2>
-        <form className="mt-10 flex w-full max-w-2xl items-center gap-4 border-b border-gray-300 pb-3">
+        <form className="mt-8 flex w-full max-w-2xl flex-col gap-3 md:flex-row md:items-center md:mt-12 max-md:gap-3 max-md:mt-8">
           <label htmlFor="email-signup" className="sr-only">
             Email address
           </label>
@@ -13,16 +15,17 @@ const EmailSignupSection = () => {
             id="email-signup"
             type="email"
             name="email"
-            placeholder="EMAIL"
+            placeholder="your@email.com"
             autoComplete="email"
-            className="flex-1 border-0 bg-transparent text-sm uppercase tracking-[0.4em] text-gray-700 outline-none placeholder:text-gray-500 focus:outline-none"
+            className="w-full flex-1 border border-gray-200 bg-white px-6 py-4 text-base font-light tracking-luxury text-gray-700 placeholder:text-gray-400 transition-colors duration-250 ease-out focus:border-gray-400 focus:outline-none"
           />
-          <button
+          <Button
             type="submit"
-            className="rounded-sm bg-gray-100 px-6 py-3 text-xs font-medium uppercase tracking-[0.4em] text-gray-900 transition-colors duration-luxury-fast hover:bg-gray-200"
+            variant="ctaPrimary"
+            className="max-md:w-full md:w-auto"
           >
             Sign Up
-          </button>
+          </Button>
         </form>
       </div>
     </section>

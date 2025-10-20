@@ -1,0 +1,40 @@
+🚨 CRITICAL PROJECT INFORMATION 🚨
+
+NEVER FORGET THESE:
+====================
+
+✅ CORRECT WORKING DIRECTORY:
+   ~/cardier-insprired-site
+
+✅ CORRECT BRANCH (has all your gallery work):
+   ai_main_45c6cae39678
+
+✅ GitHub Repo:
+   https://github.com/notTechSav/Cartier-20Inspired-20Homepage
+
+✅ Builder.io Settings:
+   - API Key: bpk-5836f445627648e5843ef7b6ceb65996
+   - Space ID: 5b9cc53f5f324d22a1f8c88faaaa270c
+   - Target Branch: ai_main_45c6cae39678
+
+✅ Latest Good Commit:
+   7b92429 - "Update immersive video source"
+
+⚠️ DO NOT USE:
+   - ~/Cartier-20Inspired-20Homepage (old, deleted)
+   - "main" branch (outdated, missing gallery)
+
+✅ Your Gallery Work (12 hours):
+   - 3 collections: Silk & Stone, Colorfield, Golden Hour
+   - DeckBuilderPreview component (1200 lines)
+   - Rose hero image
+   - All safe on branch ai_main_45c6cae39678
+
+✅ Dev Server:
+   pnpm dev
+   http://localhost:8080
+
+✅ Deploy to Vercel:
+   Add env var: VITE_BUILDER_API_KEY=bpk-5836f445627648e5843ef7b6ceb65996
+
+Created: $(date)

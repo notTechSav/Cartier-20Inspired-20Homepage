@@ -1,47 +1,33 @@
 /** @import must precede all other statements */
-@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Work+Sans:wght@300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Work+Sans:wght@200;300&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
-  /**
-   * Tailwind CSS theme
-   * tailwind.config.ts expects the following color variables to be expressed as HSL values.
-   * A different format will require also updating the theme in tailwind.config.ts.
-  */
   :root {
-    --background: 42 40% 97%;
-    --foreground: 26 18% 15%;
+    /* Typography weights */
+    --font-weight-thin: 100;
+    --font-weight-extralight: 200;
+    --font-weight-light: 300;
+    --font-weight-body: 300;
+    --font-weight-heading: 200;
 
-    --card: 42 40% 98%;
-    --card-foreground: 26 18% 15%;
+    /* Shadow tokens */
+    --shadow-color: 0deg 0% 50%;
+    --shadow-elevation-low: 0.5px 1px 1px hsl(var(--shadow-color) / 0.07);
+    --shadow-elevation-medium:
+      1px 2px 2px hsl(var(--shadow-color) / 0.09),
+      2px 4px 4px hsl(var(--shadow-color) / 0.09),
+      3px 6px 6px hsl(var(--shadow-color) / 0.09);
+    --shadow-elevation-high:
+      1px 2px 2px hsl(var(--shadow-color) / 0.06),
+      2px 4px 4px hsl(var(--shadow-color) / 0.06),
+      4px 8px 8px hsl(var(--shadow-color) / 0.06),
+      8px 16px 16px hsl(var(--shadow-color) / 0.06);
 
-    --popover: 42 40% 98%;
-    --popover-foreground: 26 18% 15%;
-
-    --primary: 37 70% 50%;
-    --primary-foreground: 45 100% 96%;
-
-    --secondary: 35 30% 92%;
-    --secondary-foreground: 26 18% 15%;
-
-    --muted: 33 24% 90%;
-    --muted-foreground: 28 12% 38%;
-
-    --accent: 37 80% 44%;
-    --accent-foreground: 45 100% 96%;
-
-    --destructive: 0 72% 44%;
-    --destructive-foreground: 45 100% 96%;
-
-    --border: 0 0% 89%;
-    --input: 0 0% 89%;
-    --ring: 37 80% 44%;
-
-    --radius: 0.5rem;
-
+    /* Spacing scale */
     --spacing-xs: 4px;
     --spacing-sm: 8px;
     --spacing-md: 16px;
@@ -50,80 +36,204 @@
     --spacing-2xl: 96px;
     --spacing-luxury: 128px;
 
-    --sidebar-background: 42 40% 98%;
-    --sidebar-foreground: 26 18% 15%;
-    --sidebar-primary: 37 70% 50%;
-    --sidebar-primary-foreground: 45 100% 96%;
-    --sidebar-accent: 35 30% 92%;
-    --sidebar-accent-foreground: 26 18% 15%;
-    --sidebar-border: 0 0% 89%;
-    --sidebar-ring: 37 80% 44%;
+    /* Neutral palette */
+    --luxury-black: #1a1a1a;
+    --luxury-white: #fafafa;
+    --gray-50: #f8f8f8;
+    --gray-100: #f0f0f0;
+    --gray-200: #e4e4e4;
+    --gray-300: #d1d1d1;
+    --gray-400: #a3a3a3;
+    --gray-500: #737373;
+    --gray-600: #525252;
+    --gray-700: #404040;
+    --gray-800: #262626;
+    --gray-900: #171717;
+
+    /* Tailwind theme variables */
+    --background: 0 0% 98%;
+    --foreground: 0 0% 24%;
+    --card: 0 0% 98%;
+    --card-foreground: 0 0% 24%;
+    --popover: 0 0% 98%;
+    --popover-foreground: 0 0% 24%;
+    --primary: 0 0% 15%;
+    --primary-foreground: 0 0% 96%;
+    --secondary: 0 0% 92%;
+    --secondary-foreground: 0 0% 24%;
+    --muted: 0 0% 92%;
+    --muted-foreground: 0 0% 40%;
+    --accent: 0 0% 20%;
+    --accent-foreground: 0 0% 96%;
+    --destructive: 0 70% 38%;
+    --destructive-foreground: 0 0% 96%;
+    --border: 0 0% 88%;
+    --input: 0 0% 88%;
+    --ring: 0 0% 20%;
+    --radius: 0.5rem;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 0 0% 24%;
+    --sidebar-primary: 0 0% 20%;
+    --sidebar-primary-foreground: 0 0% 96%;
+    --sidebar-accent: 0 0% 92%;
+    --sidebar-accent-foreground: 0 0% 24%;
+    --sidebar-border: 0 0% 88%;
+    --sidebar-ring: 0 0% 20%;
   }
 
   .dark {
-    --background: 24 16% 10%;
-    --foreground: 45 24% 92%;
-
-    --card: 24 16% 12%;
-    --card-foreground: 45 24% 92%;
-
-    --popover: 24 16% 12%;
-    --popover-foreground: 45 24% 92%;
-
-    --primary: 37 77% 64%;
-    --primary-foreground: 26 16% 10%;
-
-    --secondary: 26 16% 18%;
-    --secondary-foreground: 45 24% 92%;
-
-    --muted: 26 16% 18%;
-    --muted-foreground: 42 18% 72%;
-
-    --accent: 37 77% 64%;
-    --accent-foreground: 26 16% 10%;
-
-    --destructive: 0 70% 38%;
-    --destructive-foreground: 45 24% 92%;
-
-    --border: 0 0% 24%;
-    --input: 0 0% 24%;
-    --ring: 37 77% 64%;
-    --sidebar-background: 26 16% 12%;
-    --sidebar-foreground: 45 24% 92%;
-    --sidebar-primary: 37 77% 64%;
-    --sidebar-primary-foreground: 26 16% 10%;
-    --sidebar-accent: 26 16% 18%;
-    --sidebar-accent-foreground: 45 24% 92%;
-    --sidebar-border: 0 0% 24%;
-    --sidebar-ring: 37 77% 64%;
+    --background: 0 0% 12%;
+    --foreground: 0 0% 85%;
+    --card: 0 0% 14%;
+    --card-foreground: 0 0% 85%;
+    --popover: 0 0% 12%;
+    --popover-foreground: 0 0% 85%;
+    --primary: 0 0% 90%;
+    --primary-foreground: 0 0% 12%;
+    --secondary: 0 0% 22%;
+    --secondary-foreground: 0 0% 85%;
+    --muted: 0 0% 22%;
+    --muted-foreground: 0 0% 70%;
+    --accent: 0 0% 88%;
+    --accent-foreground: 0 0% 14%;
+    --destructive: 0 60% 45%;
+    --destructive-foreground: 0 0% 94%;
+    --border: 0 0% 32%;
+    --input: 0 0% 32%;
+    --ring: 0 0% 88%;
+    --sidebar-background: 0 0% 14%;
+    --sidebar-foreground: 0 0% 85%;
+    --sidebar-primary: 0 0% 88%;
+    --sidebar-primary-foreground: 0 0% 14%;
+    --sidebar-accent: 0 0% 22%;
+    --sidebar-accent-foreground: 0 0% 85%;
+    --sidebar-border: 0 0% 32%;
+    --sidebar-ring: 0 0% 88%;
   }
-}
 
-@layer base {
   * {
-    @apply border-border;
+    border-color: hsl(var(--border));
+  }
+
+  html {
+    height: 100%;
+    overflow: hidden;
   }
 
   body {
-    @apply bg-background text-foreground font-sans antialiased;
+    height: 100%;
+    overflow: hidden;
+    background-color: var(--luxury-white);
+    color: var(--gray-700);
+    font-family: "Work Sans", sans-serif;
+    font-weight: var(--font-weight-body);
+    letter-spacing: 0.025em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   a,
   button {
     transition: all 250ms cubic-bezier(0, 0, 0.58, 1);
   }
+
+  button,
+  input,
+  textarea,
+  select {
+    font-family: inherit;
+    font-weight: var(--font-weight-light);
+  }
+
+  ::selection {
+    background: var(--gray-200);
+    color: var(--luxury-black);
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--gray-50);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--gray-300);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--gray-400);
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--gray-300) var(--gray-50);
+  }
 }
 
-@keyframes fadeInSlow {
-  from {
-    opacity: 0;
+@layer utilities {
+  .tracking-luxury {
+    letter-spacing: 0.025em;
   }
-  to {
-    opacity: 1;
-  }
-}
 
-.animate-fadeInSlow {
-  animation: fadeInSlow 2.5s ease-out forwards;
-  animation-delay: 0.5s;
+  .tracking-display {
+    letter-spacing: -0.02em;
+  }
+
+  .tracking-uppercase {
+    letter-spacing: 0.15em;
+  }
+
+  /* Scroll-snap container */
+  .scroll-snap-container {
+    height: 100vh;
+    height: 100dvh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scroll-snap-type: y mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Scroll-snap items */
+  .scroll-snap-item {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    min-height: 100vh;
+    min-height: 100dvh;
+    animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  /* Entrance animation */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
 }
