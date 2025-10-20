@@ -1,7 +1,7 @@
 import { PropsWithChildren } from "react";
 
 import { ActiveSlideProvider } from "@/context/ActiveSlideContext";
-import HeaderYSLRefined from "@/components/HeaderYSLRefined";
+import HeaderLuxury from "@/components/HeaderLuxury";
 import Footer from "@/components/site/Footer";
 
 const SiteLayout = ({ children }: PropsWithChildren) => {
