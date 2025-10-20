@@ -69,15 +69,14 @@ const VideoSection = () => {
             Every Moment Matters
           </h2>
           <p className="max-w-[65ch] text-base font-light leading-relaxed tracking-wide text-white/85">
-            Discretion, elegance, and intention converge in every engagement. This is where anticipation meets experience.
+            Discretion, elegance, and intention converge in every engagement.
+            This is where anticipation meets experience.
           </p>
           <div className="flex items-center gap-3 max-md:gap-2">
             <button
               type="button"
               onClick={togglePlay}
-              aria-label={
-                isPaused ? "Play video" : "Pause video"
-              }
+              aria-label={isPaused ? "Play video" : "Pause video"}
               className="inline-flex items-center justify-center gap-2 rounded-sm border border-white/50 bg-white/10 px-6 py-3 text-xs font-light uppercase tracking-wide text-luxury-white transition-all duration-250 ease-out hover:border-white hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-luxury-black/50 max-md:px-4 max-md:py-2"
             >
               {isPaused ? (
@@ -95,9 +94,7 @@ const VideoSection = () => {
             <button
               type="button"
               onClick={toggleMute}
-              aria-label={
-                isMuted ? "Unmute video" : "Mute video"
-              }
+              aria-label={isMuted ? "Unmute video" : "Mute video"}
               className="inline-flex items-center justify-center gap-2 rounded-sm border border-white/50 bg-white/10 px-6 py-3 text-xs font-light uppercase tracking-wide text-luxury-white transition-all duration-250 ease-out hover:border-white hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-luxury-black/50 max-md:px-4 max-md:py-2"
             >
               {isMuted ? (

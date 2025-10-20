@@ -133,7 +133,9 @@ const Navigation = () => {
           type="button"
           onClick={toggleMenu}
           className="p-2 text-luxury-black transition-opacity duration-250 hover:opacity-60 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-2 rounded-sm"
-          aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+          aria-label={
+            isMenuOpen ? "Close navigation menu" : "Open navigation menu"
+          }
           aria-expanded={isMenuOpen}
         >
           {isMenuOpen ? (

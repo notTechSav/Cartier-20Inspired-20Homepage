@@ -52,7 +52,9 @@ const PageHeroOverlay = memo(
       alignment === "right" ? "ml-auto mr-0" : "mr-auto ml-0";
 
     return (
-      <section className={cn("relative bg-luxury-white overflow-hidden", className)}>
+      <section
+        className={cn("relative bg-luxury-white overflow-hidden", className)}
+      >
         {/* Hero Container */}
         <figure className="relative w-full bg-[#d6cdc1]">
           {/* Desktop Height */}
@@ -74,7 +76,11 @@ const PageHeroOverlay = memo(
                 loading="eager"
               />
             )}
-            <div className="absolute inset-0" style={gradientStyle} aria-hidden />
+            <div
+              className="absolute inset-0"
+              style={gradientStyle}
+              aria-hidden
+            />
 
             {/* Desktop Overlay Text */}
             <figcaption className="pointer-events-none absolute inset-0 flex items-end">
@@ -133,7 +139,11 @@ const PageHeroOverlay = memo(
                 loading="eager"
               />
             )}
-            <div className="absolute inset-0" style={gradientStyle} aria-hidden />
+            <div
+              className="absolute inset-0"
+              style={gradientStyle}
+              aria-hidden
+            />
 
             {/* Mobile Overlay Text */}
             <figcaption className="pointer-events-none absolute inset-0 flex items-end">
