@@ -1,5 +1,11 @@
 import React, { createContext, useContext, useState, ReactNode } from "react";
-import { SlideMeta } from "@/components/HeaderNavYSL";
+
+type SlideMeta = {
+  id: string;
+  dark?: boolean;
+  tabletDark?: boolean;
+  mobileDark?: boolean;
+};
 
 interface ActiveSlideContextType {
   activeSlide?: SlideMeta;
