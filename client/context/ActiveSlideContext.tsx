@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useState, ReactNode } from "react";
 import { SlideMeta, ActiveSlideContextType } from "./types";
 
-const ActiveSlideContext = createContext<ActiveSlideContextType | undefined>(
+export const ActiveSlideContext = createContext<ActiveSlideContextType | undefined>(
   undefined
 );
 
