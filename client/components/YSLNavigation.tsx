@@ -169,24 +169,16 @@ export const MobileNavigation: React.FC<MobileNavigationProps> = ({
     null,
   );
 
-  // Hybrid scroll-lock: position restoration + CSS class
+  // Safe scroll-lock: Only use overflow: hidden (no position: fixed)
   useEffect(() => {
     if (isOpen) {
-      // Store scroll position and lock scroll
-      const scrollY = window.scrollY;
-      document.body.style.top = `-${scrollY}px`;
-      document.body.classList.add("menu-open");
+      document.body.style.overflow = "hidden";
     } else {
-      // Restore scroll position
-      const scrollY = document.body.style.top;
-      document.body.classList.remove("menu-open");
-      document.body.style.top = "";
-      window.scrollTo(0, parseInt(scrollY || "0") * -1);
+      document.body.style.overflow = "";
     }
 
     return () => {
-      document.body.classList.remove("menu-open");
-      document.body.style.top = "";
+      document.body.style.overflow = "";
     };
   }, [isOpen]);
 
