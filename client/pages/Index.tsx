@@ -228,16 +228,16 @@ const Index = () => {
             <div className="text-center space-y-6 max-w-xl">
               <h2 className="text-center text-3xl font-light tracking-tight text-luxury-black">
                 Private Collections
+              </h2>
+              <p className="text-center text-sm font-light leading-relaxed tracking-luxury text-gray-600">
+                Intimate documentation from Northern California to Los Angeles —
+                three collections, three moments in time.
                 <a
                   href="/gallery"
                   className="ysl-nav-item inline-block text-luxury-black block mt-2"
                 >
                   Discover
                 </a>
-              </h2>
-              <p className="text-center text-sm font-light leading-relaxed tracking-luxury text-gray-600">
-                Intimate documentation from Northern California to Los Angeles —
-                three collections, three moments in time.
               </p>
             </div>
           </div>
@@ -300,16 +300,16 @@ const Index = () => {
             <div className="text-center space-y-6 max-w-xl">
               <h2 className="text-center text-3xl font-light tracking-tight text-luxury-black">
                 Journal
+              </h2>
+              <p className="text-center text-sm font-light leading-relaxed tracking-luxury text-gray-600">
+                Insights, stories, and perspectives on companionship, luxury,
+                and the art of connection.
                 <a
                   href="/journal"
                   className="ysl-nav-item inline-block text-luxury-black block mt-2 text-sm"
                 >
                   Read Journal →
                 </a>
-              </h2>
-              <p className="text-center text-sm font-light leading-relaxed tracking-luxury text-gray-600">
-                Insights, stories, and perspectives on companionship, luxury,
-                and the art of connection.
               </p>
             </div>
           </div>
@@ -335,16 +335,16 @@ const Index = () => {
             <div className="text-center space-y-6 max-w-xl">
               <h2 className="text-center text-3xl font-light tracking-tight text-luxury-black">
                 Curated Gifts & Experiences
+              </h2>
+              <p className="text-center text-sm font-light leading-relaxed tracking-luxury text-gray-600">
+                Thoughtfully selected gifts and experiences designed for those
+                who appreciate the finest details.
                 <a
                   href="/gifts"
                   className="ysl-nav-item inline-block text-luxury-black block mt-2 text-sm"
                 >
                   Explore Gifts
                 </a>
-              </h2>
-              <p className="text-center text-sm font-light leading-relaxed tracking-luxury text-gray-600">
-                Thoughtfully selected gifts and experiences designed for those
-                who appreciate the finest details.
               </p>
             </div>
           </div>
