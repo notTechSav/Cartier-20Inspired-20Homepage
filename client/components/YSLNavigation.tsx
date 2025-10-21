@@ -33,6 +33,7 @@ interface MobileNavigationProps {
   menuItems: NavItem[];
   isOverlay?: boolean;
   useSwiper?: boolean;
+  icon?: React.ReactNode;
 }
 
 /* ============================================
