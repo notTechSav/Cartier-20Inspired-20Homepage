@@ -96,7 +96,7 @@ const Hero = () => {
 
       {/* Desktop Content */}
       <div className="relative z-10 hidden md:flex w-full flex-1 flex-col items-center justify-end px-8 pb-0">
-        <div className="flex w-full max-w-luxury flex-col items-center justify-end gap-4 text-center text-luxury-white">
+        <div className="flex w-full max-w-luxury flex-col items-center justify-end gap-1 text-center text-luxury-white">
           <H3
             as="p"
             aria-hidden="true"
@@ -113,7 +113,7 @@ const Hero = () => {
           </H2>
           <a
             href="/inquire"
-            className="ysl-nav-item-light mt-2 text-sm inline-block text-luxury-white"
+            className="ysl-nav-item-light text-sm inline-block text-luxury-white"
           >
             Reserve an Evening
           </a>
@@ -122,7 +122,7 @@ const Hero = () => {
 
       {/* Mobile Content */}
       <div className="relative z-10 md:hidden flex w-full flex-1 flex-col items-center justify-end px-6 pb-0">
-        <div className="flex w-full flex-col items-center justify-end text-center gap-3 text-luxury-white">
+        <div className="flex w-full flex-col items-center justify-end text-center gap-1 text-luxury-white">
           <H3
             as="p"
             aria-hidden="true"
@@ -139,7 +139,7 @@ const Hero = () => {
           </H2>
           <a
             href="/inquire"
-            className="ysl-nav-item-light w-full text-xs mt-2 inline-block text-center text-luxury-white"
+            className="ysl-nav-item-light w-full text-xs inline-block text-center text-luxury-white"
           >
             Reserve an Evening
           </a>
