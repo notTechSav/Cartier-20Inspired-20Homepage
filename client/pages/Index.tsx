@@ -193,16 +193,16 @@ const Index = () => {
             <div className="text-center space-y-6 max-w-xl">
               <h2 className="text-center text-3xl font-light tracking-tight text-luxury-black">
                 SF Escorts | Framed Side-By-Side
+              </h2>
+              <p className="text-center text-sm font-light leading-relaxed tracking-luxury text-gray-600">
+                Every frame captured with intention—curated moments that reveal
+                artistry, confidence, and chemistry in equal measure.
                 <a
                   href="/about"
                   className="ysl-nav-item inline-block text-luxury-black block mt-2"
                 >
                   Take a Glimpse
                 </a>
-              </h2>
-              <p className="text-center text-sm font-light leading-relaxed tracking-luxury text-gray-600">
-                Every frame captured with intention—curated moments that reveal
-                artistry, confidence, and chemistry in equal measure.
               </p>
             </div>
           </div>
