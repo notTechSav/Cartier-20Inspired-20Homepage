@@ -4,6 +4,7 @@ import FAQSectionLuxury from "@/components/site/FAQSectionLuxury";
 import ImmersiveVideoSection from "@/components/site/ImmersiveVideoSection";
 import DesignInMotionSection from "@/components/site/DesignInMotionSection";
 import VideoSection from "@/components/site/VideoSection";
+import Footer from "@/components/site/Footer";
 import ScrollSnapLayout from "./ScrollSnapLayout";
 import ScrollSnapPanel from "./ScrollSnapPanel";
 
@@ -98,6 +99,15 @@ const Index = () => {
             Send Inquiry →
           </a>
         </div>
+      </ScrollSnapPanel>
+
+      {/* 07. Footer - Email signup and footer navigation */}
+      <ScrollSnapPanel
+        id="footer-section"
+        ariaLabel="Footer section with newsletter signup and site links"
+        className="bg-luxury-white !flex-none !items-stretch !justify-start overflow-y-auto"
+      >
+        <Footer isScrollSnapLayout={true} totalSections={7} />
       </ScrollSnapPanel>
     </ScrollSnapLayout>
   );
