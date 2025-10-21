@@ -117,12 +117,14 @@
 
   html {
     height: 100%;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
   }
 
   body {
     height: 100%;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
     background-color: var(--luxury-white);
     color: inherit;
     font-family: "Work Sans", sans-serif;
@@ -130,6 +132,12 @@
     letter-spacing: 0.025em;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+
+  body.menu-open {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
   }
 
   a,

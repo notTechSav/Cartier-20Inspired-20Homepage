@@ -42,7 +42,7 @@ const Header = ({ isOverlayActive = false }: HeaderProps) => {
     }
   }, []);
 
-  // Close menu on escape
+  // Close menu on escape and manage body overflow
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
@@ -52,12 +52,14 @@ const Header = ({ isOverlayActive = false }: HeaderProps) => {
 
     if (isMenuOpen) {
       window.addEventListener("keydown", handleEscape);
-      document.body.style.overflow = "hidden";
+      document.body.classList.add("menu-open");
+    } else {
+      document.body.classList.remove("menu-open");
     }
 
     return () => {
       window.removeEventListener("keydown", handleEscape);
-      document.body.style.overflow = "unset";
+      document.body.classList.remove("menu-open");
     };
   }, [isMenuOpen]);
 
