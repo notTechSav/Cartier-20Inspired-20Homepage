@@ -216,7 +216,7 @@ export const MobileNavigation: React.FC<MobileNavigationProps> = ({
 
   return (
     <>
-      {/* Hamburger Button */}
+      {/* Hamburger Button - with optional icon prop */}
       <button
         className={`ysl-hamburger ${isOpen ? "open" : ""}`}
         onClick={() => setIsOpen(!isOpen)}
@@ -227,26 +227,30 @@ export const MobileNavigation: React.FC<MobileNavigationProps> = ({
           color: isOverlay ? "white" : "var(--nav-color-primary)",
         }}
       >
-        <svg
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M4 7.5h16"
-            stroke="currentColor"
-            strokeWidth="1"
-            strokeLinecap="round"
-          />
-          <path
-            d="M4 16.5h16"
-            stroke="currentColor"
-            strokeWidth="1"
-            strokeLinecap="round"
-          />
-        </svg>
+        {icon ? (
+          icon
+        ) : (
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M4 7.5h16"
+              stroke="currentColor"
+              strokeWidth="1"
+              strokeLinecap="round"
+            />
+            <path
+              d="M4 16.5h16"
+              stroke="currentColor"
+              strokeWidth="1"
+              strokeLinecap="round"
+            />
+          </svg>
+        )}
       </button>
 
       {/* Mobile Overlay */}
