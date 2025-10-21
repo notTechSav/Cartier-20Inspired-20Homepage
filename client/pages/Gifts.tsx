@@ -21,7 +21,11 @@ const Gifts = () => {
   ];
 
   return (
-    <div className="bg-luxury-white text-luxury-black" id="gifts" data-section="gifts">
+    <div
+      className="bg-luxury-white text-luxury-black"
+      id="gifts"
+      data-section="gifts"
+    >
       {/* Hero Section - matching journal's hero exactly */}
       <section className="relative bg-luxury-white" data-section="gifts-hero">
         <figure className="relative h-[48vh] min-h-[280px] w-full overflow-hidden sm:h-[52vh]">

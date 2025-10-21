@@ -86,7 +86,7 @@ const SwiperAccordion = ({
                     "transition-all duration-300 ease-out",
                     "hover:bg-gray-50 active:bg-gray-100",
                     "text-left font-light uppercase tracking-widest text-sm md:text-base",
-                    "text-black border-b border-gray-100"
+                    "text-black border-b border-gray-100",
                   )}
                   style={{
                     letterSpacing: "0.15em",
@@ -99,7 +99,7 @@ const SwiperAccordion = ({
                   <ChevronDown
                     className={cn(
                       "h-4 w-4 md:h-5 md:w-5 flex-shrink-0 transition-transform duration-300 ease-out",
-                      isExpanded && "rotate-180"
+                      isExpanded && "rotate-180",
                     )}
                   />
                 </button>
@@ -109,7 +109,7 @@ const SwiperAccordion = ({
                   id={`accordion-content-${item.id}`}
                   className={cn(
                     "overflow-hidden transition-all duration-300 ease-out",
-                    isExpanded ? "max-h-96" : "max-h-0"
+                    isExpanded ? "max-h-96" : "max-h-0",
                   )}
                 >
                   <div className="px-4 py-4 md:px-6 md:py-5 text-sm md:text-base font-light leading-relaxed text-gray-700 border-t border-gray-100">

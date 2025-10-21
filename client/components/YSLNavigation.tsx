@@ -166,7 +166,7 @@ export const MobileNavigation: React.FC<MobileNavigationProps> = ({
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [expandedAccordion, setExpandedAccordion] = useState<string | null>(
-    null
+    null,
   );
 
   // Hybrid scroll-lock: position restoration + CSS class

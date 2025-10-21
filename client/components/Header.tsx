@@ -1,7 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBellConcierge } from "@fortawesome/free-solid-svg-icons";
-import { DesktopNavigation, MobileNavigation, katherineTaylorMenuConfig } from "./YSLNavigation";
+import {
+  DesktopNavigation,
+  MobileNavigation,
+  katherineTaylorMenuConfig,
+} from "./YSLNavigation";
 
 const Header = () => {
   const [isOverlay, setIsOverlay] = useState(true);
