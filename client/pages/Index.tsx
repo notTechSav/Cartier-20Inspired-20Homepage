@@ -262,9 +262,20 @@ const Index = () => {
       {/* 05. FAQ - Frequently asked questions */}
       <SwiperSlide className="!h-screen">
         <div className="w-full h-full overflow-y-auto">
-          <div className="min-h-screen flex items-center justify-center bg-luxury-white px-6 py-16">
-            <div className="w-full max-w-2xl">
-              <FAQSectionLuxury />
+          <div className="min-h-screen flex flex-col items-center justify-center bg-luxury-white px-6 py-16">
+            <div className="w-full max-w-2xl text-center">
+              <h2 className="text-3xl font-light tracking-tight text-luxury-black mb-8">
+                Frequently Asked Questions
+                <a
+                  href="/faq"
+                  className="ysl-nav-item inline-block text-luxury-black block mt-2 text-sm"
+                >
+                  View All
+                </a>
+              </h2>
+              <p className="text-sm font-light leading-relaxed tracking-luxury text-gray-600 mb-8">
+                After more than a decade in this practice, I answer what quick searches never cover.
+              </p>
             </div>
           </div>
         </div>
