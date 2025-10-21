@@ -57,11 +57,6 @@ const hiddenFaqs: FaqItem[] = [
   },
 ];
 
-const FAQ_HERO_IMAGE = {
-  src: "https://cdn.builder.io/api/v1/image/assets%2F5b9cc53f5f324d22a1f8c88faaaa270c%2F4161d5d2b2b34093861f89a5d37e6c34?format=webp&width=1200",
-  alt: "Clear glass vase with olive branch beside sealed envelope in warm afternoon light",
-};
-
 const FAQSectionLuxury = () => {
   const [openFaq, setOpenFaq] = useState<string | null>(null);
   const [showHidden, setShowHidden] = useState(false);
