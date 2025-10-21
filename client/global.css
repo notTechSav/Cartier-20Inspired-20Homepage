@@ -525,16 +525,13 @@
     }
   }
 
-  .ysl-nav-item {
+  /* Global button and link styling - YSL aesthetic */
+  .ysl-button-base {
     position: relative;
     font-family: var(--nav-font-family);
     font-weight: var(--nav-font-weight-thin);
-    font-size: var(--nav-font-size-sm);
-    letter-spacing: var(--nav-letter-spacing-lg);
     text-transform: uppercase;
-    line-height: 1.8;
-    text-decoration: none;
-    padding: var(--nav-padding-y) 0;
+    letter-spacing: var(--nav-letter-spacing-lg);
     cursor: pointer;
     background: transparent;
     border: none;
@@ -543,9 +540,17 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
-  .ysl-nav-item:hover {
+  .ysl-button-base:hover {
     transform: translateY(-1px);
     opacity: 0.7;
+  }
+
+  /* Navigation item (header) */
+  .ysl-nav-item {
+    font-size: var(--nav-font-size-sm);
+    line-height: 1.8;
+    text-decoration: none;
+    padding: var(--nav-padding-y) 0;
   }
 
   .ysl-nav-item::after {
@@ -566,6 +571,18 @@
 
   .ysl-nav-item:hover::after {
     width: 100%;
+  }
+
+  /* Global button class - applies to all buttons */
+  button,
+  [role="button"] {
+    font-family: inherit;
+  }
+
+  /* Apply luxury styling to all anchor links */
+  a {
+    color: inherit;
+    text-decoration: none;
   }
 
   .ysl-mega-menu {
