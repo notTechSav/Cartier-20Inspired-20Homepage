@@ -53,7 +53,7 @@ const Index = () => {
         <div className="absolute bottom-16 left-6 z-20 md:bottom-24 md:left-8">
           <a
             href="/rates"
-            className="ysl-nav-item inline-flex items-center justify-center text-sm text-white"
+            className="ysl-nav-item-light inline-flex items-center justify-center text-sm text-luxury-white"
           >
             View Rates →
           </a>
@@ -88,7 +88,7 @@ const Index = () => {
             </p>
             <a
               href="/journal"
-              className="ysl-nav-item inline-flex items-center justify-center text-sm text-gray-700"
+              className="ysl-nav-item inline-flex items-center justify-center text-sm text-luxury-black"
             >
               Read Journal →
             </a>
@@ -106,7 +106,7 @@ const Index = () => {
         <div className="absolute bottom-16 left-6 z-20 md:bottom-24 md:left-8">
           <a
             href="/inquire"
-            className="ysl-nav-item inline-flex items-center justify-center text-sm text-white"
+            className="ysl-nav-item-light inline-flex items-center justify-center text-sm text-luxury-white"
           >
             Send Inquiry →
           </a>
