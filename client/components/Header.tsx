@@ -47,7 +47,7 @@ const Header = () => {
         <MobileNavigation
           menuItems={katherineTaylorMenuConfig}
           isOverlay={isOverlay}
-          useSwiper={false}
+          useSwiper={true}
           icon={<FontAwesomeIcon icon={faBellConcierge} />}
         />
       </div>
