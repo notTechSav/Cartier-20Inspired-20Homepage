@@ -27,7 +27,10 @@ const Index = () => {
         className="bg-luxury-white"
       >
         <div className="w-full max-w-luxury px-6 md:px-8">
-          <ImageMosaicSection />
+          <ImageMosaicSection
+            title="Gallery"
+            subtitle="A Collection of Intimate Moments"
+          />
         </div>
       </ScrollSnapPanel>
 
