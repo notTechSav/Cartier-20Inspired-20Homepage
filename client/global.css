@@ -895,5 +895,36 @@
       animation-iteration-count: 1 !important;
       transition-duration: 0.01ms !important;
     }
+
+    .scroll-snap-container-enhanced {
+      scroll-behavior: auto;
+    }
+
+    .luxury-input::before,
+    .btn-luxury-slide::before,
+    .link-luxury::after {
+      transition: none;
+    }
+
+    .footer-column,
+    .newsletter-container {
+      animation: none;
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  /* ============================================
+     DARK MODE FOOTER ADJUSTMENTS
+     ============================================ */
+
+  .dark .luxury-divider {
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      var(--gray-700) 10%,
+      var(--gray-700) 90%,
+      transparent 100%
+    );
   }
 }
