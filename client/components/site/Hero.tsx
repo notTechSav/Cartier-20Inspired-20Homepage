@@ -152,7 +152,7 @@ const Hero = () => {
         onClick={toggleMute}
         aria-pressed={!isMuted}
         aria-label={isMuted ? "Unmute hero video" : "Mute hero video"}
-        className="ysl-nav-item-light absolute right-6 bottom-6 md:right-8 md:bottom-8 z-20 inline-flex items-center justify-center text-sm text-luxury-white"
+        className="fixed right-2 bottom-4 md:right-4 md:bottom-6 z-40 text-white font-light uppercase text-xs tracking-wide transition-opacity hover:opacity-70"
       >
         {isMuted ? "Unmute" : "Mute"}
       </button>
