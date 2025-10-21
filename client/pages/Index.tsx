@@ -179,14 +179,14 @@ const Index = () => {
       style={{ height: "100vh" }}
     >
       {/* 01. Hero - Main introduction */}
-      <SwiperSlide className="!h-screen flex items-center justify-center z-9">
+      <SwiperSlide className="!h-screen flex items-center justify-center">
         <div className="w-full h-full">
           <Hero />
         </div>
       </SwiperSlide>
 
       {/* 02. About - Design in Motion */}
-      <SwiperSlide className="!h-screen z-8">
+      <SwiperSlide className="!h-screen">
         <div className="flex flex-col items-center justify-center min-h-screen w-full bg-luxury-white px-6 py-16">
           <div className="flex flex-col items-center gap-8 max-w-2xl w-full">
             {/* Image Container with 4/5 Aspect Ratio */}
@@ -221,7 +221,7 @@ const Index = () => {
       </SwiperSlide>
 
       {/* 03. Gallery - Image mosaic collection */}
-      <SwiperSlide className="!h-screen z-7">
+      <SwiperSlide className="!h-screen">
         <div className="flex flex-col items-center justify-center min-h-screen w-full bg-luxury-white px-6 py-16">
           <div className="flex flex-col items-center gap-8 max-w-2xl w-full">
             {/* Image Container with 4/5 Aspect Ratio */}
@@ -256,7 +256,7 @@ const Index = () => {
       </SwiperSlide>
 
       {/* 04. Rates - Video showcase */}
-      <SwiperSlide className="!h-screen z-6">
+      <SwiperSlide className="!h-screen">
         <div className="w-full h-full">
           <ImmersiveVideoSection />
           <div className="absolute bottom-16 left-6 z-20">
@@ -271,7 +271,7 @@ const Index = () => {
       </SwiperSlide>
 
       {/* 05. FAQ - Frequently asked questions */}
-      <SwiperSlide className="!h-screen z-5">
+      <SwiperSlide className="!h-screen">
         <div className="w-full h-full overflow-y-auto">
           <div className="min-h-screen flex flex-col items-center justify-center bg-luxury-white px-6 py-16">
             <div className="w-full max-w-2xl text-center">
@@ -294,7 +294,7 @@ const Index = () => {
       </SwiperSlide>
 
       {/* 06. Journal - Featured content and articles */}
-      <SwiperSlide className="!h-screen z-4">
+      <SwiperSlide className="!h-screen">
         <div className="flex flex-col items-center justify-center min-h-screen w-full bg-luxury-white px-6 py-16">
           <div className="flex flex-col items-center gap-8 max-w-2xl w-full">
             {/* Image Container with 4/5 Aspect Ratio */}
@@ -329,7 +329,7 @@ const Index = () => {
       </SwiperSlide>
 
       {/* 07. Gifts - Curated gifts and experiences */}
-      <SwiperSlide className="!h-screen z-3">
+      <SwiperSlide className="!h-screen">
         <div className="flex flex-col items-center justify-center min-h-screen w-full bg-luxury-white px-6 py-16">
           <div className="flex flex-col items-center gap-8 max-w-2xl w-full">
             {/* Image Container with 4/5 Aspect Ratio */}
@@ -364,7 +364,7 @@ const Index = () => {
       </SwiperSlide>
 
       {/* 08. Inquire - Contact and engagement video */}
-      <SwiperSlide className="!h-screen z-2">
+      <SwiperSlide className="!h-screen">
         <div className="w-full h-full">
           <VideoSection />
           <div className="absolute bottom-16 left-6 z-20">
@@ -379,7 +379,7 @@ const Index = () => {
       </SwiperSlide>
 
       {/* 09. Footer - Email signup and footer navigation */}
-      <SwiperSlide className="!h-screen z-1">
+      <SwiperSlide className="!h-screen">
         <div className="w-full h-full overflow-y-auto">
           <Footer isScrollSnapLayout={false} totalSections={9} />
         </div>
