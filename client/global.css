@@ -195,6 +195,195 @@
     letter-spacing: 0.15em;
   }
 
+  /* ============================================
+     FOOTER UTILITY CLASSES & ANIMATIONS
+     ============================================ */
+
+  /* Footer-specific scroll snap behavior */
+  .scroll-snap-footer {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    min-height: 100vh;
+    min-height: 100dvh;
+    will-change: transform;
+    contain: layout style paint;
+    transform: translateZ(0);
+  }
+
+  /* Input field micro-interaction */
+  .luxury-input {
+    position: relative;
+    transition: all 400ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .luxury-input:focus {
+    transform: translateY(-1px);
+  }
+
+  .luxury-input::before {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      var(--luxury-black) 0%,
+      var(--luxury-black) 50%,
+      transparent 100%
+    );
+    transition: width 600ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .luxury-input:focus::before {
+    width: 100%;
+  }
+
+  /* Button slide animation */
+  .btn-luxury-slide {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+  }
+
+  .btn-luxury-slide::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--luxury-black);
+    transform: translateX(-100%);
+    transition: transform 500ms cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: -1;
+  }
+
+  .btn-luxury-slide:hover::before {
+    transform: translateX(0);
+  }
+
+  /* Link micro-translation */
+  .link-luxury {
+    position: relative;
+    display: inline-block;
+    transition: all 350ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .link-luxury::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: currentColor;
+    transition: width 450ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .link-luxury:hover {
+    transform: translateX(2px);
+    opacity: 1;
+  }
+
+  .link-luxury:hover::after {
+    width: 100%;
+  }
+
+  /* Staggered fade-in for footer columns */
+  .footer-column {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: footerColumnFadeIn 800ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .footer-column:nth-child(1) {
+    animation-delay: 100ms;
+  }
+
+  .footer-column:nth-child(2) {
+    animation-delay: 200ms;
+  }
+
+  .footer-column:nth-child(3) {
+    animation-delay: 300ms;
+  }
+
+  .footer-column:nth-child(4) {
+    animation-delay: 400ms;
+  }
+
+  /* Email success message animation */
+  .success-message {
+    animation: successPulse 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  /* Divider line with gradient */
+  .luxury-divider {
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      var(--gray-200) 10%,
+      var(--gray-200) 90%,
+      transparent 100%
+    );
+  }
+
+  /* Newsletter form container */
+  .newsletter-container {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1000ms cubic-bezier(0.16, 1, 0.3, 1) 200ms forwards;
+  }
+
+  /* Link group header */
+  .link-group-header {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 8px;
+  }
+
+  .link-group-header::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 24px;
+    height: 1px;
+    background: currentColor;
+    transition: width 500ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .link-group-header:hover::after {
+    width: 100%;
+  }
+
+  /* Refined scrollbar for footer if it becomes scrollable on small screens */
+  .footer-scrollable {
+    scrollbar-width: thin;
+    scrollbar-color: var(--gray-300) transparent;
+  }
+
+  .footer-scrollable::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .footer-scrollable::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .footer-scrollable::-webkit-scrollbar-thumb {
+    background: var(--gray-300);
+    border-radius: 3px;
+    transition: background 300ms ease;
+  }
+
+  .footer-scrollable::-webkit-scrollbar-thumb:hover {
+    background: var(--gray-400);
+  }
+
+  /* ============================================
+     ENHANCED SCROLL-SNAP CONTAINER
+     ============================================ */
   /* Enhanced scroll-snap container for YSL-level sharpness */
   .scroll-snap-container {
     height: 100vh;
