@@ -20,7 +20,16 @@ const Index = () => {
         <Hero />
       </ScrollSnapPanel>
 
-      {/* 02. Gallery - Image mosaic collection */}
+      {/* 02. About Me / Design in Motion - About section */}
+      <ScrollSnapPanel
+        id="about-section"
+        ariaLabel="About Katherine Taylor - Design in Motion section"
+        className="bg-luxury-white"
+      >
+        <DesignInMotionSection />
+      </ScrollSnapPanel>
+
+      {/* 03. Gallery - Image mosaic collection */}
       <ScrollSnapPanel
         id="gallery-section"
         ariaLabel="Gallery section featuring intimate collections and photography"
@@ -34,7 +43,7 @@ const Index = () => {
         </div>
       </ScrollSnapPanel>
 
-      {/* 03. Rates - Video showcase with rates information */}
+      {/* 04. Rates - Video showcase with rates information */}
       <ScrollSnapPanel
         id="rates-section"
         ariaLabel="Rates section with immersive video and pricing information"
