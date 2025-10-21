@@ -9,10 +9,17 @@ const HERO_VIDEO_SRC =
 const Hero = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isMuted, setIsMuted] = useState(true);
+  const abortControllerRef = useRef<AbortController | null>(null);
 
   useEffect(() => {
     const element = videoRef.current;
     if (!element) return;
+
+    // Abort any pending play requests
+    if (abortControllerRef.current) {
+      abortControllerRef.current.abort();
+    }
+    abortControllerRef.current = new AbortController();
 
     element.muted = isMuted;
 
@@ -20,15 +27,29 @@ const Hero = () => {
       return; // Video already playing, don't interfere
     }
 
+    const signal = abortControllerRef.current.signal;
+
     const playVideo = async () => {
       try {
-        await element.play();
+        if (!signal.aborted && element.parentElement) {
+          await element.play();
+        }
       } catch (error) {
-        console.error("Video playback failed:", error);
+        // Silently ignore errors from interrupted or removed elements
+        if (signal.aborted) return;
+        if (error instanceof DOMException && error.name === "NotAllowedError") {
+          return; // Browser autoplay policy or removed element
+        }
       }
     };
 
     playVideo();
+
+    return () => {
+      if (abortControllerRef.current) {
+        abortControllerRef.current.abort();
+      }
+    };
   }, [isMuted]);
 
   const toggleMute = () => {
