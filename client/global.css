@@ -860,15 +860,19 @@
     opacity: 1;
   }
 
-  /* Katherine Taylor branding */
-  .kt-brand {
-    font-family: "Cormorant Garamond", serif;
-    font-weight: 700;
-    font-size: 1.75rem;
-    letter-spacing: 0.05em;
+  /* Katherine Taylor branding - Ultra-thin sans-serif */
+  .kt-brand-refined {
+    font-family: "Work Sans", sans-serif;
+    font-weight: 200;
+    font-size: 13px;
+    letter-spacing: 0.22em;
     line-height: 1.2;
+    text-transform: uppercase;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     /* WCAG 2.1 SC 1.4.3: 4.5:1 contrast */
     color: inherit;
+    cursor: pointer;
   }
 
   @media (max-width: 1023px) {
@@ -876,8 +880,8 @@
       height: var(--nav-height-mobile);
     }
 
-    .kt-brand {
-      font-size: 1.5rem;
+    .kt-brand-refined {
+      font-size: 12px;
     }
   }
 
