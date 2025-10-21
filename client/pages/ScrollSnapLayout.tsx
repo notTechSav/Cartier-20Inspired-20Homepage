@@ -14,9 +14,13 @@ interface ScrollSnapLayoutProps {
 const ScrollSnapLayout: React.FC<ScrollSnapLayoutProps> = ({ children }) => {
   return (
     <div
-      className="scroll-snap-container"
+      className="scroll-snap-container pt-16 md:pt-20"
       role="region"
       aria-label="Full-screen carousel of main content sections"
+      style={{
+        height: "calc(100vh - 4rem)",
+        marginTop: "4rem",
+      }}
     >
       {children}
     </div>
