@@ -1,54 +1,8 @@
 import { useEffect, useRef, useState } from "react";
-import { Menu, X, ChevronDown } from "lucide-react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-
-interface NavCategory {
-  title: string;
-  items: Array<{
-    label: string;
-    href: string;
-  }>;
-}
-
-const navigationCategories: NavCategory[] = [
-  {
-    title: "BROWSE",
-    items: [
-      { label: "HOME", href: "/" },
-      { label: "ABOUT", href: "/about" },
-      { label: "GALLERY", href: "/gallery" },
-      { label: "JOURNAL", href: "/journal" },
-    ],
-  },
-  {
-    title: "EXPERIENCE",
-    items: [
-      { label: "GIFTS", href: "/gifts" },
-      { label: "RATES", href: "/rates" },
-    ],
-  },
-  {
-    title: "CUSTOMER SERVICE",
-    items: [
-      { label: "FAQ", href: "/faq" },
-      { label: "INQUIRE", href: "/inquire-luxury" },
-      { label: "CONTACT", href: "/contact" },
-      { label: "APPOINTMENTS", href: "/appointments" },
-    ],
-  },
-];
+import { DesktopNavigation, MobileNavigation, katherineTaylorMenuConfig } from "./YSLNavigation";
 
 const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isOverlay, setIsOverlay] = useState(true);
-  const [activeCategory, setActiveCategory] = useState<string | null>(null);
-  const [expandedMobileCategory, setExpandedMobileCategory] = useState<
-    string | null
-  >(null);
   const headerRef = useRef<HTMLDivElement>(null);
 
   // Detect overlay state based on hero section
@@ -56,43 +10,6 @@ const Header = () => {
     const heroElement = document.querySelector("[data-hero='true']");
     setIsOverlay(!!heroElement);
   }, []);
-
-  // Manage menu state and body scroll lock
-  useEffect(() => {
-    if (isMenuOpen) {
-      document.body.classList.add("menu-open");
-      window.addEventListener("keydown", handleEscape);
-    } else {
-      document.body.classList.remove("menu-open");
-    }
-
-    return () => {
-      window.removeEventListener("keydown", handleEscape);
-      document.body.classList.remove("menu-open");
-    };
-  }, [isMenuOpen]);
-
-  const handleEscape = (e: KeyboardEvent) => {
-    if (e.key === "Escape") {
-      setIsMenuOpen(false);
-    }
-  };
-
-  const toggleMenu = () => {
-    setIsMenuOpen((prev) => !prev);
-    setExpandedMobileCategory(null);
-  };
-
-  const handleLinkClick = () => {
-    setIsMenuOpen(false);
-    setExpandedMobileCategory(null);
-  };
-
-  const handleMobileCategoryToggle = (categoryTitle: string) => {
-    setExpandedMobileCategory((prev) =>
-      prev === categoryTitle ? null : categoryTitle
-    );
-  };
 
   return (
     <>
@@ -107,82 +24,12 @@ const Header = () => {
           color: isOverlay ? "white" : "var(--nav-color-primary)",
         }}
       >
-        <div className="max-w-7xl mx-auto px-0 h-full">
+        <div className="max-w-7xl mx-auto px-0 h-full flex items-center justify-center relative">
           {/* DESKTOP NAVIGATION */}
-          <nav className="ysl-nav-desktop">
-            {navigationCategories.map((category) => (
-              <div
-                key={category.title}
-                className="relative group"
-                onMouseEnter={() => setActiveCategory(category.title)}
-                onMouseLeave={() => setActiveCategory(null)}
-              >
-                <button
-                  className="ysl-nav-item"
-                  style={{
-                    color: isOverlay
-                      ? "white"
-                      : "var(--nav-color-primary)",
-                  }}
-                >
-                  {category.title}
-                </button>
-
-                {/* MEGA MENU */}
-                <div
-                  className={`ysl-mega-menu ${
-                    activeCategory === category.title ? "open" : ""
-                  }`}
-                  style={{
-                    backgroundColor: isOverlay
-                      ? "rgba(26, 26, 26, 0.95)"
-                      : "rgba(250, 250, 250, 0.99)",
-                    borderTopColor: isOverlay
-                      ? "rgba(255, 255, 255, 0.08)"
-                      : "rgba(26, 26, 26, 0.04)",
-                    borderBottomColor: isOverlay
-                      ? "rgba(255, 255, 255, 0.08)"
-                      : "rgba(26, 26, 26, 0.04)",
-                  }}
-                >
-                  <div className="ysl-mega-menu-grid">
-                    {navigationCategories.map((col) => (
-                      <div key={col.title} className="ysl-mega-menu-column">
-                        <a
-                          href="#"
-                          className="ysl-section-header"
-                          style={{
-                            color: isOverlay
-                              ? "rgba(255, 255, 255, 0.9)"
-                              : "var(--nav-color-primary)",
-                          }}
-                        >
-                          {col.title}
-                        </a>
-                        <ul>
-                          {col.items.map((item) => (
-                            <li key={item.label}>
-                              <a
-                                href={item.href}
-                                className="ysl-sub-link"
-                                style={{
-                                  color: isOverlay
-                                    ? "rgba(255, 255, 255, 0.65)"
-                                    : "rgba(26, 26, 26, 0.65)",
-                                }}
-                              >
-                                {item.label}
-                              </a>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </nav>
+          <DesktopNavigation
+            menuItems={katherineTaylorMenuConfig}
+            isOverlay={isOverlay}
+          />
 
           {/* CENTER LOGO */}
           <a
@@ -201,103 +48,16 @@ const Header = () => {
             Katherine Taylor
           </a>
 
-          {/* MOBILE HAMBURGER */}
-          <button
-            type="button"
-            className={`ysl-hamburger ${isMenuOpen ? "open" : ""}`}
-            onClick={toggleMenu}
-            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-            aria-expanded={isMenuOpen}
-            style={{
-              color: isOverlay ? "white" : "var(--nav-color-primary)",
-            }}
-          >
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M3 6H21"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-              />
-              <path
-                d="M3 12H21"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-              />
-              <path
-                d="M3 18H21"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-              />
-            </svg>
-          </button>
+          {/* MOBILE NAVIGATION */}
+          <MobileNavigation
+            menuItems={katherineTaylorMenuConfig}
+            isOverlay={isOverlay}
+            useSwiper={false}
+          />
         </div>
       </header>
 
-      {/* MOBILE OVERLAY */}
-      {isMenuOpen && (
-        <div
-          className="ysl-mobile-overlay visible"
-          onClick={() => setIsMenuOpen(false)}
-        />
-      )}
-
-      {/* MOBILE DRAWER */}
-      <div className={`ysl-mobile-drawer ${isMenuOpen ? "open" : ""}`}>
-        {navigationCategories.map((category) => (
-          <div key={category.title}>
-            <button
-              className="ysl-accordion-button"
-              onClick={() => handleMobileCategoryToggle(category.title)}
-              aria-expanded={expandedMobileCategory === category.title}
-            >
-              {category.title}
-              <svg
-                className="ysl-accordion-chevron"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M6 9L12 15L18 9"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </button>
-
-            {/* ACCORDION CONTENT */}
-            <div
-              className={`ysl-accordion-content ${
-                expandedMobileCategory === category.title ? "expanded" : ""
-              }`}
-            >
-              {category.items.map((item) => (
-                <a
-                  key={item.label}
-                  href={item.href}
-                  className="ysl-mobile-sub-link"
-                  onClick={handleLinkClick}
-                >
-                  {item.label}
-                </a>
-              ))}
-            </div>
-          </div>
-        ))}
-      </div>
-
-      {/* YSL NAVIGATION CSS */}
+      {/* YSL NAVIGATION CSS STYLES */}
       <style>{`
         :root {
           --nav-font-family: "Work Sans", sans-serif;
@@ -341,9 +101,6 @@ const Header = () => {
           z-index: 1000;
           transition: all var(--nav-transition-medium);
           will-change: transform, opacity;
-          display: flex;
-          align-items: center;
-          justify-content: center;
         }
 
         .ysl-nav-desktop {
@@ -612,6 +369,7 @@ const Header = () => {
           cursor: pointer;
           transition: all var(--nav-transition-fast);
           -webkit-tap-highlight-color: transparent;
+          text-decoration: none;
         }
 
         .ysl-accordion-button:active {
@@ -664,6 +422,40 @@ const Header = () => {
           color: var(--nav-color-primary);
           border-left-color: var(--nav-color-primary);
           transform: translateX(2px);
+        }
+
+        /* Swiper mobile mega menu styles */
+        .mobile-mega-menu-swiper {
+          width: 100%;
+          padding: var(--spacing-md) 0;
+          overflow: visible;
+        }
+
+        .mobile-mega-menu-swiper .swiper-slide {
+          width: auto;
+          min-width: 240px;
+          max-width: 280px;
+          padding: 0 var(--spacing-md);
+        }
+
+        .mobile-mega-menu-swiper .swiper-pagination {
+          bottom: 0;
+          padding: var(--spacing-md) 0;
+        }
+
+        .mobile-mega-menu-swiper .swiper-pagination-bullet {
+          width: 6px;
+          height: 6px;
+          background: var(--gray-300);
+          opacity: 0.5;
+          transition: all var(--nav-transition-fast);
+        }
+
+        .mobile-mega-menu-swiper .swiper-pagination-bullet-active {
+          width: 20px;
+          border-radius: 3px;
+          background: var(--nav-color-primary);
+          opacity: 1;
         }
 
         @keyframes fadeIn {
