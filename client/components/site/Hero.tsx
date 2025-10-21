@@ -62,9 +62,9 @@ const Hero = () => {
         className="absolute inset-0 h-full w-full object-cover"
         autoPlay
         loop
-        muted={isMuted}
+        muted
         playsInline
-        preload="metadata"
+        preload="auto"
         onLoadedData={handleVideoLoadedData}
         poster="https://res.cloudinary.com/katherine-taylor-escort-video/image/upload/v1760237084/MAYA_2_cnpwna.jpg"
       >
