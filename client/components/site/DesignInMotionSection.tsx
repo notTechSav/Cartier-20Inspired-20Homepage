@@ -18,9 +18,7 @@ const DesignInMotionSection = () => {
             that reveal artistry, confidence, and chemistry in equal measure.
             These are the signatures that define my experiences.
           </p>
-          <Button asChild variant="ctaSecondary">
-            <a href="/about">Take a Glimpse</a>
-          </Button>
+          <a href="/about" className="ysl-nav-item inline-block">Take a Glimpse</a>
         </div>
         <div className="relative h-full w-full overflow-hidden border border-gray-200 bg-gray-50 shadow-luxury-md transition-shadow duration-400 ease-out hover:shadow-luxury-lg">
           <div

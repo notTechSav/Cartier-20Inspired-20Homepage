@@ -76,7 +76,7 @@ const ImmersiveVideoSection = () => {
               aria-label={
                 isPaused ? "Play immersive video" : "Pause immersive video"
               }
-              className="inline-flex items-center justify-center rounded-[2px] border border-white/50 bg-white/10 px-6 py-3 text-xs font-light uppercase tracking-uppercase text-luxury-white transition-all duration-250 ease-out hover:border-white hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-2 max-md:px-4 max-md:py-2"
+              className="ysl-nav-item inline-flex items-center justify-center max-md:px-4 max-md:py-2"
             >
               {isPaused ? "Play" : "Pause"}
             </button>
@@ -86,7 +86,7 @@ const ImmersiveVideoSection = () => {
               aria-label={
                 isMuted ? "Unmute immersive video" : "Mute immersive video"
               }
-              className="inline-flex items-center justify-center rounded-[2px] border border-white/50 bg-white/10 px-6 py-3 text-xs font-light uppercase tracking-uppercase text-luxury-white transition-all duration-250 ease-out hover:border-white hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-2 max-md:px-4 max-md:py-2"
+              className="ysl-nav-item inline-flex items-center justify-center max-md:px-4 max-md:py-2"
             >
               {isMuted ? "Unmute" : "Mute"}
             </button>

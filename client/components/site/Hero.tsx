@@ -91,9 +91,7 @@ const Hero = () => {
           >
             An Experience That Reflects Your Highest Qualities
           </H2>
-          <Button asChild variant="ctaPrimary" className="mt-4 text-sm">
-            <a href="/inquire">Reserve an Evening</a>
-          </Button>
+          <a href="/inquire" className="ysl-nav-item mt-4 text-sm inline-block">Reserve an Evening</a>
         </div>
       </div>
 
@@ -114,9 +112,7 @@ const Hero = () => {
           >
             An Experience That Reflects Your Highest Qualities
           </H2>
-          <Button asChild variant="ctaPrimary" className="w-full text-xs mt-6">
-            <a href="/inquire">Reserve an Evening</a>
-          </Button>
+          <a href="/inquire" className="ysl-nav-item w-full text-xs mt-6 inline-block text-center">Reserve an Evening</a>
         </div>
       </div>
 
