@@ -123,19 +123,9 @@ const Hero = () => {
           onClick={toggleMute}
           aria-pressed={!isMuted}
           aria-label={isMuted ? "Unmute hero video" : "Mute hero video"}
-          className="absolute right-6 bottom-6 md:right-8 md:bottom-8 z-20 inline-flex items-center justify-center gap-2 rounded-sm border border-white/60 bg-white/90 backdrop-blur px-4 py-2 md:px-5 md:py-3 text-xs font-light uppercase tracking-wider text-luxury-black transition-all duration-250 hover:bg-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-luxury-black/50"
+          className="ysl-nav-item-light absolute right-6 bottom-6 md:right-8 md:bottom-8 z-20 inline-flex items-center justify-center text-sm text-luxury-white"
         >
-          {isMuted ? (
-            <>
-              <VolumeX className="h-3 w-3 md:h-4 md:w-4" />
-              <span className="hidden sm:inline">Unmute</span>
-            </>
-          ) : (
-            <>
-              <Volume2 className="h-3 w-3 md:h-4 md:w-4" />
-              <span className="hidden sm:inline">Mute</span>
-            </>
-          )}
+          {isMuted ? "Unmute" : "Mute"}
         </button>
       )}
     </section>

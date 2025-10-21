@@ -77,37 +77,17 @@ const VideoSection = () => {
               type="button"
               onClick={togglePlay}
               aria-label={isPaused ? "Play video" : "Pause video"}
-              className="ysl-nav-item-light inline-flex items-center justify-center gap-2 max-md:px-4 max-md:py-2 text-luxury-white"
+              className="ysl-nav-item-light inline-block text-luxury-white"
             >
-              {isPaused ? (
-                <>
-                  <Play className="h-3 w-3" />
-                  <span className="hidden sm:inline">Play</span>
-                </>
-              ) : (
-                <>
-                  <Pause className="h-3 w-3" />
-                  <span className="hidden sm:inline">Pause</span>
-                </>
-              )}
+              {isPaused ? "Play" : "Pause"}
             </button>
             <button
               type="button"
               onClick={toggleMute}
               aria-label={isMuted ? "Unmute video" : "Mute video"}
-              className="ysl-nav-item-light inline-flex items-center justify-center gap-2 max-md:px-4 max-md:py-2 text-luxury-white"
+              className="ysl-nav-item-light inline-block text-luxury-white"
             >
-              {isMuted ? (
-                <>
-                  <VolumeX className="h-3 w-3" />
-                  <span className="hidden sm:inline">Unmute</span>
-                </>
-              ) : (
-                <>
-                  <Volume2 className="h-3 w-3" />
-                  <span className="hidden sm:inline">Mute</span>
-                </>
-              )}
+              {isMuted ? "Unmute" : "Mute"}
             </button>
           </div>
         </div>

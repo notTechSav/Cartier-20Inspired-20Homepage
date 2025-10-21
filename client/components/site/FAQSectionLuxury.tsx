@@ -147,7 +147,7 @@ const FAQSectionLuxury = () => {
           <div className="mt-6">
             <a
               href="/booking"
-              className="inline-flex items-center text-xs font-light uppercase tracking-uppercase text-gray-800 underline underline-offset-4 transition-opacity duration-250 ease-out hover:opacity-70"
+              className="ysl-nav-item inline-block text-sm text-luxury-black"
             >
               Learn More
             </a>
