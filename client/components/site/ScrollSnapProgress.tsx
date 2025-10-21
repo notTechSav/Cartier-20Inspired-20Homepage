@@ -43,7 +43,7 @@ const ScrollSnapProgress: React.FC<ScrollSnapProgressProps> = ({
   }, []);
 
   return (
-    <div className="fixed right-8 top-1/2 z-50 -translate-y-1/2 hidden lg:flex flex-col items-center gap-6 max-lg:hidden">
+    <div className="fixed right-8 top-1/2 z-40 -translate-y-1/2 hidden lg:flex flex-col items-center gap-6 pointer-events-none">
       {Array.from({ length: totalSections }).map((_, index) => (
         <button
           key={index}
