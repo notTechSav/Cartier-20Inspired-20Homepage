@@ -60,18 +60,18 @@ const VideoSection = () => {
 
       {/* Content Overlay */}
       <div className="absolute inset-0 flex flex-col justify-end px-6 pb-16 md:px-8 md:pb-24 max-md:pb-12">
-        <div className="mx-auto flex w-full max-w-luxury flex-col items-start gap-6 text-luxury-white max-md:gap-4">
+        <div className="mx-auto flex w-full max-w-luxury flex-col items-center gap-6 text-center text-luxury-white max-md:gap-4">
           <span className="text-xs font-light uppercase tracking-wide text-white/70">
             Sophistication Unveiled
           </span>
-          <h2 className="font-serif text-5xl font-extralight tracking-tight leading-[1.1] max-md:text-3xl">
+          <h2 className="text-center font-serif text-5xl font-extralight tracking-tight leading-[1.1] max-md:text-3xl">
             Every Moment Matters
           </h2>
-          <p className="max-w-[65ch] text-base font-light leading-relaxed tracking-wide text-white/85">
+          <p className="text-center max-w-[65ch] text-base font-light leading-relaxed tracking-wide text-white/85">
             Discretion, elegance, and intention converge in every engagement.
             This is where anticipation meets experience.
           </p>
-          <div className="flex items-center gap-3 max-md:gap-2">
+          <div className="flex items-center justify-center gap-3 max-md:gap-2">
             <button
               type="button"
               onClick={togglePlay}

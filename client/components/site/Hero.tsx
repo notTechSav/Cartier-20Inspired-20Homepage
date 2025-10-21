@@ -76,18 +76,18 @@ const Hero = () => {
 
       {/* Desktop Content */}
       <div className="relative z-10 hidden md:flex w-full flex-1 flex-col items-center justify-end px-8 pb-32 pt-32">
-        <div className="flex w-full max-w-luxury flex-col items-start gap-8 text-luxury-white">
+        <div className="flex w-full max-w-luxury flex-col items-center gap-8 text-center text-luxury-white">
           <H3
             as="p"
             aria-hidden="true"
-            className="mb-0 text-luxury-white/70 text-sm tracking-wide"
+            className="text-center mb-0 text-luxury-white/70 text-sm tracking-wide"
           >
             Love, Elevated
           </H3>
           <H2
             as="p"
             aria-hidden="true"
-            className="text-luxury-white text-5xl md:text-6xl leading-tight"
+            className="text-center text-luxury-white text-5xl md:text-6xl leading-tight"
           >
             An Experience That Reflects Your Highest Qualities
           </H2>
@@ -96,19 +96,19 @@ const Hero = () => {
       </div>
 
       {/* Mobile Content */}
-      <div className="relative z-10 md:hidden flex w-full flex-1 flex-col items-start justify-end px-6 pb-16 pt-24">
-        <div className="flex w-full flex-col items-start gap-6 text-luxury-white">
+      <div className="relative z-10 md:hidden flex w-full flex-1 flex-col items-center justify-end px-6 pb-16 pt-24">
+        <div className="flex w-full flex-col items-center text-center gap-6 text-luxury-white">
           <H3
             as="p"
             aria-hidden="true"
-            className="mb-0 text-luxury-white/75 text-xs tracking-wide uppercase"
+            className="text-center mb-0 text-luxury-white/75 text-xs tracking-wide uppercase"
           >
             Love, Elevated
           </H3>
           <H2
             as="p"
             aria-hidden="true"
-            className="text-luxury-white text-2xl leading-tight font-extralight"
+            className="text-center text-luxury-white text-2xl leading-tight font-extralight"
           >
             An Experience That Reflects Your Highest Qualities
           </H2>
