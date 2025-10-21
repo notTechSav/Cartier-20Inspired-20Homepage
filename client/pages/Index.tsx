@@ -4,7 +4,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Mousewheel, Keyboard, EffectCreative } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-creative";
-import { useEffect, useState } from "react";
 
 import Hero from "@/components/site/Hero";
 import ImageMosaicSection from "@/components/site/ImageMosaicSection";
@@ -14,8 +13,6 @@ import DesignInMotionSection from "@/components/site/DesignInMotionSection";
 import VideoSection from "@/components/site/VideoSection";
 import Footer from "@/components/site/Footer";
 import GiftsSection from "@/components/site/GiftsSection";
-import ScrollSnapLayout from "./ScrollSnapLayout";
-import ScrollSnapPanel from "./ScrollSnapPanel";
 
 const Index = () => {
   // Swiper carousel layout for both mobile and desktop
