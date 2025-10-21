@@ -95,8 +95,8 @@ const Hero = () => {
       <div className="pointer-events-none absolute inset-0 bg-luxury-black/40 md:bg-luxury-black/50" />
 
       {/* Desktop Content */}
-      <div className="relative z-10 hidden md:flex w-full flex-1 flex-col items-center justify-end px-8 pb-4">
-        <div className="flex w-full max-w-luxury flex-col items-center gap-8 text-center text-luxury-white">
+      <div className="relative z-10 hidden md:flex w-full flex-1 flex-col items-center justify-end px-8 pb-0">
+        <div className="flex w-full max-w-luxury flex-col items-center justify-end gap-8 text-center text-luxury-white">
           <H3
             as="p"
             aria-hidden="true"
