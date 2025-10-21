@@ -228,17 +228,17 @@ const Index = () => {
             <div className="text-center space-y-6 max-w-xl">
               <h2 className="text-center text-3xl font-light tracking-tight text-luxury-black">
                 Private Collections
+                <a
+                  href="/gallery"
+                  className="ysl-nav-item inline-block text-luxury-black block mt-2"
+                >
+                  Discover
+                </a>
               </h2>
               <p className="text-center text-sm font-light leading-relaxed tracking-luxury text-gray-600">
                 Intimate documentation from Northern California to Los Angeles —
                 three collections, three moments in time.
               </p>
-              <a
-                href="/gallery"
-                className="ysl-nav-item inline-block text-luxury-black"
-              >
-                Explore
-              </a>
             </div>
           </div>
         </div>
