@@ -104,19 +104,21 @@ const Hero = () => {
           >
             Love, Elevated
           </H3>
-          <H2
-            as="p"
-            aria-hidden="true"
-            className="text-center text-luxury-white text-5xl md:text-6xl leading-tight"
-          >
-            An Experience That Reflects Your Highest Qualities
-          </H2>
-          <a
-            href="/inquire"
-            className="ysl-nav-item-light text-sm inline-block text-luxury-white"
-          >
-            Reserve an Evening
-          </a>
+          <div className="flex flex-col items-center gap-2">
+            <H2
+              as="p"
+              aria-hidden="true"
+              className="text-center text-luxury-white text-5xl md:text-6xl leading-tight"
+            >
+              An Experience That Reflects Your Highest Qualities
+            </H2>
+            <a
+              href="/inquire"
+              className="ysl-nav-item-light text-sm inline-block text-luxury-white"
+            >
+              Reserve an Evening
+            </a>
+          </div>
         </div>
       </div>
 
@@ -130,19 +132,21 @@ const Hero = () => {
           >
             Love, Elevated
           </H3>
-          <H2
-            as="p"
-            aria-hidden="true"
-            className="text-center text-luxury-white text-2xl leading-tight font-extralight"
-          >
-            An Experience That Reflects Your Highest Qualities
-          </H2>
-          <a
-            href="/inquire"
-            className="ysl-nav-item-light w-full text-xs inline-block text-center text-luxury-white"
-          >
-            Reserve an Evening
-          </a>
+          <div className="flex flex-col items-center gap-1">
+            <H2
+              as="p"
+              aria-hidden="true"
+              className="text-center text-luxury-white text-2xl leading-tight font-extralight"
+            >
+              An Experience That Reflects Your Highest Qualities
+            </H2>
+            <a
+              href="/inquire"
+              className="ysl-nav-item-light w-full text-xs inline-block text-center text-luxury-white"
+            >
+              Reserve an Evening
+            </a>
+          </div>
         </div>
       </div>
 
