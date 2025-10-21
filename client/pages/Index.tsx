@@ -1,8 +1,9 @@
 "use client";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Mousewheel, Keyboard } from "swiper/modules";
+import { Mousewheel, Keyboard, Creative } from "swiper/modules";
 import "swiper/css";
+import "swiper/css/effect-creative";
 import { useEffect, useState } from "react";
 
 import Hero from "@/components/site/Hero";
@@ -158,13 +159,23 @@ const Index = () => {
   // Mobile layout with Swiper carousel
   return (
     <Swiper
-      modules={[Mousewheel, Keyboard]}
+      modules={[Mousewheel, Keyboard, Creative]}
       direction="vertical"
       mousewheel={{ forceToAxis: true }}
       keyboard={{ enabled: true }}
       slidesPerView={1}
       spaceBetween={0}
-      className="w-full"
+      effect="creative"
+      creativeEffect={{
+        prev: {
+          shadow: true,
+          translate: [0, 0, -400],
+        },
+        next: {
+          translate: [0, "100%", 0],
+        },
+      }}
+      className="w-full swiper-creative swiper-3d"
       style={{ height: "100vh" }}
     >
       {/* 01. Hero - Main introduction */}
