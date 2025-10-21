@@ -144,7 +144,10 @@ const ImageMosaicSection = ({
             ) : null}
           </div>
           {!footerLinkHref && (
-            <a href="/gallery" className="ysl-nav-item inline-block text-luxury-black mt-4">
+            <a
+              href="/gallery"
+              className="ysl-nav-item inline-block text-luxury-black mt-4"
+            >
               Explore
             </a>
           )}

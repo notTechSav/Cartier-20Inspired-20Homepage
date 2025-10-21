@@ -20,7 +20,12 @@ const DesignInMotionSection = () => {
             These are the signatures that define my experiences.
           </p>
           <div className="flex justify-center">
-            <a href="/about" className="ysl-nav-item inline-block text-luxury-black">Take a Glimpse</a>
+            <a
+              href="/about"
+              className="ysl-nav-item inline-block text-luxury-black"
+            >
+              Take a Glimpse
+            </a>
           </div>
         </div>
         <div className="relative h-full w-full overflow-hidden border border-gray-200 bg-gray-50 shadow-luxury-md transition-shadow duration-400 ease-out hover:shadow-luxury-lg">

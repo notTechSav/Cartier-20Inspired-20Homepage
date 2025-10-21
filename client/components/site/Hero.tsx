@@ -87,7 +87,12 @@ const Hero = () => {
           >
             An Experience That Reflects Your Highest Qualities
           </H2>
-          <a href="/inquire" className="ysl-nav-item-light mt-4 text-sm inline-block text-luxury-white">Reserve an Evening</a>
+          <a
+            href="/inquire"
+            className="ysl-nav-item-light mt-4 text-sm inline-block text-luxury-white"
+          >
+            Reserve an Evening
+          </a>
         </div>
       </div>
 
@@ -108,7 +113,12 @@ const Hero = () => {
           >
             An Experience That Reflects Your Highest Qualities
           </H2>
-          <a href="/inquire" className="ysl-nav-item-light w-full text-xs mt-6 inline-block text-center text-luxury-white">Reserve an Evening</a>
+          <a
+            href="/inquire"
+            className="ysl-nav-item-light w-full text-xs mt-6 inline-block text-center text-luxury-white"
+          >
+            Reserve an Evening
+          </a>
         </div>
       </div>
 

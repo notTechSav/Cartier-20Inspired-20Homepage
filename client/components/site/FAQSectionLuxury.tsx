@@ -170,7 +170,9 @@ const FAQSectionLuxury = () => {
               Frequently Asked Questions
             </h2>
             <p className="text-center text-base font-light leading-relaxed tracking-luxury text-gray-600">
-              After more than a decade in this practice, I answer what quick searches never cover—standards, discretion, and how engagements actually unfold.
+              After more than a decade in this practice, I answer what quick
+              searches never cover—standards, discretion, and how engagements
+              actually unfold.
             </p>
           </div>
 

@@ -25,8 +25,8 @@ const GiftsSection = () => {
           </h2>
           <p className="text-center text-base font-light leading-relaxed tracking-luxury text-gray-600">
             Thoughtfully selected gifts and experiences designed for those who
-            appreciate the finest details. From intimate moments to unforgettable
-            occasions.
+            appreciate the finest details. From intimate moments to
+            unforgettable occasions.
           </p>
           <a
             href="/gifts"

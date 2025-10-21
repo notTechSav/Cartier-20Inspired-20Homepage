@@ -104,8 +104,8 @@ const Index = () => {
                 Journal
               </h2>
               <p className="text-gray-700 mb-8 max-w-2xl mx-auto">
-                Insights, stories, and perspectives on companionship, luxury, and
-                the art of connection.
+                Insights, stories, and perspectives on companionship, luxury,
+                and the art of connection.
               </p>
               <a
                 href="/journal"
@@ -294,8 +294,8 @@ const Index = () => {
                 Journal
               </h2>
               <p className="text-center text-sm font-light leading-relaxed tracking-luxury text-gray-600">
-                Insights, stories, and perspectives on companionship, luxury, and
-                the art of connection.
+                Insights, stories, and perspectives on companionship, luxury,
+                and the art of connection.
               </p>
               <a
                 href="/journal"
