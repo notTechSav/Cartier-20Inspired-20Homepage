@@ -15,7 +15,9 @@ const Hero = () => {
     const element = videoRef.current;
     if (!element) return;
 
-    element.muted = isMuted;
+    // Always keep video muted for autoplay on mobile
+    // The mute button just changes the UI state
+    element.muted = true;
 
     const playVideo = async () => {
       try {
@@ -28,7 +30,7 @@ const Hero = () => {
     };
 
     playVideo();
-  }, [isMuted]);
+  }, []);
 
   const toggleMute = () => {
     const element = videoRef.current;
