@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { Volume2, VolumeX } from "lucide-react";
 
 const HERO_VIDEO_SRC =
-  "https://res.cloudinary.com/katherine-taylor-escort-video/video/upload/v1760237084/MAYA_2_cnpwna.mp4";
+  "https://res.cloudinary.com/katherine-taylor-escort-video/video/upload/v1760312493/Love_Elevated_Katherine_Taylor_Escort_kuz4ej.mov";
 
 const Hero = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -50,7 +50,12 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative isolate flex min-h-screen w-full overflow-hidden bg-luxury-black">
+    <section
+      id="hero"
+      className="relative isolate flex min-h-screen w-full overflow-hidden bg-luxury-black"
+      data-hero="true"
+      data-section="hero"
+    >
       {/* Video Background */}
       <video
         ref={videoRef}

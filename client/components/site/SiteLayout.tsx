@@ -1,6 +1,6 @@
 import { PropsWithChildren } from "react";
 
-import Navigation from "@/components/Navigation";
+import Header from "@/components/Header";
 import Footer from "@/components/site/Footer";
 import ScrollSnapProgress from "@/components/site/ScrollSnapProgress";
 
@@ -13,7 +13,7 @@ const SiteLayout = ({ children }: PropsWithChildren) => {
   if (isScrollSnapLayout) {
     return (
       <div className="relative flex h-screen w-full flex-col bg-luxury-white text-gray-700">
-        <Navigation />
+        <Header />
         <ScrollSnapProgress totalSections={6} />
         <div className="flex-1 overflow-hidden">{children}</div>
         <Footer isScrollSnapLayout={true} totalSections={6} />
@@ -23,8 +23,8 @@ const SiteLayout = ({ children }: PropsWithChildren) => {
 
   return (
     <div className="flex min-h-screen flex-col bg-luxury-white text-gray-700">
-      <Navigation />
-      <main className="flex-1 pt-20 md:pt-32 lg:pt-40">{children}</main>
+      <Header />
+      <main className="flex-1">{children}</main>
       <Footer />
     </div>
   );

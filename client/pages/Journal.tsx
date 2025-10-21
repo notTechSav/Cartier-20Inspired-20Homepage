@@ -78,7 +78,11 @@ const Journal = () => {
   };
 
   return (
-    <div className="bg-luxury-white text-luxury-black">
+    <div
+      className="bg-luxury-white text-luxury-black"
+      id="journal"
+      data-section="journal"
+    >
       <JournalHero
         title={journalDisplay.pageTitle}
         subtitle={journalDisplay.subtitle}

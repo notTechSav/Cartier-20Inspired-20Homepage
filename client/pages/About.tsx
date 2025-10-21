@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 
+import { useEffect } from "react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import PageHeroOverlay from "@/components/site/PageHeroOverlay";
 
@@ -34,7 +35,11 @@ const About = () => {
   }, []);
 
   return (
-    <div className="bg-[#fafaf9] text-[#4a4a4a]">
+    <div
+      className="bg-[#fafaf9] text-[#4a4a4a]"
+      id="about"
+      data-section="about"
+    >
       <PageHeroOverlay
         title="About Me"
         subtitle="The conversation never resets. I carry forward your context—professional, personal, and everything unsaid—so we move without rehearsal."
