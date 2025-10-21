@@ -95,7 +95,7 @@ const Hero = () => {
       <div className="pointer-events-none absolute inset-0 bg-luxury-black/40 md:bg-luxury-black/50" />
 
       {/* Desktop Content */}
-      <div className="relative z-10 hidden md:flex w-full flex-1 flex-col items-center justify-end px-8 pb-32 pt-32">
+      <div className="relative z-10 hidden md:flex w-full flex-1 flex-col items-center justify-end px-8 pb-16">
         <div className="flex w-full max-w-luxury flex-col items-center gap-8 text-center text-luxury-white">
           <H3
             as="p"
@@ -121,7 +121,7 @@ const Hero = () => {
       </div>
 
       {/* Mobile Content */}
-      <div className="relative z-10 md:hidden flex w-full flex-1 flex-col items-center justify-end px-6 pb-16 pt-24">
+      <div className="relative z-10 md:hidden flex w-full flex-1 flex-col items-center justify-end px-6 pb-12">
         <div className="flex w-full flex-col items-center text-center gap-6 text-luxury-white">
           <H3
             as="p"
