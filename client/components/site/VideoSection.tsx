@@ -77,7 +77,7 @@ const VideoSection = () => {
               type="button"
               onClick={togglePlay}
               aria-label={isPaused ? "Play video" : "Pause video"}
-              className="ysl-nav-item inline-flex items-center justify-center gap-2 max-md:px-4 max-md:py-2"
+              className="ysl-nav-item-light inline-flex items-center justify-center gap-2 max-md:px-4 max-md:py-2 text-luxury-white"
             >
               {isPaused ? (
                 <>
@@ -95,7 +95,7 @@ const VideoSection = () => {
               type="button"
               onClick={toggleMute}
               aria-label={isMuted ? "Unmute video" : "Mute video"}
-              className="ysl-nav-item inline-flex items-center justify-center gap-2 max-md:px-4 max-md:py-2"
+              className="ysl-nav-item-light inline-flex items-center justify-center gap-2 max-md:px-4 max-md:py-2 text-luxury-white"
             >
               {isMuted ? (
                 <>
