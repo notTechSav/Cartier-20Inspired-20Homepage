@@ -54,7 +54,7 @@ const Hero = () => {
 
   const toggleMute = () => {
     const element = videoRef.current;
-    if (!element) return;
+    if (!element || !element.parentElement) return;
 
     const nextMuted = !isMuted;
     element.muted = nextMuted;
@@ -62,7 +62,10 @@ const Hero = () => {
 
     if (element.paused) {
       element.play().catch((error) => {
-        console.error("Video playback failed:", error);
+        // Silently ignore errors from removed elements or browser policy
+        if (error instanceof DOMException && error.name === "NotAllowedError") {
+          return;
+        }
       });
     }
   };
