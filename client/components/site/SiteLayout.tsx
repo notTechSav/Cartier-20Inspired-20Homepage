@@ -19,32 +19,15 @@ const SiteLayout = ({ children }: PropsWithChildren) => {
 
   if (isScrollSnapLayout) {
     return (
-      <div className="relative flex h-screen w-full flex-col bg-luxury-white text-gray-700">
+      <div className="relative w-full bg-luxury-white text-gray-700">
         {/* Header - Fixed at top, outside scroll container */}
         <Header />
 
         {/* Scroll Progress Indicator */}
         <ScrollSnapProgress totalSections={7} />
 
-        {/* Main scroll container - contains all 6 sections including Footer */}
-        <div className="flex-1 overflow-hidden">
-          {children}
-          {/*
-            IMPORTANT: The Footer is now rendered INSIDE your ScrollSnapLayout
-            as the last child. If you're still rendering it here, remove it
-            and add it as the 6th child in your ScrollSnapLayout component.
-
-            Example in your ScrollSnapLayout/Index:
-            <ScrollSnapLayout>
-              <HeroSection />
-              <FeaturedSection />
-              <CollectionSection />
-              <CraftsmanshipSection />
-              <TestimonialsSection />
-              <Footer isScrollSnapLayout={true} totalSections={6} />
-            </ScrollSnapLayout>
-          */}
-        </div>
+        {/* Main scroll container - direct scroll, no wrapper */}
+        {children}
       </div>
     );
   }
