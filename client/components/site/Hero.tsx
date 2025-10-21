@@ -121,8 +121,8 @@ const Hero = () => {
       </div>
 
       {/* Mobile Content */}
-      <div className="relative z-10 md:hidden flex w-full flex-1 flex-col items-center justify-end px-6 pb-3">
-        <div className="flex w-full flex-col items-center text-center gap-6 text-luxury-white">
+      <div className="relative z-10 md:hidden flex w-full flex-1 flex-col items-center justify-end px-6 pb-0">
+        <div className="flex w-full flex-col items-center justify-end text-center gap-6 text-luxury-white">
           <H3
             as="p"
             aria-hidden="true"
