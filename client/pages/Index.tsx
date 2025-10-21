@@ -1,9 +1,8 @@
 "use client";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Mousewheel, Keyboard, EffectCreative } from "swiper/modules";
+import { Mousewheel, Keyboard } from "swiper/modules";
 import "swiper/css";
-import "swiper/css/effect-creative";
 
 import Hero from "@/components/site/Hero";
 import ImageMosaicSection from "@/components/site/ImageMosaicSection";
@@ -18,23 +17,13 @@ const Index = () => {
   // Swiper carousel layout for both mobile and desktop
   return (
     <Swiper
-      modules={[Mousewheel, Keyboard, EffectCreative]}
+      modules={[Mousewheel, Keyboard]}
       direction="vertical"
-      effect="creative"
-      creativeEffect={{
-        prev: {
-          shadow: true,
-          translate: [0, 0, -400],
-        },
-        next: {
-          translate: [0, "100%", 0],
-        },
-      }}
       mousewheel={{ forceToAxis: true }}
       keyboard={{ enabled: true }}
       slidesPerView={1}
       spaceBetween={0}
-      className="w-full swiper-creative swiper-3d"
+      className="w-full"
       style={{ height: "100vh" }}
     >
       {/* 01. Hero - Main introduction */}
