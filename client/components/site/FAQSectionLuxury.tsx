@@ -19,12 +19,6 @@ const featuredFaqs: FaqItem[] = [
       "Having worked as an escort for over a decade, I can tell you it's refined companionship at its finest. As Katherine Taylor escort, I offer what the best SF escorts aspire to—cultured company that's elegant, confidential, and beautifully timed. Unlike what you might find searching 'escorts near me,' this is bespoke connection.",
   },
   {
-    id: "how-much-do-escorts-cost",
-    question: "How much do escorts cost?",
-    answer:
-      "After over a decade as a San Francisco escort, I've seen rates vary wildly—from $400 to $5000+ per hour. My rates begin at $2000 hourly, reflecting the caliber of experience you won't find in typical 'escort near me' searches. This investment ensures exclusive attention, impeccable preparation, and the refined companionship that distinguishes premium SF escorts.",
-  },
-  {
     id: "katherine-taylor-different",
     question: "What sets Katherine Taylor apart from other escorts near me?",
     answer:
