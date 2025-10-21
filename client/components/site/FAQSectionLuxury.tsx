@@ -1,7 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 
 import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
 
 type FaqItem = {
   id: string;
@@ -167,10 +166,10 @@ const FAQSectionLuxury = () => {
       >
         <div className="mx-auto max-w-luxury px-6 md:px-12 max-md:px-6">
           <div className="mx-auto mb-12 max-w-[65ch] text-center">
-            <h2 className="text-3xl font-light tracking-tight text-luxury-black mb-4 md:text-4xl">
+            <h2 className="text-center text-3xl font-light tracking-tight text-luxury-black mb-4 md:text-4xl">
               Frequently Asked Questions
             </h2>
-            <p className="text-base font-light leading-relaxed tracking-luxury text-gray-600">
+            <p className="text-center text-base font-light leading-relaxed tracking-luxury text-gray-600">
               After more than a decade in this practice, I answer what quick searches never cover—standards, discretion, and how engagements actually unfold.
             </p>
           </div>
@@ -198,15 +197,14 @@ const FAQSectionLuxury = () => {
             </div>
 
             <div className="mt-12 text-center">
-              <Button
-                variant="ctaSecondary"
+              <button
                 type="button"
                 onClick={() => setShowHidden((prev) => !prev)}
                 aria-expanded={showHidden}
-                className="max-md:w-full md:w-auto"
+                className="ysl-nav-item inline-block text-luxury-black"
               >
                 {showHidden ? "Show Less" : "View All Questions"}
-              </Button>
+              </button>
             </div>
           </div>
         </div>
