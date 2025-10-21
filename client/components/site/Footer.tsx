@@ -1,117 +1,340 @@
-import { useEffect, useState } from "react";
-import { Button } from "@/components/ui/button";
-import { useScrollSnapNavigation } from "@/hooks/useScrollSnapNavigation";
+/**
+ * LUXURY FOOTER COMPONENT
+ * De Beers x Hermès Aesthetic
+ * Supports both scroll-snap section (100vh) and traditional footer modes
+ */
+
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 interface FooterProps {
   isScrollSnapLayout?: boolean;
   totalSections?: number;
 }
 
-const Footer = ({ isScrollSnapLayout = false, totalSections = 6 }: FooterProps) => {
-  const [isVisible, setIsVisible] = useState(false);
-  const { nextSection, prevSection, canGoNext, canGoPrev } =
-    useScrollSnapNavigation(totalSections);
+const Footer: React.FC<FooterProps> = ({
+  isScrollSnapLayout = false,
+  totalSections = 7,
+}) => {
+  const [email, setEmail] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">(
+    "idle"
+  );
 
-  // Only show navigation in scroll-snap layout
-  useEffect(() => {
-    setIsVisible(isScrollSnapLayout);
-  }, [isScrollSnapLayout]);
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    // Simulate API call
+    setTimeout(() => {
+      setSubmitStatus("success");
+      setIsSubmitting(false);
+      setEmail("");
+
+      // Reset success message after 3s
+      setTimeout(() => setSubmitStatus("idle"), 3000);
+    }, 1000);
+  };
+
+  // Base classes that apply to both modes
+  const baseClasses = "relative w-full bg-luxury-white";
+
+  // Conditional classes based on layout mode
+  const layoutClasses = isScrollSnapLayout
+    ? "scroll-snap-item min-h-screen flex flex-col justify-center"
+    : "mt-auto";
+
+  const footerLinks = {
+    support: [
+      { label: "Track Your Order", href: "/track-order" },
+      { label: "Contact Us", href: "/contact" },
+      { label: "Book an Appointment", href: "/appointments" },
+      { label: "Frequently Asked Questions", href: "/faq" },
+      { label: "Shipping & Return Policy", href: "/shipping" },
+      { label: "Store Information | Store List", href: "/stores" },
+      { label: "Gift Card", href: "/gift-card" },
+    ],
+    services: [
+      { label: "Request Repair", href: "/repair" },
+      { label: "Personalization", href: "/personalization" },
+      { label: "Business Accounts", href: "/business" },
+      { label: "Select Financing", href: "/financing" },
+    ],
+    about: [
+      { label: "Sustainability", href: "/sustainability" },
+      { label: "Foundation", href: "/foundation" },
+      { label: "Careers", href: "/careers" },
+      { label: "For the Press", href: "/press" },
+    ],
+    legal: [
+      { label: "Privacy Policy", href: "/privacy" },
+      { label: "Terms & Conditions", href: "/terms" },
+      { label: "Accessibility Statement", href: "/accessibility" },
+      { label: "Transparency in Coverage", href: "/transparency" },
+      { label: "California Privacy", href: "/california-privacy" },
+      {
+        label: "Human Rights and Supply Chain Transparency",
+        href: "/human-rights",
+      },
+      {
+        label: "Do Not Sell or Share My Personal Information",
+        href: "/do-not-sell",
+      },
+    ],
+  };
 
   return (
-    <footer className="w-full bg-luxury-white">
-      {/* Email Signup Section */}
-      <section className="border-t border-gray-100 py-16 md:py-32 max-md:py-16">
-        <div className="mx-auto flex max-w-luxury flex-col items-center px-6 text-center md:px-8 max-md:px-6">
-          <h2 className="text-sm font-light uppercase tracking-uppercase text-gray-700">
-            Latest from Katherine Taylor
+    <footer
+      className={`${baseClasses} ${layoutClasses}`}
+      data-section-index={isScrollSnapLayout ? totalSections - 1 : undefined}
+    >
+      {/* Newsletter Section */}
+      <div className="border-b border-gray-200 px-6 py-16 md:px-12 lg:px-24 xl:px-32">
+        <div className="mx-auto max-w-7xl">
+          {/* Heading */}
+          <h2
+            className="newsletter-container mb-12 text-center font-['Cormorant_Garamond'] text-3xl font-light tracking-tight text-luxury-black md:text-4xl lg:text-[2.75rem]"
+            style={{
+              fontWeight: 300,
+              letterSpacing: "-0.01em",
+            }}
+          >
+            Latest from Our Atelier
           </h2>
-          <form className="mt-8 flex w-full max-w-2xl flex-col gap-3 md:flex-row md:items-center md:mt-12 max-md:gap-3 max-md:mt-8">
-            <label htmlFor="email-signup" className="sr-only">
-              Email address
-            </label>
-            <input
-              id="email-signup"
-              type="email"
-              name="email"
-              placeholder="your@email.com"
-              autoComplete="email"
-              className="w-full flex-1 border border-gray-200 bg-white px-6 py-4 text-base font-light tracking-luxury text-gray-700 placeholder:text-gray-400 transition-colors duration-250 ease-out focus:border-gray-400 focus:outline-none"
-            />
-            <Button
+
+          {/* Email Form */}
+          <form
+            onSubmit={handleSubmit}
+            className="newsletter-container mx-auto flex max-w-2xl flex-col items-center gap-4 md:flex-row"
+          >
+            <div className="relative w-full flex-1">
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="EMAIL"
+                required
+                disabled={isSubmitting || submitStatus === "success"}
+                className="luxury-input w-full border-b border-gray-300 bg-transparent px-4 py-4 font-['Work_Sans'] text-sm uppercase tracking-[0.15em] text-luxury-black placeholder-gray-400 transition-all duration-300 focus:border-luxury-black focus:outline-none disabled:opacity-50"
+                style={{
+                  fontWeight: 300,
+                  letterSpacing: "0.15em",
+                }}
+              />
+            </div>
+
+            <button
               type="submit"
-              variant="ctaPrimary"
-              className="max-md:w-full md:w-auto"
+              disabled={isSubmitting || submitStatus === "success"}
+              className="btn-luxury-slide group relative overflow-hidden border border-gray-300 bg-transparent px-8 py-4 font-['Work_Sans'] text-xs uppercase tracking-[0.2em] text-luxury-black transition-all duration-500 hover:border-luxury-black disabled:opacity-50 md:px-10"
+              style={{
+                fontWeight: 300,
+                letterSpacing: "0.2em",
+              }}
             >
-              Sign Up
-            </Button>
+              {/* Background slide effect */}
+              <span className="absolute inset-0 -translate-x-full bg-luxury-black transition-transform duration-500 group-hover:translate-x-0" />
+
+              <span className="relative z-10 transition-colors duration-500 group-hover:text-luxury-white">
+                {submitStatus === "success"
+                  ? "Thank You"
+                  : isSubmitting
+                    ? "Submitting..."
+                    : "Sign Up"}
+              </span>
+            </button>
           </form>
-        </div>
-      </section>
 
-      {/* Section Navigation (Scroll-snap only) */}
-      {isVisible && (
-        <section className="border-t border-gray-100 py-8 md:py-12 max-md:py-8">
-          <div className="mx-auto flex max-w-luxury items-center justify-between px-6 md:px-8 max-md:px-6">
-            <button
-              onClick={prevSection}
-              disabled={!canGoPrev}
-              aria-label="Go to previous section"
-              className="inline-flex items-center justify-center rounded-[2px] border border-gray-400 bg-transparent px-6 py-3 text-sm font-light uppercase tracking-uppercase text-gray-700 transition-all duration-250 ease-out disabled:opacity-40 disabled:cursor-not-allowed hover:enabled:border-gray-700 hover:enabled:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2"
+          {/* Success Message */}
+          {submitStatus === "success" && (
+            <p
+              className="success-message mt-6 text-center font-['Work_Sans'] text-xs uppercase tracking-[0.15em] text-gray-600"
+              style={{
+                fontWeight: 300,
+              }}
             >
-              ← Back
-            </button>
-            <button
-              onClick={nextSection}
-              disabled={!canGoNext}
-              aria-label="Go to next section"
-              className="inline-flex items-center justify-center rounded-[2px] border border-gray-400 bg-transparent px-6 py-3 text-sm font-light uppercase tracking-uppercase text-gray-700 transition-all duration-250 ease-out disabled:opacity-40 disabled:cursor-not-allowed hover:enabled:border-gray-700 hover:enabled:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2"
+              You've been added to our mailing list
+            </p>
+          )}
+        </div>
+      </div>
+
+      {/* Links Section */}
+      <div className="px-6 py-16 md:px-12 lg:px-24 xl:px-32">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4 lg:gap-16">
+          {/* SUPPORT Column */}
+          <div className="footer-column space-y-6">
+            <h3
+              className="link-group-header mb-6 font-['Work_Sans'] text-xs uppercase tracking-[0.2em] text-luxury-black"
+              style={{
+                fontWeight: 400,
+                letterSpacing: "0.2em",
+              }}
             >
-              Next →
-            </button>
+              Support
+            </h3>
+            <nav className="space-y-4">
+              {footerLinks.support.map((link, index) => (
+                <Link
+                  key={index}
+                  to={link.href}
+                  className="link-luxury block font-['Work_Sans'] text-sm text-gray-600 transition-all duration-300 hover:text-luxury-black"
+                  style={{
+                    fontWeight: 300,
+                    letterSpacing: "0.025em",
+                    lineHeight: "1.8",
+                  }}
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </nav>
           </div>
-        </section>
-      )}
 
-      {/* Footer Links */}
-      <section className="py-12 px-6 border-t border-gray-100 md:py-16 md:px-8 max-md:py-12 max-md:px-6">
-        <div className="max-w-luxury mx-auto flex flex-col gap-6 text-center md:flex-row md:items-center md:justify-between md:text-left md:gap-8 max-md:gap-6">
-          <p className="text-sm font-light tracking-wide text-gray-600">
-            © 2025 Katherine Taylor
-          </p>
-          <nav className="flex flex-col items-center gap-3 md:flex-row md:gap-8 max-md:gap-3">
-            <a
-              href="#"
-              className="text-sm font-light tracking-wide text-gray-600 transition-colors hover:text-gray-900"
+          {/* SERVICES Column */}
+          <div className="footer-column space-y-6">
+            <h3
+              className="link-group-header mb-6 font-['Work_Sans'] text-xs uppercase tracking-[0.2em] text-luxury-black"
+              style={{
+                fontWeight: 400,
+                letterSpacing: "0.2em",
+              }}
             >
-              Contact
-            </a>
-            <a
-              href="#"
-              className="text-sm font-light tracking-wide text-gray-600 transition-colors hover:text-gray-900"
+              Services
+            </h3>
+            <nav className="space-y-4">
+              {footerLinks.services.map((link, index) => (
+                <Link
+                  key={index}
+                  to={link.href}
+                  className="link-luxury block font-['Work_Sans'] text-sm text-gray-600 transition-all duration-300 hover:text-luxury-black"
+                  style={{
+                    fontWeight: 300,
+                    letterSpacing: "0.025em",
+                    lineHeight: "1.8",
+                  }}
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </nav>
+          </div>
+
+          {/* ABOUT Column */}
+          <div className="footer-column space-y-6">
+            <h3
+              className="link-group-header mb-6 font-['Work_Sans'] text-xs uppercase tracking-[0.2em] text-luxury-black"
+              style={{
+                fontWeight: 400,
+                letterSpacing: "0.2em",
+              }}
             >
-              Press
-            </a>
-            <a
-              href="#"
-              className="text-sm font-light tracking-wide text-gray-600 transition-colors hover:text-gray-900"
+              About
+            </h3>
+            <nav className="space-y-4">
+              {footerLinks.about.map((link, index) => (
+                <Link
+                  key={index}
+                  to={link.href}
+                  className="link-luxury block font-['Work_Sans'] text-sm text-gray-600 transition-all duration-300 hover:text-luxury-black"
+                  style={{
+                    fontWeight: 300,
+                    letterSpacing: "0.025em",
+                    lineHeight: "1.8",
+                  }}
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </nav>
+          </div>
+
+          {/* LEGAL Column */}
+          <div className="footer-column space-y-6">
+            <h3
+              className="link-group-header mb-6 font-['Work_Sans'] text-xs uppercase tracking-[0.2em] text-luxury-black"
+              style={{
+                fontWeight: 400,
+                letterSpacing: "0.2em",
+              }}
             >
-              Careers
-            </a>
-            <a
-              href="#"
-              className="text-sm font-light tracking-wide text-gray-600 transition-colors hover:text-gray-900"
-            >
-              Privacy
-            </a>
-            <a
-              href="#"
-              className="text-sm font-light tracking-wide text-gray-600 transition-colors hover:text-gray-900"
-            >
-              Terms
-            </a>
-          </nav>
+              Legal
+            </h3>
+            <nav className="space-y-4">
+              {footerLinks.legal.map((link, index) => (
+                <Link
+                  key={index}
+                  to={link.href}
+                  className="link-luxury block font-['Work_Sans'] text-sm text-gray-600 transition-all duration-300 hover:text-luxury-black"
+                  style={{
+                    fontWeight: 300,
+                    letterSpacing: "0.025em",
+                    lineHeight: "1.8",
+                  }}
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </nav>
+          </div>
         </div>
-      </section>
+      </div>
+
+      {/* Copyright Bar */}
+      <div className="border-t border-gray-200 px-6 py-8 md:px-12 lg:px-24 xl:px-32">
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 md:flex-row">
+          <p
+            className="font-['Work_Sans'] text-xs text-gray-500"
+            style={{
+              fontWeight: 300,
+              letterSpacing: "0.05em",
+            }}
+          >
+            © {new Date().getFullYear()} All Rights Reserved
+          </p>
+
+          {/* Social Links (optional) */}
+          <div className="flex gap-6">
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-['Work_Sans'] text-xs uppercase tracking-[0.15em] text-gray-500 transition-colors duration-300 hover:text-luxury-black"
+              style={{
+                fontWeight: 300,
+                letterSpacing: "0.15em",
+              }}
+            >
+              Instagram
+            </a>
+            <a
+              href="https://twitter.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-['Work_Sans'] text-xs uppercase tracking-[0.15em] text-gray-500 transition-colors duration-300 hover:text-luxury-black"
+              style={{
+                fontWeight: 300,
+                letterSpacing: "0.15em",
+              }}
+            >
+              Twitter
+            </a>
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-['Work_Sans'] text-xs uppercase tracking-[0.15em] text-gray-500 transition-colors duration-300 hover:text-luxury-black"
+              style={{
+                fontWeight: 300,
+                letterSpacing: "0.15em",
+              }}
+            >
+              Facebook
+            </a>
+          </div>
+        </div>
+      </div>
     </footer>
   );
 };
