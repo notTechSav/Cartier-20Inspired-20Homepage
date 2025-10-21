@@ -15,23 +15,31 @@ const ScrollSnapProgress: React.FC<ScrollSnapProgressProps> = ({
     const container = document.querySelector(".scroll-snap-container");
     if (!container) return;
 
+    let scrollTimeout: NodeJS.Timeout;
+
     const handleScroll = () => {
-      const sections = container.querySelectorAll(".scroll-snap-item");
-      let active = 0;
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        const sections = container.querySelectorAll(".scroll-snap-item");
+        let active = 0;
 
-      sections.forEach((section, index) => {
-        const rect = (section as HTMLElement).getBoundingClientRect();
-        // If section is in the upper half of viewport, it's the active one
-        if (rect.top < window.innerHeight / 2) {
-          active = index;
-        }
-      });
+        sections.forEach((section, index) => {
+          const rect = (section as HTMLElement).getBoundingClientRect();
+          // If section is in the upper half of viewport, it's the active one
+          if (rect.top < window.innerHeight / 2) {
+            active = index;
+          }
+        });
 
-      setActiveSection(active);
+        setActiveSection(active);
+      }, 50);
     };
 
     container.addEventListener("scroll", handleScroll, { passive: true });
-    return () => container.removeEventListener("scroll", handleScroll);
+    return () => {
+      container.removeEventListener("scroll", handleScroll);
+      clearTimeout(scrollTimeout);
+    };
   }, []);
 
   return (
