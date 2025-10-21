@@ -15,22 +15,22 @@ const Hero = () => {
     const element = videoRef.current;
     if (!element) return;
 
-    // Always keep video muted for autoplay on mobile
-    // The mute button just changes the UI state
-    element.muted = true;
+    element.muted = isMuted;
+
+    if (!element.paused) {
+      return; // Video already playing, don't interfere
+    }
 
     const playVideo = async () => {
       try {
-        if (element.paused) {
-          await element.play();
-        }
+        await element.play();
       } catch (error) {
         console.error("Video playback failed:", error);
       }
     };
 
     playVideo();
-  }, []);
+  }, [isMuted]);
 
   const toggleMute = () => {
     const element = videoRef.current;
@@ -64,10 +64,9 @@ const Hero = () => {
         className="absolute inset-0 h-full w-full object-cover"
         autoPlay
         loop
-        muted
+        muted={isMuted}
         playsInline
         preload="auto"
-        onLoadedData={handleVideoLoadedData}
         poster="https://res.cloudinary.com/katherine-taylor-escort-video/image/upload/v1760237084/MAYA_2_cnpwna.jpg"
       >
         <source src={HERO_VIDEO_SRC} type="video/mp4" />
