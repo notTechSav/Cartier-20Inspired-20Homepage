@@ -195,22 +195,28 @@
     letter-spacing: 0.15em;
   }
 
-  /* Scroll-snap container */
+  /* Enhanced scroll-snap container for YSL-level sharpness */
   .scroll-snap-container {
     height: 100vh;
     height: 100dvh;
     overflow-y: auto;
     overflow-x: hidden;
     scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    overscroll-behavior-y: contain;
     -webkit-overflow-scrolling: touch;
+    will-change: scroll-position;
   }
 
-  /* Scroll-snap items */
+  /* Enhanced scroll-snap items */
   .scroll-snap-item {
     scroll-snap-align: start;
     scroll-snap-stop: always;
     min-height: 100vh;
     min-height: 100dvh;
+    will-change: transform;
+    contain: layout style paint;
+    transform: translateZ(0);
     animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
 
