@@ -9,7 +9,6 @@ const HERO_VIDEO_SRC =
 const Hero = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isMuted, setIsMuted] = useState(true);
-  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
 
   useEffect(() => {
     const element = videoRef.current;
@@ -45,10 +44,6 @@ const Hero = () => {
         console.error("Video playback failed:", error);
       });
     }
-  };
-
-  const handleVideoLoadedData = () => {
-    setIsVideoLoaded(true);
   };
 
   return (
@@ -118,17 +113,15 @@ const Hero = () => {
       </div>
 
       {/* Mute/Unmute Button */}
-      {isVideoLoaded && (
-        <button
-          type="button"
-          onClick={toggleMute}
-          aria-pressed={!isMuted}
-          aria-label={isMuted ? "Unmute hero video" : "Mute hero video"}
-          className="ysl-nav-item-light absolute right-6 bottom-6 md:right-8 md:bottom-8 z-20 inline-flex items-center justify-center text-sm text-luxury-white"
-        >
-          {isMuted ? "Unmute" : "Mute"}
-        </button>
-      )}
+      <button
+        type="button"
+        onClick={toggleMute}
+        aria-pressed={!isMuted}
+        aria-label={isMuted ? "Unmute hero video" : "Mute hero video"}
+        className="ysl-nav-item-light absolute right-6 bottom-6 md:right-8 md:bottom-8 z-20 inline-flex items-center justify-center text-sm text-luxury-white"
+      >
+        {isMuted ? "Unmute" : "Mute"}
+      </button>
     </section>
   );
 };
