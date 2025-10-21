@@ -162,6 +162,7 @@ export const MobileNavigation: React.FC<MobileNavigationProps> = ({
   menuItems,
   isOverlay = false,
   useSwiper = false,
+  icon,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [expandedAccordion, setExpandedAccordion] = useState<string | null>(
