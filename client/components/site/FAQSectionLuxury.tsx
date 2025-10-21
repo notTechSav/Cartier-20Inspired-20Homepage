@@ -166,25 +166,20 @@ const FAQSectionLuxury = () => {
 
   return (
     <div className="bg-luxury-white">
-      <PageHeroOverlay
-        title="Frequently Asked Questions"
-        subtitle="After more than a decade in this practice, I answer what quick searches never cover—standards, discretion, and how engagements actually unfold."
-        eyebrow="Insights & Guidance"
-        imageSrc={FAQ_HERO_IMAGE.src}
-        imageAlt={FAQ_HERO_IMAGE.alt}
-        alignment="left"
-      />
-
       <section
         id="faq"
-        className="relative bg-luxury-white py-16 md:py-32 lg:py-40 max-md:py-16"
+        className="relative bg-luxury-white py-12 md:py-24 max-md:py-12"
         aria-label="Frequently asked questions about escort services and engagement details"
         data-section="faq"
       >
         <div className="mx-auto max-w-luxury px-6 md:px-12 max-md:px-6">
-          <div className="mx-auto mb-16 max-w-[65ch] text-center text-base font-light leading-relaxed tracking-luxury text-gray-600 md:mb-24 max-md:mb-12">
-            The following answers distill the questions I receive most often
-            from clients balancing public visibility with private lives.
+          <div className="mx-auto mb-12 max-w-[65ch] text-center">
+            <h2 className="text-3xl font-light tracking-tight text-luxury-black mb-4 md:text-4xl">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-base font-light leading-relaxed tracking-luxury text-gray-600">
+              After more than a decade in this practice, I answer what quick searches never cover—standards, discretion, and how engagements actually unfold.
+            </p>
           </div>
 
           <div className="mx-auto max-w-4xl">
