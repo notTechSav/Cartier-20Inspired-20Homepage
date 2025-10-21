@@ -151,6 +151,33 @@
     font-weight: var(--font-weight-light);
   }
 
+  /* Global YSL button styling for all buttons */
+  button:not(.ysl-hamburger):not([class*="toast"]):not([class*="dialog"]):not([class*="menu-trigger"]) {
+    position: relative;
+    cursor: pointer;
+    transition: all 250ms cubic-bezier(0.16, 1, 0.3, 1);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  button:not(.ysl-hamburger):not([class*="toast"]):not([class*="dialog"]):not([class*="menu-trigger"]):hover {
+    transform: translateY(-1px);
+  }
+
+  /* Global YSL link styling for all anchor tags */
+  a:not([class*="nav"]):not([class*="logo"]):not([class*="hamburger"]) {
+    position: relative;
+    cursor: pointer;
+    transition: all 250ms cubic-bezier(0.16, 1, 0.3, 1);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  a:not([class*="nav"]):not([class*="logo"]):not([class*="hamburger"]):hover {
+    transform: translateY(-1px);
+    opacity: 0.85;
+  }
+
   ::selection {
     background: var(--gray-200);
     color: var(--luxury-black);
