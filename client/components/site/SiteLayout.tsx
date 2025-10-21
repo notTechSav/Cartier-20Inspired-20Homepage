@@ -24,7 +24,7 @@ const SiteLayout = ({ children }: PropsWithChildren) => {
         <Header />
 
         {/* Scroll Progress Indicator */}
-        <ScrollSnapProgress totalSections={7} />
+        <ScrollSnapProgress totalSections={8} />
 
         {/* Main scroll container - flex-1 allows it to fill remaining space */}
         <div className="flex-1 w-full overflow-hidden">
