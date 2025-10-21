@@ -38,13 +38,13 @@ const Header = () => {
         {/* CENTER LOGO - Katherine Taylor */}
         <a
           href="/"
-          className="kt-brand absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
+          className="kt-brand-refined absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 transition-all duration-[320ms] ease-[cubic-bezier(0.16,1,0.3,1)] hover:translate-y-[-3px]"
           style={{
             color: isOverlay ? "white" : "var(--nav-color-primary)",
             whiteSpace: "nowrap",
           }}
         >
-          Katherine Taylor
+          KATHERINE TAYLOR
         </a>
 
         {/* MOBILE NAVIGATION - FontAwesome bell-concierge icon */}
