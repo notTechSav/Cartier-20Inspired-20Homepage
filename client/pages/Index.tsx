@@ -60,7 +60,7 @@ const Index = () => {
         </div>
       </ScrollSnapPanel>
 
-      {/* 04. FAQ - Frequently asked questions */}
+      {/* 05. FAQ - Frequently asked questions */}
       <ScrollSnapPanel
         id="faq-section"
         ariaLabel="FAQ section with frequently asked questions"
@@ -71,7 +71,7 @@ const Index = () => {
         </div>
       </ScrollSnapPanel>
 
-      {/* 05. Journal - Featured content and articles */}
+      {/* 06. Journal - Featured content and articles */}
       <ScrollSnapPanel
         id="journal-section"
         ariaLabel="Journal section with featured articles and insights"
@@ -96,7 +96,7 @@ const Index = () => {
         </div>
       </ScrollSnapPanel>
 
-      {/* 06. Inquire - Contact and engagement video */}
+      {/* 07. Inquire - Contact and engagement video */}
       <ScrollSnapPanel
         id="inquire-section"
         ariaLabel="Inquire section with engagement video and contact call to action"
@@ -113,13 +113,13 @@ const Index = () => {
         </div>
       </ScrollSnapPanel>
 
-      {/* 07. Footer - Email signup and footer navigation */}
+      {/* 08. Footer - Email signup and footer navigation */}
       <ScrollSnapPanel
         id="footer-section"
         ariaLabel="Footer section with newsletter signup and site links"
         className="bg-luxury-white !flex-none !items-stretch !justify-start overflow-y-auto"
       >
-        <Footer isScrollSnapLayout={true} totalSections={7} />
+        <Footer isScrollSnapLayout={true} totalSections={8} />
       </ScrollSnapPanel>
     </ScrollSnapLayout>
   );
