@@ -72,7 +72,7 @@ const Footer: React.FC<FooterProps> = ({
         <div className="mx-auto max-w-7xl px-6 md:px-12 lg:px-24">
           {/* Heading */}
           <h2 className="mb-8 text-center text-2xl font-light tracking-tight text-luxury-black md:text-3xl">
-            Latest from Our Atelier
+            Latest from Katherine
           </h2>
 
           {/* Email Form */}
