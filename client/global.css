@@ -771,6 +771,7 @@
     transition: all var(--nav-transition-fast);
     -webkit-tap-highlight-color: transparent;
     text-decoration: none;
+    pointer-events: auto;
   }
 
   .ysl-accordion-button:active {
