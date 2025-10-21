@@ -53,7 +53,7 @@ const Index = () => {
         <div className="absolute bottom-16 left-6 z-20 md:bottom-24 md:left-8">
           <a
             href="/rates"
-            className="inline-flex items-center justify-center rounded-[2px] border border-white/50 bg-white/10 px-8 py-4 text-sm font-light uppercase tracking-uppercase text-white transition-all duration-250 ease-out hover:border-white hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2"
+            className="ysl-nav-item inline-flex items-center justify-center text-sm text-white"
           >
             View Rates →
           </a>
@@ -88,7 +88,7 @@ const Index = () => {
             </p>
             <a
               href="/journal"
-              className="inline-flex items-center justify-center rounded-[2px] border border-gray-400 bg-transparent px-8 py-4 text-sm font-light uppercase tracking-uppercase text-gray-700 transition-all duration-250 ease-out hover:border-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2"
+              className="ysl-nav-item inline-flex items-center justify-center text-sm text-gray-700"
             >
               Read Journal →
             </a>
@@ -106,7 +106,7 @@ const Index = () => {
         <div className="absolute bottom-16 left-6 z-20 md:bottom-24 md:left-8">
           <a
             href="/inquire"
-            className="inline-flex items-center justify-center rounded-[2px] border border-white/50 bg-white/10 px-8 py-4 text-sm font-light uppercase tracking-uppercase text-white transition-all duration-250 ease-out hover:border-white hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2"
+            className="ysl-nav-item inline-flex items-center justify-center text-sm text-white"
           >
             Send Inquiry →
           </a>
