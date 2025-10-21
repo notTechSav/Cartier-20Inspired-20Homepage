@@ -19,15 +19,17 @@ const SiteLayout = ({ children }: PropsWithChildren) => {
 
   if (isScrollSnapLayout) {
     return (
-      <div className="relative w-full bg-luxury-white text-gray-700">
+      <div className="relative h-screen w-full overflow-hidden bg-luxury-white text-gray-700 flex flex-col">
         {/* Header - Fixed at top, outside scroll container */}
         <Header />
 
         {/* Scroll Progress Indicator */}
         <ScrollSnapProgress totalSections={7} />
 
-        {/* Main scroll container - direct scroll, no wrapper */}
-        {children}
+        {/* Main scroll container - flex-1 allows it to fill remaining space */}
+        <div className="flex-1 w-full overflow-hidden">
+          {children}
+        </div>
       </div>
     );
   }
