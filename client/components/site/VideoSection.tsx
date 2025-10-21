@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-import { Play, Pause, Volume2, VolumeX } from "lucide-react";
 
 const VideoSection = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
