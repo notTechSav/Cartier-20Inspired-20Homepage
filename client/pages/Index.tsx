@@ -114,11 +114,8 @@ const Index = () => {
         <div style={{ width: "100%", height: "100%", overflowY: "auto" }}>
           <div style={{ minHeight: "100vh", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", backgroundColor: "var(--color-background-primary)", paddingLeft: "var(--spacer-m)", paddingRight: "var(--spacer-m)", paddingTop: "var(--spacer-4xl)", paddingBottom: "var(--spacer-4xl)" }}>
             <div style={{ width: "100%", maxWidth: "42rem", textAlign: "center" }}>
-              <h2 style={{ marginBottom: "var(--spacer-2xl)" }}>Frequently Asked Questions</h2>
-              <p style={{ marginBottom: "var(--spacer-2xl)" }}>
-                After more than a decade in this practice, I answer what quick
-                searches never cover.
-              </p>
+              <h2 style={{ marginBottom: "var(--spacer-2xl)" }}>Answers about escorting in Sacramento and California escort rules and regulations</h2>
+              <h3 style={{ marginBottom: "var(--spacer-2xl)", fontSize: '18px', fontWeight: 300, letterSpacing: '0.02em' }}>Escorting you, if you will, through your "escorts near me" searches</h3>
             </div>
           </div>
         </div>
