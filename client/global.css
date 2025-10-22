@@ -12,21 +12,7 @@
      ============================================ */
   
   :root {
-    /* ============================================
-       1. TYPOGRAPHY (YSL EXACT)
-       ============================================ */
-    --sans: 'Helvetica_Reg', Helvetica, Arial, sans-serif;
-    --copperplate: 'Copperplate', serif;
-
-    --font-weight-thin: 100;
-    --font-weight-extralight: 200;
-    --font-weight-light: 300;
-    --font-weight-regular: 400;
-    --font-weight-medium: 500;
-    --font-weight-semibold: 600;
-    --font-weight-bold: 700;
-    --font-weight-body: 300;
-    --font-weight-heading: 200;
+    /* Typography variables removed */
 
     /* ============================================
        2. SPACING (YSL EXACT)
