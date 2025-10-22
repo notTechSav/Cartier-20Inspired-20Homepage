@@ -90,24 +90,22 @@ const Index = () => {
       </SwiperSlide>
 
       {/* 04. Rates - Escorting rates + Video showcase */}
-      <SwiperSlide style={{ height: "100vh", overflow: "hidden" }} id="rates">
-        <div style={{ display: 'flex', flexDirection: 'column', height: '100%', width: '100%' }}>
-          {/* Rates Text Section Above Video */}
-          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', paddingLeft: 'var(--spacer-m)', paddingRight: 'var(--spacer-m)', paddingTop: 'var(--spacer-4xl)', paddingBottom: 'var(--spacer-2xl)', backgroundColor: 'var(--color-background-primary)' }}>
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 'var(--spacer-xl)', maxWidth: '42rem', width: '100%' }}>
-              <h2 style={{ textAlign: 'center', lineHeight: 1.2 }}>Escorting rates in California</h2>
-              <h3 style={{ textAlign: 'center', fontSize: '18px', fontWeight: 300, letterSpacing: '0.02em' }}>Sacramento escorting and san francisco Transparent pricing</h3>
-              <p style={{ textAlign: 'center', fontSize: '16px', fontWeight: 300, color: 'var(--color-text-tertiary)', lineHeight: 1.6 }}>
-                With a decade long established reputation, my California escort rates are comprehensively posted mirror your highest expectations
-              </p>
-              <a href="#rates" style={{ textAlign: 'center', cursor: 'pointer', color: 'var(--color-text-primary)', textDecoration: 'none', fontSize: '16px', fontWeight: 400 }}>View Rates →</a>
-            </div>
+      <SwiperSlide style={{ height: "100vh", overflow: "hidden", display: 'flex', flexDirection: 'column' }} id="rates">
+        {/* Rates Text Section Above Video */}
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', paddingLeft: 'var(--spacer-m)', paddingRight: 'var(--spacer-m)', paddingTop: 'var(--spacer-2xl)', paddingBottom: 'var(--spacer-2xl)', backgroundColor: 'var(--color-background-primary)' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 'var(--spacer-lg)', maxWidth: '42rem', width: '100%' }}>
+            <h2 style={{ textAlign: 'center', lineHeight: 1.2, margin: 0 }}>Escorting rates in California</h2>
+            <h3 style={{ textAlign: 'center', fontSize: '16px', fontWeight: 300, letterSpacing: '0.02em', margin: 0 }}>Sacramento escorting and san francisco Transparent pricing</h3>
+            <p style={{ textAlign: 'center', fontSize: '14px', fontWeight: 300, color: 'var(--color-text-tertiary)', lineHeight: 1.6, margin: 0 }}>
+              With a decade long established reputation, my California escort rates are comprehensively posted mirror your highest expectations
+            </p>
+            <a href="#rates" style={{ textAlign: 'center', cursor: 'pointer', color: 'var(--color-text-primary)', textDecoration: 'none', fontSize: '14px', fontWeight: 400 }}>View Rates →</a>
           </div>
+        </div>
 
-          {/* Video Section Below Text */}
-          <div style={{ flex: 1, width: "100%", overflow: 'hidden' }}>
-            <ImmersiveVideoSection />
-          </div>
+        {/* Video Section Below Text - Fill Remaining Height */}
+        <div style={{ flex: 1, width: "100%", overflow: 'hidden', minHeight: 0 }}>
+          <ImmersiveVideoSection />
         </div>
       </SwiperSlide>
 
