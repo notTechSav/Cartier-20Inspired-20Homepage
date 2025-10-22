@@ -10,7 +10,6 @@ import FAQSectionLuxury from "@/components/site/FAQSectionLuxury";
 import ImmersiveVideoSection from "@/components/site/ImmersiveVideoSection";
 import DesignInMotionSection from "@/components/site/DesignInMotionSection";
 import VideoSection from "@/components/site/VideoSection";
-import Footer from "@/components/site/Footer";
 import GiftsSection from "@/components/site/GiftsSection";
 
 const Index = () => {
