@@ -137,6 +137,16 @@
   --ease-transform: cubic-bezier(.22,1,.36,1);
   --ease-bounce: cubic-bezier(.65,-.55,.25,1.5);
   --ease-out-quint: cubic-bezier(.22,1,.36,1);
+  --transition-delay-xs: 50ms;
+  --transition-delay-sm: 100ms;
+  --transition-delay-md: 150ms;
+  --transition-delay-lg: 200ms;
+  --transition-delay-xl: 300ms;
+  --transition-delay-2xl: 450ms;
+  --transition-duration-fast: 200ms;
+  --transition-duration-normal: 320ms;
+  --transition-duration-slow: 450ms;
+  --transition-duration-slower: 580ms;
   --navHeight: 0px;
   --scrollbar-width: 0px;
   box-sizing: border-box;
