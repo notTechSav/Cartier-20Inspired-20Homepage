@@ -66,9 +66,7 @@ const Index = () => {
 
             {/* Text Content Below Image */}
             <div className="text-center space-y-6 max-w-xl">
-              <h2 className="text-center">
-                SF Escorts | Framed Side-By-Side
-              </h2>
+              <h2 className="text-center">SF Escorts | Framed Side-By-Side</h2>
               <p className="text-center">
                 Every frame captured with intention—curated moments that reveal
                 artistry, confidence, and chemistry in equal measure.
@@ -95,13 +93,11 @@ const Index = () => {
 
             {/* Text Content Below Image */}
             <div className="text-center space-y-6 max-w-xl">
-              <h2 className="text-center">
-                Private Collections
-              </h2>
+              <h2 className="text-center">Private Collections</h2>
               <p className="text-center">
                 Intimate documentation from Northern California to Los Angeles —
                 three collections, three moments in time.
-                </p>
+              </p>
             </div>
           </div>
         </div>
@@ -111,8 +107,7 @@ const Index = () => {
       <SwiperSlide className="!h-screen">
         <div className="w-full h-full">
           <ImmersiveVideoSection />
-          <div className="absolute bottom-16 left-6 z-20">
-          </div>
+          <div className="absolute bottom-16 left-6 z-20"></div>
         </div>
       </SwiperSlide>
 
@@ -121,9 +116,7 @@ const Index = () => {
         <div className="w-full h-full overflow-y-auto">
           <div className="min-h-screen flex flex-col items-center justify-center bg-luxury-white px-6 py-16">
             <div className="w-full max-w-2xl text-center">
-              <h2 className="mb-8">
-                Frequently Asked Questions
-              </h2>
+              <h2 className="mb-8">Frequently Asked Questions</h2>
               <p className="mb-8">
                 After more than a decade in this practice, I answer what quick
                 searches never cover.
@@ -150,9 +143,7 @@ const Index = () => {
 
             {/* Text Content Below Image */}
             <div className="text-center space-y-6 max-w-xl">
-              <h2 className="text-center">
-                Journal
-              </h2>
+              <h2 className="text-center">Journal</h2>
               <p className="text-center">
                 Insights, stories, and perspectives on companionship, luxury,
                 and the art of connection.
@@ -179,9 +170,7 @@ const Index = () => {
 
             {/* Text Content Below Image */}
             <div className="text-center space-y-6 max-w-xl">
-              <h2 className="text-center">
-                Curated Gifts & Experiences
-              </h2>
+              <h2 className="text-center">Curated Gifts & Experiences</h2>
               <p className="text-center">
                 Thoughtfully selected gifts and experiences designed for those
                 who appreciate the finest details.
@@ -195,8 +184,7 @@ const Index = () => {
       <SwiperSlide className="!h-screen">
         <div className="w-full h-full">
           <VideoSection />
-          <div className="absolute bottom-16 left-6 z-20">
-          </div>
+          <div className="absolute bottom-16 left-6 z-20"></div>
         </div>
       </SwiperSlide>
 

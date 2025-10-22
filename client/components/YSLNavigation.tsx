@@ -74,10 +74,7 @@ export const DesktopNavigation: React.FC<DesktopNavigationProps> = ({
               {item.label}
             </button>
           ) : (
-            <a
-              href={item.url}
-              className="ysl-nav-item"
-            >
+            <a href={item.url} className="ysl-nav-item">
               {item.label}
             </a>
           )}
@@ -96,19 +93,13 @@ export const DesktopNavigation: React.FC<DesktopNavigationProps> = ({
               <div className="ysl-mega-menu-grid">
                 {item.columns.map((column, idx) => (
                   <div key={idx} className="ysl-mega-menu-column">
-                    <a
-                      href={column.headerUrl}
-                      className="ysl-section-header"
-                    >
+                    <a href={column.headerUrl} className="ysl-section-header">
                       {column.header}
                     </a>
                     <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
                       {column.links.map((link, linkIdx) => (
                         <li key={linkIdx}>
-                          <a
-                            href={link.url}
-                            className="ysl-sub-link"
-                          >
+                          <a href={link.url} className="ysl-sub-link">
                             {link.label}
                           </a>
                         </li>

@@ -81,7 +81,6 @@ const PageHeroOverlay = memo(
               style={gradientStyle}
               aria-hidden
             />
-
           </div>
 
           {/* Mobile Height */}
@@ -108,7 +107,6 @@ const PageHeroOverlay = memo(
               style={gradientStyle}
               aria-hidden
             />
-
           </div>
         </figure>
       </section>

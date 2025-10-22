@@ -57,8 +57,7 @@ const ImmersiveVideoSection = () => {
       </video>
       <div className="absolute inset-0 bg-luxury-black/55" />
       <div className="absolute inset-0 flex flex-col justify-end px-6 pb-16 md:px-8 md:pb-24 max-md:pb-12">
-        <div className="mx-auto flex w-full max-w-luxury flex-col items-center gap-6 text-center text-luxury-white max-md:gap-4">
-        </div>
+        <div className="mx-auto flex w-full max-w-luxury flex-col items-center gap-6 text-center text-luxury-white max-md:gap-4"></div>
       </div>
     </section>
   );

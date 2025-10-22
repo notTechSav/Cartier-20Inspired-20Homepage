@@ -11,15 +11,10 @@ const Header = () => {
   const headerRef = useRef<HTMLDivElement>(null);
 
   return (
-    <header
-      ref={headerRef}
-      className="ysl-header"
-    >
+    <header ref={headerRef} className="ysl-header">
       <div className="max-w-7xl mx-auto px-0 h-full flex items-center justify-center relative">
         {/* DESKTOP NAVIGATION */}
-        <DesktopNavigation
-          menuItems={katherineTaylorMenuConfig}
-        />
+        <DesktopNavigation menuItems={katherineTaylorMenuConfig} />
 
         {/* CENTER LOGO - Katherine Taylor */}
         <a

@@ -1,6 +1,7 @@
 # Design System Audit: Current vs YSL
 
 ## Executive Summary
+
 **Status**: Two separate systems with overlapping concerns  
 **Risk**: Code duplication, maintenance burden, unpredictable token cascade  
 **Recommendation**: Merge into unified system (no bloat, zero conflicts)
@@ -10,6 +11,7 @@
 ## 1. SPACING SYSTEM
 
 ### Current System (client/global.css)
+
 ```
 --spacing-xs: 4px         (4px)
 --spacing-sm: 8px         (8px)
@@ -21,11 +23,13 @@
 ```
 
 **Issues:**
+
 - Pixel-based (not responsive to root font-size changes)
 - Limited granularity (7 sizes only)
 - No semantic naming (what does "lg" mean contextually?)
 
 ### YSL System
+
 ```
 --spacer-xxxs: 0.125rem   (2px @ 16px root)
 --spacer-xxs: 0.25rem     (4px)
@@ -47,6 +51,7 @@
 ```
 
 **Semantic spacers (context-aware):**
+
 ```
 --spacer-header-top: 1.125rem
 --spacer-block-top: 3.75rem
@@ -60,12 +65,14 @@
 ```
 
 **Advantages:**
+
 - Rem-based (scales with root font-size)
 - Much finer granularity (16 base sizes)
 - Semantic naming for specific use cases
 - Responsive by default
 
 ### Verdict
+
 **ADOPT YSL'S APPROACH**: The rem-based system is superior. Convert our px values to rem equivalents.
 
 ---
@@ -73,6 +80,7 @@
 ## 2. COLOR SYSTEM
 
 ### Current System
+
 ```
 Hex-based (non-granular):
 --luxury-black: #1a1a1a
@@ -87,11 +95,13 @@ Navigation-specific hardcoded:
 ```
 
 **Issues:**
+
 - No semantic meaning (what is --gray-400 used for?)
-- Navigation colors scattered in --nav-* tokens
+- Navigation colors scattered in --nav-\* tokens
 - No system for interactive states, error states, backgrounds
 
 ### YSL System
+
 ```
 TEXT COLORS (with RGB + alpha for flexibility):
 --color-text-primary: #000
@@ -137,12 +147,14 @@ SHADOW:
 ```
 
 **Advantages:**
+
 - Semantic naming (what it's USED for, not just the color)
 - RGB notation allows alpha/opacity manipulation
 - Covers all interactive states (primary, secondary, tertiary, error)
 - One place to find all colors
 
 ### Verdict
+
 **ADOPT YSL'S APPROACH**: This is a massive improvement. Replace our grayscale-only system with semantic color naming.
 
 ---
@@ -150,6 +162,7 @@ SHADOW:
 ## 3. TYPOGRAPHY SYSTEM
 
 ### Current System
+
 ```
 WEIGHTS (generic):
 --font-weight-thin: 100
@@ -163,11 +176,13 @@ FAMILIES (embedded in nav tokens):
 ```
 
 **Issues:**
+
 - No explicit font-family tokens
 - Weight names don't match weight values (--font-weight-thin is 100, not typical "thin")
 - Families buried in imports
 
 ### YSL System
+
 ```
 --sans: 'Helvetica_Reg', Helvetica, Arial, sans-serif
 --copperplate: 'Copperplate', serif
@@ -177,11 +192,13 @@ FAMILIES (embedded in nav tokens):
 ```
 
 **Advantages:**
+
 - Explicit font families
 - Weight names match intent (medium/semibold/bold are standard)
 - Easy to swap entire font system
 
 ### Verdict
+
 **ADOPT + ADAPT**: Keep our imported families, but add explicit tokens.
 
 ---
@@ -189,6 +206,7 @@ FAMILIES (embedded in nav tokens):
 ## 4. EASING/ANIMATION SYSTEM
 
 ### Current System
+
 ```
 Navigation-specific (embedded in --nav-transition-*):
 --nav-transition-fast: 320ms cubic-bezier(0.16, 1, 0.3, 1)
@@ -202,11 +220,13 @@ cubic-bezier(0.16, 1, 0.3, 1)
 ```
 
 **Issues:**
+
 - Easing curves not named (hard to reuse)
 - Durations tied to navigation only
 - Inconsistent timing values scattered
 
 ### YSL System
+
 ```
 EASING CURVES (named):
 --ease: cubic-bezier(.4,0,.2,1)
@@ -219,11 +239,13 @@ DURATION (implied in usage, not explicit token)
 ```
 
 **Advantages:**
+
 - Named easing curves (semantic)
 - Easy to apply consistently
 - Can be combined with any duration
 
 ### Verdict
+
 **ADOPT YSL'S EASING + ENHANCE**: Use named easing curves, add duration tokens.
 
 ---
@@ -231,6 +253,7 @@ DURATION (implied in usage, not explicit token)
 ## 5. SHADOW SYSTEM
 
 ### Current System
+
 ```
 --shadow-color: 0deg 0% 50%
 --shadow-elevation-low: 0.5px 1px 1px hsl(var(--shadow-color) / 0.07)
@@ -241,13 +264,15 @@ DURATION (implied in usage, not explicit token)
 **Good system**, but YSL doesn't explicitly define shadows. No conflict.
 
 ### Verdict
+
 **KEEP OURS**: Shadow system is clean and works well.
 
 ---
 
 ## 6. NAVIGATION-SPECIFIC TOKENS
 
-### Current System (in --nav-* namespace)
+### Current System (in --nav-\* namespace)
+
 ```
 FONTS:
 --nav-font-family: "Work Sans", sans-serif
@@ -287,28 +312,33 @@ TRANSITIONS:
 ```
 
 **Issues:**
+
 - Duplicates base tokens (--nav-font-family = "Work Sans")
 - Navigation-specific namespace makes sense but mixes concerns
 - Colors reference --luxury-black (one level of indirection)
 - Transitions are hardcoded values + easing
 
 ### YSL System
+
 **No navigation-specific tokens** — they build from base tokens only.
 
 ### Verdict
-**REFACTOR**: Keep --nav-* tokens for semantic navigation layout (height, gap, padding), but map font/color/shadow to base tokens.
+
+**REFACTOR**: Keep --nav-\* tokens for semantic navigation layout (height, gap, padding), but map font/color/shadow to base tokens.
 
 ---
 
 ## 7. LAYOUT & RESPONSIVE SYSTEM
 
 ### Current System
+
 ```
 No explicit grid or responsive layout tokens
 Breakpoints implied in media queries (@media max-width: 1023px, etc.)
 ```
 
 ### YSL System
+
 ```
 --grid-columns: 8
 --container-width: 100%
@@ -319,11 +349,13 @@ Breakpoints implied in media queries (@media max-width: 1023px, etc.)
 ```
 
 **Advantages:**
+
 - Explicit grid definition
 - Container width control
 - Gutter management
 
 ### Verdict
+
 **ADOPT FOR FUTURE**: These are useful but not critical. We can add them later.
 
 ---
@@ -331,17 +363,20 @@ Breakpoints implied in media queries (@media max-width: 1023px, etc.)
 ## 8. THIRD-PARTY INTEGRATIONS (Algolia Search)
 
 ### YSL System
+
 ```
 50+ --aa-* variables for Algolia styling
 --swiper-theme-color: #007aff
 ```
 
 **Our System**
+
 ```
 No Algolia tokens
 ```
 
 ### Verdict
+
 **SKIP FOR NOW**: Only implement if/when we add Algolia search.
 
 ---
@@ -349,6 +384,7 @@ No Algolia tokens
 ## 9. UTILITY/SEMANTIC HELPERS
 
 ### Current System (In utilities layer)
+
 ```
 .tracking-luxury
 .tracking-display
@@ -363,11 +399,13 @@ No Algolia tokens
 **Good system**, but not tokens — these are component classes.
 
 ### YSL System
+
 ```
 No utility classes in their token dump (focus on tokens only)
 ```
 
 ### Verdict
+
 **KEEP OURS**: These are utilities, not tokens. No conflict.
 
 ---
@@ -425,19 +463,19 @@ No utility classes in their token dump (focus on tokens only)
   --color-text-secondary: #666666;
   --color-text-tertiary: #999999;
   --color-text-inverse: rgb(255, 255, 255);
-  --color-text-error: #B32519;
+  --color-text-error: #b32519;
 
   --color-background-primary: rgb(255, 255, 255);
-  --color-background-secondary: #1A1A1A;
-  --color-background-light: #F8F8F8;
-  --color-background-lighter: #F2F2F2;
+  --color-background-secondary: #1a1a1a;
+  --color-background-light: #f8f8f8;
+  --color-background-lighter: #f2f2f2;
   --color-background-overlay: rgba(26, 26, 26, 0.4);
-  --color-background-error: #B32519;
+  --color-background-error: #b32519;
 
   --color-border-primary: #1a1a1a;
   --color-border-secondary: #cccccc;
   --color-border-tertiary: #e4e4e4;
-  --color-border-error: #B32519;
+  --color-border-error: #b32519;
 
   --color-shadow-primary: #0000001a;
 
@@ -477,6 +515,7 @@ No utility classes in their token dump (focus on tokens only)
 ### Phase 2: Update Component References
 
 **Old:**
+
 ```css
 .ysl-nav-item {
   color: var(--nav-color-primary);
@@ -486,6 +525,7 @@ No utility classes in their token dump (focus on tokens only)
 ```
 
 **New:**
+
 ```css
 .ysl-nav-item {
   color: var(--color-text-primary);

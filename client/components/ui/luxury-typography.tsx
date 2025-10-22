@@ -26,12 +26,6 @@ const createHeading = <TDefault extends ElementType>(
   };
 };
 
-export const H2 = createHeading(
-  "h2",
-  "",
-);
+export const H2 = createHeading("h2", "");
 
-export const H3 = createHeading(
-  "h3",
-  "",
-);
+export const H3 = createHeading("h3", "");

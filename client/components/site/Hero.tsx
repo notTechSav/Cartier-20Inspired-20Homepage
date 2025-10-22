@@ -96,14 +96,11 @@ const Hero = () => {
 
       {/* Desktop Content */}
       <div className="relative z-10 hidden md:flex w-full flex-1 flex-col items-center justify-end px-8 pb-0">
-        <div className="flex w-full max-w-luxury flex-col items-center justify-end gap-1 text-center text-luxury-white">
-        </div>
+        <div className="flex w-full max-w-luxury flex-col items-center justify-end gap-1 text-center text-luxury-white"></div>
       </div>
 
       {/* Mobile Content */}
-      <div className="relative z-10 md:hidden flex w-full flex-1 flex-col items-center justify-end px-6 pb-0">
-      </div>
-
+      <div className="relative z-10 md:hidden flex w-full flex-1 flex-col items-center justify-end px-6 pb-0"></div>
     </section>
   );
 };
