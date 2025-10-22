@@ -23,9 +23,9 @@ export const DynamicContent = ({
 
   if (loading) {
     return (
-      <div className={`flex items-center justify-center p-8 ${className}`}>
-        <div className="flex items-center space-x-2 text-gray-600">
-          <RefreshCw className="h-4 w-4 animate-spin" />
+      <div style={{ display: "flex", alignItems: "center", justifyContent: "center", padding: "var(--spacer-m)" }} className={className}>
+        <div style={{ display: "flex", alignItems: "center", gap: "var(--spacer-xs)", color: "var(--color-text-tertiary)" }}>
+          <RefreshCw style={{ width: "16px", height: "16px", animation: "spin 1s linear infinite" }} />
           <span>Generating content...</span>
         </div>
       </div>
@@ -34,16 +34,16 @@ export const DynamicContent = ({
 
   if (error) {
     return (
-      <div className={`flex flex-col items-center justify-center p-8 ${className}`}>
-        <div className="flex items-center space-x-2 text-red-600 mb-4">
-          <AlertCircle className="h-4 w-4" />
+      <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "var(--spacer-m)" }} className={className}>
+        <div style={{ display: "flex", alignItems: "center", gap: "var(--spacer-xs)", color: "var(--color-text-error)", marginBottom: "var(--spacer-m)" }}>
+          <AlertCircle style={{ width: "16px", height: "16px" }} />
           <span>Error generating content</span>
         </div>
-        <p className="text-sm text-gray-600 mb-4 text-center max-w-md">
+        <p style={{ fontSize: "14px", color: "var(--color-text-tertiary)", marginBottom: "var(--spacer-m)", textAlign: "center", maxWidth: "28rem" }}>
           {error}
         </p>
         <Button onClick={regenerate} variant="outline" size="sm">
-          <RefreshCw className="h-4 w-4 mr-2" />
+          <RefreshCw style={{ width: "16px", height: "16px", marginRight: "var(--spacer-xs)" }} />
           Try Again
         </Button>
       </div>
@@ -52,13 +52,13 @@ export const DynamicContent = ({
 
   return (
     <div className={className}>
-      <div 
+      <div
         dangerouslySetInnerHTML={{ __html: content }}
-        className="prose prose-lg max-w-none"
+        style={{ maxWidth: "100%" }}
       />
-      <div className="mt-4 flex justify-end">
+      <div style={{ marginTop: "var(--spacer-m)", display: "flex", justifyContent: "flex-end" }}>
         <Button onClick={regenerate} variant="ghost" size="sm">
-          <RefreshCw className="h-4 w-4 mr-2" />
+          <RefreshCw style={{ width: "16px", height: "16px", marginRight: "var(--spacer-xs)" }} />
           Regenerate
         </Button>
       </div>
@@ -67,4 +67,3 @@ export const DynamicContent = ({
 };
 
 export default DynamicContent;
-
