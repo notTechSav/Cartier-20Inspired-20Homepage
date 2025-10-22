@@ -160,7 +160,11 @@ const FAQSectionLuxury = () => {
     <div className="luxury-section">
       <section
         id="faq"
-        className="luxury-section relative py-12 md:py-24 max-md:py-12"
+        className="luxury-section relative"
+        style={{
+          paddingTop: 'var(--spacer-block-top)',
+          paddingBottom: 'var(--spacer-block-bottom)',
+        }}
         aria-label="Frequently asked questions about escort services and engagement details"
         data-section="faq"
       >
