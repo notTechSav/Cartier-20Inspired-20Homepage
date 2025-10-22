@@ -50,23 +50,7 @@ const Index = () => {
       </SwiperSlide>
 
       {/* 02. About - Design in Motion */}
-      <SwiperSlide
-        className="!h-screen"
-        style={{
-          height: '617px',
-          zIndex: 9,
-          transform: 'translate3d(0px, -617px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1)',
-          opacity: 1,
-          transitionDuration: '0ms',
-          transformStyle: 'preserve-3d',
-          transitionProperty: 'transform, opacity',
-          display: 'block',
-          position: 'relative',
-          width: '100%',
-          backgroundColor: 'var(--color-background-primary)',
-          boxSizing: 'border-box'
-        }}
-      >
+      <SwiperSlide className="!h-screen">
         <div className="flex flex-col items-center justify-center min-h-screen w-full bg-luxury-white px-6 py-16">
           <div className="flex flex-col items-center gap-8 max-w-2xl w-full">
             {/* Image Container with 4/5 Aspect Ratio */}
