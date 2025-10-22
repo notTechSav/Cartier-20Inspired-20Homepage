@@ -147,9 +147,21 @@ const About = () => {
             </p>
             <div
               data-animate
-              className="relative overflow-hidden rounded-sm opacity-0 transition-all duration-[900ms] ease-[cubic-bezier(0.16,1,0.3,1)] data-[visible=true]:translate-y-0 data-[visible=true]:opacity-100"
               style={{
+                position: 'relative',
+                overflow: 'hidden',
+                borderRadius: '4px',
                 backgroundColor: 'var(--section-bg-packshots)',
+                opacity: 0,
+                transform: 'translateY(8px)',
+                transition: 'all 900ms cubic-bezier(0.16,1,0.3,1)',
+              }}
+              onLoad={(e) => {
+                const el = e.currentTarget as HTMLElement;
+                if (el.dataset.visible === 'true') {
+                  el.style.opacity = '1';
+                  el.style.transform = 'translateY(0)';
+                }
               }}
             >
               <AspectRatio ratio={16 / 9}>
