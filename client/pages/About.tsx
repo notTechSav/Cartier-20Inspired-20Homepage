@@ -57,7 +57,12 @@ const About = () => {
       >
         <header
           data-animate
-          className="space-y-6 opacity-0 transition-all duration-[900ms] ease-[cubic-bezier(0.16,1,0.3,1)] data-[visible=true]:translate-y-0 data-[visible=true]:opacity-100 data-[visible=true]:delay-100"
+          className="opacity-0 transition-all duration-[900ms] ease-[cubic-bezier(0.16,1,0.3,1)] data-[visible=true]:translate-y-0 data-[visible=true]:opacity-100 data-[visible=true]:delay-100"
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 'var(--spacer-l)',
+          }}
         >
           <p
             className="leading-[1.9]"
