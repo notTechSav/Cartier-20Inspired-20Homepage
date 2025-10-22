@@ -69,8 +69,6 @@ const ImmersiveVideoSection = () => {
             timeless brilliance of every piece as the city awakens to golden
             light.
           </p>
-          <div className="flex items-center justify-center gap-3 max-md:gap-2">
-          </div>
         </div>
       </div>
     </section>
