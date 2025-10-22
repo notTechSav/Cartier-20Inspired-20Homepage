@@ -42,31 +42,31 @@ const Index = () => {
       }}
     >
       {/* 01. Hero - Main introduction */}
-      <SwiperSlide className="!h-screen flex items-center justify-center">
-        <div className="w-full h-full">
+      <SwiperSlide style={{ height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <div style={{ width: '100%', height: '100%' }}>
           <Hero />
         </div>
       </SwiperSlide>
 
       {/* 02. About - Design in Motion */}
-      <SwiperSlide className="!h-screen">
-        <div className="flex flex-col items-center justify-center min-h-screen w-full bg-luxury-white px-6 py-16">
-          <div className="flex flex-col items-center gap-8 max-w-2xl w-full">
+      <SwiperSlide style={{ height: '100vh' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '100vh', width: '100%', backgroundColor: 'var(--color-background-primary)', paddingLeft: 'var(--spacer-m)', paddingRight: 'var(--spacer-m)', paddingTop: 'var(--spacer-4xl)', paddingBottom: 'var(--spacer-4xl)' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 'var(--spacer-2xl)', maxWidth: '42rem', width: '100%' }}>
             {/* Image Container with 4/5 Aspect Ratio */}
-            <div className="w-full max-w-xs">
-              <div className="aspect-[4/5] w-full bg-gray-100 overflow-hidden rounded-sm">
+            <div style={{ width: '100%', maxWidth: '20rem' }}>
+              <div style={{ aspectRatio: '4/5', width: '100%', backgroundColor: '#f3f4f6', overflow: 'hidden', borderRadius: '2px' }}>
                 <img
                   src="https://cdn.builder.io/api/v1/image/assets%2F5b9cc53f5f324d22a1f8c88faaaa270c%2Fbd093f662cb045d19868b4b86fde26e4?format=webp&width=1600"
                   alt="SF Escorts - Katherine Taylor"
-                  className="w-full h-full object-cover"
+                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 />
               </div>
             </div>
 
             {/* Text Content Below Image */}
-            <div className="text-center space-y-6 max-w-xl">
-              <h2 className="text-center">SF Escorts | Framed Side-By-Side</h2>
-              <p className="text-center">
+            <div style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', gap: 'var(--spacer-xl)', maxWidth: '40rem' }}>
+              <h2 style={{ textAlign: 'center' }}>SF Escorts | Framed Side-By-Side</h2>
+              <p style={{ textAlign: 'center' }}>
                 Every frame captured with intention—curated moments that reveal
                 artistry, confidence, and chemistry in equal measure.
               </p>
@@ -76,24 +76,24 @@ const Index = () => {
       </SwiperSlide>
 
       {/* 03. Gallery - Image mosaic collection */}
-      <SwiperSlide className="!h-screen">
-        <div className="flex flex-col items-center justify-center min-h-screen w-full bg-luxury-white px-6 py-16">
-          <div className="flex flex-col items-center gap-8 max-w-2xl w-full">
+      <SwiperSlide style={{ height: '100vh' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '100vh', width: '100%', backgroundColor: 'var(--color-background-primary)', paddingLeft: 'var(--spacer-m)', paddingRight: 'var(--spacer-m)', paddingTop: 'var(--spacer-4xl)', paddingBottom: 'var(--spacer-4xl)' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 'var(--spacer-2xl)', maxWidth: '42rem', width: '100%' }}>
             {/* Image Container with 4/5 Aspect Ratio */}
-            <div className="w-full max-w-xs">
-              <div className="aspect-[4/5] w-full bg-gray-100 overflow-hidden rounded-sm">
+            <div style={{ width: '100%', maxWidth: '20rem' }}>
+              <div style={{ aspectRatio: '4/5', width: '100%', backgroundColor: '#f3f4f6', overflow: 'hidden', borderRadius: '2px' }}>
                 <img
                   src="/rose-hero.png"
                   alt="Gallery - Private Collections"
-                  className="w-full h-full object-cover"
+                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 />
               </div>
             </div>
 
             {/* Text Content Below Image */}
-            <div className="text-center space-y-6 max-w-xl">
-              <h2 className="text-center">Private Collections</h2>
-              <p className="text-center">
+            <div style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', gap: 'var(--spacer-xl)', maxWidth: '40rem' }}>
+              <h2 style={{ textAlign: 'center' }}>Private Collections</h2>
+              <p style={{ textAlign: 'center' }}>
                 Intimate documentation from Northern California to Los Angeles —
                 three collections, three moments in time.
               </p>
