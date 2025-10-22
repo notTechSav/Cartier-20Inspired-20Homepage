@@ -100,11 +100,6 @@ export const DesktopNavigation: React.FC<DesktopNavigationProps> = ({
                     <a
                       href={column.headerUrl}
                       className="ysl-section-header"
-                      style={{
-                        color: isOverlay
-                          ? "rgba(255, 255, 255, 0.9)"
-                          : "var(--nav-color-primary)",
-                      }}
                     >
                       {column.header}
                     </a>
