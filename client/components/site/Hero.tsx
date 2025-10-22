@@ -150,16 +150,6 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Mute/Unmute Button */}
-      <button
-        type="button"
-        onClick={toggleMute}
-        aria-pressed={!isMuted}
-        aria-label={isMuted ? "Unmute hero video" : "Mute hero video"}
-        className="fixed right-2 bottom-4 md:right-4 md:bottom-6 z-40 text-white font-light uppercase text-xs tracking-wide transition-opacity hover:opacity-70"
-      >
-        {isMuted ? "Unmute" : "Mute"}
-      </button>
     </section>
   );
 };
