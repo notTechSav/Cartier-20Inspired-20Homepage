@@ -15,27 +15,35 @@ const ScrollSnapProgress: React.FC<ScrollSnapProgressProps> = ({
     const container = document.querySelector(".scroll-snap-container");
     if (!container) return;
 
+    let scrollTimeout: NodeJS.Timeout;
+
     const handleScroll = () => {
-      const sections = container.querySelectorAll(".scroll-snap-item");
-      let active = 0;
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        const sections = container.querySelectorAll(".scroll-snap-item");
+        let active = 0;
 
-      sections.forEach((section, index) => {
-        const rect = (section as HTMLElement).getBoundingClientRect();
-        // If section is in the upper half of viewport, it's the active one
-        if (rect.top < window.innerHeight / 2) {
-          active = index;
-        }
-      });
+        sections.forEach((section, index) => {
+          const rect = (section as HTMLElement).getBoundingClientRect();
+          // If section is in the upper half of viewport, it's the active one
+          if (rect.top < window.innerHeight / 2) {
+            active = index;
+          }
+        });
 
-      setActiveSection(active);
+        setActiveSection(active);
+      }, 50);
     };
 
     container.addEventListener("scroll", handleScroll, { passive: true });
-    return () => container.removeEventListener("scroll", handleScroll);
+    return () => {
+      container.removeEventListener("scroll", handleScroll);
+      clearTimeout(scrollTimeout);
+    };
   }, []);
 
   return (
-    <div className="fixed right-8 top-1/2 z-50 -translate-y-1/2 hidden lg:flex flex-col items-center gap-6 max-lg:hidden">
+    <div className="fixed right-8 top-1/2 z-40 -translate-y-1/2 hidden lg:flex flex-col items-center gap-6 pointer-events-none">
       {Array.from({ length: totalSections }).map((_, index) => (
         <button
           key={index}

@@ -14,19 +14,19 @@ const JournalCard = memo(
       <article className="group space-y-4 border-t border-gray-200 pt-10 text-left first:border-t-0 first:pt-0">
         <header>
           <h2
-            className="text-[28px] font-extralight leading-[1.25] tracking-[-0.02em] text-luxury-black"
+            className=" text-luxury-black"
             style={{ fontWeight: 200 }}
           >
             {title}
           </h2>
         </header>
-        <p className="max-w-[62ch] text-[18px] font-light leading-[1.75] text-gray-600">
+        <p className="max-w-[62ch]  text-gray-600">
           {excerpt}
         </p>
         <button
           type="button"
           onClick={() => onOpen(slug)}
-          className="inline-flex items-center text-[14px] font-light tracking-[0.01em] text-luxury-black transition-all focus:outline-none focus-visible:ring-1 focus-visible:ring-luxury-black/40 focus-visible:ring-offset-4 focus-visible:ring-offset-luxury-white"
+          className="inline-flex items-center  text-luxury-black transition-all focus:outline-none focus-visible:ring-1 focus-visible:ring-luxury-black/40 focus-visible:ring-offset-4 focus-visible:ring-offset-luxury-white"
           style={{
             transitionDuration: "350ms",
             letterSpacing: "0.01em",

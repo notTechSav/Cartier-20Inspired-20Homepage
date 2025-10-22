@@ -1,0 +1,254 @@
+/* ============================================
+   SWIPER CAROUSEL GLOBAL THEME MODULE
+   YSL-Inspired Carousel Architecture
+   ============================================ */
+
+/* Safe area insets for notched devices */
+:root {
+  --safe-area-inset-bottom: env(safe-area-inset-bottom);
+}
+
+/* Swiper container - reset and configure for proper carousel behavior */
+.swiperContainer {
+  display: block;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: min(100vh, 100dvh);
+  padding: 0;
+  margin: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  perspective: 1200px;
+  touch-action: pan-x;
+  z-index: 1;
+  list-style: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Swiper wrapper with smooth easing matching YSL */
+.swiperWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  box-sizing: border-box;
+  will-change: transform;
+}
+
+/* Swiper slides full viewport with overflow handling */
+.swiperSlide {
+  flex-shrink: 0;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition-property: transform;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Swiper slide scrollbar styling */
+.swiperSlide::-webkit-scrollbar {
+  width: 6px;
+}
+
+.swiperSlide::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.swiperSlide::-webkit-scrollbar-thumb {
+  background: #d1d1d1;
+  border-radius: 3px;
+}
+
+.swiperSlide::-webkit-scrollbar-thumb:hover {
+  background: #a3a3a3;
+}
+
+/* Swiper slide content wrapper - ensures proper layout */
+.slideContent {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* ============================================
+   SWIPER CONFIGURATION CONSTANTS
+   (Document for use in component props)
+   ============================================ */
+
+/* 
+  SWIPER MODULE CONFIG - Apply these props to Swiper component:
+  
+  modules={[Mousewheel, Keyboard]}
+  direction="vertical"
+  mousewheel={{ forceToAxis: true, releaseOnEdges: true }}
+  keyboard={{ enabled: true, onlyInViewport: true }}
+  slidesPerView={1}
+  spaceBetween={0}
+  speed={600}
+  resistance={true}
+  resistanceRatio={0.85}
+  grabCursor={true}
+  centeredSlides={false}
+  initialSlide={0}
+  watchSlidesProgress={true}
+  preloadImages={false}
+  lazy={{
+    loadPrevNext: true,
+    loadPrevNextAmount: 1,
+  }}
+
+  CSS CLASSES:
+  - Apply .swiperContainer to <Swiper> element
+  - Apply .swiperWrapper to swiper-wrapper (automatic via Swiper)
+  - Apply .swiperSlide to each <SwiperSlide> element
+  - Apply .slideContent to content wrapper inside each slide
+
+  EASING CURVE:
+  cubic-bezier(0.22, 1, 0.36, 1) - YSL's exact timing function
+
+  TRANSITION DURATION:
+  600ms - smooth, elegant slide transitions
+
+  HEIGHT:
+  min(100vh, 100dvh) - mobile viewport-safe height
+*/
+
+/* ============================================
+   UTILITY CLASSES FOR COMMON PATTERNS
+   ============================================ */
+
+/* Hero-style slide with centered content */
+.heroSlide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+}
+
+/* Content slide with padding and overflow */
+.contentSlide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 2rem 1.5rem;
+  background-color: #fafafa;
+}
+
+/* Video/media slide - full viewport cover */
+.mediaSlide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #000;
+}
+
+/* Full-height section within slide */
+.fullHeight {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Scrollable content area within slide */
+.scrollableContent {
+  width: 100%;
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+scrollableContent::-webkit-scrollbar {
+  width: 6px;
+}
+
+scrollableContent::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+scrollableContent::-webkit-scrollbar-thumb {
+  background: #d1d1d1;
+  border-radius: 3px;
+}
+
+/* ============================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================ */
+
+@media (max-width: 1024px) {
+  .swiperContainer {
+    height: min(100vh, 100dvh);
+  }
+}
+
+@media (max-width: 768px) {
+  .contentSlide {
+    padding: 1.5rem 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .swiperWrapper {
+    transition: none;
+  }
+
+  .swiperSlide {
+    transition: none;
+  }
+}
+
+/* ============================================
+   ACCESSIBILITY & PERFORMANCE
+   ============================================ */
+
+/* Ensure slides are properly hidden from screen readers when not active */
+.swiperSlide[aria-hidden="true"] {
+  pointer-events: none;
+}
+
+/* Optimize performance with will-change */
+.swiperWrapper {
+  will-change: transform;
+}
+
+.swiperSlide {
+  contain: layout style paint;
+  transform: translateZ(0);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ============================================
+   DARK MODE SUPPORT
+   ============================================ */
+
+@media (prefers-color-scheme: dark) {
+  .swiperSlide::-webkit-scrollbar-thumb {
+    background: #404040;
+  }
+
+  .swiperSlide::-webkit-scrollbar-thumb:hover {
+    background: #525252;
+  }
+
+  .contentSlide {
+    background-color: #1a1a1a;
+  }
+}

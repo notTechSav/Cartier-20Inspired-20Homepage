@@ -2,9 +2,6 @@ import { useEffect, useMemo, useRef, useState } from "react";
 
 import { cn } from "@/lib/utils";
 
-import PageHeroOverlay from "@/components/site/PageHeroOverlay";
-import { Button } from "@/components/ui/button";
-
 type FaqItem = {
   id: string;
   question: string;
@@ -17,12 +14,6 @@ const featuredFaqs: FaqItem[] = [
     question: "What is an escort?",
     answer:
       "Having worked as an escort for over a decade, I can tell you it's refined companionship at its finest. As Katherine Taylor escort, I offer what the best SF escorts aspire to—cultured company that's elegant, confidential, and beautifully timed. Unlike what you might find searching 'escorts near me,' this is bespoke connection.",
-  },
-  {
-    id: "how-much-do-escorts-cost",
-    question: "How much do escorts cost?",
-    answer:
-      "After over a decade as a San Francisco escort, I've seen rates vary wildly—from $400 to $5000+ per hour. My rates begin at $2000 hourly, reflecting the caliber of experience you won't find in typical 'escort near me' searches. This investment ensures exclusive attention, impeccable preparation, and the refined companionship that distinguishes premium SF escorts.",
   },
   {
     id: "katherine-taylor-different",
@@ -64,11 +55,6 @@ const hiddenFaqs: FaqItem[] = [
       "I split my time as both a San Francisco escort and among Sacramento escorts, but distance is merely logistics. Whether you're searching 'SF escort,' 'Bay Area escorts,' or need me elsewhere entirely, fly-me-to-you arrangements are welcome. After a decade of travel companionship, I've perfected the art of arrival.",
   },
 ];
-
-const FAQ_HERO_IMAGE = {
-  src: "https://cdn.builder.io/api/v1/image/assets%2F5b9cc53f5f324d22a1f8c88faaaa270c%2F4161d5d2b2b34093861f89a5d37e6c34?format=webp&width=1200",
-  alt: "Clear glass vase with olive branch beside sealed envelope in warm afternoon light",
-};
 
 const FAQSectionLuxury = () => {
   const [openFaq, setOpenFaq] = useState<string | null>(null);
@@ -160,7 +146,7 @@ const FAQSectionLuxury = () => {
           <div className="mt-6">
             <a
               href="/booking"
-              className="inline-flex items-center text-xs font-light uppercase tracking-uppercase text-gray-800 underline underline-offset-4 transition-opacity duration-250 ease-out hover:opacity-70"
+              className="ysl-nav-item inline-block text-sm text-luxury-black"
             >
               Learn More
             </a>
@@ -172,25 +158,22 @@ const FAQSectionLuxury = () => {
 
   return (
     <div className="bg-luxury-white">
-      <PageHeroOverlay
-        title="Frequently Asked Questions"
-        subtitle="After more than a decade in this practice, I answer what quick searches never cover—standards, discretion, and how engagements actually unfold."
-        eyebrow="Insights & Guidance"
-        imageSrc={FAQ_HERO_IMAGE.src}
-        imageAlt={FAQ_HERO_IMAGE.alt}
-        alignment="left"
-      />
-
       <section
         id="faq"
-        className="relative bg-luxury-white py-16 md:py-32 lg:py-40 max-md:py-16"
+        className="relative bg-luxury-white py-12 md:py-24 max-md:py-12"
         aria-label="Frequently asked questions about escort services and engagement details"
         data-section="faq"
       >
         <div className="mx-auto max-w-luxury px-6 md:px-12 max-md:px-6">
-          <div className="mx-auto mb-16 max-w-[65ch] text-center text-base font-light leading-relaxed tracking-luxury text-gray-600 md:mb-24 max-md:mb-12">
-            The following answers distill the questions I receive most often
-            from clients balancing public visibility with private lives.
+          <div className="mx-auto mb-12 max-w-[65ch] text-center">
+            <h2 className="text-center text-3xl font-light tracking-tight text-luxury-black mb-4 md:text-4xl">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-center text-base font-light leading-relaxed tracking-luxury text-gray-600">
+              After more than a decade in this practice, I answer what quick
+              searches never cover—standards, discretion, and how engagements
+              actually unfold.
+            </p>
           </div>
 
           <div className="mx-auto max-w-4xl">
@@ -216,15 +199,14 @@ const FAQSectionLuxury = () => {
             </div>
 
             <div className="mt-12 text-center">
-              <Button
-                variant="ctaSecondary"
+              <button
                 type="button"
                 onClick={() => setShowHidden((prev) => !prev)}
                 aria-expanded={showHidden}
-                className="max-md:w-full md:w-auto"
+                className="ysl-nav-item inline-block text-luxury-black"
               >
                 {showHidden ? "Show Less" : "View All Questions"}
-              </Button>
+              </button>
             </div>
           </div>
         </div>

@@ -5,7 +5,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-[2px] text-sm font-light uppercase tracking-uppercase ring-offset-background transition-all duration-250 ease-out focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-2 disabled:pointer-events-none disabled:opacity-40 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-[2px] text-sm font-light uppercase tracking-luxury ring-offset-background transition-all duration-250 ease-out focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-2 disabled:pointer-events-none disabled:opacity-40 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:translate-y-[-1px]",
   {
     variants: {
       variant: {
@@ -20,9 +20,9 @@ const buttonVariants = cva(
         ghost: "text-gray-700 hover:bg-gray-100",
         link: "text-gray-900 underline underline-offset-4 hover:opacity-70",
         ctaPrimary:
-          "px-12 py-5 bg-luxury-black text-luxury-white hover:bg-gray-900 focus:ring-gray-300 focus:ring-offset-2 active:opacity-90",
+          "px-12 py-5 bg-luxury-black text-luxury-white hover:bg-gray-900 focus:ring-gray-300 focus:ring-offset-2 active:opacity-90 hover:translate-y-[-2px]",
         ctaSecondary:
-          "px-12 py-5 border border-luxury-black bg-transparent text-luxury-black transition-all duration-400 ease-out hover:bg-luxury-black hover:text-luxury-white focus:ring-gray-300 focus:ring-offset-2",
+          "px-12 py-5 border border-luxury-black bg-transparent text-luxury-black transition-all duration-400 ease-out hover:bg-luxury-black hover:text-luxury-white focus:ring-gray-300 focus:ring-offset-2 hover:translate-y-[-2px]",
       },
       size: {
         default: "h-11 px-6",

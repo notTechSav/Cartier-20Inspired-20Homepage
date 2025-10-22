@@ -1,117 +1,224 @@
-import { useEffect, useState } from "react";
-import { Button } from "@/components/ui/button";
-import { useScrollSnapNavigation } from "@/hooks/useScrollSnapNavigation";
+/**
+ * YSL-STYLE FOOTER COMPONENT
+ * De Beers x Hermès Aesthetic
+ * Uses YSL footer classes with React Router and full functionality
+ */
+
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 interface FooterProps {
   isScrollSnapLayout?: boolean;
   totalSections?: number;
 }
 
-const Footer = ({ isScrollSnapLayout = false, totalSections = 6 }: FooterProps) => {
-  const [isVisible, setIsVisible] = useState(false);
-  const { nextSection, prevSection, canGoNext, canGoPrev } =
-    useScrollSnapNavigation(totalSections);
+const Footer: React.FC<FooterProps> = ({
+  isScrollSnapLayout = false,
+  totalSections = 7,
+}) => {
+  const [email, setEmail] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<
+    "idle" | "success" | "error"
+  >("idle");
 
-  // Only show navigation in scroll-snap layout
-  useEffect(() => {
-    setIsVisible(isScrollSnapLayout);
-  }, [isScrollSnapLayout]);
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    setTimeout(() => {
+      setSubmitStatus("success");
+      setIsSubmitting(false);
+      setEmail("");
+
+      setTimeout(() => setSubmitStatus("idle"), 3000);
+    }, 1000);
+  };
+
+  const footerLinks = {
+    support: [
+      { label: "Track Your Order", href: "/track-order" },
+      { label: "Contact Us", href: "/contact" },
+      { label: "Book an Appointment", href: "/appointments" },
+      { label: "Frequently Asked Questions", href: "/faq" },
+    ],
+    services: [
+      { label: "Request Repair", href: "/repair" },
+      { label: "Personalization", href: "/personalization" },
+      { label: "Business Accounts", href: "/business" },
+      { label: "Select Financing", href: "/financing" },
+    ],
+    about: [
+      { label: "Sustainability", href: "/sustainability" },
+      { label: "Foundation", href: "/foundation" },
+      { label: "Careers", href: "/careers" },
+      { label: "For the Press", href: "/press" },
+    ],
+    legal: [
+      { label: "Privacy Policy", href: "/privacy" },
+      { label: "Terms & Conditions", href: "/terms" },
+      { label: "Accessibility Statement", href: "/accessibility" },
+      { label: "California Privacy", href: "/california-privacy" },
+    ],
+  };
 
   return (
-    <footer className="w-full bg-luxury-white">
-      {/* Email Signup Section */}
-      <section className="border-t border-gray-100 py-16 md:py-32 max-md:py-16">
-        <div className="mx-auto flex max-w-luxury flex-col items-center px-6 text-center md:px-8 max-md:px-6">
-          <h2 className="text-sm font-light uppercase tracking-uppercase text-gray-700">
-            Latest from Katherine Taylor
+    <footer
+      className={`ysl-footer scroll-snap-item ${isScrollSnapLayout ? "min-h-screen flex flex-col justify-center" : ""}`}
+      data-section-index={isScrollSnapLayout ? totalSections - 1 : undefined}
+    >
+      {/* Newsletter Section */}
+      <div className="ysl-newsletter border-b border-gray-200 py-4 md:py-6">
+        <div className="mx-auto max-w-7xl px-4 md:px-6 lg:px-8">
+          {/* Heading */}
+          <h2 className="mb-3 text-center text-lg text-luxury-black md:text-xl">
+            Latest from Katherine
           </h2>
-          <form className="mt-8 flex w-full max-w-2xl flex-col gap-3 md:flex-row md:items-center md:mt-12 max-md:gap-3 max-md:mt-8">
-            <label htmlFor="email-signup" className="sr-only">
-              Email address
-            </label>
-            <input
-              id="email-signup"
-              type="email"
-              name="email"
-              placeholder="your@email.com"
-              autoComplete="email"
-              className="w-full flex-1 border border-gray-200 bg-white px-6 py-4 text-base font-light tracking-luxury text-gray-700 placeholder:text-gray-400 transition-colors duration-250 ease-out focus:border-gray-400 focus:outline-none"
-            />
-            <Button
+
+          {/* Email Form */}
+          <form
+            onSubmit={handleSubmit}
+            className="mx-auto flex max-w-2xl flex-col items-center gap-2 md:flex-row md:gap-2"
+          >
+            <div className="relative w-full flex-1">
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Email Address"
+                required
+                disabled={isSubmitting || submitStatus === "success"}
+                className="ysl-newsletter-input w-full"
+              />
+            </div>
+
+            <button
               type="submit"
-              variant="ctaPrimary"
-              className="max-md:w-full md:w-auto"
+              disabled={isSubmitting || submitStatus === "success"}
+              className="ysl-newsletter-button"
             >
-              Sign Up
-            </Button>
+              {submitStatus === "success"
+                ? "Thank You"
+                : isSubmitting
+                  ? "Submitting..."
+                  : "Submit"}
+            </button>
           </form>
-        </div>
-      </section>
 
-      {/* Section Navigation (Scroll-snap only) */}
-      {isVisible && (
-        <section className="border-t border-gray-100 py-8 md:py-12 max-md:py-8">
-          <div className="mx-auto flex max-w-luxury items-center justify-between px-6 md:px-8 max-md:px-6">
-            <button
-              onClick={prevSection}
-              disabled={!canGoPrev}
-              aria-label="Go to previous section"
-              className="inline-flex items-center justify-center rounded-[2px] border border-gray-400 bg-transparent px-6 py-3 text-sm font-light uppercase tracking-uppercase text-gray-700 transition-all duration-250 ease-out disabled:opacity-40 disabled:cursor-not-allowed hover:enabled:border-gray-700 hover:enabled:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2"
-            >
-              ← Back
-            </button>
-            <button
-              onClick={nextSection}
-              disabled={!canGoNext}
-              aria-label="Go to next section"
-              className="inline-flex items-center justify-center rounded-[2px] border border-gray-400 bg-transparent px-6 py-3 text-sm font-light uppercase tracking-uppercase text-gray-700 transition-all duration-250 ease-out disabled:opacity-40 disabled:cursor-not-allowed hover:enabled:border-gray-700 hover:enabled:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2"
-            >
-              Next →
-            </button>
+          {/* Success Message */}
+          {submitStatus === "success" && (
+            <p className="mt-2 animate-fadeIn text-center text-xs text-gray-600">
+              You've been added to our mailing list
+            </p>
+          )}
+        </div>
+      </div>
+
+      {/* Links Grid Section */}
+      <div className="py-4 md:py-6">
+        <div className="mx-auto max-w-7xl px-4 md:px-6 lg:px-8">
+          <div className="ysl-footer-grid">
+            {/* SUPPORT Column */}
+            <div className="ysl-footer-column">
+              <h3 className="ysl-footer-heading text-sm">Support</h3>
+              <nav className="space-y-0">
+                {footerLinks.support.map((link, index) => (
+                  <Link
+                    key={index}
+                    to={link.href}
+                    className="ysl-footer-link block text-xs"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </nav>
+            </div>
+
+            {/* SERVICES Column */}
+            <div className="ysl-footer-column">
+              <h3 className="ysl-footer-heading text-sm">Services</h3>
+              <nav className="space-y-0">
+                {footerLinks.services.map((link, index) => (
+                  <Link
+                    key={index}
+                    to={link.href}
+                    className="ysl-footer-link block text-xs"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </nav>
+            </div>
+
+            {/* ABOUT Column */}
+            <div className="ysl-footer-column">
+              <h3 className="ysl-footer-heading text-sm">About</h3>
+              <nav className="space-y-0">
+                {footerLinks.about.map((link, index) => (
+                  <Link
+                    key={index}
+                    to={link.href}
+                    className="ysl-footer-link block text-xs"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </nav>
+            </div>
+
+            {/* LEGAL Column */}
+            <div className="ysl-footer-column">
+              <h3 className="ysl-footer-heading text-sm">Legal</h3>
+              <nav className="space-y-0">
+                {footerLinks.legal.map((link, index) => (
+                  <Link
+                    key={index}
+                    to={link.href}
+                    className="ysl-footer-link block text-xs"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </nav>
+            </div>
           </div>
-        </section>
-      )}
-
-      {/* Footer Links */}
-      <section className="py-12 px-6 border-t border-gray-100 md:py-16 md:px-8 max-md:py-12 max-md:px-6">
-        <div className="max-w-luxury mx-auto flex flex-col gap-6 text-center md:flex-row md:items-center md:justify-between md:text-left md:gap-8 max-md:gap-6">
-          <p className="text-sm font-light tracking-wide text-gray-600">
-            © 2025 Katherine Taylor
-          </p>
-          <nav className="flex flex-col items-center gap-3 md:flex-row md:gap-8 max-md:gap-3">
-            <a
-              href="#"
-              className="text-sm font-light tracking-wide text-gray-600 transition-colors hover:text-gray-900"
-            >
-              Contact
-            </a>
-            <a
-              href="#"
-              className="text-sm font-light tracking-wide text-gray-600 transition-colors hover:text-gray-900"
-            >
-              Press
-            </a>
-            <a
-              href="#"
-              className="text-sm font-light tracking-wide text-gray-600 transition-colors hover:text-gray-900"
-            >
-              Careers
-            </a>
-            <a
-              href="#"
-              className="text-sm font-light tracking-wide text-gray-600 transition-colors hover:text-gray-900"
-            >
-              Privacy
-            </a>
-            <a
-              href="#"
-              className="text-sm font-light tracking-wide text-gray-600 transition-colors hover:text-gray-900"
-            >
-              Terms
-            </a>
-          </nav>
         </div>
-      </section>
+      </div>
+
+      {/* Copyright Bar */}
+      <div className="ysl-footer-bottom">
+        <p className="ysl-footer-copyright">
+          © {new Date().getFullYear()} All Rights Reserved
+        </p>
+
+        {/* Social & Legal Links */}
+        <div className="ysl-footer-legal">
+          <a
+            href="https://instagram.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="ysl-footer-legal-link"
+          >
+            Instagram
+          </a>
+          <a
+            href="https://twitter.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="ysl-footer-legal-link"
+          >
+            Twitter
+          </a>
+          <a
+            href="https://facebook.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="ysl-footer-legal-link"
+          >
+            Facebook
+          </a>
+        </div>
+      </div>
     </footer>
   );
 };

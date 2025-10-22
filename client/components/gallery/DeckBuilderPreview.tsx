@@ -513,13 +513,13 @@ function Hub({
   return (
     <section className="mx-auto max-w-[1180px] px-6 md:px-12 pt-32 pb-32 md:pt-40 md:pb-48">
       <header className="mx-auto mb-14 max-w-[720px] sm:mb-24">
-        <h1 className="text-[56px] sm:text-[68px] md:text-[84px] font-extralight tracking-[-0.03em] leading-[0.95]">
+        <h1 className="text-[56px] sm:text-[68px] md:">
           Private Collections
         </h1>
         <h2 className="sr-only">Katherine Taylor escort</h2>
         <h2 className="sr-only">Sacramento escort · Bay Area escort</h2>
         <h2 className="sr-only">High-end escorts near me · Private companionship Northern California</h2>
-        <p className="mt-3 sm:mt-4 max-w-prose text-sm sm:text-base font-light leading-[1.75] text-neutral-700">
+        <p className="mt-3 sm:mt-4 max-w-prose text-sm sm:text-base font-light  text-neutral-700">
           Intimate documentation from Northern California to Los Angeles — three collections, three moments in time. Each room holds its own story, from available light in San Francisco to saturated dusk on the coast.
         </p>
       </header>
@@ -557,7 +557,7 @@ function Hub({
                 })()}
               </div>
               <div className="mt-5 space-y-2">
-                <h2 className="text-[22px] sm:text-[26px] md:text-[32px] font-extralight tracking-[-0.02em] leading-[1.15] duration-250 group-hover:text-[var(--color-stone)]">
+                <h2 className="text-[22px] sm:text-[26px] md:text-[32px] font-extralight   duration-250 group-hover:">
                   {c.title}
                 </h2>
                 <p
@@ -566,7 +566,7 @@ function Hub({
                 >
                   {c.statement}
                 </p>
-                <span className="inline-block text-[10px] sm:text-[11px] tracking-[0.18em] uppercase duration-250 group-hover:text-[var(--color-stone)]">
+                <span className="inline-block text-[10px] sm:text-[11px]  uppercase duration-250 group-hover:">
                   View Collection
                 </span>
               </div>
@@ -594,18 +594,18 @@ function CollectionHeader({
         <div className="space-y-8">
           <button
             onClick={onBack}
-            className="inline-flex h-11 items-center gap-2 text-xs uppercase tracking-[0.15em] text-[var(--color-stone)] duration-250 hover:text-[var(--color-ink)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-stone)]/40"
+            className="inline-flex h-11 items-center gap-2 text-xs uppercase  text-[var(--color-stone)] duration-250 hover:/40"
             aria-label="Back to Gallery"
             title="Back to Gallery"
           >
             <span className="text-base">←</span> Back to Collections
           </button>
           <div className="space-y-4">
-            <h1 className="text-3xl sm:text-4xl md:text-[48px] font-extralight tracking-[-0.025em] leading-[1.05]">
+            <h1 className="text-3xl sm:text-4xl md:">
               {c.title}
             </h1>
             <h2 className="sr-only">{c.title} — Katherine Taylor escort</h2>
-            <p className="max-w-[48ch] text-sm sm:text-base font-light leading-[1.75] text-neutral-700">
+            <p className="max-w-[48ch] text-sm sm:text-base font-light  text-neutral-700">
               {c.statement}
             </p>
           </div>
@@ -791,14 +791,14 @@ function DeckBuilder({ c, onClose }: { c: Collection; onClose: () => void }) {
         <div className="flex items-start justify-between gap-6">
           <h2
             id="deck-title"
-            className="text-xl sm:text-2xl font-extralight tracking-[-0.02em]"
+            className="text-xl sm:text-2xl font-extralight "
           >
             Build Private Deck
           </h2>
           <button
             ref={closeRef}
             onClick={onClose}
-            className="text-sm uppercase tracking-[0.15em]"
+            className="text-sm uppercase "
             aria-label="Close deck builder"
           >
             Close
@@ -813,7 +813,7 @@ function DeckBuilder({ c, onClose }: { c: Collection; onClose: () => void }) {
         <div role="group" aria-labelledby="layout-label">
           <h3
             id="layout-label"
-            className="text-xs sm:text-sm uppercase tracking-[0.15em]"
+            className="text-xs sm:text-sm uppercase "
           >
             Layout
           </h3>
@@ -845,7 +845,7 @@ function DeckBuilder({ c, onClose }: { c: Collection; onClose: () => void }) {
             <div className="flex items-center gap-3">
               <h3
                 id="frames-label"
-                className="text-xs sm:text-sm uppercase tracking-[0.15em]"
+                className="text-xs sm:text-sm uppercase "
               >
                 Frames
               </h3>
@@ -893,7 +893,7 @@ function DeckBuilder({ c, onClose }: { c: Collection; onClose: () => void }) {
         <div className="mt-8" role="group" aria-labelledby="delivery-label">
           <h3
             id="delivery-label"
-            className="text-xs sm:text-sm uppercase tracking-[0.15em]"
+            className="text-xs sm:text-sm uppercase "
           >
             Delivery
           </h3>
@@ -946,7 +946,7 @@ function DeckBuilder({ c, onClose }: { c: Collection; onClose: () => void }) {
 
         <hr className="my-6 border-neutral-200" />
 
-        <ul className="text-[11px] sm:text-xs text-neutral-600 leading-relaxed">
+        <ul className=" sm:text-xs text-neutral-600 leading-relaxed">
           <li>Cover: {c.title} — From the archive.</li>
           <li>
             Footer: By-appointment only · Private social escort & strategic
@@ -1016,7 +1016,7 @@ function ImageViewer({
       <div className="absolute top-0 left-0 right-0 px-4 sm:px-6 md:px-8 pt-[calc(16px+var(--safe-top))] pb-4 flex items-center justify-between gap-3">
         <button
           onClick={onClose}
-          className="text-xs uppercase tracking-[0.15em] underline underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-300/60"
+          className="text-xs uppercase  underline underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-300/60"
         >
           Back to Collection
         </button>
@@ -1055,10 +1055,10 @@ function ImageViewer({
         </button>
       </div>
 
-      <div className="absolute left-0 right-0 bottom-0 px-4 sm:px-6 md:px-8 pb-[calc(16px+var(--safe-bottom))] pt-4 text-[12px] sm:text-sm font-light text-white/85">
+      <div className="absolute left-0 right-0 bottom-0 px-4 sm:px-6 md:px-8 pb-[calc(16px+var(--safe-bottom))] pt-4  sm:text-sm font-light text-white/85">
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
           <div>
-            <div className="uppercase tracking-[0.15em] text-[11px] sm:text-xs opacity-80">
+            <div className="uppercase   sm:text-xs opacity-80">
               Title
             </div>
             <div>{title}</div>
@@ -1067,7 +1067,7 @@ function ImageViewer({
             <button
               onClick={() => setShowDetails((v) => !v)}
               aria-expanded={showDetails}
-              className="text-xs uppercase tracking-[0.15em] underline underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/30"
+              className="text-xs uppercase  underline underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/30"
             >
               {showDetails ? "Hide details" : "Details"}
             </button>
@@ -1079,19 +1079,19 @@ function ImageViewer({
             className="mt-3 grid grid-cols-1 sm:grid-cols-3 gap-6 opacity-90"
           >
             <div>
-              <div className="uppercase tracking-[0.15em] text-[11px] sm:text-xs opacity-80">
+              <div className="uppercase   sm:text-xs opacity-80">
                 Specs
               </div>
               <div>{specsSummary}</div>
             </div>
             <div>
-              <div className="uppercase tracking-[0.15em] text-[11px] sm:text-xs opacity-80">
+              <div className="uppercase   sm:text-xs opacity-80">
                 Capture
               </div>
               <div>{capture}</div>
             </div>
             <div>
-              <div className="uppercase tracking-[0.15em] text-[11px] sm:text-xs opacity-80">
+              <div className="uppercase   sm:text-xs opacity-80">
                 Notes
               </div>
               <div>{notes}</div>

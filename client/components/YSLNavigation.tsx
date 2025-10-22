@@ -26,12 +26,10 @@ export interface NavItem {
 
 interface DesktopNavigationProps {
   menuItems: NavItem[];
-  isOverlay?: boolean;
 }
 
 interface MobileNavigationProps {
   menuItems: NavItem[];
-  isOverlay?: boolean;
   useSwiper?: boolean;
   icon?: React.ReactNode;
 }
@@ -41,7 +39,6 @@ interface MobileNavigationProps {
    ============================================ */
 export const DesktopNavigation: React.FC<DesktopNavigationProps> = ({
   menuItems,
-  isOverlay = false,
 }) => {
   const [activeMegaMenu, setActiveMegaMenu] = useState<string | null>(null);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
@@ -73,20 +70,11 @@ export const DesktopNavigation: React.FC<DesktopNavigationProps> = ({
               className="ysl-nav-item"
               aria-expanded={activeMegaMenu === item.key}
               aria-controls={`mega-menu-${item.key}`}
-              style={{
-                color: isOverlay ? "white" : "var(--nav-color-primary)",
-              }}
             >
               {item.label}
             </button>
           ) : (
-            <a
-              href={item.url}
-              className="ysl-nav-item"
-              style={{
-                color: isOverlay ? "white" : "var(--nav-color-primary)",
-              }}
-            >
+            <a href={item.url} className="ysl-nav-item">
               {item.label}
             </a>
           )}
@@ -101,44 +89,17 @@ export const DesktopNavigation: React.FC<DesktopNavigationProps> = ({
               onMouseLeave={handleMouseLeave}
               role="region"
               aria-label={`${item.label} submenu`}
-              style={{
-                backgroundColor: isOverlay
-                  ? "rgba(26, 26, 26, 0.95)"
-                  : "rgba(250, 250, 250, 0.99)",
-                borderTopColor: isOverlay
-                  ? "rgba(255, 255, 255, 0.08)"
-                  : "rgba(26, 26, 26, 0.04)",
-                borderBottomColor: isOverlay
-                  ? "rgba(255, 255, 255, 0.08)"
-                  : "rgba(26, 26, 26, 0.04)",
-              }}
             >
               <div className="ysl-mega-menu-grid">
                 {item.columns.map((column, idx) => (
                   <div key={idx} className="ysl-mega-menu-column">
-                    <a
-                      href={column.headerUrl}
-                      className="ysl-section-header"
-                      style={{
-                        color: isOverlay
-                          ? "rgba(255, 255, 255, 0.9)"
-                          : "var(--nav-color-primary)",
-                      }}
-                    >
+                    <a href={column.headerUrl} className="ysl-section-header">
                       {column.header}
                     </a>
                     <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
                       {column.links.map((link, linkIdx) => (
                         <li key={linkIdx}>
-                          <a
-                            href={link.url}
-                            className="ysl-sub-link"
-                            style={{
-                              color: isOverlay
-                                ? "rgba(255, 255, 255, 0.65)"
-                                : "rgba(26, 26, 26, 0.65)",
-                            }}
-                          >
+                          <a href={link.url} className="ysl-sub-link">
                             {link.label}
                           </a>
                         </li>
@@ -160,7 +121,6 @@ export const DesktopNavigation: React.FC<DesktopNavigationProps> = ({
    ============================================ */
 export const MobileNavigation: React.FC<MobileNavigationProps> = ({
   menuItems,
-  isOverlay = false,
   useSwiper = false,
   icon,
 }) => {
@@ -169,24 +129,16 @@ export const MobileNavigation: React.FC<MobileNavigationProps> = ({
     null,
   );
 
-  // Hybrid scroll-lock: position restoration + CSS class
+  // Safe scroll-lock: Only use overflow: hidden (no position: fixed)
   useEffect(() => {
     if (isOpen) {
-      // Store scroll position and lock scroll
-      const scrollY = window.scrollY;
-      document.body.style.top = `-${scrollY}px`;
-      document.body.classList.add("menu-open");
+      document.body.style.overflow = "hidden";
     } else {
-      // Restore scroll position
-      const scrollY = document.body.style.top;
-      document.body.classList.remove("menu-open");
-      document.body.style.top = "";
-      window.scrollTo(0, parseInt(scrollY || "0") * -1);
+      document.body.style.overflow = "";
     }
 
     return () => {
-      document.body.classList.remove("menu-open");
-      document.body.style.top = "";
+      document.body.style.overflow = "";
     };
   }, [isOpen]);
 
@@ -223,9 +175,6 @@ export const MobileNavigation: React.FC<MobileNavigationProps> = ({
         aria-label={isOpen ? "Close menu" : "Open menu"}
         aria-expanded={isOpen}
         aria-controls="mobile-navigation-drawer"
-        style={{
-          color: isOverlay ? "white" : "var(--nav-color-primary)",
-        }}
       >
         {icon ? (
           icon

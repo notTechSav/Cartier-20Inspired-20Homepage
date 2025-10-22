@@ -1,7 +1,13 @@
-import { PropsWithChildren } from "react";
+/**
+ * SITE LAYOUT - CORRECTED FOR SCROLL-SNAP INTEGRATION
+ * De Beers x Hermès Aesthetic
+ *
+ * Key Fix: Footer is now part of the scroll-snap children, not a sibling
+ * The Footer component itself handles being section 6 when isScrollSnapLayout={true}
+ */
 
+import { PropsWithChildren } from "react";
 import Header from "@/components/Header";
-import Footer from "@/components/site/Footer";
 import ScrollSnapProgress from "@/components/site/ScrollSnapProgress";
 
 const SiteLayout = ({ children }: PropsWithChildren) => {
@@ -12,20 +18,24 @@ const SiteLayout = ({ children }: PropsWithChildren) => {
 
   if (isScrollSnapLayout) {
     return (
-      <div className="relative flex h-screen w-full flex-col bg-luxury-white text-gray-700">
+      <div className="relative h-screen w-full overflow-hidden bg-luxury-white text-gray-700 flex flex-col">
+        {/* Header - Fixed at top, outside scroll container */}
         <Header />
-        <ScrollSnapProgress totalSections={6} />
-        <div className="flex-1 overflow-hidden">{children}</div>
-        <Footer isScrollSnapLayout={true} totalSections={6} />
+
+        {/* Scroll Progress Indicator */}
+        <ScrollSnapProgress totalSections={8} />
+
+        {/* Main scroll container - flex-1 allows it to fill remaining space */}
+        <div className="flex-1 w-full overflow-hidden">{children}</div>
       </div>
     );
   }
 
+  // Traditional layout - Header and main content only
   return (
     <div className="flex min-h-screen flex-col bg-luxury-white text-gray-700">
       <Header />
       <main className="flex-1">{children}</main>
-      <Footer />
     </div>
   );
 };

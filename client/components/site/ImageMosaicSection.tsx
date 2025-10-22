@@ -62,10 +62,8 @@ const ImageMosaicSection = ({
     >
       <div className="mx-auto flex max-w-luxury flex-col gap-12 px-8">
         <div className="space-y-4 text-center">
-          <p className="text-xs font-light uppercase tracking-uppercase text-gray-600">
-            {title}
-          </p>
-          <h1 className="mx-auto max-w-[65ch] text-2xl md:text-3xl font-light leading-relaxed tracking-luxury text-gray-700">
+          <p className="text-center text-gray-600">{title}</p>
+          <h1 className="text-center mx-auto max-w-[65ch] text-gray-700">
             {subtitle}
           </h1>
         </div>
@@ -125,28 +123,33 @@ const ImageMosaicSection = ({
             );
           })}
         </div>
-        {footerHeading || (footerLinkHref && footerLinkLabel) ? (
-          <div className="border-t border-gray-100 pt-8 text-left">
-            <div className="flex flex-col items-start gap-3 md:flex-row md:items-center md:justify-between max-md:gap-3 max-md:flex-col">
-              {footerHeading ? (
-                <span className="text-xs font-light uppercase tracking-uppercase text-gray-600">
-                  {footerHeading}
-                </span>
-              ) : (
-                <span className="sr-only">Gift guide prompt</span>
-              )}
-              {footerLinkHref && footerLinkLabel ? (
-                <a
-                  href={footerLinkHref}
-                  className="inline-flex items-center gap-3 text-sm font-light uppercase tracking-uppercase text-luxury-black underline underline-offset-4 transition-opacity duration-250 ease-out hover:opacity-70"
-                >
-                  {footerLinkLabel}
-                  <span aria-hidden="true">→</span>
-                </a>
-              ) : null}
-            </div>
+        <div className="border-t border-gray-100 pt-8 text-center">
+          <div className="flex flex-col items-center gap-3">
+            {footerHeading ? (
+              <span className="text-center text-xs font-light uppercase tracking-uppercase text-gray-600">
+                {footerHeading}
+              </span>
+            ) : (
+              <span className="sr-only">Gift guide prompt</span>
+            )}
+            {footerLinkHref && footerLinkLabel ? (
+              <a
+                href={footerLinkHref}
+                className="ysl-nav-item inline-block text-luxury-black"
+              >
+                {footerLinkLabel}
+              </a>
+            ) : null}
           </div>
-        ) : null}
+          {!footerLinkHref && (
+            <a
+              href="/gallery"
+              className="ysl-nav-item inline-block text-luxury-black mt-4"
+            >
+              Explore
+            </a>
+          )}
+        </div>
       </div>
     </section>
   );
