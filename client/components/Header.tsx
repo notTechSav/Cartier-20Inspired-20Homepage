@@ -21,12 +21,6 @@ const Header = () => {
     <header
       ref={headerRef}
       className="ysl-header"
-      style={{
-        backgroundColor: isOverlay
-          ? "transparent"
-          : "rgba(250, 250, 250, 0.98)",
-        color: isOverlay ? "white" : "var(--nav-color-primary)",
-      }}
     >
       <div className="max-w-7xl mx-auto px-0 h-full flex items-center justify-center relative">
         {/* DESKTOP NAVIGATION */}
