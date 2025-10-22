@@ -95,10 +95,21 @@ const About = () => {
           />
         </div>
 
-        <main className="space-y-16">
+        <main
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 'var(--spacer-content)',
+          }}
+        >
           <section
             data-animate
-            className="space-y-7 opacity-0 transition-all duration-[900ms] ease-[cubic-bezier(0.16,1,0.3,1)] data-[visible=true]:translate-y-0 data-[visible=true]:opacity-100"
+            className="opacity-0 transition-all duration-[900ms] ease-[cubic-bezier(0.16,1,0.3,1)] data-[visible=true]:translate-y-0 data-[visible=true]:opacity-100"
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              gap: 'var(--spacer-block-top)',
+            }}
           >
             <p>
               A client once sent two lines: in-suite only, three hours, no
