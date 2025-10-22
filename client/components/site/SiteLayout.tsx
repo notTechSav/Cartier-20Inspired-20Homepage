@@ -18,7 +18,16 @@ const SiteLayout = ({ children }: PropsWithChildren) => {
 
   if (isScrollSnapLayout) {
     return (
-      <div className="relative h-screen w-full overflow-hidden bg-luxury-white text-gray-700 flex flex-col">
+      <div style={{
+        position: 'relative',
+        height: '100vh',
+        width: '100%',
+        overflow: 'hidden',
+        backgroundColor: 'var(--color-background-primary)',
+        color: '#374151',
+        display: 'flex',
+        flexDirection: 'column'
+      }}>
         {/* Header - Fixed at top, outside scroll container */}
         <Header />
 
@@ -26,16 +35,28 @@ const SiteLayout = ({ children }: PropsWithChildren) => {
         <ScrollSnapProgress totalSections={8} />
 
         {/* Main scroll container - flex-1 allows it to fill remaining space */}
-        <div className="flex-1 w-full overflow-hidden">{children}</div>
+        <div style={{
+          flex: 1,
+          width: '100%',
+          overflow: 'hidden'
+        }}>
+          {children}
+        </div>
       </div>
     );
   }
 
   // Traditional layout - Header and main content only
   return (
-    <div className="flex min-h-screen flex-col bg-luxury-white text-gray-700">
+    <div style={{
+      display: 'flex',
+      minHeight: '100vh',
+      flexDirection: 'column',
+      backgroundColor: 'var(--color-background-primary)',
+      color: '#374151'
+    }}>
       <Header />
-      <main className="flex-1">{children}</main>
+      <main style={{ flex: 1 }}>{children}</main>
     </div>
   );
 };
