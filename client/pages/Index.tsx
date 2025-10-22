@@ -65,7 +65,7 @@ const Index = () => {
       </SwiperSlide>
 
       {/* 03. Gallery - Image mosaic collection */}
-      <SwiperSlide style={{ height: '100vh' }}>
+      <SwiperSlide style={{ height: '100vh' }} id="gallery">
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '100vh', width: '100%', backgroundColor: 'var(--color-background-primary)', paddingLeft: 'var(--spacer-m)', paddingRight: 'var(--spacer-m)', paddingTop: 'var(--spacer-4xl)', paddingBottom: 'var(--spacer-4xl)' }}>
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 'var(--spacer-2xl)', maxWidth: '42rem', width: '100%' }}>
             {/* Image Container with 4/5 Aspect Ratio */}
@@ -73,7 +73,7 @@ const Index = () => {
               <div style={{ aspectRatio: '4/5', width: '100%', backgroundColor: '#f3f4f6', overflow: 'hidden', borderRadius: '2px' }}>
                 <img
                   src="/rose-hero.png"
-                  alt="Gallery - Private Collections"
+                  alt="Gallery - Sacramento escort Katherine Taylor"
                   style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 />
               </div>
@@ -81,11 +81,9 @@ const Index = () => {
 
             {/* Text Content Below Image */}
             <div style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', gap: 'var(--spacer-xl)', maxWidth: '40rem' }}>
-              <h2 style={{ textAlign: 'center' }}>Private Collections</h2>
-              <p style={{ textAlign: 'center' }}>
-                Intimate documentation from Northern California to Los Angeles —
-                three collections, three moments in time.
-              </p>
+              <h2 style={{ textAlign: 'center' }}>Sacramento escort Katherine Taylor</h2>
+              <h3 style={{ textAlign: 'center', fontSize: '18px', fontWeight: 300, letterSpacing: '0.02em' }}>Visual rhythm showcasing Sac escort companionship</h3>
+              <a href="#gallery" style={{ textAlign: 'center', cursor: 'pointer', color: 'var(--color-text-primary)', textDecoration: 'none', fontSize: '16px', fontWeight: 400 }}>Discover →</a>
             </div>
           </div>
         </div>
