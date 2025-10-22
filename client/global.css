@@ -13,11 +13,11 @@
   
   :root {
     /* ============================================
-       1. TYPOGRAPHY
+       1. TYPOGRAPHY (YSL EXACT)
        ============================================ */
-    --font-sans: "Work Sans", sans-serif;
-    --font-serif: "Cormorant Garamond", serif;
-    
+    --sans: 'Helvetica_Reg', Helvetica, Arial, sans-serif;
+    --copperplate: 'Copperplate', serif;
+
     --font-weight-thin: 100;
     --font-weight-extralight: 200;
     --font-weight-light: 300;
@@ -25,40 +25,42 @@
     --font-weight-medium: 500;
     --font-weight-semibold: 600;
     --font-weight-bold: 700;
+    --font-weight-body: 300;
+    --font-weight-heading: 200;
 
     /* ============================================
-       2. SPACING (rem-based, YSL system)
-       Base unit: 16px root font-size
+       2. SPACING (YSL EXACT)
        ============================================ */
-    --spacer-xxxs: 0.125rem;     /* 2px */
-    --spacer-xxs: 0.25rem;       /* 4px */
-    --spacer-xs: 0.5rem;         /* 8px */
-    --spacer-s: 0.75rem;         /* 12px */
-    --spacer-m: 1rem;            /* 16px */
-    --spacer-l: 1.5rem;          /* 24px */
-    --spacer-xl: 2rem;           /* 32px */
-    --spacer-2xl: 2.5rem;        /* 40px */
-    --spacer-3xl: 2.75rem;       /* 44px */
-    --spacer-4xl: 3.5rem;        /* 56px */
-    --spacer-5xl: 4rem;          /* 64px */
-    --spacer-6xl: 4.5rem;        /* 72px */
-    --spacer-7xl: 5rem;          /* 80px */
-    --spacer-8xl: 5.5rem;        /* 88px */
-    --spacer-9xl: 6rem;          /* 96px */
-    --spacer-10xl: 6.5rem;       /* 104px */
-    --spacer-11xl: 10.75rem;     /* 172px */
-
-    /* Semantic spacing tokens */
+    --spacer-xxxs: 0.125rem;
+    --spacer-xxs: 0.25rem;
+    --spacer-xs: 0.5rem;
+    --spacer-s: 0.75rem;
+    --spacer-m: 1rem;
+    --spacer-l: 1.5rem;
+    --spacer-xl: 2rem;
+    --spacer-2xl: 2.5rem;
+    --spacer-3xl: 2.75rem;
+    --spacer-4xl: 3.5rem;
+    --spacer-5xl: 4rem;
+    --spacer-6xl: 4.5rem;
+    --spacer-7xl: 5rem;
+    --spacer-8xl: 5.5rem;
+    --spacer-9xl: 6rem;
+    --spacer-10xl: 6.5rem;
+    --spacer-11xl: 10.75rem;
+    --spacer-cart-reminder-banner: 3.625rem;
     --spacer-header-top: 1.125rem;
     --spacer-block-top: 3.75rem;
+    --spacer-look-bottom: 6.25rem;
     --spacer-block-bottom: 6.25rem;
     --spacer-footer-bottom: 6.25rem;
     --spacer-title-bottom: 1.5rem;
     --spacer-inner: 1.375rem;
     --spacer-content-text: 1.25rem;
-    --spacer-content: 5rem;
+    --spacer-header: 3.75rem;
+    --spacer-content: 4.5rem;
 
-    /* Legacy spacing (backwards compatibility) */
+    /* Legacy spacing */
     --spacing-xs: 4px;
     --spacing-sm: 8px;
     --spacing-md: 16px;
@@ -68,37 +70,50 @@
     --spacing-luxury: 128px;
 
     /* ============================================
-       3. COLORS (Semantic naming, YSL system)
+       3. COLORS (YSL EXACT)
        ============================================ */
-    
+
     /* TEXT COLORS */
-    --color-text-primary: #1a1a1a;
-    --color-text-secondary: #666666;
-    --color-text-tertiary: #999999;
+    --color-text-primary: #000;
+    --color-text-secondary: #999999;
+    --color-text-tertiary: #666666;
     --color-text-inverse: rgb(255, 255, 255);
+    --color-text-calendar: #CCCCCC;
     --color-text-error: #B32519;
-    --color-text-inverse-tertiary: rgba(255, 255, 255, 0.45);
+    --color-text-inverse-tertiary: rgb(255, 255, 255, 0.45);
 
     /* BACKGROUND COLORS */
     --color-background-primary: rgb(255, 255, 255);
     --color-background-secondary: #1A1A1A;
     --color-background-tertiary: #333333;
-    --color-background-light: #F8F8F8;
+    --color-background-quaternary: #F5F5F7;
+    --color-background-light: #E6E6E6;
     --color-background-lighter: #F2F2F2;
+    --color-background-packshots: #F8F7F5;
     --color-background-inverse: #000;
-    --color-background-blur: rgba(255, 255, 255, 0.9);
-    --color-background-icon: rgba(255, 255, 255, 0.3);
-    --color-background-dark-icon: rgba(0, 0, 0, 0.2);
-    --color-background-overlay: rgba(26, 26, 26, 0.4);
+    --color-background-blur: rgb(255, 255, 255, 0.9);
+    --color-background-icon: rgb(255, 255, 255, 0.3);
+    --color-background-dark-icon: rgb(0, 0, 0, 0.2);
+    --color-background-overlay: rgb(239, 239, 239, 0.6);
     --color-background-error: #B32519;
+    --color-background-scrollbar: #CCCCCC;
 
     /* BORDER COLORS */
-    --color-border-primary: #1a1a1a;
+    --color-border-primary: #000;
     --color-border-secondary: #999999;
-    --color-border-tertiary: #cccccc;
+    --color-border-tertiary: #CCCCCC;
     --color-border-error: #B32519;
     --color-border-light: #F2F2F2;
     --color-border-inverse: rgb(255, 255, 255);
+
+    /* OUTLINE COLORS */
+    --color-outline-primary: #000;
+    --color-outline-secondary: #999999;
+    --color-outline-light: rgb(255, 255, 255);
+    --color-outline-highlight: #B32519;
+
+    /* SHADOW */
+    --color-shadow-primary: #0000001A;
 
     /* OUTLINE COLORS */
     --color-outline-primary: #1a1a1a;
