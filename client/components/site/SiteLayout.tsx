@@ -8,7 +8,6 @@
 
 import { PropsWithChildren } from "react";
 import Header from "@/components/Header";
-import Footer from "@/components/site/Footer";
 import ScrollSnapProgress from "@/components/site/ScrollSnapProgress";
 
 const SiteLayout = ({ children }: PropsWithChildren) => {
@@ -32,12 +31,11 @@ const SiteLayout = ({ children }: PropsWithChildren) => {
     );
   }
 
-  // Traditional layout - Footer at bottom as usual
+  // Traditional layout - Header and main content only
   return (
     <div className="flex min-h-screen flex-col bg-luxury-white text-gray-700">
       <Header />
       <main className="flex-1">{children}</main>
-      <Footer />
     </div>
   );
 };
