@@ -415,8 +415,8 @@
     --section-shadow-primary: #0000001a;
 
     /* Typography */
-    --section-font-family: "Helvetica_Reg", Helvetica, Arial, sans-serif;
-    --section-font-serif: "Copperplate", serif;
+    --section-font-family: "Work Sans", Helvetica, Arial, sans-serif;
+    --section-font-serif: "Cormorant Garamond", serif;
   }
 
   .dark {
