@@ -14,16 +14,27 @@ import Footer from "@/components/site/Footer";
 import GiftsSection from "@/components/site/GiftsSection";
 
 const Index = () => {
-  // Swiper carousel layout for both mobile and desktop
+  // Swiper carousel layout for both mobile and desktop - YSL implementation
   return (
     <Swiper
       modules={[Mousewheel, Keyboard]}
       direction="vertical"
-      mousewheel={{ forceToAxis: true }}
-      keyboard={{ enabled: true }}
+      mousewheel={{ forceToAxis: true, releaseOnEdges: true }}
+      keyboard={{ enabled: true, onlyInViewport: true }}
       slidesPerView={1}
       spaceBetween={0}
       speed={600}
+      resistance={true}
+      resistanceRatio={0.85}
+      grabCursor={true}
+      centeredSlides={false}
+      initialSlide={0}
+      watchSlidesProgress={true}
+      preloadImages={false}
+      lazy={{
+        loadPrevNext: true,
+        loadPrevNextAmount: 1,
+      }}
       className="w-full"
       style={{
         height: "min(100vh, 100dvh)",
