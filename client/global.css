@@ -256,6 +256,22 @@ h1, h2, h3, h4, h5, h6, p {
   z-index: 8;
 }
 
+/* Video Optimization - All video elements */
+video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  object-position: center center;
+  width: calc(100% + 1px);
+  height: calc(100% + 1px);
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
 /* Navigation Styles */
 .ysl-header {
   position: fixed;
