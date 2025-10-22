@@ -532,7 +532,7 @@
 @layer utilities {
   /* Luxury section styling utility */
   .luxury-section {
-    background-color: red;
+    background-color: var(--section-bg-primary);
     color: var(--section-text-primary);
   }
 
