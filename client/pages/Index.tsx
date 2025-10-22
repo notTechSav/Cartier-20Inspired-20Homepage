@@ -127,12 +127,6 @@ const Index = () => {
               <p className="mb-8">
                 After more than a decade in this practice, I answer what quick
                 searches never cover.
-                <a
-                  href="/faq"
-                  className="ysl-nav-item inline-block text-luxury-black block mt-2"
-                >
-                  View All
-                </a>
               </p>
             </div>
           </div>
@@ -162,12 +156,6 @@ const Index = () => {
               <p className="text-center">
                 Insights, stories, and perspectives on companionship, luxury,
                 and the art of connection.
-                <a
-                  href="/journal"
-                  className="ysl-nav-item inline-block text-luxury-black block mt-2"
-                >
-                  Read Journal →
-                </a>
               </p>
             </div>
           </div>
