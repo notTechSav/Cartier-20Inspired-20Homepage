@@ -513,8 +513,8 @@
       --outer-gutter: 32px;
 
       /* Typography and spacing */
-      --sans: "Helvetica_Reg", Helvetica, Arial, sans-serif;
-      --copperplate: "Copperplate", serif;
+      --sans: "Work Sans", Helvetica, Arial, sans-serif;
+      --serif: "Cormorant Garamond", serif;
 
       /* Semantic spacing tokens - Desktop uses larger values */
       --spacer-header-top: 1.5rem;
