@@ -75,9 +75,9 @@ export default {
         },
       },
       fontFamily: {
-        sans: ["'Work Sans'", "sans-serif"],
-        serif: ["'Cormorant Garamond'", "serif"],
-        brand: ["'Cormorant Garamond'", "serif"],
+        sans: ["var(--sans)"],
+        serif: ["var(--copperplate)"],
+        brand: ["var(--copperplate)"],
       },
       fontWeight: {
         thin: "100",
