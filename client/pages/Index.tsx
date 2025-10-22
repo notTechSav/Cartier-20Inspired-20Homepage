@@ -23,8 +23,13 @@ const Index = () => {
       keyboard={{ enabled: true }}
       slidesPerView={1}
       spaceBetween={0}
+      speed={600}
       className="w-full"
-      style={{ height: "100vh" }}
+      style={{
+        height: "min(100vh, 100dvh)",
+        touchAction: "pan-x",
+        perspective: "1200px",
+      }}
     >
       {/* 01. Hero - Main introduction */}
       <SwiperSlide className="!h-screen flex items-center justify-center">
