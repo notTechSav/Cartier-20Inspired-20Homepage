@@ -58,14 +58,6 @@ const ImmersiveVideoSection = () => {
       <div className="absolute inset-0 bg-luxury-black/55" />
       <div className="absolute inset-0 flex flex-col justify-end px-6 pb-16 md:px-8 md:pb-24 max-md:pb-12">
         <div className="mx-auto flex w-full max-w-luxury flex-col items-center gap-6 text-center text-luxury-white max-md:gap-4">
-          <span className="text-xs font-light uppercase tracking-uppercase text-white/70">
-            An Immersive Viewpoint
-          </span>
-          <p className="text-center max-w-[65ch] text-white/85">
-            Experience the LOVE collection in motion. Let the skyline mirror the
-            timeless brilliance of every piece as the city awakens to golden
-            light.
-          </p>
         </div>
       </div>
     </section>
