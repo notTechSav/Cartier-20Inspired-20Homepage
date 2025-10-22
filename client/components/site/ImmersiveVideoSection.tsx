@@ -70,16 +70,6 @@ const ImmersiveVideoSection = () => {
             light.
           </p>
           <div className="flex items-center justify-center gap-3 max-md:gap-2">
-            <button
-              type="button"
-              onClick={togglePlay}
-              aria-label={
-                isPaused ? "Play immersive video" : "Pause immersive video"
-              }
-              className="ysl-nav-item-light inline-flex items-center justify-center max-md:px-4 max-md:py-2 text-luxury-white"
-            >
-              {isPaused ? "Play" : "Pause"}
-            </button>
           </div>
         </div>
       </div>
