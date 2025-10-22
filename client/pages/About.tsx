@@ -59,7 +59,7 @@ const About = () => {
             className="leading-[1.9]"
             style={{
               fontSize: '17px',
-              color: 'var(--about-text-primary)',
+              color: 'var(--section-text-primary)',
             }}
           >
             The conversation never resets. I carry forward everything—your
