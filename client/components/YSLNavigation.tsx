@@ -40,7 +40,6 @@ interface MobileNavigationProps {
    ============================================ */
 export const DesktopNavigation: React.FC<DesktopNavigationProps> = ({
   menuItems,
-  isOverlay = false,
 }) => {
   const [activeMegaMenu, setActiveMegaMenu] = useState<string | null>(null);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
