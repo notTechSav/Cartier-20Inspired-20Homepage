@@ -77,9 +77,9 @@ const About = () => {
           }}
         >
           <p
-            className="leading-[1.9]"
             style={{
               fontSize: '17px',
+              lineHeight: 1.9,
             }}
           >
             The conversation never resets. I carry forward everything—your
