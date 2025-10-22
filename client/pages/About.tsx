@@ -36,7 +36,11 @@ const About = () => {
 
   return (
     <div
-      className="bg-[#fafaf9] text-[#4a4a4a]"
+      className="text-[#4a4a4a]"
+      style={{
+        backgroundColor: 'var(--about-bg-primary)',
+        color: 'var(--about-text-primary)',
+      }}
       id="about"
       data-section="about"
     >
@@ -53,7 +57,13 @@ const About = () => {
           data-animate
           className="space-y-6 opacity-0 transition-all duration-[900ms] ease-[cubic-bezier(0.16,1,0.3,1)] data-[visible=true]:translate-y-0 data-[visible=true]:opacity-100 data-[visible=true]:delay-100"
         >
-          <p className="text-[17px] leading-[1.9] text-[#1a1a1a]">
+          <p
+            className="leading-[1.9]"
+            style={{
+              fontSize: '17px',
+              color: 'var(--about-text-primary)',
+            }}
+          >
             The conversation never resets. I carry forward everything—your
             M&amp;A timeline, your board anxieties, your daughter’s college
             decision, the trip to Patagonia you’ve been planning. Not because I
