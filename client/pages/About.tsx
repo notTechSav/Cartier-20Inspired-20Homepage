@@ -34,11 +34,7 @@ const About = () => {
 
   return (
     <div
-      className="text-[#4a4a4a]"
-      style={{
-        backgroundColor: 'var(--section-bg-primary)',
-        color: 'var(--section-text-primary)',
-      }}
+      className="luxury-section"
       id="about"
       data-section="about"
     >
