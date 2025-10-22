@@ -51,9 +51,8 @@ const Gifts = () => {
           <div className="flex flex-col px-10 pb-[60px] pt-[120px] sm:px-12">
             <header className="mb-8">
               <h1
-                className="font-light text-luxury-gray-800"
+                className="text-luxury-gray-800"
                 style={{
-                  fontWeight: 200,
                   fontSize: "48px",
                   letterSpacing: "-0.02em",
                   lineHeight: 1.1,
@@ -63,7 +62,7 @@ const Gifts = () => {
                 Gifts
               </h1>
               <p
-                className="font-light text-luxury-black/70"
+                className="text-luxury-black/70"
                 style={{
                   fontSize: "16px",
                   letterSpacing: "0.01em",
@@ -105,7 +104,6 @@ const Gifts = () => {
               {GUIDANCE_COPY.map((paragraph) => (
                 <p
                   key={paragraph}
-                  className="font-light"
                   style={{
                     fontSize: "17px",
                     letterSpacing: "0.008em",
