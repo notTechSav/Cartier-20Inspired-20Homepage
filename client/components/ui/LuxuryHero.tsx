@@ -126,8 +126,6 @@ export default function LuxuryHero() {
         </motion.div>
       </div>
 
-      {/* AI Concierge floating component */}
-      <AIConcierge />
 
       {/* Subtle grain texture overlay */}
       <div className="absolute inset-0 z-30 pointer-events-none opacity-[0.02]">
