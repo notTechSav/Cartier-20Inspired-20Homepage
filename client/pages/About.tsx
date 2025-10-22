@@ -91,16 +91,19 @@ const About = () => {
         </header>
 
         <div
-          className="flex justify-center"
           aria-hidden="true"
           style={{
+            display: 'flex',
+            justifyContent: 'center',
             marginTop: 'var(--spacer-block-top)',
             marginBottom: 'var(--spacer-block-bottom)',
           }}
         >
           <span
-            className="h-24 w-px opacity-40"
             style={{
+              height: '96px',
+              width: '1px',
+              opacity: 0.4,
               backgroundImage:
                 'linear-gradient(to bottom, transparent, rgba(139, 115, 85, 0.6), transparent)',
             }}
