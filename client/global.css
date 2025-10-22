@@ -6,28 +6,59 @@
 @tailwind utilities;
 
 @layer base {
+  /* ============================================
+     UNIFIED DESIGN SYSTEM TOKENS
+     Based on YSL header system + our refinements
+     ============================================ */
+  
   :root {
-    /* Typography weights */
+    /* ============================================
+       1. TYPOGRAPHY
+       ============================================ */
+    --font-sans: "Work Sans", sans-serif;
+    --font-serif: "Cormorant Garamond", serif;
+    
     --font-weight-thin: 100;
     --font-weight-extralight: 200;
     --font-weight-light: 300;
-    --font-weight-body: 300;
-    --font-weight-heading: 200;
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
 
-    /* Shadow tokens */
-    --shadow-color: 0deg 0% 50%;
-    --shadow-elevation-low: 0.5px 1px 1px hsl(var(--shadow-color) / 0.07);
-    --shadow-elevation-medium:
-      1px 2px 2px hsl(var(--shadow-color) / 0.09),
-      2px 4px 4px hsl(var(--shadow-color) / 0.09),
-      3px 6px 6px hsl(var(--shadow-color) / 0.09);
-    --shadow-elevation-high:
-      1px 2px 2px hsl(var(--shadow-color) / 0.06),
-      2px 4px 4px hsl(var(--shadow-color) / 0.06),
-      4px 8px 8px hsl(var(--shadow-color) / 0.06),
-      8px 16px 16px hsl(var(--shadow-color) / 0.06);
+    /* ============================================
+       2. SPACING (rem-based, YSL system)
+       Base unit: 16px root font-size
+       ============================================ */
+    --spacer-xxxs: 0.125rem;     /* 2px */
+    --spacer-xxs: 0.25rem;       /* 4px */
+    --spacer-xs: 0.5rem;         /* 8px */
+    --spacer-s: 0.75rem;         /* 12px */
+    --spacer-m: 1rem;            /* 16px */
+    --spacer-l: 1.5rem;          /* 24px */
+    --spacer-xl: 2rem;           /* 32px */
+    --spacer-2xl: 2.5rem;        /* 40px */
+    --spacer-3xl: 2.75rem;       /* 44px */
+    --spacer-4xl: 3.5rem;        /* 56px */
+    --spacer-5xl: 4rem;          /* 64px */
+    --spacer-6xl: 4.5rem;        /* 72px */
+    --spacer-7xl: 5rem;          /* 80px */
+    --spacer-8xl: 5.5rem;        /* 88px */
+    --spacer-9xl: 6rem;          /* 96px */
+    --spacer-10xl: 6.5rem;       /* 104px */
+    --spacer-11xl: 10.75rem;     /* 172px */
 
-    /* Spacing scale */
+    /* Semantic spacing tokens */
+    --spacer-header-top: 1.125rem;
+    --spacer-block-top: 3.75rem;
+    --spacer-block-bottom: 6.25rem;
+    --spacer-footer-bottom: 6.25rem;
+    --spacer-title-bottom: 1.5rem;
+    --spacer-inner: 1.375rem;
+    --spacer-content-text: 1.25rem;
+    --spacer-content: 5rem;
+
+    /* Legacy spacing (backwards compatibility) */
     --spacing-xs: 4px;
     --spacing-sm: 8px;
     --spacing-md: 16px;
@@ -36,7 +67,50 @@
     --spacing-2xl: 96px;
     --spacing-luxury: 128px;
 
-    /* Neutral palette */
+    /* ============================================
+       3. COLORS (Semantic naming, YSL system)
+       ============================================ */
+    
+    /* TEXT COLORS */
+    --color-text-primary: #1a1a1a;
+    --color-text-secondary: #666666;
+    --color-text-tertiary: #999999;
+    --color-text-inverse: rgb(255, 255, 255);
+    --color-text-error: #B32519;
+    --color-text-inverse-tertiary: rgba(255, 255, 255, 0.45);
+
+    /* BACKGROUND COLORS */
+    --color-background-primary: rgb(255, 255, 255);
+    --color-background-secondary: #1A1A1A;
+    --color-background-tertiary: #333333;
+    --color-background-light: #F8F8F8;
+    --color-background-lighter: #F2F2F2;
+    --color-background-inverse: #000;
+    --color-background-blur: rgba(255, 255, 255, 0.9);
+    --color-background-icon: rgba(255, 255, 255, 0.3);
+    --color-background-dark-icon: rgba(0, 0, 0, 0.2);
+    --color-background-overlay: rgba(26, 26, 26, 0.4);
+    --color-background-error: #B32519;
+
+    /* BORDER COLORS */
+    --color-border-primary: #1a1a1a;
+    --color-border-secondary: #999999;
+    --color-border-tertiary: #cccccc;
+    --color-border-error: #B32519;
+    --color-border-light: #F2F2F2;
+    --color-border-inverse: rgb(255, 255, 255);
+
+    /* OUTLINE COLORS */
+    --color-outline-primary: #1a1a1a;
+    --color-outline-secondary: #999999;
+    --color-outline-light: rgb(255, 255, 255);
+    --color-outline-highlight: #B32519;
+
+    /* SHADOW COLORS */
+    --color-shadow-primary: #0000001a;
+    --shadow-color: 0deg 0% 50%;
+
+    /* Legacy color palette (backwards compatibility) */
     --luxury-black: #1a1a1a;
     --luxury-white: #fafafa;
     --gray-50: #f8f8f8;
@@ -79,6 +153,89 @@
     --sidebar-accent-foreground: 0 0% 24%;
     --sidebar-border: 0 0% 88%;
     --sidebar-ring: 0 0% 20%;
+
+    /* ============================================
+       4. EASING CURVES (Named, YSL system)
+       ============================================ */
+    --ease: cubic-bezier(0.4, 0, 0.2, 1);
+    --ease-fade: cubic-bezier(0.25, 0.1, 0.25, 1);
+    --ease-transform: cubic-bezier(0.22, 1, 0.36, 1);
+    --ease-bounce: cubic-bezier(0.65, -0.55, 0.25, 1.5);
+    --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
+
+    /* ============================================
+       5. DURATIONS
+       ============================================ */
+    --duration-fast: 320ms;
+    --duration-medium: 450ms;
+    --duration-slow: 580ms;
+
+    /* ============================================
+       6. SHADOWS (Enhanced from current system)
+       ============================================ */
+    --shadow-elevation-low: 0.5px 1px 1px hsl(var(--shadow-color) / 0.07);
+    --shadow-elevation-medium:
+      1px 2px 2px hsl(var(--shadow-color) / 0.09),
+      2px 4px 4px hsl(var(--shadow-color) / 0.09),
+      3px 6px 6px hsl(var(--shadow-color) / 0.09);
+    --shadow-elevation-high:
+      1px 2px 2px hsl(var(--shadow-color) / 0.06),
+      2px 4px 4px hsl(var(--shadow-color) / 0.06),
+      4px 8px 8px hsl(var(--shadow-color) / 0.06),
+      8px 16px 16px hsl(var(--shadow-color) / 0.06);
+
+    /* ============================================
+       7. NAVIGATION-SPECIFIC TOKENS
+       Semantic layout and responsive values
+       ============================================ */
+    --nav-font-family: var(--font-sans);
+    --nav-font-weight-thin: var(--font-weight-extralight);
+    --nav-font-weight-light: var(--font-weight-light);
+    --nav-font-size-sm: 11px;
+    --nav-font-size-md: 12px;
+    --nav-font-size-lg: 13px;
+    --nav-letter-spacing-sm: 0.11em;
+    --nav-letter-spacing-md: 0.18em;
+    --nav-letter-spacing-lg: 0.22em;
+    
+    /* Layout dimensions */
+    --nav-gap-desktop: 48px;
+    --nav-gap-columns: 96px;
+    --nav-padding-x: 64px;
+    --nav-padding-y: 24px;
+    --nav-height-desktop: 72px;
+    --nav-height-mobile: 64px;
+    --nav-height-scrolled: 64px;
+
+    /* Colors (reference base tokens) */
+    --nav-color-primary: var(--color-text-primary);
+    --nav-color-hover: rgba(26, 26, 26, 0.7);
+    --nav-color-border: rgba(26, 26, 26, 0.04);
+    --nav-bg-header: rgba(250, 250, 250, 0.98);
+    --nav-bg-menu: rgba(250, 250, 250, 0.99);
+    
+    /* Shadows and transitions */
+    --nav-shadow-sm: var(--shadow-elevation-low);
+    --nav-shadow-md: var(--shadow-elevation-medium);
+    --nav-transition-fast: var(--duration-fast) var(--ease-transform);
+    --nav-transition-medium: var(--duration-medium) var(--ease-transform);
+    --nav-transition-slow: var(--duration-slow) var(--ease-transform);
+
+    /* ============================================
+       8. RESPONSIVE BREAKPOINTS & LAYOUT
+       ============================================ */
+    --breakpoint-mobile: 640px;
+    --breakpoint-tablet: 1024px;
+    --breakpoint-desktop: 1280px;
+    
+    --inner-gutter: 20px;
+    --outer-gutter: 20px;
+    --grid-columns: 8;
+    --container-width: 100%;
+    --col-container-width: calc(var(--container-width, 100%) - (2 * var(--outer-gutter, 0)));
+
+    /* Safe area (mobile notch support) */
+    --safe-area-inset-bottom: env(safe-area-inset-bottom);
   }
 
   .dark {
@@ -119,7 +276,6 @@
     height: 100%;
     overflow-x: hidden;
     overflow-y: auto;
-    --safe-area-inset-bottom: env(safe-area-inset-bottom);
   }
 
   body {
@@ -128,8 +284,8 @@
     overflow-y: auto;
     background-color: var(--luxury-white);
     color: inherit;
-    font-family: "Work Sans", sans-serif;
-    font-weight: var(--font-weight-body);
+    font-family: var(--font-sans);
+    font-weight: var(--font-weight-body, var(--font-weight-light));
     letter-spacing: 0.025em;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -211,7 +367,7 @@
   /* Input field micro-interaction */
   .luxury-input {
     position: relative;
-    transition: all 400ms cubic-bezier(0.16, 1, 0.3, 1);
+    transition: all 400ms var(--ease-transform);
   }
 
   .luxury-input:focus {
@@ -231,7 +387,7 @@
       var(--luxury-black) 50%,
       transparent 100%
     );
-    transition: width 600ms cubic-bezier(0.16, 1, 0.3, 1);
+    transition: width 600ms var(--ease-transform);
   }
 
   .luxury-input:focus::before {
@@ -251,7 +407,7 @@
     inset: 0;
     background: var(--luxury-black);
     transform: translateX(-100%);
-    transition: transform 500ms cubic-bezier(0.16, 1, 0.3, 1);
+    transition: transform 500ms var(--ease-transform);
     z-index: -1;
   }
 
@@ -263,7 +419,7 @@
   .link-luxury {
     position: relative;
     display: inline-block;
-    transition: all 350ms cubic-bezier(0.16, 1, 0.3, 1);
+    transition: all 350ms var(--ease-transform);
   }
 
   .link-luxury::after {
@@ -274,7 +430,7 @@
     width: 0;
     height: 1px;
     background: currentColor;
-    transition: width 450ms cubic-bezier(0.16, 1, 0.3, 1);
+    transition: width 450ms var(--ease-transform);
   }
 
   .link-luxury:hover {
@@ -290,7 +446,7 @@
   .footer-column {
     opacity: 0;
     transform: translateY(20px);
-    animation: footerColumnFadeIn 800ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation: footerColumnFadeIn 800ms var(--ease-transform) forwards;
   }
 
   .footer-column:nth-child(1) {
@@ -311,7 +467,7 @@
 
   /* Email success message animation */
   .success-message {
-    animation: successPulse 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation: successPulse 0.6s var(--ease-transform) forwards;
   }
 
   /* Divider line with gradient */
@@ -330,7 +486,7 @@
   .newsletter-container {
     opacity: 0;
     transform: translateY(30px);
-    animation: fadeInUp 1000ms cubic-bezier(0.16, 1, 0.3, 1) 200ms forwards;
+    animation: fadeInUp 1000ms var(--ease-transform) 200ms forwards;
   }
 
   /* Link group header */
@@ -348,7 +504,7 @@
     width: 24px;
     height: 1px;
     background: currentColor;
-    transition: width 500ms cubic-bezier(0.16, 1, 0.3, 1);
+    transition: width 500ms var(--ease-transform);
   }
 
   .link-group-header:hover::after {
@@ -382,7 +538,6 @@
   /* ============================================
      SWIPER CAROUSEL CONFIGURATION
      ============================================ */
-  /* Swiper container - reset and configure for proper carousel behavior */
   .swiper {
     display: block;
     box-sizing: border-box;
@@ -402,7 +557,6 @@
     -webkit-tap-highlight-color: transparent;
   }
 
-  /* Swiper wrapper with smooth easing matching YSL */
   .swiper-wrapper {
     position: relative;
     width: 100%;
@@ -411,12 +565,11 @@
     display: flex;
     flex-direction: column;
     transition-property: transform;
-    transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+    transition-timing-function: var(--ease-transform);
     box-sizing: border-box;
     will-change: transform;
   }
 
-  /* Swiper slides full viewport with overflow handling */
   .swiper-slide {
     flex-shrink: 0;
     width: 100%;
@@ -431,7 +584,6 @@
     -webkit-overflow-scrolling: touch;
   }
 
-  /* Swiper slide scrollbar styling */
   .swiper-slide::-webkit-scrollbar {
     width: 6px;
   }
@@ -448,7 +600,6 @@
   /* ============================================
      ENHANCED SCROLL-SNAP CONTAINER
      ============================================ */
-  /* Enhanced scroll-snap container for YSL-level sharpness */
   .scroll-snap-container {
     height: 100vh;
     height: 100dvh;
@@ -461,7 +612,6 @@
     will-change: scroll-position;
   }
 
-  /* Enhanced scroll-snap items */
   .scroll-snap-item {
     scroll-snap-align: start;
     scroll-snap-stop: always;
@@ -470,7 +620,7 @@
     will-change: transform;
     contain: layout style paint;
     transform: translateZ(0);
-    animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation: fadeInUp 0.8s var(--ease-transform) forwards;
   }
 
   /* Entrance animations */
@@ -533,34 +683,6 @@
   /* ============================================
      YSL NAVIGATION STYLES
      ============================================ */
-  :root {
-    --nav-font-family: "Work Sans", sans-serif;
-    --nav-font-weight-thin: 200;
-    --nav-font-weight-light: 300;
-    --nav-font-size-sm: 11px;
-    --nav-font-size-md: 12px;
-    --nav-font-size-lg: 13px;
-    --nav-letter-spacing-sm: 0.11em;
-    --nav-letter-spacing-md: 0.18em;
-    --nav-letter-spacing-lg: 0.22em;
-    --nav-gap-desktop: 48px;
-    --nav-gap-columns: 96px;
-    --nav-padding-x: 64px;
-    --nav-padding-y: 24px;
-    --nav-color-primary: var(--luxury-black);
-    --nav-color-hover: rgba(26, 26, 26, 0.7);
-    --nav-color-border: rgba(26, 26, 26, 0.04);
-    --nav-bg-header: rgba(250, 250, 250, 0.98);
-    --nav-bg-menu: rgba(250, 250, 250, 0.99);
-    --nav-shadow-sm: var(--shadow-elevation-low);
-    --nav-shadow-md: var(--shadow-elevation-medium);
-    --nav-transition-fast: 320ms cubic-bezier(0.16, 1, 0.3, 1);
-    --nav-transition-medium: 450ms cubic-bezier(0.16, 1, 0.3, 1);
-    --nav-transition-slow: 580ms cubic-bezier(0.16, 1, 0.3, 1);
-    --nav-height-desktop: 72px;
-    --nav-height-mobile: 64px;
-    --nav-height-scrolled: 64px;
-  }
 
   .ysl-header {
     position: fixed;
@@ -803,7 +925,6 @@
     z-index: 10001;
     transition: all var(--nav-transition-fast);
     color: inherit;
-    /* WCAG 2.1 SC 1.4.3: 4.5:1 contrast */
     filter: none;
   }
 
@@ -832,7 +953,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(26, 26, 26, 0.4);
+    background: var(--color-background-overlay);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     z-index: 1001;
@@ -1005,15 +1126,14 @@
 
   /* Katherine Taylor branding - Ultra-thin sans-serif */
   .kt-brand-refined {
-    font-family: "Work Sans", sans-serif;
-    font-weight: 200;
+    font-family: var(--font-sans);
+    font-weight: var(--font-weight-thin);
     font-size: 13px;
     letter-spacing: 0.22em;
     line-height: 1.2;
     text-transform: uppercase;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    /* WCAG 2.1 SC 1.4.3: 4.5:1 contrast */
     color: inherit;
     cursor: pointer;
   }
@@ -1117,7 +1237,7 @@
   .ysl-footer-column {
     display: flex;
     flex-direction: column;
-    animation: fadeIn 800ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation: fadeIn 800ms var(--ease-transform) forwards;
     animation-fill-mode: both;
   }
 
