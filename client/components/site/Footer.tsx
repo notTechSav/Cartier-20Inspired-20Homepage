@@ -119,13 +119,13 @@ const Footer: React.FC<FooterProps> = ({
         <div className="ysl-footer-grid">
           {/* SUPPORT Column */}
           <div className="ysl-footer-column">
-            <h3 className="ysl-footer-heading">Support</h3>
+            <h3 className="ysl-footer-heading text-sm">Support</h3>
             <nav className="space-y-0">
               {footerLinks.support.map((link, index) => (
                 <Link
                   key={index}
                   to={link.href}
-                  className="ysl-footer-link block"
+                  className="ysl-footer-link block text-xs"
                 >
                   {link.label}
                 </Link>
@@ -135,13 +135,13 @@ const Footer: React.FC<FooterProps> = ({
 
           {/* SERVICES Column */}
           <div className="ysl-footer-column">
-            <h3 className="ysl-footer-heading">Services</h3>
+            <h3 className="ysl-footer-heading text-sm">Services</h3>
             <nav className="space-y-0">
               {footerLinks.services.map((link, index) => (
                 <Link
                   key={index}
                   to={link.href}
-                  className="ysl-footer-link block"
+                  className="ysl-footer-link block text-xs"
                 >
                   {link.label}
                 </Link>
@@ -151,13 +151,13 @@ const Footer: React.FC<FooterProps> = ({
 
           {/* ABOUT Column */}
           <div className="ysl-footer-column">
-            <h3 className="ysl-footer-heading">About</h3>
+            <h3 className="ysl-footer-heading text-sm">About</h3>
             <nav className="space-y-0">
               {footerLinks.about.map((link, index) => (
                 <Link
                   key={index}
                   to={link.href}
-                  className="ysl-footer-link block"
+                  className="ysl-footer-link block text-xs"
                 >
                   {link.label}
                 </Link>
@@ -167,13 +167,13 @@ const Footer: React.FC<FooterProps> = ({
 
           {/* LEGAL Column */}
           <div className="ysl-footer-column">
-            <h3 className="ysl-footer-heading">Legal</h3>
+            <h3 className="ysl-footer-heading text-sm">Legal</h3>
             <nav className="space-y-0">
               {footerLinks.legal.map((link, index) => (
                 <Link
                   key={index}
                   to={link.href}
-                  className="ysl-footer-link block"
+                  className="ysl-footer-link block text-xs"
                 >
                   {link.label}
                 </Link>
