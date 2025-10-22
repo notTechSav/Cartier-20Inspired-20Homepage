@@ -121,13 +121,6 @@ const About = () => {
               transform: 'translateY(8px)',
               transition: 'all 900ms cubic-bezier(0.16,1,0.3,1)',
             }}
-            onLoad={(e) => {
-              const el = e.currentTarget as HTMLElement;
-              if (el.dataset.visible === 'true') {
-                el.style.opacity = '1';
-                el.style.transform = 'translateY(0)';
-              }
-            }}
           >
             <p>
               A client once sent two lines: in-suite only, three hours, no
