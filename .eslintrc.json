@@ -1,0 +1,32 @@
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "es2020": true,
+    "node": true
+  },
+  "extends": [],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "rules": {
+    "no-restricted-syntax": [
+      "error",
+      {
+        "selector": "JSXAttribute[name.name='className'][value.value=/\\w+-\\d+|@apply|@layer|@tailwind/]",
+        "message": "Tailwind classes are not allowed. Use inline styles with CSS variables instead."
+      },
+      {
+        "selector": "JSXAttribute[name.name='className'][value.value=/\\bflex\\b|\\bgrid\\b|\\bflex-col\\b|\\bitems-|\\bjustify-|\\bgap-|\\bp-|\\bm-|\\bw-|\\bh-|\\btext-|\\bbg-|\\bborder-|\\brounded-|\\bshadow-|\\bopacity-|\\bzoom-|\\bscale-|\\btransform|\\btransition|\\bduration-|\\bease-|\\bdelay-/]",
+        "message": "Tailwind utility classes are not allowed. Use inline styles or CSS modules with design tokens instead."
+      }
+    ],
+    "no-console": ["warn", { "allow": ["warn", "error"] }],
+    "no-debugger": "warn"
+  }
+}
