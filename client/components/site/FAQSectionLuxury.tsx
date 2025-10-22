@@ -144,15 +144,26 @@ const FAQSectionLuxury = () => {
       <div
         id={`faq-answer-${item.id}`}
         className={`overflow-hidden transition-all duration-400 ease-out ${
-          isOpen ? "max-h-96 pb-8" : "max-h-0"
+          isOpen ? "max-h-96" : "max-h-0"
         }`}
+        style={{
+          paddingBottom: isOpen ? 'var(--spacer-l)' : '0',
+        }}
       >
-        <div className="pr-6 md:pr-24 max-md:pr-6">
+        <div
+          style={{
+            paddingRight: 'var(--inner-gutter)',
+          }}
+        >
           <p className="max-w-[65ch] text-base font-light leading-relaxed tracking-luxury text-gray-600">
             {item.answer}
           </p>
 
-          <div className="mt-6">
+          <div
+            style={{
+              marginTop: 'var(--spacer-m)',
+            }}
+          >
             <a
               href="/booking"
               className="ysl-nav-item inline-block text-sm text-luxury-black"
