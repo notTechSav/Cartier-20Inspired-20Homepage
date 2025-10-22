@@ -80,14 +80,6 @@ const VideoSection = () => {
             >
               {isPaused ? "Play" : "Pause"}
             </button>
-            <button
-              type="button"
-              onClick={toggleMute}
-              aria-label={isMuted ? "Unmute video" : "Mute video"}
-              className="ysl-nav-item-light inline-block text-luxury-white"
-            >
-              {isMuted ? "Unmute" : "Mute"}
-            </button>
           </div>
         </div>
       </div>
