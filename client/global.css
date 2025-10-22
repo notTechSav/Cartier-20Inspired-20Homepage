@@ -274,6 +274,10 @@ h1, h2, h3, h4, h5, h6, p {
   transition-delay: 0ms;
   background-color: var(--color-background-primary);
   z-index: 8;
+  backface-visibility: hidden;
+  will-change: transform;
+  transform-origin: center center;
+  perspective: var(--perspective-3d);
 }
 
 .swiper-slide-prev {
