@@ -51,18 +51,15 @@ const JournalHero = memo(
           <figcaption className="pointer-events-none absolute inset-0 flex items-end sm:hidden">
             <div className="w-full px-8 pb-10">
               <p
-                className="mb-2 text-xs font-light uppercase  text-luxury-white/75"
+                className="mb-2 uppercase text-luxury-white/75"
                 style={{ letterSpacing: "0.12em" }}
               >
                 THE HIGH-END EDITION
               </p>
-              <h1
-                className=" text-luxury-white"
-                style={{ fontWeight: 200 }}
-              >
+              <h1 className="text-luxury-white">
                 {title}
               </h1>
-              <p className="mt-4 text-sm font-light  text-luxury-white/80">
+              <p className="mt-4 text-luxury-white/80">
                 {subtitle}
               </p>
             </div>
