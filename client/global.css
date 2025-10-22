@@ -783,7 +783,7 @@
     opacity: 0.7;
   }
 
-  /* Navigation item (header) - Dark text variant */
+  /* Navigation item - Always white text (header is always transparent) */
   .ysl-nav-item {
     position: relative;
     font-family: var(--nav-font-family);
@@ -798,6 +798,7 @@
     background: transparent;
     border: none;
     transition: all var(--nav-transition-fast);
+    color: white;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -811,8 +812,8 @@
     height: 1px;
     background: linear-gradient(
       90deg,
-      var(--nav-color-primary) 0%,
-      rgba(26, 26, 26, 0.6) 50%,
+      rgba(250, 250, 250, 1) 0%,
+      rgba(250, 250, 250, 0.6) 50%,
       transparent 100%
     );
     transition: width var(--nav-transition-slow);
@@ -826,7 +827,7 @@
     width: 100%;
   }
 
-  /* Navigation item - White text variant for dark backgrounds */
+  /* Legacy dark variant - kept for backwards compatibility */
   .ysl-nav-item-light {
     position: relative;
     font-family: var(--nav-font-family);
@@ -841,7 +842,7 @@
     background: transparent;
     border: none;
     transition: all var(--nav-transition-fast);
-    color: inherit;
+    color: white;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
