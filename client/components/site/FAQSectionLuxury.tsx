@@ -157,10 +157,10 @@ const FAQSectionLuxury = () => {
   );
 
   return (
-    <div className="bg-luxury-white">
+    <div className="luxury-section">
       <section
         id="faq"
-        className="relative bg-luxury-white py-12 md:py-24 max-md:py-12"
+        className="luxury-section relative py-12 md:py-24 max-md:py-12"
         aria-label="Frequently asked questions about escort services and engagement details"
         data-section="faq"
       >
