@@ -238,7 +238,12 @@ const FAQSectionLuxury = () => {
               <div className="border-t border-gray-200" />
             </div>
 
-            <div className="mt-12 text-center">
+            <div
+              className="text-center"
+              style={{
+                marginTop: 'var(--spacer-block-top)',
+              }}
+            >
               <button
                 type="button"
                 onClick={() => setShowHidden((prev) => !prev)}
