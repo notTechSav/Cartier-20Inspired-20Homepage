@@ -106,7 +106,12 @@ const FAQSectionLuxury = () => {
   };
 
   const FAQItem = ({ item, isOpen }: { item: FaqItem; isOpen: boolean }) => (
-    <div className="border-t border-gray-200">
+    <div
+      className="border-t"
+      style={{
+        borderColor: 'var(--section-border-light)',
+      }}
+    >
       <button
         onClick={() => handleToggle(item.id)}
         className="group flex w-full items-start justify-between transition-all duration-250 ease-out focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-2"
