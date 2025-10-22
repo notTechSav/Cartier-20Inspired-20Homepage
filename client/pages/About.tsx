@@ -73,7 +73,13 @@ const About = () => {
         </header>
 
         <div className="my-16 flex justify-center" aria-hidden="true">
-          <span className="h-24 w-px bg-gradient-to-b from-transparent via-[#8b7355]/60 to-transparent opacity-40" />
+          <span
+            className="h-24 w-px opacity-40"
+            style={{
+              backgroundImage:
+                'linear-gradient(to bottom, transparent, var(--about-divider-color), transparent)',
+            }}
+          />
         </div>
 
         <main className="space-y-16">
