@@ -26,7 +26,6 @@ export interface NavItem {
 
 interface DesktopNavigationProps {
   menuItems: NavItem[];
-  isOverlay?: boolean;
 }
 
 interface MobileNavigationProps {
