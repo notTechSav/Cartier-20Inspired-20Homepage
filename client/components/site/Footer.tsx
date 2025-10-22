@@ -116,10 +116,11 @@ const Footer: React.FC<FooterProps> = ({
 
       {/* Links Grid Section */}
       <div className="py-4 md:py-6">
-        <div className="ysl-footer-grid">
-          {/* SUPPORT Column */}
-          <div className="ysl-footer-column">
-            <h3 className="ysl-footer-heading text-sm">Support</h3>
+        <div className="mx-auto max-w-7xl px-4 md:px-6 lg:px-8">
+          <div className="ysl-footer-grid">
+            {/* SUPPORT Column */}
+            <div className="ysl-footer-column">
+              <h3 className="ysl-footer-heading text-sm">Support</h3>
             <nav className="space-y-0">
               {footerLinks.support.map((link, index) => (
                 <Link
@@ -178,7 +179,8 @@ const Footer: React.FC<FooterProps> = ({
                   {link.label}
                 </Link>
               ))}
-            </nav>
+              </nav>
+            </div>
           </div>
         </div>
       </div>
