@@ -97,57 +97,11 @@ const Hero = () => {
       {/* Desktop Content */}
       <div className="relative z-10 hidden md:flex w-full flex-1 flex-col items-center justify-end px-8 pb-0">
         <div className="flex w-full max-w-luxury flex-col items-center justify-end gap-1 text-center text-luxury-white">
-          <H3
-            as="p"
-            aria-hidden="true"
-            className="text-center mb-0 text-luxury-white/70"
-          >
-            Love, Elevated
-          </H3>
-          <div className="flex flex-col items-center">
-            <H2
-              as="p"
-              aria-hidden="true"
-              className="text-center text-luxury-white"
-            >
-              An Experience That Reflects Your Highest Qualities
-              <a
-                href="/inquire"
-                className="ysl-nav-item-light text-sm inline-block text-luxury-white block mt-2"
-              >
-                Reserve an Evening
-              </a>
-            </H2>
-          </div>
         </div>
       </div>
 
       {/* Mobile Content */}
       <div className="relative z-10 md:hidden flex w-full flex-1 flex-col items-center justify-end px-6 pb-0">
-        <div className="flex w-full flex-col items-center justify-end text-center gap-1 text-luxury-white">
-          <H3
-            as="p"
-            aria-hidden="true"
-            className="text-center mb-0 text-luxury-white/75 text-xs tracking-wide uppercase"
-          >
-            Love, Elevated
-          </H3>
-          <div className="flex flex-col items-center">
-            <H2
-              as="p"
-              aria-hidden="true"
-              className="text-center text-luxury-white text-2xl leading-tight font-extralight"
-            >
-              An Experience That Reflects Your Highest Qualities
-              <a
-                href="/inquire"
-                className="ysl-nav-item-light text-xs inline-block text-center text-luxury-white block mt-1"
-              >
-                Reserve an Evening
-              </a>
-            </H2>
-          </div>
-        </div>
       </div>
 
     </section>
