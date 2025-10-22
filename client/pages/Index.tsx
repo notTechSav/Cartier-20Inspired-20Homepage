@@ -66,15 +66,15 @@ const Index = () => {
 
             {/* Text Content Below Image */}
             <div className="text-center space-y-6 max-w-xl">
-              <h2 className="text-center text-3xl font-light tracking-tight text-luxury-black">
+              <h2 className="text-center">
                 SF Escorts | Framed Side-By-Side
               </h2>
-              <p className="text-center text-sm font-light leading-relaxed tracking-luxury text-gray-600">
+              <p className="text-center">
                 Every frame captured with intention—curated moments that reveal
                 artistry, confidence, and chemistry in equal measure.
                 <a
                   href="/about"
-                  className="ysl-nav-item inline-block text-luxury-black block mt-2"
+                  className="ysl-nav-item inline-block block mt-2"
                 >
                   Take a Glimpse
                 </a>
