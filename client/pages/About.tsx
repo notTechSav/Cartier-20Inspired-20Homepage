@@ -47,8 +47,10 @@ const About = () => {
         alignment="left"
       />
       <div
-        className="mx-auto max-w-[680px]"
         style={{
+          maxWidth: '680px',
+          marginLeft: 'auto',
+          marginRight: 'auto',
           paddingLeft: 'var(--inner-gutter)',
           paddingRight: 'var(--inner-gutter)',
           paddingTop: 'var(--spacer-block-top)',
