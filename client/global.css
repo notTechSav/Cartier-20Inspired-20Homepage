@@ -1,11 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@100;300;400;700&display=swap');
-
 :root {
-  /* MOBILE DESIGN TOKENS */
+  font: inherit;
+  font-family: var(--sans);
+  font-size: 16px;
+  text-transform: uppercase;
+  color: var(--color-text-primary);
   --swiper-theme-color: #007aff;
   --aa-search-input-height: 44px;
   --aa-input-icon-size: 20px;
   --aa-base-unit: 16;
+  --aa-spacing-factor: 1;
   --aa-spacing: calc(var(--aa-base-unit)*var(--aa-spacing-factor)*1px);
   --aa-spacing-half: calc(var(--aa-spacing)/2);
   --aa-panel-max-height: 650px;
@@ -19,6 +22,7 @@
   --aa-icon-stroke-width: 1.6;
   --aa-icon-color-rgb: 119,119,163;
   --aa-icon-color-alpha: 1;
+  --aa-action-icon-size: 20px;
   --aa-text-color-rgb: 38,38,39;
   --aa-text-color-alpha: 1;
   --aa-primary-color-rgb: 62,52,211;
@@ -49,8 +53,6 @@
   --aa-scrollbar-track-background-color-alpha: 1;
   --aa-scrollbar-thumb-background-color-rgb: var(--aa-background-color-rgb);
   --aa-scrollbar-thumb-background-color-alpha: 1;
-  --aa-spacing-factor: 1.2;
-  --aa-action-icon-size: 22px;
   --infoBannerHeight: 0px;
   --breakpoint: 'sm';
   --inner-gutter: 20px;
@@ -58,10 +60,6 @@
   --grid-columns: 8;
   --container-width: 100%;
   --col-container-width: calc(var(--container-width,100%) - (2 * var(--outer-gutter,0)));
-  --navHeight: 0px;
-  --scrollbar-width: 0px;
-
-  /* COLOR PALETTE */
   --color-text-primary: #000;
   --color-text-secondary: #999999;
   --color-text-tertiary: #666666;
@@ -94,12 +92,8 @@
   --color-outline-light: rgb(255,255,255);
   --color-outline-highlight: #B32519;
   --color-shadow-primary: #0000001A;
-
-  /* TYPOGRAPHY */
-  --sans: 'Lato', Helvetica, Arial, sans-serif;
-  --copperplate: 'Playfair Display', serif;
-
-  /* SPACING SCALE */
+  --sans: 'Helvetica_Reg',Helvetica,Arial,sans-serif;
+  --copperplate: 'Copperplate',serif;
   --spacer-xxxs: 0.125rem;
   --spacer-xxs: 0.25rem;
   --spacer-xs: 0.5rem;
@@ -128,14 +122,16 @@
   --spacer-cart-reminder-banner: 3.625rem;
   --spacer-header: 3.75rem;
   --spacer-content: 5rem;
-
-  /* EASING & ANIMATION */
+  --safe-area-inset-bottom: env(safe-area-inset-bottom);
   --ease: cubic-bezier(.4,0,.2,1);
   --ease-fade: cubic-bezier(.25,.1,.25,1);
   --ease-transform: cubic-bezier(.22,1,.36,1);
   --ease-bounce: cubic-bezier(.65,-.55,.25,1.5);
   --ease-out-quint: cubic-bezier(.22,1,.36,1);
-  --safe-area-inset-bottom: env(safe-area-inset-bottom);
+  --navHeight: 0px;
+  --scrollbar-width: 0px;
+  box-sizing: border-box;
+  touch-action: inherit;
 }
 
 @keyframes spin {
