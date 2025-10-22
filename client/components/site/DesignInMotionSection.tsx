@@ -8,13 +8,13 @@ const DesignInMotionSection = () => {
     <section className="bg-luxury-white py-16 md:py-32 lg:py-40 max-md:py-16 hidden md:block">
       <div className="mx-auto grid max-w-luxury items-center gap-6 px-6 md:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] md:gap-12 lg:gap-16 max-md:gap-6 max-md:px-6">
         <div className="space-y-6 text-center max-md:space-y-4">
-          <h2 className="text-center text-3xl md:text-4xl font-light tracking-tight text-luxury-black">
+          <h2 className="text-center text-luxury-black">
             SF Escorts | Framed Side-By-Side
           </h2>
-          <h3 className="text-center text-xl md:text-2xl font-light tracking-tight text-luxury-black">
+          <h3 className="text-center text-luxury-black">
             What sets Katherine Taylor Apart From Other Escorts Near Me?
           </h3>
-          <p className="text-center max-w-[65ch] mx-auto text-base font-light leading-relaxed tracking-luxury text-gray-600">
+          <p className="text-center max-w-[65ch] mx-auto text-gray-600">
             Every frame you see here is captured with intention—curated moments
             that reveal artistry, confidence, and chemistry in equal measure.
             These are the signatures that define my experiences.
