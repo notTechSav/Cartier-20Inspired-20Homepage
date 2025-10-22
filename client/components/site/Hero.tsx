@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { Volume2, VolumeX } from "lucide-react";
 
 const HERO_VIDEO_SRC =
-  "https://res.cloudinary.com/katherine-taylor-escort-video/video/upload/v1761027922/MAYA_2_yebhpf.mp4";
+  "https://res.cloudinary.com/katherine-taylor-escort-video/video/upload/Sac_Escort_Kat_Taylor_pgdwvn.mp4";
 
 const Hero = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
