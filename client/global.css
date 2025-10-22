@@ -119,6 +119,7 @@
     height: 100%;
     overflow-x: hidden;
     overflow-y: auto;
+    --safe-area-inset-bottom: env(safe-area-inset-bottom);
   }
 
   body {
@@ -415,7 +416,7 @@
     will-change: transform;
   }
 
-  /* Swiper slides full viewport */
+  /* Swiper slides full viewport with overflow handling */
   .swiper-slide {
     flex-shrink: 0;
     width: 100%;
@@ -423,7 +424,25 @@
     position: relative;
     transition-property: transform;
     box-sizing: border-box;
-    display: block;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Swiper slide scrollbar styling */
+  .swiper-slide::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .swiper-slide::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .swiper-slide::-webkit-scrollbar-thumb {
+    background: var(--gray-300);
+    border-radius: 3px;
   }
 
   /* ============================================
