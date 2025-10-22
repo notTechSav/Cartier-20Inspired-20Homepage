@@ -500,6 +500,10 @@ h1, h2, h3, h4, h5, h6, p {
   cursor: pointer;
 }
 
+.kt-brand-refined:hover {
+  transform: translateY(-3px);
+}
+
 @media (max-width: 1023px) {
   .kt-brand-refined {
     font-size: 12px;
