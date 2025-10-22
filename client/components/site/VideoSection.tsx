@@ -71,16 +71,6 @@ const VideoSection = () => {
             Discretion, elegance, and intention converge in every engagement.
             This is where anticipation meets experience.
           </p>
-          <div className="flex items-center justify-center gap-3 max-md:gap-2">
-            <button
-              type="button"
-              onClick={togglePlay}
-              aria-label={isPaused ? "Play video" : "Pause video"}
-              className="ysl-nav-item-light inline-block text-luxury-white"
-            >
-              {isPaused ? "Play" : "Pause"}
-            </button>
-          </div>
         </div>
       </div>
     </section>
