@@ -168,7 +168,11 @@ const About = () => {
                 <img
                   src={ABOUT_SECONDARY_IMAGE}
                   alt="Hardcover journal with pencil and card in warm window light"
-                  className="h-full w-full object-cover"
+                  style={{
+                    height: '100%',
+                    width: '100%',
+                    objectFit: 'cover',
+                  }}
                   loading="lazy"
                 />
               </AspectRatio>
