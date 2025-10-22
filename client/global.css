@@ -347,8 +347,8 @@
      ============================================ */
   h1 {
     font-family: var(--sans);
-    font-size: 3.25rem;
-    line-height: 0.8;
+    font-size: 2.25rem;
+    line-height: 0.85;
     font-weight: 700;
     letter-spacing: -0.02em;
     text-wrap: balance;
@@ -358,34 +358,46 @@
     -webkit-font-smoothing: antialiased;
     margin: 0;
     padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    outline: 0;
+    vertical-align: baseline;
   }
 
   h2 {
     font-family: var(--sans);
-    font-size: 2.5rem;
-    line-height: 1;
+    font-size: 0.75rem;
+    line-height: 1rem;
     font-weight: 700;
-    letter-spacing: -0.02em;
-    text-wrap: balance;
+    letter-spacing: 0px;
     text-transform: uppercase;
-    color: var(--color-text-primary);
+    color: rgb(255, 255, 255);
+    text-align: center;
     -webkit-font-smoothing: antialiased;
     margin: 0;
     padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    outline: 0;
+    vertical-align: baseline;
   }
 
   h3 {
     font-family: var(--sans);
-    font-size: 1.75rem;
-    line-height: 1.1;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    text-wrap: balance;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    font-weight: 400;
+    letter-spacing: 0px;
     text-transform: uppercase;
-    color: var(--color-text-primary);
+    color: rgb(255, 255, 255);
+    text-align: center;
     -webkit-font-smoothing: antialiased;
     margin: 0;
     padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    outline: 0;
+    vertical-align: baseline;
   }
 
   a,
