@@ -164,7 +164,13 @@ const FAQSectionLuxury = () => {
         aria-label="Frequently asked questions about escort services and engagement details"
         data-section="faq"
       >
-        <div className="mx-auto max-w-luxury px-6 md:px-12 max-md:px-6">
+        <div
+          className="mx-auto max-w-luxury"
+          style={{
+            paddingLeft: 'var(--inner-gutter)',
+            paddingRight: 'var(--inner-gutter)',
+          }}
+        >
           <div className="mx-auto mb-12 max-w-[65ch] text-center">
             <h2 className="text-center text-3xl font-light tracking-tight text-luxury-black mb-4 md:text-4xl">
               Frequently Asked Questions
