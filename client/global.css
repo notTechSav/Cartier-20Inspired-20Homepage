@@ -362,7 +362,7 @@
      Dense, aggressive typography with 0.75 line-height
      ============================================ */
   h1 {
-    font-family: 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+    font-family: Helvetica, Arial, sans-serif;
     font-size: clamp(3rem, 6vw, 5rem);
     font-weight: 700;
     line-height: 0.75;
@@ -376,7 +376,7 @@
   }
 
   h2 {
-    font-family: 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+    font-family: Helvetica, Arial, sans-serif;
     font-size: clamp(2rem, 4vw, 3.5rem);
     font-weight: 700;
     line-height: 0.75;
@@ -390,7 +390,7 @@
   }
 
   h3 {
-    font-family: 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+    font-family: Helvetica, Arial, sans-serif;
     font-size: clamp(1.5rem, 2.5vw, 2rem);
     font-weight: 600;
     line-height: 0.75;
