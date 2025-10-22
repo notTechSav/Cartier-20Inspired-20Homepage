@@ -185,12 +185,6 @@ const Index = () => {
               <p className="text-center">
                 Thoughtfully selected gifts and experiences designed for those
                 who appreciate the finest details.
-                <a
-                  href="/gifts"
-                  className="ysl-nav-item inline-block text-luxury-black block mt-2"
-                >
-                  Explore Gifts
-                </a>
               </p>
             </div>
           </div>
@@ -202,12 +196,6 @@ const Index = () => {
         <div className="w-full h-full">
           <VideoSection />
           <div className="absolute bottom-16 left-6 z-20">
-            <a
-              href="/inquire"
-              className="ysl-nav-item-light inline-flex items-center justify-center text-sm text-luxury-white"
-            >
-              Send Inquiry →
-            </a>
           </div>
         </div>
       </SwiperSlide>
