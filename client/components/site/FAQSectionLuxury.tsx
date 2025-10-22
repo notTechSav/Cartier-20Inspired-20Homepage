@@ -195,8 +195,18 @@ const FAQSectionLuxury = () => {
             paddingRight: 'var(--inner-gutter)',
           }}
         >
-          <div className="mx-auto mb-12 max-w-[65ch] text-center">
-            <h2 className="text-center text-3xl font-light tracking-tight text-luxury-black mb-4 md:text-4xl">
+          <div
+            className="mx-auto max-w-[65ch] text-center"
+            style={{
+              marginBottom: 'var(--spacer-block-top)',
+            }}
+          >
+            <h2
+              className="text-center text-3xl font-light tracking-tight text-luxury-black md:text-4xl"
+              style={{
+                marginBottom: 'var(--spacer-title-bottom)',
+              }}
+            >
               Frequently Asked Questions
             </h2>
             <p className="text-center text-base font-light leading-relaxed tracking-luxury text-gray-600">
