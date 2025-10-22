@@ -109,11 +109,6 @@ export const DesktopNavigation: React.FC<DesktopNavigationProps> = ({
                           <a
                             href={link.url}
                             className="ysl-sub-link"
-                            style={{
-                              color: isOverlay
-                                ? "rgba(255, 255, 255, 0.65)"
-                                : "rgba(26, 26, 26, 0.65)",
-                            }}
                           >
                             {link.label}
                           </a>
