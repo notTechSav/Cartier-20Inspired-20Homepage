@@ -273,22 +273,39 @@
   }
 
   html {
-    height: 100%;
+    min-height: 100%;
     overflow-x: hidden;
     overflow-y: auto;
+    font-family: var(--sans);
+    font-size: 16px;
+    text-transform: uppercase;
+    color: var(--color-text-primary);
+    box-sizing: border-box;
+    touch-action: inherit;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    outline: 0;
+    vertical-align: baseline;
   }
 
   body {
-    height: 100%;
+    min-height: 100%;
     overflow-x: hidden;
     overflow-y: auto;
     background-color: var(--luxury-white);
-    color: inherit;
-    font-family: var(--font-sans);
+    color: var(--color-text-primary);
+    font-family: var(--sans);
+    font-size: 16px;
+    text-transform: uppercase;
     font-weight: var(--font-weight-body, var(--font-weight-light));
     letter-spacing: 0.025em;
+    margin: 0;
+    padding: 0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    -webkit-locale: "en-us";
   }
 
   body.menu-open {
