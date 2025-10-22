@@ -82,36 +82,6 @@ const PageHeroOverlay = memo(
               aria-hidden
             />
 
-            {/* Desktop Overlay Text */}
-            <figcaption className="pointer-events-none absolute inset-0 flex items-end">
-              <div
-                className={cn(
-                  "w-full max-w-[1120px] px-6 sm:px-12 lg:px-16",
-                  containerAlignment,
-                )}
-              >
-                <div className={cn("flex w-full", desktopJustify)}>
-                  <div
-                    className={cn(
-                      "max-w-2xl pb-12 text-luxury-white lg:pb-16",
-                      textAlignment,
-                    )}
-                  >
-                    {eyebrow ? (
-                      <p className="mb-4 text-luxury-white/80">
-                        {eyebrow}
-                      </p>
-                    ) : null}
-                    <h1 className="text-luxury-white">
-                      {title}
-                    </h1>
-                    <p className="mt-6 text-luxury-white/85 max-w-lg">
-                      {subtitle}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </figcaption>
           </div>
 
           {/* Mobile Height */}
@@ -139,22 +109,6 @@ const PageHeroOverlay = memo(
               aria-hidden
             />
 
-            {/* Mobile Overlay Text */}
-            <figcaption className="pointer-events-none absolute inset-0 flex items-end">
-              <div className="w-full px-5 pb-8">
-                {eyebrow ? (
-                  <p className="mb-3 text-luxury-white/75">
-                    {eyebrow}
-                  </p>
-                ) : null}
-                <h1 className="text-luxury-white">
-                  {title}
-                </h1>
-                <p className="mt-3 text-luxury-white/80">
-                  {subtitle}
-                </p>
-              </div>
-            </figcaption>
           </div>
         </figure>
       </section>
