@@ -147,6 +147,9 @@
   --transition-duration-normal: 320ms;
   --transition-duration-slow: 450ms;
   --transition-duration-slower: 580ms;
+  --perspective-3d: 1200px;
+  --transform-origin-center: 50% 50%;
+  --backface-visibility: hidden;
   --navHeight: 0px;
   --scrollbar-width: 0px;
   box-sizing: border-box;
