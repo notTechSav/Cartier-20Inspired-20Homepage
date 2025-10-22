@@ -343,10 +343,10 @@
   }
 
   /* ============================================
-     HEADING STYLES (YSL System)
+     HEADING STYLES (Our fonts, YSL structure)
      ============================================ */
   h1 {
-    font-family: var(--sans);
+    font-family: var(--font-sans);
     font-size: 2.25rem;
     line-height: 0.85;
     font-weight: 700;
@@ -365,7 +365,7 @@
   }
 
   h2 {
-    font-family: var(--sans);
+    font-family: var(--font-sans);
     font-size: 0.75rem;
     line-height: 1rem;
     font-weight: 700;
@@ -383,7 +383,7 @@
   }
 
   h3 {
-    font-family: var(--sans);
+    font-family: var(--font-sans);
     font-size: 0.75rem;
     line-height: 1rem;
     font-weight: 400;
