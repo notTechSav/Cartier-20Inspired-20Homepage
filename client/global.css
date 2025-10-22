@@ -262,6 +262,9 @@ h1, h2, h3, h4, h5, h6, p {
   display: block;
   transform-style: preserve-3d;
   transition-property: transform, opacity;
+  transition-duration: var(--transition-duration-normal);
+  transition-timing-function: var(--ease-transform);
+  transition-delay: 0ms;
   background-color: var(--color-background-primary);
   z-index: 8;
 }
