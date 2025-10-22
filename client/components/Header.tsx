@@ -8,14 +8,7 @@ import {
 } from "./YSLNavigation";
 
 const Header = () => {
-  const [isOverlay, setIsOverlay] = useState(true);
   const headerRef = useRef<HTMLDivElement>(null);
-
-  // Detect overlay state based on hero section
-  useEffect(() => {
-    const heroElement = document.querySelector("[data-hero='true']");
-    setIsOverlay(!!heroElement);
-  }, []);
 
   return (
     <header
