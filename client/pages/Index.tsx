@@ -101,10 +101,10 @@ const Index = () => {
 
             {/* Text Content Below Image */}
             <div className="text-center space-y-6 max-w-xl">
-              <h2 className="text-center text-3xl font-light tracking-tight text-luxury-black">
+              <h2 className="text-center">
                 Private Collections
               </h2>
-              <p className="text-center text-sm font-light leading-relaxed tracking-luxury text-gray-600">
+              <p className="text-center">
                 Intimate documentation from Northern California to Los Angeles —
                 three collections, three moments in time.
                 <a
@@ -139,10 +139,10 @@ const Index = () => {
         <div className="w-full h-full overflow-y-auto">
           <div className="min-h-screen flex flex-col items-center justify-center bg-luxury-white px-6 py-16">
             <div className="w-full max-w-2xl text-center">
-              <h2 className="text-3xl font-light tracking-tight text-luxury-black mb-8">
+              <h2 className="mb-8">
                 Frequently Asked Questions
               </h2>
-              <p className="text-sm font-light leading-relaxed tracking-luxury text-gray-600 mb-8">
+              <p className="mb-8">
                 After more than a decade in this practice, I answer what quick
                 searches never cover.
                 <a
@@ -174,10 +174,10 @@ const Index = () => {
 
             {/* Text Content Below Image */}
             <div className="text-center space-y-6 max-w-xl">
-              <h2 className="text-center text-3xl font-light tracking-tight text-luxury-black">
+              <h2 className="text-center">
                 Journal
               </h2>
-              <p className="text-center text-sm font-light leading-relaxed tracking-luxury text-gray-600">
+              <p className="text-center">
                 Insights, stories, and perspectives on companionship, luxury,
                 and the art of connection.
                 <a
@@ -209,10 +209,10 @@ const Index = () => {
 
             {/* Text Content Below Image */}
             <div className="text-center space-y-6 max-w-xl">
-              <h2 className="text-center text-3xl font-light tracking-tight text-luxury-black">
+              <h2 className="text-center">
                 Curated Gifts & Experiences
               </h2>
-              <p className="text-center text-sm font-light leading-relaxed tracking-luxury text-gray-600">
+              <p className="text-center">
                 Thoughtfully selected gifts and experiences designed for those
                 who appreciate the finest details.
                 <a
