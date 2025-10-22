@@ -93,17 +93,6 @@ export const DesktopNavigation: React.FC<DesktopNavigationProps> = ({
               onMouseLeave={handleMouseLeave}
               role="region"
               aria-label={`${item.label} submenu`}
-              style={{
-                backgroundColor: isOverlay
-                  ? "rgba(26, 26, 26, 0.95)"
-                  : "rgba(250, 250, 250, 0.99)",
-                borderTopColor: isOverlay
-                  ? "rgba(255, 255, 255, 0.08)"
-                  : "rgba(26, 26, 26, 0.04)",
-                borderBottomColor: isOverlay
-                  ? "rgba(255, 255, 255, 0.08)"
-                  : "rgba(26, 26, 26, 0.04)",
-              }}
             >
               <div className="ysl-mega-menu-grid">
                 {item.columns.map((column, idx) => (
