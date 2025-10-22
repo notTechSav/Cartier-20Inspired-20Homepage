@@ -89,11 +89,20 @@ const Index = () => {
         </div>
       </SwiperSlide>
 
-      {/* 04. Rates - Video showcase */}
-      <SwiperSlide style={{ height: "100vh" }}>
-        <div style={{ width: "100%", height: "100%" }}>
-          <ImmersiveVideoSection />
-          <div style={{ position: "absolute", bottom: "var(--spacer-4xl)", left: "var(--spacer-m)", zIndex: 20 }}></div>
+      {/* 04. Rates - Escorting rates */}
+      <SwiperSlide style={{ height: '100vh' }} id="rates">
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '100vh', width: '100%', backgroundColor: 'var(--color-background-primary)', paddingLeft: 'var(--spacer-m)', paddingRight: 'var(--spacer-m)', paddingTop: 'var(--spacer-4xl)', paddingBottom: 'var(--spacer-4xl)' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 'var(--spacer-2xl)', maxWidth: '42rem', width: '100%' }}>
+            {/* Text Content */}
+            <div style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', gap: 'var(--spacer-xl)', maxWidth: '40rem' }}>
+              <h2 style={{ textAlign: 'center', lineHeight: 1.2 }}>Escorting rates in California</h2>
+              <h3 style={{ textAlign: 'center', fontSize: '18px', fontWeight: 300, letterSpacing: '0.02em' }}>Sacramento escorting and san francisco Transparent pricing</h3>
+              <p style={{ textAlign: 'center', fontSize: '16px', fontWeight: 300, color: 'var(--color-text-tertiary)', lineHeight: 1.6 }}>
+                With a decade long established reputation, my California escort rates are comprehensively posted mirror your highest expectations
+              </p>
+              <a href="#rates" style={{ textAlign: 'center', cursor: 'pointer', color: 'var(--color-text-primary)', textDecoration: 'none', fontSize: '16px', fontWeight: 400, marginTop: 'var(--spacer-m)' }}>View Rates →</a>
+            </div>
+          </div>
         </div>
       </SwiperSlide>
 
