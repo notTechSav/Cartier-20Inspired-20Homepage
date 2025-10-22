@@ -1397,13 +1397,13 @@
   .ysl-newsletter-button {
     font-family: var(--nav-font-family);
     font-weight: var(--nav-font-weight-thin);
-    font-size: 10px;
-    letter-spacing: 0.15em;
+    font-size: 13px;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
     color: var(--nav-color-primary);
     background: transparent;
-    border: 1px solid rgba(26, 26, 26, 0.15);
-    padding: 10px 24px;
+    border: 1px solid var(--nav-color-primary);
+    padding: 16px 48px;
     cursor: pointer;
     transition: all var(--nav-transition-fast);
     -webkit-font-smoothing: antialiased;
@@ -1420,6 +1420,11 @@
 
   .ysl-newsletter-button:active {
     transform: translateY(0);
+  }
+
+  .ysl-newsletter-button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
   }
 
   .ysl-footer-bottom {
