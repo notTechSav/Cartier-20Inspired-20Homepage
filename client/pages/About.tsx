@@ -69,13 +69,6 @@ const About = () => {
             transition: 'all 900ms cubic-bezier(0.16,1,0.3,1)',
             transitionDelay: '100ms',
           }}
-          onLoad={(e) => {
-            const el = e.currentTarget as HTMLElement;
-            if (el.dataset.visible === 'true') {
-              el.style.opacity = '1';
-              el.style.transform = 'translateY(0)';
-            }
-          }}
         >
           <p
             style={{
