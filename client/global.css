@@ -134,49 +134,6 @@
     --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
     --safe-area-inset-bottom: env(safe-area-inset-bottom);
 
-    /* TAILWIND THEME DEFAULTS */
-    --background: 0 0% 98%;
-    --foreground: 0 0% 24%;
-    --card: 0 0% 98%;
-    --card-foreground: 0 0% 24%;
-    --popover: 0 0% 98%;
-    --popover-foreground: 0 0% 24%;
-    --primary: 0 0% 15%;
-    --primary-foreground: 0 0% 96%;
-    --secondary: 0 0% 92%;
-    --secondary-foreground: 0 0% 24%;
-    --muted: 0 0% 92%;
-    --muted-foreground: 0 0% 40%;
-    --accent: 0 0% 20%;
-    --accent-foreground: 0 0% 96%;
-    --destructive: 0 70% 38%;
-    --destructive-foreground: 0 0% 96%;
-    --border: 0 0% 88%;
-    --input: 0 0% 88%;
-    --ring: 0 0% 20%;
-    --radius: 0.5rem;
-  }
-
-  .dark {
-    --background: 0 0% 12%;
-    --foreground: 0 0% 85%;
-    --card: 0 0% 14%;
-    --card-foreground: 0 0% 85%;
-    --popover: 0 0% 12%;
-    --popover-foreground: 0 0% 85%;
-    --primary: 0 0% 90%;
-    --primary-foreground: 0 0% 12%;
-    --secondary: 0 0% 22%;
-    --secondary-foreground: 0 0% 85%;
-    --muted: 0 0% 22%;
-    --muted-foreground: 0 0% 70%;
-    --accent: 0 0% 88%;
-    --accent-foreground: 0 0% 14%;
-    --destructive: 0 60% 45%;
-    --destructive-foreground: 0 0% 94%;
-    --border: 0 0% 32%;
-    --input: 0 0% 32%;
-    --ring: 0 0% 88%;
   }
 
   /* DESKTOP TOKENS (1024px+) */
