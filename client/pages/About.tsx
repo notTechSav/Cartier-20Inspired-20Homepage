@@ -75,7 +75,7 @@ const About = () => {
             className="h-24 w-px opacity-40"
             style={{
               backgroundImage:
-                'linear-gradient(to bottom, transparent, var(--about-divider-color), transparent)',
+                'linear-gradient(to bottom, transparent, rgba(139, 115, 85, 0.6), transparent)',
             }}
           />
         </div>
