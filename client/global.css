@@ -335,6 +335,25 @@ h1, h2, h3, h4, h5, h6, p {
   perspective: var(--perspective-3d);
 }
 
+.swiper-slide-active {
+  flex-shrink: 0;
+  width: 100%;
+  position: relative;
+  display: block;
+  transform-style: preserve-3d;
+  transition-property: transform, opacity;
+  transition-duration: var(--transition-duration-normal);
+  transition-timing-function: var(--ease-transform);
+  background-color: var(--color-background-primary);
+  z-index: 9;
+  transform: translate3d(0, 0, 0) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1);
+  opacity: 1;
+  backface-visibility: hidden;
+  will-change: transform;
+  transform-origin: center center;
+  perspective: var(--perspective-3d);
+}
+
 /* Video Optimization - All video elements */
 video {
   position: absolute;
