@@ -101,8 +101,8 @@
     --color-shadow-primary: #0000001A;
 
     /* TYPOGRAPHY */
-    --sans: 'Helvetica_Reg',Helvetica,Arial,sans-serif;
-    --copperplate: 'Copperplate',serif;
+    --sans: 'Lato', Helvetica, Arial, sans-serif;
+    --copperplate: 'Playfair Display', serif;
 
     /* SPACING SCALE */
     --spacer-xxxs: 0.125rem;
