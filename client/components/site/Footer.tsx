@@ -95,13 +95,13 @@ const Footer: React.FC<FooterProps> = ({
             <button
               type="submit"
               disabled={isSubmitting || submitStatus === "success"}
-              className="ysl-nav-item-light"
+              className="ysl-newsletter-button"
             >
               {submitStatus === "success"
                 ? "Thank You"
                 : isSubmitting
                   ? "Submitting..."
-                  : "Sign Up"}
+                  : "Submit"}
             </button>
           </form>
 
