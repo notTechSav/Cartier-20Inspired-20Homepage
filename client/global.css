@@ -474,6 +474,33 @@
 }
 
 @layer utilities {
+  /* Luxury section styling utility */
+  .luxury-section {
+    background-color: var(--section-bg-primary);
+    color: var(--section-text-primary);
+  }
+
+  .luxury-section h1,
+  .luxury-section h2,
+  .luxury-section h3,
+  .luxury-section h4,
+  .luxury-section h5,
+  .luxury-section h6 {
+    color: var(--section-text-primary);
+  }
+
+  .luxury-section p {
+    color: var(--section-text-secondary);
+  }
+
+  .luxury-section a {
+    color: var(--section-text-primary);
+  }
+
+  .luxury-section border {
+    border-color: var(--section-border-light);
+  }
+
   .tracking-luxury {
     letter-spacing: 0.025em;
   }
