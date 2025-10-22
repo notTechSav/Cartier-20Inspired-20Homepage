@@ -386,6 +386,10 @@
     --aa-spacing-factor: 1.2;
     --aa-action-icon-size: 22px;
 
+    /* YSL TYPOGRAPHY SYSTEM (Mobile) */
+    --sans: "Helvetica_Reg", Helvetica, Arial, sans-serif;
+    --copperplate: "Copperplate", serif;
+
     /* Section-specific overrides */
     --section-text-primary: #000;
     --section-text-secondary: #999999;
@@ -411,8 +415,8 @@
     --section-shadow-primary: #0000001a;
 
     /* Typography */
-    --section-font-family: 'Helvetica_Reg', Helvetica, Arial, sans-serif;
-    --section-font-serif: 'Copperplate', serif;
+    --section-font-family: "Helvetica_Reg", Helvetica, Arial, sans-serif;
+    --section-font-serif: "Copperplate", serif;
   }
 
   .dark {
