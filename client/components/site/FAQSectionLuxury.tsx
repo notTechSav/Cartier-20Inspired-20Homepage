@@ -109,7 +109,11 @@ const FAQSectionLuxury = () => {
     <div className="border-t border-gray-200">
       <button
         onClick={() => handleToggle(item.id)}
-        className="group flex w-full items-start justify-between py-8 transition-all duration-250 ease-out focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-2 md:py-10"
+        className="group flex w-full items-start justify-between transition-all duration-250 ease-out focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-2"
+        style={{
+          paddingTop: 'var(--spacer-l)',
+          paddingBottom: 'var(--spacer-l)',
+        }}
         aria-expanded={isOpen}
         aria-controls={`faq-answer-${item.id}`}
         ref={(el) => {
@@ -119,7 +123,12 @@ const FAQSectionLuxury = () => {
         <h3 className="pr-8 text-left text-base font-light tracking-luxury text-luxury-black transition-colors duration-250 ease-out group-hover:text-gray-600">
           {item.question}
         </h3>
-        <div className="mt-1">
+        <div
+          className="flex-shrink-0"
+          style={{
+            marginTop: 'var(--spacer-xs)',
+          }}
+        >
           <span
             aria-hidden="true"
             className={cn(
