@@ -121,64 +121,64 @@ const Footer: React.FC<FooterProps> = ({
             {/* SUPPORT Column */}
             <div className="ysl-footer-column">
               <h3 className="ysl-footer-heading text-sm">Support</h3>
-            <nav className="space-y-0">
-              {footerLinks.support.map((link, index) => (
-                <Link
-                  key={index}
-                  to={link.href}
-                  className="ysl-footer-link block text-xs"
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </nav>
-          </div>
+              <nav className="space-y-0">
+                {footerLinks.support.map((link, index) => (
+                  <Link
+                    key={index}
+                    to={link.href}
+                    className="ysl-footer-link block text-xs"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </nav>
+            </div>
 
-          {/* SERVICES Column */}
-          <div className="ysl-footer-column">
-            <h3 className="ysl-footer-heading text-sm">Services</h3>
-            <nav className="space-y-0">
-              {footerLinks.services.map((link, index) => (
-                <Link
-                  key={index}
-                  to={link.href}
-                  className="ysl-footer-link block text-xs"
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </nav>
-          </div>
+            {/* SERVICES Column */}
+            <div className="ysl-footer-column">
+              <h3 className="ysl-footer-heading text-sm">Services</h3>
+              <nav className="space-y-0">
+                {footerLinks.services.map((link, index) => (
+                  <Link
+                    key={index}
+                    to={link.href}
+                    className="ysl-footer-link block text-xs"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </nav>
+            </div>
 
-          {/* ABOUT Column */}
-          <div className="ysl-footer-column">
-            <h3 className="ysl-footer-heading text-sm">About</h3>
-            <nav className="space-y-0">
-              {footerLinks.about.map((link, index) => (
-                <Link
-                  key={index}
-                  to={link.href}
-                  className="ysl-footer-link block text-xs"
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </nav>
-          </div>
+            {/* ABOUT Column */}
+            <div className="ysl-footer-column">
+              <h3 className="ysl-footer-heading text-sm">About</h3>
+              <nav className="space-y-0">
+                {footerLinks.about.map((link, index) => (
+                  <Link
+                    key={index}
+                    to={link.href}
+                    className="ysl-footer-link block text-xs"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </nav>
+            </div>
 
-          {/* LEGAL Column */}
-          <div className="ysl-footer-column">
-            <h3 className="ysl-footer-heading text-sm">Legal</h3>
-            <nav className="space-y-0">
-              {footerLinks.legal.map((link, index) => (
-                <Link
-                  key={index}
-                  to={link.href}
-                  className="ysl-footer-link block text-xs"
-                >
-                  {link.label}
-                </Link>
-              ))}
+            {/* LEGAL Column */}
+            <div className="ysl-footer-column">
+              <h3 className="ysl-footer-heading text-sm">Legal</h3>
+              <nav className="space-y-0">
+                {footerLinks.legal.map((link, index) => (
+                  <Link
+                    key={index}
+                    to={link.href}
+                    className="ysl-footer-link block text-xs"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
               </nav>
             </div>
           </div>
