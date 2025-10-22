@@ -72,12 +72,6 @@ const Index = () => {
               <p className="text-center">
                 Every frame captured with intention—curated moments that reveal
                 artistry, confidence, and chemistry in equal measure.
-                <a
-                  href="/about"
-                  className="ysl-nav-item inline-block block mt-2"
-                >
-                  Take a Glimpse
-                </a>
               </p>
             </div>
           </div>
