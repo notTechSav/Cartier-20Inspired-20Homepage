@@ -292,6 +292,10 @@ h1, h2, h3, h4, h5, h6, p {
   background-color: var(--color-background-primary);
   z-index: 9;
   opacity: 1;
+  backface-visibility: hidden;
+  will-change: transform;
+  transform-origin: center center;
+  perspective: var(--perspective-3d);
 }
 
 .swiper-slide-visible {
@@ -307,6 +311,10 @@ h1, h2, h3, h4, h5, h6, p {
   z-index: 10;
   transform: translate3d(0, 0, 0) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1);
   opacity: 1;
+  backface-visibility: hidden;
+  will-change: transform;
+  transform-origin: center center;
+  perspective: var(--perspective-3d);
 }
 
 /* Video Optimization - All video elements */
