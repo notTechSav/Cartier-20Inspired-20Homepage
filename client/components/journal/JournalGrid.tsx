@@ -16,7 +16,7 @@ const JournalGrid = memo(
         <div className="mx-auto flex max-w-[680px] flex-col gap-16 sm:gap-20">
           {microline ? (
             <p
-              className="text-center text-[12px] font-light uppercase tracking-[0.16em] text-gray-600"
+              className="text-center uppercase text-gray-600"
               style={{ letterSpacing: "0.16em" }}
             >
               {microline}
