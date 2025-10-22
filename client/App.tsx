@@ -44,8 +44,8 @@ type RouterState = {
 
 // Loading fallback for lazy-loaded routes
 const RouteLoader = () => (
-  <div className="flex min-h-screen items-center justify-center bg-luxury-white">
-    <div className="h-8 w-8 animate-spin rounded-full border-2 border-luxury-black border-t-transparent" />
+  <div style={{ display: "flex", minHeight: "100vh", alignItems: "center", justifyContent: "center", backgroundColor: "var(--color-background-primary)" }}>
+    <div style={{ width: "32px", height: "32px", animation: "spin 1s linear infinite", borderRadius: "50%", border: "2px solid var(--color-text-primary)", borderTopColor: "transparent" }} />
   </div>
 );
 
