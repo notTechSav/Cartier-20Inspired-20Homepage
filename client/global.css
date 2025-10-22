@@ -92,7 +92,7 @@
   --color-outline-light: rgb(255,255,255);
   --color-outline-highlight: #B32519;
   --color-shadow-primary: #0000001A;
-  --sans: Helvetica, Arial, sans-serif;
+  --sans: 'Helvetica_Reg',Helvetica,Arial,sans-serif;
   --spacer-xxxs: 0.125rem;
   --spacer-xxs: 0.25rem;
   --spacer-xs: 0.5rem;
