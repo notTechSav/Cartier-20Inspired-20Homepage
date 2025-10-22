@@ -138,6 +138,12 @@
   --safe-area-inset-bottom: env(safe-area-inset-bottom);
 }
 
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 /* DESKTOP TOKENS (1024px+) */
 @media (min-width: 1024px) {
   :root {
