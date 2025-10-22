@@ -101,13 +101,7 @@ const Index = () => {
               <p className="text-center">
                 Intimate documentation from Northern California to Los Angeles —
                 three collections, three moments in time.
-                <a
-                  href="/gallery"
-                  className="ysl-nav-item inline-block text-luxury-black block mt-2"
-                >
-                  Discover
-                </a>
-              </p>
+                </p>
             </div>
           </div>
         </div>
@@ -118,12 +112,6 @@ const Index = () => {
         <div className="w-full h-full">
           <ImmersiveVideoSection />
           <div className="absolute bottom-16 left-6 z-20">
-            <a
-              href="/rates"
-              className="ysl-nav-item-light inline-flex items-center justify-center text-sm text-luxury-white"
-            >
-              View Rates →
-            </a>
           </div>
         </div>
       </SwiperSlide>
