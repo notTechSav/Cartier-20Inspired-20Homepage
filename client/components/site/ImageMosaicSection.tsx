@@ -62,10 +62,10 @@ const ImageMosaicSection = ({
     >
       <div className="mx-auto flex max-w-luxury flex-col gap-12 px-8">
         <div className="space-y-4 text-center">
-          <p className="text-center text-xs font-light uppercase tracking-uppercase text-gray-600">
+          <p className="text-center text-gray-600">
             {title}
           </p>
-          <h1 className="text-center mx-auto max-w-[65ch] text-2xl md:text-3xl font-light leading-relaxed tracking-luxury text-gray-700">
+          <h1 className="text-center mx-auto max-w-[65ch] text-gray-700">
             {subtitle}
           </h1>
         </div>

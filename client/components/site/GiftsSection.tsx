@@ -20,10 +20,10 @@ const GiftsSection = () => {
 
         {/* Text Content Below Image */}
         <div className="text-center space-y-6 max-w-2xl">
-          <h2 className="text-center text-3xl md:text-4xl font-light tracking-tight text-luxury-black">
+          <h2 className="text-center text-luxury-black">
             Curated Gifts & Experiences
           </h2>
-          <p className="text-center text-base font-light leading-relaxed tracking-luxury text-gray-600">
+          <p className="text-center text-gray-600">
             Thoughtfully selected gifts and experiences designed for those who
             appreciate the finest details. From intimate moments to
             unforgettable occasions.
