@@ -65,10 +65,10 @@ export default function LuxuryHero() {
             transition={{ duration: 1.2, delay: 0.4 }}
             className="mb-luxury-md"
           >
-            <span className="block text-display-lg font-serif font-light tracking-luxury-tight leading-none mb-4">
+            <span className="block tracking-luxury-tight leading-none mb-4">
               Quiet
             </span>
-            <span className="block text-display font-serif italic font-normal tracking-luxury luxury-gradient-text">
+            <span className="block italic tracking-luxury luxury-gradient-text">
               Authority
             </span>
           </motion.h1>
