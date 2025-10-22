@@ -78,7 +78,14 @@ const About = () => {
           </p>
         </header>
 
-        <div className="my-16 flex justify-center" aria-hidden="true">
+        <div
+          className="flex justify-center"
+          aria-hidden="true"
+          style={{
+            marginTop: 'var(--spacer-block-top)',
+            marginBottom: 'var(--spacer-block-bottom)',
+          }}
+        >
           <span
             className="h-24 w-px opacity-40"
             style={{
