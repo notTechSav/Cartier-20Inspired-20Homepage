@@ -6,7 +6,10 @@ const GALLERY_HERO_IMAGE = "/rose-hero.png";
 const Gallery = () => {
   return (
     <div
-      style={{ backgroundColor: "var(--color-background-primary)", color: "var(--color-text-primary)" }}
+      style={{
+        backgroundColor: "var(--color-background-primary)",
+        color: "var(--color-text-primary)",
+      }}
       id="gallery"
       data-section="gallery"
     >

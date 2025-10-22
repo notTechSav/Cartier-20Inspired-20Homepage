@@ -1,6 +1,6 @@
-import { useDynamicContent } from '@/hooks/useDynamicContent';
-import { Button } from '@/components/ui/button';
-import { RefreshCw, AlertCircle } from 'lucide-react';
+import { useDynamicContent } from "@/hooks/useDynamicContent";
+import { Button } from "@/components/ui/button";
+import { RefreshCw, AlertCircle } from "lucide-react";
 
 interface DynamicContentProps {
   page?: string;
@@ -9,11 +9,11 @@ interface DynamicContentProps {
   className?: string;
 }
 
-export const DynamicContent = ({ 
-  page, 
-  customPrompt, 
-  brandVoice, 
-  className = "" 
+export const DynamicContent = ({
+  page,
+  customPrompt,
+  brandVoice,
+  className = "",
 }: DynamicContentProps) => {
   const { content, loading, error, regenerate } = useDynamicContent({
     page,
@@ -23,9 +23,30 @@ export const DynamicContent = ({
 
   if (loading) {
     return (
-      <div style={{ display: "flex", alignItems: "center", justifyContent: "center", padding: "var(--spacer-m)" }} className={className}>
-        <div style={{ display: "flex", alignItems: "center", gap: "var(--spacer-xs)", color: "var(--color-text-tertiary)" }}>
-          <RefreshCw style={{ width: "16px", height: "16px", animation: "spin 1s linear infinite" }} />
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          padding: "var(--spacer-m)",
+        }}
+        className={className}
+      >
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: "var(--spacer-xs)",
+            color: "var(--color-text-tertiary)",
+          }}
+        >
+          <RefreshCw
+            style={{
+              width: "16px",
+              height: "16px",
+              animation: "spin 1s linear infinite",
+            }}
+          />
           <span>Generating content...</span>
         </div>
       </div>
@@ -34,16 +55,47 @@ export const DynamicContent = ({
 
   if (error) {
     return (
-      <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "var(--spacer-m)" }} className={className}>
-        <div style={{ display: "flex", alignItems: "center", gap: "var(--spacer-xs)", color: "var(--color-text-error)", marginBottom: "var(--spacer-m)" }}>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          padding: "var(--spacer-m)",
+        }}
+        className={className}
+      >
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: "var(--spacer-xs)",
+            color: "var(--color-text-error)",
+            marginBottom: "var(--spacer-m)",
+          }}
+        >
           <AlertCircle style={{ width: "16px", height: "16px" }} />
           <span>Error generating content</span>
         </div>
-        <p style={{ fontSize: "14px", color: "var(--color-text-tertiary)", marginBottom: "var(--spacer-m)", textAlign: "center", maxWidth: "28rem" }}>
+        <p
+          style={{
+            fontSize: "14px",
+            color: "var(--color-text-tertiary)",
+            marginBottom: "var(--spacer-m)",
+            textAlign: "center",
+            maxWidth: "28rem",
+          }}
+        >
           {error}
         </p>
         <Button onClick={regenerate} variant="outline" size="sm">
-          <RefreshCw style={{ width: "16px", height: "16px", marginRight: "var(--spacer-xs)" }} />
+          <RefreshCw
+            style={{
+              width: "16px",
+              height: "16px",
+              marginRight: "var(--spacer-xs)",
+            }}
+          />
           Try Again
         </Button>
       </div>
@@ -56,9 +108,21 @@ export const DynamicContent = ({
         dangerouslySetInnerHTML={{ __html: content }}
         style={{ maxWidth: "100%" }}
       />
-      <div style={{ marginTop: "var(--spacer-m)", display: "flex", justifyContent: "flex-end" }}>
+      <div
+        style={{
+          marginTop: "var(--spacer-m)",
+          display: "flex",
+          justifyContent: "flex-end",
+        }}
+      >
         <Button onClick={regenerate} variant="ghost" size="sm">
-          <RefreshCw style={{ width: "16px", height: "16px", marginRight: "var(--spacer-xs)" }} />
+          <RefreshCw
+            style={{
+              width: "16px",
+              height: "16px",
+              marginRight: "var(--spacer-xs)",
+            }}
+          />
           Regenerate
         </Button>
       </div>

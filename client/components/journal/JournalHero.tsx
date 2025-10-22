@@ -37,12 +37,8 @@ const JournalHero = memo(
                 >
                   THE HIGH-END EDITION
                 </p>
-                <h1 className="text-luxury-white">
-                  {title}
-                </h1>
-                <p className="mt-5 text-luxury-white/80">
-                  {subtitle}
-                </p>
+                <h1 className="text-luxury-white">{title}</h1>
+                <p className="mt-5 text-luxury-white/80">{subtitle}</p>
               </div>
             </div>
           </figcaption>
@@ -56,12 +52,8 @@ const JournalHero = memo(
               >
                 THE HIGH-END EDITION
               </p>
-              <h1 className="text-luxury-white">
-                {title}
-              </h1>
-              <p className="mt-4 text-luxury-white/80">
-                {subtitle}
-              </p>
+              <h1 className="text-luxury-white">{title}</h1>
+              <p className="mt-4 text-luxury-white/80">{subtitle}</p>
             </div>
           </figcaption>
         </figure>

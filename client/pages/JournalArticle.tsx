@@ -112,9 +112,27 @@ const JournalArticle = () => {
     .map((paragraph) => paragraph.trim());
 
   return (
-    <div style={{ backgroundColor: "var(--color-background-primary)", color: "var(--color-text-primary)" }}>
-      <section style={{ position: "relative", overflow: "hidden", backgroundColor: "var(--color-background-primary)" }}>
-        <div style={{ position: "relative", height: "48vh", minHeight: "260px", width: "100%" }}>
+    <div
+      style={{
+        backgroundColor: "var(--color-background-primary)",
+        color: "var(--color-text-primary)",
+      }}
+    >
+      <section
+        style={{
+          position: "relative",
+          overflow: "hidden",
+          backgroundColor: "var(--color-background-primary)",
+        }}
+      >
+        <div
+          style={{
+            position: "relative",
+            height: "48vh",
+            minHeight: "260px",
+            width: "100%",
+          }}
+        >
           <img
             src={heroImage.src}
             alt={heroImage.alt}
@@ -130,14 +148,53 @@ const JournalArticle = () => {
             }}
             aria-hidden
           />
-          <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "flex-end" }}>
-            <div style={{ marginLeft: "auto", marginRight: "auto", width: "100%", maxWidth: "1120px", paddingLeft: "var(--spacer-m)", paddingRight: "var(--spacer-m)", paddingBottom: "var(--spacer-4xl)" }}>
-              <div style={{ maxWidth: "42rem", display: "flex", flexDirection: "column", gap: "var(--spacer-s)", color: "white" }}>
-                <p style={{ fontSize: "12px", fontWeight: 300, textTransform: "uppercase", letterSpacing: "0.12em", color: "rgba(255, 255, 255, 0.8)" }}>
+          <div
+            style={{
+              position: "absolute",
+              inset: 0,
+              display: "flex",
+              alignItems: "flex-end",
+            }}
+          >
+            <div
+              style={{
+                marginLeft: "auto",
+                marginRight: "auto",
+                width: "100%",
+                maxWidth: "1120px",
+                paddingLeft: "var(--spacer-m)",
+                paddingRight: "var(--spacer-m)",
+                paddingBottom: "var(--spacer-4xl)",
+              }}
+            >
+              <div
+                style={{
+                  maxWidth: "42rem",
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "var(--spacer-s)",
+                  color: "white",
+                }}
+              >
+                <p
+                  style={{
+                    fontSize: "12px",
+                    fontWeight: 300,
+                    textTransform: "uppercase",
+                    letterSpacing: "0.12em",
+                    color: "rgba(255, 255, 255, 0.8)",
+                  }}
+                >
                   {formattedPublishedDate}
                 </p>
                 <h1
-                  style={{ fontSize: "40px", fontWeight: 200, lineHeight: 1.1, color: "white", letterSpacing: "-0.02em" }}
+                  style={{
+                    fontSize: "40px",
+                    fontWeight: 200,
+                    lineHeight: 1.1,
+                    color: "white",
+                    letterSpacing: "-0.02em",
+                  }}
                 >
                   {essay.title}
                 </h1>

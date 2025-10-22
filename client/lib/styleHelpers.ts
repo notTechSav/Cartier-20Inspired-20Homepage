@@ -53,7 +53,7 @@ export const commonStyles = {
       bottom: 0,
       left: 0,
       backgroundColor: bgColor || "rgba(0, 0, 0, 0.3)",
-    } as CSSProperties),
+    }) as CSSProperties,
 
   relativePosition: {
     position: "relative" as const,
@@ -70,6 +70,8 @@ export const commonStyles = {
   } as CSSProperties,
 };
 
-export function mergeStyles(...styles: (CSSProperties | undefined)[]): CSSProperties {
+export function mergeStyles(
+  ...styles: (CSSProperties | undefined)[]
+): CSSProperties {
   return Object.assign({}, ...styles.filter(Boolean));
 }

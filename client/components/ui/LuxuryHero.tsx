@@ -6,7 +6,7 @@ export default function LuxuryHero() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const { scrollY } = useScroll();
-  
+
   // Parallax effects
   const heroY = useTransform(scrollY, [0, 500], [0, 150]);
   const heroOpacity = useTransform(scrollY, [0, 300], [1, 0]);
@@ -17,12 +17,15 @@ export default function LuxuryHero() {
   }, []);
 
   return (
-    <div ref={containerRef} className="relative min-h-screen overflow-hidden luxury-texture">
+    <div
+      ref={containerRef}
+      className="relative min-h-screen overflow-hidden luxury-texture"
+    >
       {/* Gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-luxury-pearl via-transparent to-luxury-cream/50 z-10" />
-      
+
       {/* Animated background */}
-      <motion.div 
+      <motion.div
         style={{ y: heroY, opacity: heroOpacity }}
         className="absolute inset-0 z-0"
       >
@@ -41,7 +44,7 @@ export default function LuxuryHero() {
 
       {/* Content */}
       <div className="relative z-20 flex flex-col justify-center items-center min-h-screen px-6 py-20">
-        <motion.div 
+        <motion.div
           style={{ y: textY }}
           className="text-center max-w-luxury-wide mx-auto"
         >
@@ -79,9 +82,9 @@ export default function LuxuryHero() {
             transition={{ duration: 1, delay: 0.6 }}
             className="text-body-lg luxury-thin text-luxury-gray-700 max-w-2xl mx-auto mb-luxury-lg leading-relaxed tracking-luxury"
           >
-            Where heritage meets innovation. Experience bespoke luxury 
-            crafted with meticulous attention to detail and powered by 
-            artificial intelligence.
+            Where heritage meets innovation. Experience bespoke luxury crafted
+            with meticulous attention to detail and powered by artificial
+            intelligence.
           </motion.p>
 
           {/* CTAs */}
@@ -121,17 +124,23 @@ export default function LuxuryHero() {
             animate={{ y: [0, 10, 0] }}
             transition={{ repeat: Infinity, duration: 2 }}
           >
-            <ChevronDown className="w-6 h-6 text-luxury-gray-600" strokeWidth={1} />
+            <ChevronDown
+              className="w-6 h-6 text-luxury-gray-600"
+              strokeWidth={1}
+            />
           </motion.div>
         </motion.div>
       </div>
-
 
       {/* Subtle grain texture overlay */}
       <div className="absolute inset-0 z-30 pointer-events-none opacity-[0.02]">
         <svg width="100%" height="100%">
           <filter id="grain">
-            <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" />
+            <feTurbulence
+              type="fractalNoise"
+              baseFrequency="0.9"
+              numOctaves="4"
+            />
             <feColorMatrix type="saturate" values="0" />
           </filter>
           <rect width="100%" height="100%" filter="url(#grain)" opacity="0.5" />

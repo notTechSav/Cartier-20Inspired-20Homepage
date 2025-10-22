@@ -97,21 +97,88 @@ const Hero = () => {
       {/* Desktop Content */}
       <div className="relative z-10 hidden md:flex w-full flex-1 flex-col items-center justify-end px-8 pb-20">
         <div className="flex w-full max-w-luxury flex-col items-center justify-end gap-6 text-center text-luxury-white">
-          <h1 style={{ fontSize: "48px", fontWeight: 400, letterSpacing: "0.02em", color: "white" }}>Katherine Taylor</h1>
-          <h3 style={{ fontSize: "18px", fontWeight: 300, letterSpacing: "0.02em", color: "rgba(255, 255, 255, 0.8)", maxWidth: "42rem" }}>Professional escort services in Sacramento and San Francisco—discretion, elegance, and genuine connection.</h3>
+          <h1
+            style={{
+              fontSize: "48px",
+              fontWeight: 400,
+              letterSpacing: "0.02em",
+              color: "white",
+            }}
+          >
+            Katherine Taylor
+          </h1>
+          <h3
+            style={{
+              fontSize: "18px",
+              fontWeight: 300,
+              letterSpacing: "0.02em",
+              color: "rgba(255, 255, 255, 0.8)",
+              maxWidth: "42rem",
+            }}
+          >
+            Professional escort services in Sacramento and San
+            Francisco—discretion, elegance, and genuine connection.
+          </h3>
           <p>
-            <a href="#about" style={{ color: "white", textDecoration: "underline", transition: "opacity 300ms var(--ease)" }}>Discover More →</a>
+            <a
+              href="#about"
+              style={{
+                color: "white",
+                textDecoration: "underline",
+                transition: "opacity 300ms var(--ease)",
+              }}
+            >
+              Discover More →
+            </a>
           </p>
         </div>
       </div>
 
       {/* Mobile Content */}
       <div className="relative z-10 md:hidden flex w-full flex-1 flex-col items-center justify-end px-6 pb-12">
-        <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "flex-end", gap: "var(--spacer-xl)", textAlign: "center", color: "white" }}>
-          <h1 style={{ fontSize: "36px", fontWeight: 400, letterSpacing: "0.02em", color: "white" }}>Katherine Taylor</h1>
-          <h3 style={{ fontSize: "16px", fontWeight: 300, letterSpacing: "0.02em", color: "rgba(255, 255, 255, 0.8)" }}>Professional escort services in Sacramento and San Francisco—discretion, elegance, and genuine connection.</h3>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "flex-end",
+            gap: "var(--spacer-xl)",
+            textAlign: "center",
+            color: "white",
+          }}
+        >
+          <h1
+            style={{
+              fontSize: "36px",
+              fontWeight: 400,
+              letterSpacing: "0.02em",
+              color: "white",
+            }}
+          >
+            Katherine Taylor
+          </h1>
+          <h3
+            style={{
+              fontSize: "16px",
+              fontWeight: 300,
+              letterSpacing: "0.02em",
+              color: "rgba(255, 255, 255, 0.8)",
+            }}
+          >
+            Professional escort services in Sacramento and San
+            Francisco—discretion, elegance, and genuine connection.
+          </h3>
           <p>
-            <a href="#about" style={{ color: "white", textDecoration: "underline", transition: "opacity 300ms var(--ease)" }}>Discover More →</a>
+            <a
+              href="#about"
+              style={{
+                color: "white",
+                textDecoration: "underline",
+                transition: "opacity 300ms var(--ease)",
+              }}
+            >
+              Discover More →
+            </a>
           </p>
         </div>
       </div>

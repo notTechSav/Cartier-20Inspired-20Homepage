@@ -98,9 +98,7 @@ const JournalModal = ({
                   </p>
                 ) : null}
                 <DialogPrimitive.Title asChild>
-                  <h2 className="text-luxury-black">
-                    {essay?.title}
-                  </h2>
+                  <h2 className="text-luxury-black">{essay?.title}</h2>
                 </DialogPrimitive.Title>
               </header>
 
@@ -121,8 +119,7 @@ const JournalModal = ({
                     onClick={() => onNavigateNext(essay.readNext!)}
                     className="text-luxury-black underline-offset-[6px] transition-colors duration-300 hover:underline focus:outline-none focus-visible:ring-1 focus-visible:ring-luxury-black/40 focus-visible:ring-offset-4 focus-visible:ring-offset-luxury-white"
                   >
-                    {readNextLabel}{" "}
-                    <span>{nextEssay.title}</span>
+                    {readNextLabel} <span>{nextEssay.title}</span>
                   </button>
                 </footer>
               ) : null}

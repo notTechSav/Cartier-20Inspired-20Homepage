@@ -18,16 +18,18 @@ const SiteLayout = ({ children }: PropsWithChildren) => {
 
   if (isScrollSnapLayout) {
     return (
-      <div style={{
-        position: 'relative',
-        height: '100vh',
-        width: '100%',
-        overflow: 'hidden',
-        backgroundColor: 'var(--color-background-primary)',
-        color: '#374151',
-        display: 'flex',
-        flexDirection: 'column'
-      }}>
+      <div
+        style={{
+          position: "relative",
+          height: "100vh",
+          width: "100%",
+          overflow: "hidden",
+          backgroundColor: "var(--color-background-primary)",
+          color: "#374151",
+          display: "flex",
+          flexDirection: "column",
+        }}
+      >
         {/* Header - Fixed at top, outside scroll container */}
         <Header />
 
@@ -35,11 +37,13 @@ const SiteLayout = ({ children }: PropsWithChildren) => {
         <ScrollSnapProgress totalSections={8} />
 
         {/* Main scroll container - flex-1 allows it to fill remaining space */}
-        <div style={{
-          flex: 1,
-          width: '100%',
-          overflow: 'hidden'
-        }}>
+        <div
+          style={{
+            flex: 1,
+            width: "100%",
+            overflow: "hidden",
+          }}
+        >
           {children}
         </div>
       </div>
@@ -48,13 +52,15 @@ const SiteLayout = ({ children }: PropsWithChildren) => {
 
   // Traditional layout - Header and main content only
   return (
-    <div style={{
-      display: 'flex',
-      minHeight: '100vh',
-      flexDirection: 'column',
-      backgroundColor: 'var(--color-background-primary)',
-      color: '#374151'
-    }}>
+    <div
+      style={{
+        display: "flex",
+        minHeight: "100vh",
+        flexDirection: "column",
+        backgroundColor: "var(--color-background-primary)",
+        color: "#374151",
+      }}
+    >
       <Header />
       <main style={{ flex: 1 }}>{children}</main>
     </div>

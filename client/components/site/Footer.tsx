@@ -114,7 +114,6 @@ const Footer: React.FC<FooterProps> = ({
         </div>
       </div>
 
-
       {/* Copyright Bar */}
       <div className="ysl-footer-bottom">
         <p className="ysl-footer-copyright">
