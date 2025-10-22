@@ -268,6 +268,36 @@
     --sidebar-ring: 0 0% 88%;
   }
 
+  /* ============================================
+     RESPONSIVE TOKENS (Desktop breakpoint)
+     Overrides for large screens (lg: 1024px+)
+     ============================================ */
+  @media (min-width: 1024px) {
+    :root {
+      /* Layout grid and gutters - Desktop spacing is much wider */
+      --breakpoint: "lg";
+      --grid-columns: 12;
+      --inner-gutter: 68px;
+      --outer-gutter: 32px;
+
+      /* Semantic spacing tokens - Desktop uses larger values */
+      --spacer-header-top: 1.5rem;       /* 24px */
+      --spacer-block-top: 5rem;          /* 80px */
+      --spacer-look-bottom: 4.5rem;      /* 72px */
+      --spacer-block-bottom: 7.5rem;     /* 120px */
+      --spacer-footer-bottom: 3.75rem;   /* 60px */
+      --spacer-title-bottom: 3.75rem;    /* 60px */
+      --spacer-inner: 2rem;              /* 32px */
+      --spacer-content-text: 18.0625rem; /* 289px - large content width */
+      --spacer-header: 4.5rem;           /* 72px */
+
+      /* Calculate container width based on new gutters */
+      --col-container-width: calc(
+        var(--container-width, 100%) - (2 * var(--outer-gutter, 32px))
+      );
+    }
+  }
+
   * {
     border-color: hsl(var(--border));
   }
