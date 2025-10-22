@@ -14,7 +14,8 @@ const About = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.dataset.visible = "true";
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
           }
         });
       },
