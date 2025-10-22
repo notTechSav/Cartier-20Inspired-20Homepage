@@ -12,17 +12,33 @@ const Header = () => {
 
   return (
     <header ref={headerRef} className="ysl-header">
-      <div className="max-w-7xl mx-auto px-0 h-full flex items-center justify-center relative">
+      <div style={{
+        maxWidth: '80rem',
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        paddingLeft: 0,
+        paddingRight: 0,
+        height: '100%',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        position: 'relative'
+      }}>
         {/* DESKTOP NAVIGATION */}
         <DesktopNavigation menuItems={katherineTaylorMenuConfig} />
 
         {/* CENTER LOGO - Katherine Taylor */}
         <a
           href="/"
-          className="kt-brand-refined absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 transition-all duration-[320ms] ease-[cubic-bezier(0.16,1,0.3,1)] hover:translate-y-[-3px]"
+          className="kt-brand-refined"
           style={{
+            position: 'absolute',
+            left: '50%',
+            top: '50%',
+            transform: 'translate(-50%, -50%)',
             color: "white",
             whiteSpace: "nowrap",
+            transition: 'all 320ms cubic-bezier(0.16,1,0.3,1)'
           }}
         >
           KATHERINE TAYLOR
