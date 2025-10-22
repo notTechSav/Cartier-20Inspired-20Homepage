@@ -379,6 +379,28 @@
   }
 
   /* ============================================
+     SWIPER CAROUSEL CONFIGURATION
+     ============================================ */
+  /* Swiper container with 3D perspective and touch configuration */
+  .swiper {
+    perspective: 1200px;
+    touch-action: pan-x;
+    height: min(100vh, 100dvh);
+  }
+
+  /* Swiper wrapper with smooth easing matching YSL */
+  .swiper-wrapper {
+    transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: transform;
+  }
+
+  /* Swiper slides full viewport */
+  .swiper-slide {
+    height: 100%;
+    min-height: min(100vh, 100dvh);
+  }
+
+  /* ============================================
      ENHANCED SCROLL-SNAP CONTAINER
      ============================================ */
   /* Enhanced scroll-snap container for YSL-level sharpness */
