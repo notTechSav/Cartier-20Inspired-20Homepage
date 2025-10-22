@@ -19,7 +19,7 @@ const Header = () => {
         {/* DESKTOP NAVIGATION */}
         <DesktopNavigation
           menuItems={katherineTaylorMenuConfig}
-          isOverlay={isOverlay}
+          isOverlay={true}
         />
 
         {/* CENTER LOGO - Katherine Taylor */}
@@ -27,7 +27,7 @@ const Header = () => {
           href="/"
           className="kt-brand-refined absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 transition-all duration-[320ms] ease-[cubic-bezier(0.16,1,0.3,1)] hover:translate-y-[-3px]"
           style={{
-            color: isOverlay ? "white" : "var(--nav-color-primary)",
+            color: "white",
             whiteSpace: "nowrap",
           }}
         >
@@ -37,7 +37,7 @@ const Header = () => {
         {/* MOBILE NAVIGATION - FontAwesome bell-concierge icon */}
         <MobileNavigation
           menuItems={katherineTaylorMenuConfig}
-          isOverlay={isOverlay}
+          isOverlay={true}
           useSwiper={false}
           icon={<FontAwesomeIcon icon={faBellConcierge} />}
         />
