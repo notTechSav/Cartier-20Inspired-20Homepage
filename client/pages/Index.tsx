@@ -147,7 +147,7 @@ const Index = () => {
                 searches never cover.
                 <a
                   href="/faq"
-                  className="ysl-nav-item inline-block text-luxury-black block mt-2 text-sm"
+                  className="ysl-nav-item inline-block text-luxury-black block mt-2"
                 >
                   View All
                 </a>
@@ -182,7 +182,7 @@ const Index = () => {
                 and the art of connection.
                 <a
                   href="/journal"
-                  className="ysl-nav-item inline-block text-luxury-black block mt-2 text-sm"
+                  className="ysl-nav-item inline-block text-luxury-black block mt-2"
                 >
                   Read Journal →
                 </a>
@@ -217,7 +217,7 @@ const Index = () => {
                 who appreciate the finest details.
                 <a
                   href="/gifts"
-                  className="ysl-nav-item inline-block text-luxury-black block mt-2 text-sm"
+                  className="ysl-nav-item inline-block text-luxury-black block mt-2"
                 >
                   Explore Gifts
                 </a>
