@@ -83,7 +83,7 @@ const JournalModal = ({
             <button
               type="button"
               onClick={onClose}
-              className="absolute right-8 top-8 text-sm font-light  text-luxury-black underline-offset-4 transition-colors duration-300 hover:underline focus:outline-none focus-visible:ring-1 focus-visible:ring-luxury-black/40 focus-visible:ring-offset-4 focus-visible:ring-offset-luxury-white"
+              className="absolute right-8 top-8 text-luxury-black underline-offset-4 transition-colors duration-300 hover:underline focus:outline-none focus-visible:ring-1 focus-visible:ring-luxury-black/40 focus-visible:ring-offset-4 focus-visible:ring-offset-luxury-white"
             >
               {closeLabel}
             </button>
@@ -93,15 +93,12 @@ const JournalModal = ({
             <div className="flex flex-col gap-8 text-left">
               <header className="space-y-3">
                 {formattedPublishedDate ? (
-                  <p className="text-xs font-light uppercase  text-gray-600">
+                  <p className="uppercase text-gray-600">
                     Published {formattedPublishedDate}
                   </p>
                 ) : null}
                 <DialogPrimitive.Title asChild>
-                  <h2
-                    className=" text-luxury-black"
-                    style={{ fontWeight: 200 }}
-                  >
+                  <h2 className="text-luxury-black">
                     {essay?.title}
                   </h2>
                 </DialogPrimitive.Title>
@@ -122,10 +119,10 @@ const JournalModal = ({
                   <button
                     type="button"
                     onClick={() => onNavigateNext(essay.readNext!)}
-                    className="text-sm font-light  text-luxury-black underline-offset-[6px] transition-colors duration-300 hover:underline focus:outline-none focus-visible:ring-1 focus-visible:ring-luxury-black/40 focus-visible:ring-offset-4 focus-visible:ring-offset-luxury-white"
+                    className="text-luxury-black underline-offset-[6px] transition-colors duration-300 hover:underline focus:outline-none focus-visible:ring-1 focus-visible:ring-luxury-black/40 focus-visible:ring-offset-4 focus-visible:ring-offset-luxury-white"
                   >
                     {readNextLabel}{" "}
-                    <span className="font-normal">{nextEssay.title}</span>
+                    <span>{nextEssay.title}</span>
                   </button>
                 </footer>
               ) : null}
