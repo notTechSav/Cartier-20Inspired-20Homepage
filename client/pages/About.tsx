@@ -99,7 +99,7 @@ const About = () => {
               data-animate
               className="relative overflow-hidden rounded-sm opacity-0 transition-all duration-[900ms] ease-[cubic-bezier(0.16,1,0.3,1)] data-[visible=true]:translate-y-0 data-[visible=true]:opacity-100"
               style={{
-                backgroundColor: 'var(--about-bg-secondary)',
+                backgroundColor: 'var(--section-bg-packshots)',
               }}
             >
               <AspectRatio ratio={16 / 9}>
