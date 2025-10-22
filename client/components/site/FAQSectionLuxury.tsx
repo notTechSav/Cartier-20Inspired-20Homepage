@@ -106,20 +106,39 @@ const FAQSectionLuxury = () => {
   };
 
   const FAQItem = ({ item, isOpen }: { item: FaqItem; isOpen: boolean }) => (
-    <div className="border-t border-gray-200">
+    <div
+      className="border-t"
+      style={{
+        borderColor: 'var(--section-border-light)',
+      }}
+    >
       <button
         onClick={() => handleToggle(item.id)}
-        className="group flex w-full items-start justify-between py-8 transition-all duration-250 ease-out focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-2 md:py-10"
+        className="group flex w-full items-start justify-between transition-all duration-250 ease-out focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-2"
+        style={{
+          paddingTop: 'var(--spacer-l)',
+          paddingBottom: 'var(--spacer-l)',
+        }}
         aria-expanded={isOpen}
         aria-controls={`faq-answer-${item.id}`}
         ref={(el) => {
           faqRefs.current[item.id] = el;
         }}
       >
-        <h3 className="pr-8 text-left text-base font-light tracking-luxury text-luxury-black transition-colors duration-250 ease-out group-hover:text-gray-600">
+        <h3
+          className="text-left text-base font-light tracking-luxury text-luxury-black transition-colors duration-250 ease-out group-hover:text-gray-600"
+          style={{
+            paddingRight: 'var(--spacer-m)',
+          }}
+        >
           {item.question}
         </h3>
-        <div className="mt-1">
+        <div
+          className="flex-shrink-0"
+          style={{
+            marginTop: 'var(--spacer-xs)',
+          }}
+        >
           <span
             aria-hidden="true"
             className={cn(
@@ -135,15 +154,26 @@ const FAQSectionLuxury = () => {
       <div
         id={`faq-answer-${item.id}`}
         className={`overflow-hidden transition-all duration-400 ease-out ${
-          isOpen ? "max-h-96 pb-8" : "max-h-0"
+          isOpen ? "max-h-96" : "max-h-0"
         }`}
+        style={{
+          paddingBottom: isOpen ? 'var(--spacer-l)' : '0',
+        }}
       >
-        <div className="pr-6 md:pr-24 max-md:pr-6">
+        <div
+          style={{
+            paddingRight: 'var(--inner-gutter)',
+          }}
+        >
           <p className="max-w-[65ch] text-base font-light leading-relaxed tracking-luxury text-gray-600">
             {item.answer}
           </p>
 
-          <div className="mt-6">
+          <div
+            style={{
+              marginTop: 'var(--spacer-m)',
+            }}
+          >
             <a
               href="/booking"
               className="ysl-nav-item inline-block text-sm text-luxury-black"
@@ -157,16 +187,36 @@ const FAQSectionLuxury = () => {
   );
 
   return (
-    <div className="bg-luxury-white">
+    <div className="luxury-section">
       <section
         id="faq"
-        className="relative bg-luxury-white py-12 md:py-24 max-md:py-12"
+        className="luxury-section relative"
+        style={{
+          paddingTop: 'var(--spacer-block-top)',
+          paddingBottom: 'var(--spacer-block-bottom)',
+        }}
         aria-label="Frequently asked questions about escort services and engagement details"
         data-section="faq"
       >
-        <div className="mx-auto max-w-luxury px-6 md:px-12 max-md:px-6">
-          <div className="mx-auto mb-12 max-w-[65ch] text-center">
-            <h2 className="text-center text-3xl font-light tracking-tight text-luxury-black mb-4 md:text-4xl">
+        <div
+          className="mx-auto max-w-luxury"
+          style={{
+            paddingLeft: 'var(--inner-gutter)',
+            paddingRight: 'var(--inner-gutter)',
+          }}
+        >
+          <div
+            className="mx-auto max-w-[65ch] text-center"
+            style={{
+              marginBottom: 'var(--spacer-block-top)',
+            }}
+          >
+            <h2
+              className="text-center text-3xl font-light tracking-tight text-luxury-black md:text-4xl"
+              style={{
+                marginBottom: 'var(--spacer-title-bottom)',
+              }}
+            >
               Frequently Asked Questions
             </h2>
             <p className="text-center text-base font-light leading-relaxed tracking-luxury text-gray-600">
@@ -195,10 +245,20 @@ const FAQSectionLuxury = () => {
                   />
                 ))}
 
-              <div className="border-t border-gray-200" />
+              <div
+                className="border-t"
+                style={{
+                  borderColor: 'var(--section-border-light)',
+                }}
+              />
             </div>
 
-            <div className="mt-12 text-center">
+            <div
+              className="text-center"
+              style={{
+                marginTop: 'var(--spacer-block-top)',
+              }}
+            >
               <button
                 type="button"
                 onClick={() => setShowHidden((prev) => !prev)}

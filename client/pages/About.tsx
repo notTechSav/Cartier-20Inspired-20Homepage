@@ -1,6 +1,4 @@
 import { useEffect } from "react";
-
-import { useEffect } from "react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import PageHeroOverlay from "@/components/site/PageHeroOverlay";
 
@@ -16,7 +14,9 @@ const About = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.dataset.visible = "true";
+            const el = entry.target as HTMLElement;
+            el.style.opacity = "1";
+            el.style.transform = "translateY(0)";
           }
         });
       },
@@ -36,7 +36,7 @@ const About = () => {
 
   return (
     <div
-      className="bg-[#fafaf9] text-[#4a4a4a]"
+      className="luxury-section"
       id="about"
       data-section="about"
     >
@@ -48,12 +48,35 @@ const About = () => {
         imageAlt="Sunlit doorway opening onto herringbone floors beside linen curtains"
         alignment="left"
       />
-      <div className="mx-auto max-w-[680px] px-6 pb-24 pt-16 md:px-8 md:pb-28 md:pt-20">
+      <div
+        style={{
+          maxWidth: '680px',
+          marginLeft: 'auto',
+          marginRight: 'auto',
+          paddingLeft: 'var(--inner-gutter)',
+          paddingRight: 'var(--inner-gutter)',
+          paddingTop: 'var(--spacer-block-top)',
+          paddingBottom: 'var(--spacer-block-bottom)',
+        }}
+      >
         <header
           data-animate
-          className="space-y-6 opacity-0 transition-all duration-[900ms] ease-[cubic-bezier(0.16,1,0.3,1)] data-[visible=true]:translate-y-0 data-[visible=true]:opacity-100 data-[visible=true]:delay-100"
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 'var(--spacer-l)',
+            opacity: 0,
+            transform: 'translateY(8px)',
+            transition: 'all 900ms cubic-bezier(0.16,1,0.3,1)',
+            transitionDelay: '100ms',
+          }}
         >
-          <p className="text-[17px] leading-[1.9] text-[#1a1a1a]">
+          <p
+            style={{
+              fontSize: '17px',
+              lineHeight: 1.9,
+            }}
+          >
             The conversation never resets. I carry forward everything—your
             M&amp;A timeline, your board anxieties, your daughter’s college
             decision, the trip to Patagonia you’ve been planning. Not because I
@@ -62,14 +85,43 @@ const About = () => {
           </p>
         </header>
 
-        <div className="my-16 flex justify-center" aria-hidden="true">
-          <span className="h-24 w-px bg-gradient-to-b from-transparent via-[#8b7355]/60 to-transparent opacity-40" />
+        <div
+          aria-hidden="true"
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            marginTop: 'var(--spacer-block-top)',
+            marginBottom: 'var(--spacer-block-bottom)',
+          }}
+        >
+          <span
+            style={{
+              height: '96px',
+              width: '1px',
+              opacity: 0.4,
+              backgroundImage:
+                'linear-gradient(to bottom, transparent, rgba(139, 115, 85, 0.6), transparent)',
+            }}
+          />
         </div>
 
-        <main className="space-y-16">
+        <main
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 'var(--spacer-content)',
+          }}
+        >
           <section
             data-animate
-            className="space-y-7 opacity-0 transition-all duration-[900ms] ease-[cubic-bezier(0.16,1,0.3,1)] data-[visible=true]:translate-y-0 data-[visible=true]:opacity-100"
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              gap: 'var(--spacer-block-top)',
+              opacity: 0,
+              transform: 'translateY(8px)',
+              transition: 'all 900ms cubic-bezier(0.16,1,0.3,1)',
+            }}
           >
             <p>
               A client once sent two lines: in-suite only, three hours, no
@@ -83,13 +135,25 @@ const About = () => {
             </p>
             <div
               data-animate
-              className="relative overflow-hidden rounded-sm bg-gradient-to-br from-[#d4cfc9] via-[#e8e4e0] to-[#d4cfc9] opacity-0 transition-all duration-[900ms] ease-[cubic-bezier(0.16,1,0.3,1)] data-[visible=true]:translate-y-0 data-[visible=true]:opacity-100"
+              style={{
+                position: 'relative',
+                overflow: 'hidden',
+                borderRadius: '4px',
+                backgroundColor: 'var(--section-bg-packshots)',
+                opacity: 0,
+                transform: 'translateY(8px)',
+                transition: 'all 900ms cubic-bezier(0.16,1,0.3,1)',
+              }}
             >
               <AspectRatio ratio={16 / 9}>
                 <img
                   src={ABOUT_SECONDARY_IMAGE}
                   alt="Hardcover journal with pencil and card in warm window light"
-                  className="h-full w-full object-cover"
+                  style={{
+                    height: '100%',
+                    width: '100%',
+                    objectFit: 'cover',
+                  }}
                   loading="lazy"
                 />
               </AspectRatio>
