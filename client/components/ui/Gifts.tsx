@@ -81,7 +81,7 @@ const Gifts = () => {
                 onClick={toggleGuidance}
                 aria-expanded={isExpanded}
                 aria-controls="gifts-guidance"
-                className="inline-flex items-center justify-center border border-[rgba(26,26,26,0.2)] bg-transparent px-7 py-3 text-[14px] font-light tracking-[0.02em] text-luxury-black transition-all duration-[480ms] ease-[cubic-bezier(0.4,0,0.2,1)] hover:-translate-y-[1px] hover:border-[rgba(26,26,26,0.4)] hover:bg-[rgba(26,26,26,0.02)] hover:shadow-[0_4px_12px_rgba(0,0,0,0.04)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[rgba(26,26,26,0.32)]"
+                className="inline-flex items-center justify-center border border-[rgba(26,26,26,0.2)] bg-transparent px-7 py-3 "
               >
                 {revealButtonLabel}
               </button>

@@ -32,13 +32,13 @@ const JournalHero = memo(
             <div className="mx-auto w-full max-w-[1120px] px-12 pb-14">
               <div className="max-w-xl text-left text-luxury-white">
                 <p
-                  className="mb-3 text-sm font-light uppercase tracking-[0.12em] text-luxury-white/75"
+                  className="mb-3 text-sm font-light uppercase  text-luxury-white/75"
                   style={{ letterSpacing: "0.12em" }}
                 >
                   THE HIGH-END EDITION
                 </p>
                 <h1
-                  className="text-4xl font-extralight leading-[1.1] tracking-[-0.02em] text-luxury-white sm:text-[50px]"
+                  className="text-4xl font-extralight   text-luxury-white sm:"
                   style={{ fontWeight: 200 }}
                 >
                   {title}
@@ -54,18 +54,18 @@ const JournalHero = memo(
           <figcaption className="pointer-events-none absolute inset-0 flex items-end sm:hidden">
             <div className="w-full px-8 pb-10">
               <p
-                className="mb-2 text-xs font-light uppercase tracking-[0.12em] text-luxury-white/75"
+                className="mb-2 text-xs font-light uppercase  text-luxury-white/75"
                 style={{ letterSpacing: "0.12em" }}
               >
                 THE HIGH-END EDITION
               </p>
               <h1
-                className="text-[32px] font-extralight leading-[1.15] tracking-[-0.02em] text-luxury-white"
+                className=" text-luxury-white"
                 style={{ fontWeight: 200 }}
               >
                 {title}
               </h1>
-              <p className="mt-4 text-sm font-light leading-[1.8] text-luxury-white/80">
+              <p className="mt-4 text-sm font-light  text-luxury-white/80">
                 {subtitle}
               </p>
             </div>

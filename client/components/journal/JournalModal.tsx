@@ -83,7 +83,7 @@ const JournalModal = ({
             <button
               type="button"
               onClick={onClose}
-              className="absolute right-8 top-8 text-sm font-light tracking-[0.08em] text-luxury-black underline-offset-4 transition-colors duration-300 hover:underline focus:outline-none focus-visible:ring-1 focus-visible:ring-luxury-black/40 focus-visible:ring-offset-4 focus-visible:ring-offset-luxury-white"
+              className="absolute right-8 top-8 text-sm font-light  text-luxury-black underline-offset-4 transition-colors duration-300 hover:underline focus:outline-none focus-visible:ring-1 focus-visible:ring-luxury-black/40 focus-visible:ring-offset-4 focus-visible:ring-offset-luxury-white"
             >
               {closeLabel}
             </button>
@@ -93,13 +93,13 @@ const JournalModal = ({
             <div className="flex flex-col gap-8 text-left">
               <header className="space-y-3">
                 {formattedPublishedDate ? (
-                  <p className="text-xs font-light uppercase tracking-[0.12em] text-gray-600">
+                  <p className="text-xs font-light uppercase  text-gray-600">
                     Published {formattedPublishedDate}
                   </p>
                 ) : null}
                 <DialogPrimitive.Title asChild>
                   <h2
-                    className="text-[32px] font-extralight leading-[1.2] tracking-[-0.02em] text-luxury-black"
+                    className=" text-luxury-black"
                     style={{ fontWeight: 200 }}
                   >
                     {essay?.title}
@@ -108,7 +108,7 @@ const JournalModal = ({
               </header>
 
               <DialogPrimitive.Description asChild>
-                <div className="space-y-6 text-[18px] font-light leading-[1.75] text-luxury-black">
+                <div className="space-y-6  text-luxury-black">
                   {paragraphs.map((paragraph, index) => (
                     <p key={`${essay?.slug ?? ""}-paragraph-${index}`}>
                       {paragraph}
@@ -122,7 +122,7 @@ const JournalModal = ({
                   <button
                     type="button"
                     onClick={() => onNavigateNext(essay.readNext!)}
-                    className="text-sm font-light tracking-[0.01em] text-luxury-black underline-offset-[6px] transition-colors duration-300 hover:underline focus:outline-none focus-visible:ring-1 focus-visible:ring-luxury-black/40 focus-visible:ring-offset-4 focus-visible:ring-offset-luxury-white"
+                    className="text-sm font-light  text-luxury-black underline-offset-[6px] transition-colors duration-300 hover:underline focus:outline-none focus-visible:ring-1 focus-visible:ring-luxury-black/40 focus-visible:ring-offset-4 focus-visible:ring-offset-luxury-white"
                   >
                     {readNextLabel}{" "}
                     <span className="font-normal">{nextEssay.title}</span>

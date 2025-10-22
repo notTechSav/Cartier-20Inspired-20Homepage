@@ -107,7 +107,7 @@ const Footer: React.FC<FooterProps> = ({
 
           {/* Success Message */}
           {submitStatus === "success" && (
-            <p className="mt-6 animate-fadeIn text-center text-xs uppercase tracking-[0.15em] text-gray-600">
+            <p className="mt-6 animate-fadeIn text-center text-xs uppercase  text-gray-600">
               You've been added to our mailing list
             </p>
           )}
