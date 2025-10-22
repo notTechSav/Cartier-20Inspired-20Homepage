@@ -80,16 +80,6 @@ const ImmersiveVideoSection = () => {
             >
               {isPaused ? "Play" : "Pause"}
             </button>
-            <button
-              type="button"
-              onClick={toggleMute}
-              aria-label={
-                isMuted ? "Unmute immersive video" : "Mute immersive video"
-              }
-              className="ysl-nav-item-light inline-flex items-center justify-center max-md:px-4 max-md:py-2 text-luxury-white"
-            >
-              {isMuted ? "Unmute" : "Mute"}
-            </button>
           </div>
         </div>
       </div>
