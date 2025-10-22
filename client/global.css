@@ -399,6 +399,35 @@ a, button {
   transition-delay: 0ms;
 }
 
+/* Global Footer */
+footer {
+  text-transform: uppercase;
+  color: var(--color-text-primary);
+  visibility: visible;
+  list-style: none;
+  box-sizing: border-box;
+  touch-action: inherit;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+  outline: 0;
+  width: 100%;
+  position: relative;
+  display: block;
+  transition-property: transform, opacity;
+  transition-duration: var(--transition-duration-normal);
+  transition-timing-function: var(--ease-transform);
+  transition-delay: var(--transition-delay-sm);
+  background-color: var(--color-background-primary);
+  padding-bottom: var(--safe-area-inset-bottom);
+  padding-top: var(--spacer-footer-bottom);
+  border-top: 1px solid var(--color-border-tertiary);
+}
+
 /* Navigation Styles */
 .ysl-header {
   position: fixed;
