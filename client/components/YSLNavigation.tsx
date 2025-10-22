@@ -71,9 +71,6 @@ export const DesktopNavigation: React.FC<DesktopNavigationProps> = ({
               className="ysl-nav-item"
               aria-expanded={activeMegaMenu === item.key}
               aria-controls={`mega-menu-${item.key}`}
-              style={{
-                color: isOverlay ? "white" : "var(--nav-color-primary)",
-              }}
             >
               {item.label}
             </button>
@@ -81,9 +78,6 @@ export const DesktopNavigation: React.FC<DesktopNavigationProps> = ({
             <a
               href={item.url}
               className="ysl-nav-item"
-              style={{
-                color: isOverlay ? "white" : "var(--nav-color-primary)",
-              }}
             >
               {item.label}
             </a>
