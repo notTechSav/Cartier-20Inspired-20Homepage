@@ -19,7 +19,6 @@ const Header = () => {
         {/* DESKTOP NAVIGATION */}
         <DesktopNavigation
           menuItems={katherineTaylorMenuConfig}
-          isOverlay={true}
         />
 
         {/* CENTER LOGO - Katherine Taylor */}
@@ -37,7 +36,6 @@ const Header = () => {
         {/* MOBILE NAVIGATION - FontAwesome bell-concierge icon */}
         <MobileNavigation
           menuItems={katherineTaylorMenuConfig}
-          isOverlay={true}
           useSwiper={false}
           icon={<FontAwesomeIcon icon={faBellConcierge} />}
         />
