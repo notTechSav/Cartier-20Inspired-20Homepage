@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ChevronDown } from "lucide-react";
-import AIConcierge from "@/components/ai/AIConcierge";
 
 export default function LuxuryHero() {
   const containerRef = useRef<HTMLDivElement>(null);
