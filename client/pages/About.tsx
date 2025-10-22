@@ -99,7 +99,10 @@ const About = () => {
             </p>
             <div
               data-animate
-              className="relative overflow-hidden rounded-sm bg-gradient-to-br from-[#d4cfc9] via-[#e8e4e0] to-[#d4cfc9] opacity-0 transition-all duration-[900ms] ease-[cubic-bezier(0.16,1,0.3,1)] data-[visible=true]:translate-y-0 data-[visible=true]:opacity-100"
+              className="relative overflow-hidden rounded-sm opacity-0 transition-all duration-[900ms] ease-[cubic-bezier(0.16,1,0.3,1)] data-[visible=true]:translate-y-0 data-[visible=true]:opacity-100"
+              style={{
+                backgroundColor: 'var(--about-bg-secondary)',
+              }}
             >
               <AspectRatio ratio={16 / 9}>
                 <img
