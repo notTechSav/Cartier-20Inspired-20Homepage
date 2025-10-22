@@ -387,8 +387,8 @@
     --aa-action-icon-size: 22px;
 
     /* YSL TYPOGRAPHY SYSTEM (Mobile) */
-    --sans: "Helvetica_Reg", Helvetica, Arial, sans-serif;
-    --copperplate: "Copperplate", serif;
+    --sans: "Work Sans", Helvetica, Arial, sans-serif;
+    --serif: "Cormorant Garamond", serif;
 
     /* Section-specific overrides */
     --section-text-primary: #000;
