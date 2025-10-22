@@ -184,9 +184,6 @@ export const MobileNavigation: React.FC<MobileNavigationProps> = ({
         aria-label={isOpen ? "Close menu" : "Open menu"}
         aria-expanded={isOpen}
         aria-controls="mobile-navigation-drawer"
-        style={{
-          color: isOverlay ? "white" : "var(--nav-color-primary)",
-        }}
       >
         {icon ? (
           icon
