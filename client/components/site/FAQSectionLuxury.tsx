@@ -125,7 +125,12 @@ const FAQSectionLuxury = () => {
           faqRefs.current[item.id] = el;
         }}
       >
-        <h3 className="pr-8 text-left text-base font-light tracking-luxury text-luxury-black transition-colors duration-250 ease-out group-hover:text-gray-600">
+        <h3
+          className="text-left text-base font-light tracking-luxury text-luxury-black transition-colors duration-250 ease-out group-hover:text-gray-600"
+          style={{
+            paddingRight: 'var(--spacer-m)',
+          }}
+        >
           {item.question}
         </h3>
         <div
