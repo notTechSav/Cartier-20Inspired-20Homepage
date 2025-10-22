@@ -47,10 +47,12 @@ const About = () => {
         alignment="left"
       />
       <div
-        className="mx-auto max-w-[680px] pb-24 pt-16 md:pb-28 md:pt-20"
+        className="mx-auto max-w-[680px]"
         style={{
           paddingLeft: 'var(--inner-gutter)',
           paddingRight: 'var(--inner-gutter)',
+          paddingTop: 'var(--spacer-block-top)',
+          paddingBottom: 'var(--spacer-block-bottom)',
         }}
       >
         <header
