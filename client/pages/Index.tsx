@@ -188,11 +188,6 @@ const Index = () => {
       </SwiperSlide>
 
       {/* 09. Footer - Email signup and footer navigation */}
-      <SwiperSlide className="!h-screen">
-        <div className="w-full h-full overflow-y-auto">
-          <Footer isScrollSnapLayout={false} totalSections={9} />
-        </div>
-      </SwiperSlide>
     </Swiper>
   );
 };
