@@ -356,25 +356,81 @@
   /* ============================================
      RESPONSIVE TOKENS (Desktop breakpoint)
      Overrides for large screens (lg: 1024px+)
+     Desktop Design Tokens
      ============================================ */
   @media (min-width: 1024px) {
     :root {
+      /* Swiper & Component Theme */
+      --swiper-theme-color: #007aff;
+      --aa-search-input-height: 44px;
+      --aa-input-icon-size: 20px;
+      --aa-base-unit: 16;
+      --aa-spacing-factor: 1;
+      --aa-spacing: calc(var(--aa-base-unit) * var(--aa-spacing-factor) * 1px);
+      --aa-spacing-half: calc(var(--aa-spacing) / 2);
+      --aa-panel-max-height: 650px;
+      --aa-base-z-index: 9999;
+      --aa-font-size: calc(var(--aa-base-unit) * 1px);
+      --aa-font-family: inherit;
+      --aa-font-weight-medium: 500;
+      --aa-font-weight-semibold: 600;
+      --aa-font-weight-bold: 700;
+      --aa-icon-size: 20px;
+      --aa-icon-stroke-width: 1.6;
+      --aa-icon-color-rgb: 119, 119, 163;
+      --aa-icon-color-alpha: 1;
+      --aa-action-icon-size: 20px;
+      --aa-text-color-rgb: 38, 38, 39;
+      --aa-text-color-alpha: 1;
+      --aa-primary-color-rgb: 62, 52, 211;
+      --aa-primary-color-alpha: 0.2;
+      --aa-muted-color-rgb: 128, 126, 163;
+      --aa-muted-color-alpha: 0.6;
+      --aa-panel-border-color-rgb: 128, 126, 163;
+      --aa-panel-border-color-alpha: 0.3;
+      --aa-input-border-color-rgb: 128, 126, 163;
+      --aa-input-border-color-alpha: 0.8;
+      --aa-background-color-rgb: 255, 255, 255;
+      --aa-background-color-alpha: 1;
+      --aa-input-background-color-rgb: 255, 255, 255;
+      --aa-input-background-color-alpha: 1;
+      --aa-selected-color-rgb: 179, 173, 214;
+      --aa-selected-color-alpha: 0.205;
+      --aa-description-highlight-background-color-rgb: 245, 223, 77;
+      --aa-description-highlight-background-color-alpha: 0.5;
+      --aa-detached-modal-max-width: 680px;
+      --aa-detached-modal-max-height: 500px;
+      --aa-overlay-color-rgb: 115, 114, 129;
+      --aa-overlay-color-alpha: 0.4;
+      --aa-panel-shadow: 0 0 0 1px rgba(35, 38, 59, 0.1),
+        0 6px 16px -4px rgba(35, 38, 59, 0.15);
+      --aa-scrollbar-width: 13px;
+      --aa-scrollbar-track-background-color-rgb: 234, 234, 234;
+      --aa-scrollbar-track-background-color-alpha: 1;
+      --aa-scrollbar-thumb-background-color-rgb: 255, 255, 255;
+      --aa-scrollbar-thumb-background-color-alpha: 1;
+
       /* Layout grid and gutters - Desktop spacing is much wider */
       --breakpoint: "lg";
       --grid-columns: 12;
       --inner-gutter: 68px;
       --outer-gutter: 32px;
 
+      /* Typography and spacing */
+      --sans: "Helvetica_Reg", Helvetica, Arial, sans-serif;
+      --copperplate: "Copperplate", serif;
+
       /* Semantic spacing tokens - Desktop uses larger values */
-      --spacer-header-top: 1.5rem; /* 24px */
-      --spacer-block-top: 5rem; /* 80px */
-      --spacer-look-bottom: 4.5rem; /* 72px */
-      --spacer-block-bottom: 7.5rem; /* 120px */
-      --spacer-footer-bottom: 3.75rem; /* 60px */
-      --spacer-title-bottom: 3.75rem; /* 60px */
-      --spacer-inner: 2rem; /* 32px */
-      --spacer-content-text: 18.0625rem; /* 289px - large content width */
-      --spacer-header: 4.5rem; /* 72px */
+      --spacer-header-top: 1.5rem;
+      --spacer-block-top: 5rem;
+      --spacer-look-bottom: 4.5rem;
+      --spacer-block-bottom: 7.5rem;
+      --spacer-footer-bottom: 3.75rem;
+      --spacer-title-bottom: 3.75rem;
+      --spacer-inner: 2rem;
+      --spacer-content-text: 18.0625rem;
+      --spacer-header: 4.5rem;
+      --spacer-content: 5rem;
 
       /* Calculate container width based on new gutters */
       --col-container-width: calc(
