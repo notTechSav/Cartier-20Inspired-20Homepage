@@ -98,20 +98,14 @@ const PageHeroOverlay = memo(
                     )}
                   >
                     {eyebrow ? (
-                      <p
-                        className="mb-4 text-xs font-light uppercase tracking-[0.12em] text-luxury-white/80"
-                        style={{ letterSpacing: "0.12em" }}
-                      >
+                      <p className="mb-4 text-luxury-white/80">
                         {eyebrow}
                       </p>
                     ) : null}
-                    <h1
-                      className="text-5xl md:text-6xl lg:text-7xl font-extralight leading-[1.05] tracking-[-0.02em] text-luxury-white"
-                      style={{ fontWeight: 200 }}
-                    >
+                    <h1 className="text-luxury-white">
                       {title}
                     </h1>
-                    <p className="mt-6 text-base font-light leading-[1.8] text-luxury-white/85 max-w-lg">
+                    <p className="mt-6 text-luxury-white/85 max-w-lg">
                       {subtitle}
                     </p>
                   </div>

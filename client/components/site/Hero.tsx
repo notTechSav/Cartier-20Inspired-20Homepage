@@ -100,7 +100,7 @@ const Hero = () => {
           <H3
             as="p"
             aria-hidden="true"
-            className="text-center mb-0 text-luxury-white/70 text-sm tracking-wide"
+            className="text-center mb-0 text-luxury-white/70"
           >
             Love, Elevated
           </H3>
@@ -108,7 +108,7 @@ const Hero = () => {
             <H2
               as="p"
               aria-hidden="true"
-              className="text-center text-luxury-white text-5xl md:text-6xl leading-tight"
+              className="text-center text-luxury-white"
             >
               An Experience That Reflects Your Highest Qualities
               <a
