@@ -934,6 +934,7 @@
     text-decoration: none;
     display: block;
     margin-bottom: 24px;
+    color: var(--nav-color-primary);
     opacity: 1;
     transition: opacity var(--nav-transition-fast);
   }
@@ -952,12 +953,13 @@
     text-decoration: none;
     display: block;
     padding: var(--spacing-sm) 0;
+    color: rgba(26, 26, 26, 0.65);
     transition: all var(--nav-transition-fast);
   }
 
   .ysl-sub-link:hover {
     transform: translateX(4px);
-    opacity: 1;
+    color: var(--nav-color-primary);
   }
 
   .ysl-hamburger {
