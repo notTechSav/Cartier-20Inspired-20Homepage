@@ -321,8 +321,6 @@
     min-height: 100%;
     overflow-x: hidden;
     overflow-y: auto;
-    font-family: Helvetica, Arial, sans-serif;
-    font-size: 16px;
     color: var(--color-text-primary);
     box-sizing: border-box;
     touch-action: inherit;
@@ -340,15 +338,8 @@
     overflow-y: auto;
     background-color: var(--luxury-white);
     color: var(--color-text-primary);
-    font-family: Helvetica, Arial, sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 1.6;
-    letter-spacing: normal;
     margin: 0;
     padding: 0;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
     -webkit-locale: "en-us";
   }
 
