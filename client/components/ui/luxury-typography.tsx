@@ -28,10 +28,10 @@ const createHeading = <TDefault extends ElementType>(
 
 export const H2 = createHeading(
   "h2",
-  "mb-6 text-luxury-black",
+  "",
 );
 
 export const H3 = createHeading(
   "h3",
-  "mb-4 text-luxury-black",
+  "",
 );
