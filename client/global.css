@@ -272,6 +272,42 @@
   }
 
   /* ============================================
+     MOBILE DESIGN TOKENS (max-width: 640px)
+     About page & section styling - MOBILE ONLY
+     Desktop tokens to be added in separate media query
+     ============================================ */
+  @media (max-width: 640px) {
+    :root {
+      /* ABOUT PAGE - MOBILE TOKENS */
+      --about-bg-primary: rgb(255, 255, 255);
+      --about-bg-secondary: #f8f7f5;
+      --about-text-primary: #000;
+      --about-text-secondary: #999999;
+      --about-text-tertiary: #666666;
+      --about-border-primary: #000;
+      --about-border-light: #f2f2f2;
+      --about-divider-color: rgba(139, 115, 85, 0.6);
+      --about-input-height: 44px;
+      --about-icon-size: 20px;
+      --about-base-unit: 16;
+      --about-spacing: calc(var(--about-base-unit) * 1.2 * 1px);
+      --about-spacing-half: calc(var(--about-spacing) / 2);
+      --about-panel-max-height: 650px;
+      --about-base-z-index: 9999;
+      --about-font-size: calc(var(--about-base-unit) * 1px);
+      --about-font-family: inherit;
+      --about-font-weight-medium: 500;
+      --about-font-weight-semibold: 600;
+      --about-font-weight-bold: 700;
+      --about-icon-stroke-width: 1.6;
+      --about-shadow: 0 0 0 1px rgba(35, 38, 59, 0.1),
+        0 6px 16px -4px rgba(35, 38, 59, 0.15);
+      --about-scrollbar-width: 13px;
+      --about-ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+  }
+
+  /* ============================================
      RESPONSIVE TOKENS (Desktop breakpoint)
      Overrides for large screens (lg: 1024px+)
      ============================================ */
