@@ -48,27 +48,16 @@ const Index = () => {
         </div>
       </SwiperSlide>
 
-      {/* 02. About - Design in Motion */}
-      <SwiperSlide style={{ height: '100vh' }}>
+      {/* 02. About - Katherine Taylor Background */}
+      <SwiperSlide style={{ height: '100vh' }} id="about">
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '100vh', width: '100%', backgroundColor: 'var(--color-background-primary)', paddingLeft: 'var(--spacer-m)', paddingRight: 'var(--spacer-m)', paddingTop: 'var(--spacer-4xl)', paddingBottom: 'var(--spacer-4xl)' }}>
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 'var(--spacer-2xl)', maxWidth: '42rem', width: '100%' }}>
-            {/* Image Container with 4/5 Aspect Ratio */}
-            <div style={{ width: '100%', maxWidth: '20rem' }}>
-              <div style={{ aspectRatio: '4/5', width: '100%', backgroundColor: '#f3f4f6', overflow: 'hidden', borderRadius: '2px' }}>
-                <img
-                  src="https://cdn.builder.io/api/v1/image/assets%2F5b9cc53f5f324d22a1f8c88faaaa270c%2Fbd093f662cb045d19868b4b86fde26e4?format=webp&width=1600"
-                  alt="SF Escorts - Katherine Taylor"
-                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                />
-              </div>
-            </div>
-
-            {/* Text Content Below Image */}
+            {/* Text Content */}
             <div style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', gap: 'var(--spacer-xl)', maxWidth: '40rem' }}>
-              <h2 style={{ textAlign: 'center' }}>SF Escorts | Framed Side-By-Side</h2>
-              <p style={{ textAlign: 'center' }}>
-                Every frame captured with intention—curated moments that reveal
-                artistry, confidence, and chemistry in equal measure.
+              <h2 style={{ textAlign: 'center', lineHeight: 1.2 }}>Katherine Taylor<br/>Sacramento Escort</h2>
+              <h3 style={{ textAlign: 'center', fontSize: '18px', fontWeight: 300, letterSpacing: '0.02em' }}>Over a decade of trusted companionship in California—professionalism refined, privacy protected.</h3>
+              <p style={{ textAlign: 'center', fontSize: '16px', fontWeight: 300, color: 'var(--color-text-tertiary)' }}>
+                Katherine Taylor has been providing professional escort services in Sacramento and San Francisco for over 10 years. Based in Midtown Sacramento, she serves clients throughout the region with unmatched discretion and elegance.
               </p>
             </div>
           </div>
