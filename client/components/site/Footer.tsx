@@ -68,17 +68,17 @@ const Footer: React.FC<FooterProps> = ({
       data-section-index={isScrollSnapLayout ? totalSections - 1 : undefined}
     >
       {/* Newsletter Section */}
-      <div className="ysl-newsletter border-b border-gray-200 py-16 md:py-24">
-        <div className="mx-auto max-w-7xl px-6 md:px-12 lg:px-24">
+      <div className="ysl-newsletter border-b border-gray-200 py-4 md:py-6">
+        <div className="mx-auto max-w-7xl px-4 md:px-6 lg:px-8">
           {/* Heading */}
-          <h2 className="mb-8 text-center text-2xl font-light tracking-tight text-luxury-black md:text-3xl">
+          <h2 className="mb-3 text-center text-lg text-luxury-black md:text-xl">
             Latest from Katherine
           </h2>
 
           {/* Email Form */}
           <form
             onSubmit={handleSubmit}
-            className="mx-auto flex max-w-2xl flex-col items-center gap-6 md:flex-row md:gap-4"
+            className="mx-auto flex max-w-2xl flex-col items-center gap-2 md:flex-row md:gap-2"
           >
             <div className="relative w-full flex-1">
               <input
@@ -107,7 +107,7 @@ const Footer: React.FC<FooterProps> = ({
 
           {/* Success Message */}
           {submitStatus === "success" && (
-            <p className="mt-6 animate-fadeIn text-center text-xs uppercase  text-gray-600">
+            <p className="mt-2 animate-fadeIn text-center text-xs text-gray-600">
               You've been added to our mailing list
             </p>
           )}
@@ -115,7 +115,7 @@ const Footer: React.FC<FooterProps> = ({
       </div>
 
       {/* Links Grid Section */}
-      <div className="py-16 md:py-24">
+      <div className="py-4 md:py-6">
         <div className="ysl-footer-grid">
           {/* SUPPORT Column */}
           <div className="ysl-footer-column">
