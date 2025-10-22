@@ -32,18 +32,15 @@ const JournalHero = memo(
             <div className="mx-auto w-full max-w-[1120px] px-12 pb-14">
               <div className="max-w-xl text-left text-luxury-white">
                 <p
-                  className="mb-3 text-sm font-light uppercase  text-luxury-white/75"
+                  className="mb-3 uppercase text-luxury-white/75"
                   style={{ letterSpacing: "0.12em" }}
                 >
                   THE HIGH-END EDITION
                 </p>
-                <h1
-                  className="text-4xl font-extralight   text-luxury-white sm:"
-                  style={{ fontWeight: 200 }}
-                >
+                <h1 className="text-luxury-white">
                   {title}
                 </h1>
-                <p className="mt-5 text-base font-light text-luxury-white/80">
+                <p className="mt-5 text-luxury-white/80">
                   {subtitle}
                 </p>
               </div>
