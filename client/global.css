@@ -850,7 +850,7 @@
   .ysl-nav-item-light {
     position: relative;
     font-family: var(--nav-font-family);
-    font-size: 13px;
+    font-size: var(--nav-font-size-lg);
     font-weight: var(--nav-font-weight-thin);
     line-height: 1.8;
     text-decoration: none;
