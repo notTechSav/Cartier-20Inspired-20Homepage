@@ -61,7 +61,9 @@ export default function RootLayout({
         <meta name="theme-color" content="#fafafa" />
         <link rel="icon" type="image/svg+xml" href="/logo.svg" />
       </head>
-      <body>{children}</body>
+      <body className="font-sans antialiased">
+        {children}
+      </body>
     </html>
   );
 }
