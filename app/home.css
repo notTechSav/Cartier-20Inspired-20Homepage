@@ -1,0 +1,456 @@
+/* De Beers x Hermès Typography */
+:root {
+  --luxury-black: #000000;
+  --luxury-white: #FAFAFA;
+  --luxury-gray: #757575;
+  --luxury-gold: #D4A574;
+  --font-thin: 100;
+  --font-light: 200;
+  --transition-smooth: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+  font-weight: var(--font-thin);
+  background: var(--luxury-white);
+  color: var(--luxury-black);
+  letter-spacing: 0.08em;
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Snap Container */
+.luxury-container {
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+}
+
+.snap-container {
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.snap-container::-webkit-scrollbar {
+  display: none;
+}
+
+.snap-section {
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+/* Typography - Ultra-thin, vertically elongated */
+h1, h2, h3 {
+  font-weight: var(--font-thin);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  line-height: 1.1;
+  letter-spacing: 0.2em;
+  transform: scaleY(1.15);
+}
+
+h2 {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  line-height: 1.3;
+  transform: scaleY(1.1);
+  margin-bottom: 1.5rem;
+}
+
+p {
+  font-weight: var(--font-light);
+  font-size: clamp(0.95rem, 2vw, 1.125rem);
+  line-height: 1.8;
+  letter-spacing: 0.05em;
+  max-width: 42ch;
+  margin: 0 auto;
+}
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(180deg, 
+    var(--luxury-white) 0%, 
+    rgba(250, 250, 250, 0.95) 50%, 
+    var(--luxury-white) 100%);
+}
+
+.hero-content {
+  text-align: center;
+  padding: 2rem;
+  animation: fadeInUp 1.2s ease-out;
+}
+
+.hero-title {
+  margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  color: var(--luxury-gray);
+  margin-bottom: 0.5rem;
+  font-weight: var(--font-light);
+  letter-spacing: 0.1em;
+}
+
+.hero-tagline {
+  font-size: clamp(0.875rem, 2vw, 1rem);
+  color: var(--luxury-gold);
+  font-style: italic;
+  letter-spacing: 0.08em;
+}
+/* Content Sections */
+.content-section {
+  background: var(--luxury-white);
+  padding: 3rem 1.5rem;
+}
+
+.content-wrapper {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.image-container {
+  width: 100%;
+  max-width: 320px;
+  aspect-ratio: 4/5;
+  overflow: hidden;
+  border-radius: 2px;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+  position: relative;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition-smooth);
+}
+
+.image-container:hover img {
+  transform: scale(1.02);
+}
+.text-content {
+  text-align: center;
+  max-width: 600px;
+}
+
+.text-content h2 {
+  color: var(--luxury-black);
+  margin-bottom: 1rem;
+}
+
+.text-content p {
+  color: var(--luxury-gray);
+}
+
+/* Video Sections */
+.video-section {
+  position: relative;
+  background: var(--luxury-black);
+}
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.background-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  opacity: 0.7;
+}
+.video-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 2;
+  color: var(--luxury-white);
+}
+
+.video-overlay h2 {
+  color: var(--luxury-white);
+  margin-bottom: 1rem;
+}
+
+.video-overlay p {
+  color: rgba(250, 250, 250, 0.8);
+  margin-bottom: 2rem;
+}
+
+/* CTA Button */
+.cta-button {
+  display: inline-block;
+  padding: 1rem 3rem;
+  border: 1px solid var(--luxury-white);
+  color: var(--luxury-white);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: var(--font-light);
+  font-size: 0.875rem;
+  transition: var(--transition-smooth);
+  background: transparent;
+}
+.cta-button:hover {
+  background: var(--luxury-white);
+  color: var(--luxury-black);
+  transform: translateY(-2px);
+}
+
+/* FAQ Section */
+.faq-wrapper {
+  max-width: 800px;
+  width: 100%;
+  padding: 2rem;
+}
+
+.faq-wrapper h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: var(--luxury-gray);
+  margin-bottom: 3rem;
+}
+
+.faq-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.faq-item {
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  padding-bottom: 1.5rem;
+}
+.faq-item summary {
+  font-weight: var(--font-light);
+  font-size: 1.125rem;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  padding: 0.5rem 0;
+  list-style: none;
+  position: relative;
+  transition: var(--transition-smooth);
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::after {
+  content: '+';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+  font-weight: var(--font-thin);
+  transition: var(--transition-smooth);
+}
+
+.faq-item[open] summary::after {
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.faq-item p {
+  margin-top: 1rem;
+  color: var(--luxury-gray);
+  text-align: left;
+}
+/* Footer Section */
+.footer-section {
+  background: var(--luxury-black);
+  color: var(--luxury-white);
+}
+
+.luxury-footer {
+  width: 100%;
+  padding: 3rem 2rem;
+}
+
+.footer-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer-content h3 {
+  color: var(--luxury-white);
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer-content p {
+  color: rgba(250, 250, 250, 0.6);
+  margin-bottom: 2rem;
+}
+
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+.footer-nav a {
+  color: rgba(250, 250, 250, 0.8);
+  text-decoration: none;
+  font-weight: var(--font-light);
+  font-size: 0.875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: var(--transition-smooth);
+}
+
+.footer-nav a:hover {
+  color: var(--luxury-gold);
+}
+
+.copyright {
+  color: rgba(250, 250, 250, 0.4);
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Media Queries */
+@media (min-width: 768px) {
+  .content-wrapper {
+    flex-direction: row;
+    gap: 4rem;
+  }
+  
+  .image-container {
+    max-width: 400px;
+  }
+  
+  .text-content {
+    text-align: left;
+    flex: 1;
+  }
+  
+  .text-content h2 {
+    text-align: left;
+  }
+  
+  .text-content p {
+    text-align: left;
+    margin: 0;
+  }
+}
+@media (min-width: 1024px) {
+  h1 {
+    font-size: 4.5rem;
+  }
+  
+  h2 {
+    font-size: 2.25rem;
+  }
+  
+  .hero-content {
+    padding: 4rem;
+  }
+  
+  .content-section {
+    padding: 4rem 2rem;
+  }
+  
+  .faq-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem 4rem;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Focus styles */
+a:focus,
+button:focus,
+summary:focus {
+  outline: 2px solid var(--luxury-gold);
+  outline-offset: 2px;
+}
+
+/* Print styles */
+@media print {
+  .snap-container {
+    scroll-snap-type: none;
+  }
+  
+  .snap-section {
+    height: auto;
+    page-break-after: always;
+  }
+  
+  .video-section {
+    display: none;
+  }
+}

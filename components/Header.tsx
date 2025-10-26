@@ -1,0 +1,44 @@
+"use client";
+
+import { useRef } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBellConcierge } from "@fortawesome/free-solid-svg-icons";
+import {
+  DesktopNavigation,
+  MobileNavigation,
+  katherineTaylorMenuConfig,
+} from "./YSLNavigation";
+
+const Header = () => {
+  const headerRef = useRef<HTMLDivElement>(null);
+
+  return (
+    <header ref={headerRef} className="ysl-header">
+      <div className="max-w-7xl mx-auto px-0 h-full flex items-center justify-center relative">
+        {/* DESKTOP NAVIGATION */}
+        <DesktopNavigation menuItems={katherineTaylorMenuConfig} />
+
+        {/* CENTER LOGO - Katherine Taylor */}
+        <a
+          href="/"
+          className="kt-brand-refined absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 transition-all duration-[320ms] ease-[cubic-bezier(0.16,1,0.3,1)] hover:translate-y-[-3px]"
+          style={{
+            color: "white",
+            whiteSpace: "nowrap",
+          }}
+        >
+          KATHERINE TAYLOR
+        </a>
+
+        {/* MOBILE NAVIGATION - FontAwesome bell-concierge icon */}
+        <MobileNavigation
+          menuItems={katherineTaylorMenuConfig}
+          useSwiper={false}
+          icon={<FontAwesomeIcon icon={faBellConcierge} />}
+        />
+      </div>
+    </header>
+  );
+};
+
+export default Header;
