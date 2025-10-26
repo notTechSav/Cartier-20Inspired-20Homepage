@@ -1,6 +1,4 @@
-"use client";
-
-import { useEffect } from "react";
+// components/pages/AboutClient.tsx
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import PageHeroOverlay from "@/components/site/PageHeroOverlay";
 
@@ -10,30 +8,6 @@ const ABOUT_SECONDARY_IMAGE =
   "https://cdn.builder.io/api/v1/image/assets%2F5b9cc53f5f324d22a1f8c88faaaa270c%2Fc52c5d671db044f38e0442b59a54c778?format=webp&width=1200";
 
 export default function AboutClient() {
-  useEffect(() => {
-    const elements = document.querySelectorAll<HTMLElement>("[data-animate]");
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            (entry.target as HTMLElement).dataset.visible = "true";
-          }
-        });
-      },
-      {
-        threshold: 0.15,
-        rootMargin: "0px 0px -100px 0px",
-      },
-    );
-
-    elements.forEach((element) => observer.observe(element));
-
-    return () => {
-      elements.forEach((element) => observer.unobserve(element));
-      observer.disconnect();
-    };
-  }, []);
-
   return (
     <div
       className="bg-[#fafaf9] text-[#4a4a4a]"
@@ -49,10 +23,7 @@ export default function AboutClient() {
         alignment="left"
       />
       <div className="mx-auto max-w-[680px] px-6 pb-24 pt-16 md:px-8 md:pb-28 md:pt-20">
-        <header
-          data-animate
-          className="space-y-6 opacity-0 transition-all duration-[900ms] ease-[cubic-bezier(0.16,1,0.3,1)] data-[visible=true]:translate-y-0 data-[visible=true]:opacity-100 data-[visible=true]:delay-100"
-        >
+        <header className="reveal space-y-6">
           <p className="text-[17px] leading-[1.9] text-[#1a1a1a]">
             The conversation never resets. I carry forward everything—your
             M&amp;A timeline, your board anxieties, your daughter's college
@@ -67,10 +38,7 @@ export default function AboutClient() {
         </div>
 
         <main className="space-y-16">
-          <section
-            data-animate
-            className="space-y-7 opacity-0 transition-all duration-[900ms] ease-[cubic-bezier(0.16,1,0.3,1)] data-[visible=true]:translate-y-0 data-[visible=true]:opacity-100"
-          >
+          <section className="reveal space-y-7">
             <p>
               A client once sent two lines: in-suite only, three hours, no
               celebrity talk. Most people would see red flags. I saw the
@@ -81,10 +49,7 @@ export default function AboutClient() {
               no instructions needed. That's what institutional memory looks
               like when it's in practice.
             </p>
-            <div
-              data-animate
-              className="relative overflow-hidden rounded-sm bg-gradient-to-br from-[#d4cfc9] via-[#e8e4e0] to-[#d4cfc9] opacity-0 transition-all duration-[900ms] ease-[cubic-bezier(0.16,1,0.3,1)] data-[visible=true]:translate-y-0 data-[visible=true]:opacity-100"
-            >
+            <div className="reveal relative overflow-hidden rounded-sm bg-gradient-to-br from-[#d4cfc9] via-[#e8e4e0] to-[#d4cfc9]">
               <AspectRatio ratio={16 / 9}>
                 <img
                   src={ABOUT_SECONDARY_IMAGE}
