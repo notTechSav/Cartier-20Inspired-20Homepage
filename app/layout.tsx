@@ -1,34 +1,51 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
 
 export const metadata: Metadata = {
   title: {
-    default: "Katherine Taylor",
-    template: "%s | Katherine Taylor",
+    default: "Sacramento Escorts | Katherine Taylor | Luxury Companionship",
+    template: "%s | Katherine Taylor Escort Services",
   },
-  description:
-    "High-end private companionship. Quiet authority, intentional scarcity, refined experiences.",
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000"
-  ),
+  description: "Professional escort services in Sacramento and San Francisco. Discreet, elegant companionship for discerning clients. High-end private encounters.",
+  keywords: "escorts near me, Sacramento escort, Sac escort, California escorts, California escort, escorting, Katherine Taylor",
+  metadataBase: new URL("https://katherinetaylorescort.com"),
   openGraph: {
-    title: "Katherine Taylor",
-    description:
-      "High-end private companionship. Quiet authority, intentional scarcity, refined experiences.",
+    title: "Sacramento Escorts | Katherine Taylor",
+    description: "Professional escort services in Sacramento and San Francisco. Discreet, elegant companionship.",
     type: "website",
+    url: "https://katherinetaylorescort.com",
+    siteName: "Katherine Taylor Escort",
+    images: [
+      {
+        url: "https://katherinetaylorescort.com/og-image.jpg",
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Katherine Taylor",
-    description:
-      "High-end private companionship. Quiet authority, intentional scarcity, refined experiences.",
+    site: "@thekatherineexp",
+    creator: "@thekatherineexp",
+    title: "Sacramento Escorts | Katherine Taylor",
+    description: "Professional escort services in Sacramento and San Francisco",
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  alternates: {
+    canonical: "https://katherinetaylorescort.com",
+  },
+  verification: {
+    google: "google-site-verification-code",
   },
 };
 
@@ -40,26 +57,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <meta name="theme-color" content="#fafaf7" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+        <meta name="theme-color" content="#fafafa" />
         <link rel="icon" type="image/svg+xml" href="/logo.svg" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Work+Sans:wght@300;400;500;600&display=swap"
-          rel="stylesheet"
-        />
       </head>
-      <body className="font-sans antialiased">
-        <TooltipProvider>
-          {children}
-          <Toaster />
-          <Sonner />
-        </TooltipProvider>
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
