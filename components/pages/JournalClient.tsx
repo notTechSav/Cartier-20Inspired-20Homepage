@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useRouter, usePathname } from "next/navigation";
 import JournalFooter from "@/components/journal/JournalFooter";
 import JournalGrid from "@/components/journal/JournalGrid";
 import JournalHero from "@/components/journal/JournalHero";
@@ -21,8 +21,8 @@ import {
 } from "@/lib/seo-helpers";
 
 const Journal = () => {
-  const navigate = useNavigate();
-  const location = useLocation();
+  const router = useRouter();
+  const pathname = usePathname();
 
   useEffect(() => {
     const { title, description, keywords, openGraph } = journalMetadata;
@@ -72,9 +72,7 @@ const Journal = () => {
   }, []);
 
   const handleOpen = (slug: string) => {
-    navigate(`/journal/${slug}`, {
-      state: { backgroundLocation: location },
-    });
+    router.push(`/journal/${slug}`);
   };
 
   return (

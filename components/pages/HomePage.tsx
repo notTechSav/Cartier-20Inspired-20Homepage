@@ -26,11 +26,6 @@ const HomePage = () => {
       centeredSlides={false}
       initialSlide={0}
       watchSlidesProgress={true}
-      preloadImages={false}
-      lazy={{
-        loadPrevNext: true,
-        loadPrevNextAmount: 1,
-      }}
       className="w-full"
       style={{
         height: "min(100vh, 100dvh)",

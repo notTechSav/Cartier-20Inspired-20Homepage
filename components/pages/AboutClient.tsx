@@ -16,7 +16,7 @@ export default function AboutClient() {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.dataset.visible = "true";
+            (entry.target as HTMLElement).dataset.visible = "true";
           }
         });
       },

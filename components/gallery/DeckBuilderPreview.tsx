@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useEffect, useMemo, useRef, useState } from "react";
 
 // LWS utility CSS (tokens + durations) — keep inline for the preview

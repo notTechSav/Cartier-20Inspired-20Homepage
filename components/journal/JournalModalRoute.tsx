@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from "react";
-import { type Location, useLocation, useNavigate, useParams } from "react-router-dom";
+import { useRouter, useParams, usePathname } from "next/navigation";
 import JournalModal from "@/components/journal/JournalModal";
 import { getEssayBySlug, getReadNextEssay, journalDisplay } from "@/lib/journal-content";
 
@@ -10,24 +10,25 @@ type LocationState = {
 };
 
 const JournalModalRoute = () => {
-  const { slug } = useParams();
-  const location = useLocation();
-  const navigate = useNavigate();
-  const state = location.state as LocationState | undefined;
+  const params = useParams();
+  const router = useRouter();
+  const pathname = usePathname();
   const scrollPositionRef = useRef(0);
+
+  const slug = typeof params.slug === 'string' ? params.slug : params.slug?.[0];
 
   const essay = getEssayBySlug(slug);
   const nextEssay = getReadNextEssay(slug ?? undefined);
 
   useEffect(() => {
     if (!slug) {
-      navigate("/journal", { replace: true });
+      router.replace("/journal");
       return;
     }
     if (!essay) {
-      navigate("/journal", { replace: true });
+      router.replace("/journal");
     }
-  }, [essay, navigate, slug]);
+  }, [essay, router, slug]);
 
   useEffect(() => {
     if (!essay) {
@@ -64,11 +65,7 @@ const JournalModalRoute = () => {
   }, [Boolean(essay)]);
 
   const handleClose = () => {
-    if (state?.backgroundLocation) {
-      navigate(-1);
-    } else {
-      navigate("/journal", { replace: true });
-    }
+    router.push("/journal");
   };
 
   useEffect(() => {
@@ -81,10 +78,7 @@ const JournalModalRoute = () => {
   }, [essay]);
 
   const handleNavigateNext = (nextSlug: string) => {
-    navigate(`/journal/${nextSlug}`, {
-      replace: true,
-      state: { backgroundLocation: state?.backgroundLocation ?? location },
-    });
+    router.replace(`/journal/${nextSlug}`);
   };
 
   return (

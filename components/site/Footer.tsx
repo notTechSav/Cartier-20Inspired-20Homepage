@@ -1,3 +1,5 @@
+"use client";
+
 /**
  * YSL-STYLE FOOTER COMPONENT
  * De Beers x Hermès Aesthetic
@@ -5,7 +7,7 @@
  */
 
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 interface FooterProps {
   isScrollSnapLayout?: boolean;
@@ -125,7 +127,7 @@ const Footer: React.FC<FooterProps> = ({
                 {footerLinks.support.map((link, index) => (
                   <Link
                     key={index}
-                    to={link.href}
+                    href={link.href}
                     className="ysl-footer-link block text-xs"
                   >
                     {link.label}
@@ -141,7 +143,7 @@ const Footer: React.FC<FooterProps> = ({
                 {footerLinks.services.map((link, index) => (
                   <Link
                     key={index}
-                    to={link.href}
+                    href={link.href}
                     className="ysl-footer-link block text-xs"
                   >
                     {link.label}
@@ -157,7 +159,7 @@ const Footer: React.FC<FooterProps> = ({
                 {footerLinks.about.map((link, index) => (
                   <Link
                     key={index}
-                    to={link.href}
+                    href={link.href}
                     className="ysl-footer-link block text-xs"
                   >
                     {link.label}
@@ -173,7 +175,7 @@ const Footer: React.FC<FooterProps> = ({
                 {footerLinks.legal.map((link, index) => (
                   <Link
                     key={index}
-                    to={link.href}
+                    href={link.href}
                     className="ysl-footer-link block text-xs"
                   >
                     {link.label}
