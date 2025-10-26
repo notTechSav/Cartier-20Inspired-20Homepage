@@ -1,3 +1,5 @@
+'use client';
+
 // components/pages/AboutClient.tsx
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import PageHeroOverlay from "@/components/site/PageHeroOverlay";

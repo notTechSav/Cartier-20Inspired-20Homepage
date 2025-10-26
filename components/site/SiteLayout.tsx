@@ -1,3 +1,5 @@
+'use client';
+
 /**
  * SITE LAYOUT - CORRECTED FOR SCROLL-SNAP INTEGRATION
  * De Beers x Hermès Aesthetic
