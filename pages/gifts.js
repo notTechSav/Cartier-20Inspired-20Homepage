@@ -1,4 +1,4 @@
-export default function Contact() {
+export default function Gifts() {
   return (
     <>
       <style jsx global>{`
@@ -72,10 +72,23 @@ export default function Contact() {
           margin-bottom: 2rem;
         }
         
+        h2 {
+          font-size: 1.8rem;
+          font-weight: 200;
+          margin: 2rem 0 1rem;
+        }
+        
         p {
           font-size: 1.1rem;
           line-height: 1.8;
           opacity: 0.9;
+          margin-bottom: 1.5rem;
+        }
+        
+        .guidance {
+          margin: 3rem 0;
+          padding: 2rem;
+          border-left: 1px solid rgba(255,255,255,0.2);
         }
       `}</style>
       
@@ -97,8 +110,19 @@ export default function Contact() {
       </nav>
       
       <div className="container">
-        <h1>Contact</h1>
-        <p>Screening required for all new clients.</p>
+        <h1>Gifts</h1>
+        <p>A quiet page, by request.</p>
+        
+        <div className="guidance">
+          <h2>On Thoughtful Gestures</h2>
+          <p>I don't expect gifts. When they happen, they feel like punctuation — a quiet thank-you, a gesture that marks continuity, not transaction.</p>
+          
+          <p>The most meaningful ones usually reflect the texture of what we've talked about: a book that deepened a conversation, a bottle tied to a story, a small object that travels well, or an experience that creates calm.</p>
+          
+          <p>I don't accept extravagant or public gifts. The intention matters more than the scale, and privacy always comes first. If you're uncertain, ask — I'll answer honestly.</p>
+          
+          <p>The best gift, though, is time well spent. Continuity itself — the ongoing conversation, the trust that builds when you realize I remember the details you didn't need to repeat — that's the one that stays.</p>
+        </div>
       </div>
     </>
   );

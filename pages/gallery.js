@@ -1,4 +1,4 @@
-export default function Contact() {
+export default function Gallery() {
   return (
     <>
       <style jsx global>{`
@@ -59,7 +59,7 @@ export default function Contact() {
         }
         
         .container {
-          max-width: 800px;
+          max-width: 1200px;
           margin: 0 auto;
           padding: 120px 20px 60px;
           min-height: 100vh;
@@ -76,6 +76,20 @@ export default function Contact() {
           font-size: 1.1rem;
           line-height: 1.8;
           opacity: 0.9;
+          margin-bottom: 2rem;
+        }
+        
+        .gallery-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+          gap: 2rem;
+          margin-top: 3rem;
+        }
+        
+        .gallery-item {
+          aspect-ratio: 1;
+          background: rgba(255,255,255,0.05);
+          border: 1px solid rgba(255,255,255,0.1);
         }
       `}</style>
       
@@ -97,8 +111,14 @@ export default function Contact() {
       </nav>
       
       <div className="container">
-        <h1>Contact</h1>
-        <p>Screening required for all new clients.</p>
+        <h1>Gallery</h1>
+        <p>Visual moments from a decade of refined experiences.</p>
+        
+        <div className="gallery-grid">
+          <div className="gallery-item"></div>
+          <div className="gallery-item"></div>
+          <div className="gallery-item"></div>
+        </div>
       </div>
     </>
   );

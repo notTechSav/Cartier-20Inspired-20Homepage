@@ -1,4 +1,4 @@
-export default function Contact() {
+export default function Journal() {
   return (
     <>
       <style jsx global>{`
@@ -97,8 +97,8 @@ export default function Contact() {
       </nav>
       
       <div className="container">
-        <h1>Contact</h1>
-        <p>Screening required for all new clients.</p>
+        <h1>Journal</h1>
+        <p>Thoughts and perspectives from a decade in luxury companionship.</p>
       </div>
     </>
   );

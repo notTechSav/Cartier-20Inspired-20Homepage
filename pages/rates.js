@@ -1,4 +1,4 @@
-export default function Contact() {
+export default function Rates() {
   return (
     <>
       <style jsx global>{`
@@ -72,10 +72,34 @@ export default function Contact() {
           margin-bottom: 2rem;
         }
         
+        h2 {
+          font-size: 1.8rem;
+          font-weight: 200;
+          margin: 3rem 0 1rem;
+        }
+        
         p {
           font-size: 1.1rem;
           line-height: 1.8;
           opacity: 0.9;
+          margin-bottom: 1.5rem;
+        }
+        
+        .rate-section {
+          margin: 3rem 0;
+          padding: 2rem;
+          border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .rate-item {
+          display: flex;
+          justify-content: space-between;
+          padding: 1rem 0;
+          border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        
+        .rate-item:last-child {
+          border-bottom: none;
         }
       `}</style>
       
@@ -97,8 +121,52 @@ export default function Contact() {
       </nav>
       
       <div className="container">
-        <h1>Contact</h1>
-        <p>Screening required for all new clients.</p>
+        <h1>Rates</h1>
+        <p>Every figure on this page exists to protect one idea: you never have to explain yourself twice.</p>
+        
+        <div className="rate-section">
+          <h2>New Clients</h2>
+          <div className="rate-item">
+            <span>Overnight (up to 14 hours)</span>
+            <span>$25,000</span>
+          </div>
+          <div className="rate-item">
+            <span>24 Hours</span>
+            <span>$45,000</span>
+          </div>
+          <div className="rate-item">
+            <span>48 Hours</span>
+            <span>$75,000</span>
+          </div>
+        </div>
+        
+        <div className="rate-section">
+          <h2>Established Clients</h2>
+          <div className="rate-item">
+            <span>Overnight (up to 14 hours)</span>
+            <span>$28,000</span>
+          </div>
+          <div className="rate-item">
+            <span>24 Hours</span>
+            <span>$50,000</span>
+          </div>
+          <div className="rate-item">
+            <span>48 Hours</span>
+            <span>$80,000</span>
+          </div>
+        </div>
+        
+        <div className="rate-section">
+          <h2>Strategic Partnerships</h2>
+          <div className="rate-item">
+            <span>Annual Retainer</span>
+            <span>$240,000</span>
+          </div>
+        </div>
+        
+        <p style={{ marginTop: '3rem', fontStyle: 'italic' }}>
+          I don't sell time. I reserve attention, continuity, and discretion for the few who understand their value.
+        </p>
       </div>
     </>
   );

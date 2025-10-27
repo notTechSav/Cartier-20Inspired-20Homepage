@@ -194,6 +194,11 @@ export default function SanFrancisco() {
           <ul className="nav-links">
             <li><a href="/">Home</a></li>
             <li><a href="/san-francisco">San Francisco</a></li>
+            <li><a href="/journal">Journal</a></li>
+            <li><a href="/gifts">Gifts</a></li>
+            <li><a href="/gallery">Gallery</a></li>
+            <li><a href="/rates">Rates</a></li>
+            <li><a href="/faq">FAQ</a></li>
             <li><a href="/about">About</a></li>
             <li><a href="/contact">Contact</a></li>
           </ul>
