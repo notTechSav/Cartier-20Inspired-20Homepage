@@ -17,19 +17,6 @@ export default function Home() {
           line-height: 1.6;
         }
         
-        .container {
-          max-width: 1200px;
-          margin: 0 auto;
-          padding: 60px 20px;
-        }
-        
-        h1 {
-          font-size: 2.5rem;
-          font-weight: 200;
-          letter-spacing: 0.02em;
-          margin-bottom: 2rem;
-        }
-        
         .nav {
           position: fixed;
           top: 0;
@@ -122,19 +109,100 @@ export default function Home() {
 }
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  // Server-side schema injection - Google sees this on first crawl
   const schema = [
     {
       "@context": "https://schema.org",
-      "@type": "ProfessionalService",
+      "@type": "WebPage",
+      "name": "Katherine Taylor | Sacramento Escort",
+      "url": "https://katherinetaylorescort.com",
+      "description": "Professional escort services in Sacramento and San Francisco. Trusted, discreet, and elegant companionship.",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Katherine Taylor",
+        "url": "https://katherinetaylorescort.com"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "contentUrl": "https://katherinetaylorescort.com/og-image.jpg"
+      },
+      "about": {
+        "@type": "Person",
+        "name": "Katherine Taylor",
+        "url": "https://katherinetaylorescort.com"
+      },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://katherinetaylorescort.com"
+          }
+        ]
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
       "name": "Katherine Taylor",
+      "url": "https://katherinetaylorescort.com",
+      "logo": "https://katherinetaylorescort.com/og-image.jpg",
+      "description": "Elite escort services in Sacramento and San Francisco. Professional, discreet companionship for discerning clients.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Sacramento",
+        "addressRegion": "CA",
+        "postalCode": "95814",
+        "addressCountry": "US"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Sacramento",
+          "sameAs": "https://en.wikipedia.org/wiki/Sacramento,_California"
+        },
+        {
+          "@type": "City",
+          "name": "San Francisco",
+          "sameAs": "https://en.wikipedia.org/wiki/San_Francisco"
+        }
+      ],
+      "sameAs": [
+        "https://katherinetaylorescort.com"
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Katherine Taylor",
+      "url": "https://katherinetaylorescort.com",
+      "image": "https://katherinetaylorescort.com/og-image.jpg",
+      "jobTitle": "Elite Companion",
+      "description": "Professional escort providing discreet, elegant companionship in Sacramento and San Francisco.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Sacramento",
+        "addressRegion": "CA",
+        "addressCountry": "US"
+      },
+      "knowsAbout": [
+        "Professional companionship",
+        "Sacramento escort services",
+        "San Francisco escort services",
+        "Elite companion services",
+        "Luxury escort services"
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Katherine Taylor Escort Services",
       "image": "https://katherinetaylorescort.com/og-image.jpg",
       "url": "https://katherinetaylorescort.com",
-      "telephone": "+1-XXX-XXX-XXXX",
       "priceRange": "$$$",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "",
         "addressLocality": "Sacramento",
         "addressRegion": "CA",
         "postalCode": "95814",
@@ -153,20 +221,14 @@ export const getServerSideProps: GetServerSideProps = async () => {
         {
           "@type": "City",
           "name": "San Francisco"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Bay Area"
         }
       ],
-      "description": "Elite escort services in Sacramento and San Francisco. Discreet companionship for discerning clients."
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "Katherine Taylor",
-      "url": "https://katherinetaylorescort.com",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://katherinetaylorescort.com/?s={search_term_string}",
-        "query-input": "required name=search_term_string"
-      }
+      "description": "Elite escort services in Sacramento and San Francisco. Discreet companionship for discerning clients. Professional, confidential, and available for travel.",
+      "serviceType": "Elite Companion Services"
     }
   ];
 

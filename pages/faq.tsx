@@ -1,3 +1,5 @@
+import type { GetServerSideProps } from 'next';
+
 export default function FAQ() {
   return (
     <>
@@ -131,6 +133,84 @@ export default function FAQ() {
   );
 }
 
-export async function getServerSideProps() {
-  return { props: {} };
-}
+export const getServerSideProps: GetServerSideProps = async () => {
+  const schema = [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "FAQ | Katherine Taylor",
+      "url": "https://katherinetaylorescort.com/faq",
+      "description": "Frequently asked questions about Katherine Taylor's elite escort services in Sacramento and San Francisco.",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Katherine Taylor",
+        "url": "https://katherinetaylorescort.com"
+      },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://katherinetaylorescort.com"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "FAQ",
+            "item": "https://katherinetaylorescort.com/faq"
+          }
+        ]
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I book?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Screening is required for all new clients. Please provide LinkedIn or employment verification."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What areas do you serve?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "San Francisco, Sacramento, and the greater Bay Area including Peninsula, South Bay, and Wine Country."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much notice do you need?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "24-48 hours preferred for dinner dates and overnight arrangements."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you travel?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, both domestically and internationally with advance arrangements."
+          }
+        }
+      ]
+    }
+  ];
+
+  return {
+    props: {
+      title: 'FAQ | Katherine Taylor - Sacramento & San Francisco Escort',
+      description: 'Frequently asked questions about Katherine Taylor\'s elite escort services in Sacramento and San Francisco. Learn about booking, service areas, and travel arrangements.',
+      canonical: 'https://katherinetaylorescort.com/faq',
+      keywords: 'Sacramento escort FAQ, California escort questions, elite escort services, Bay Area companion, escort booking',
+      schema
+    }
+  };
+};
