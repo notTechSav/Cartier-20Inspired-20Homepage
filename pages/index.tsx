@@ -1,3 +1,5 @@
+import type { GetServerSideProps } from 'next';
+
 export default function Home() {
   return (
     <>
@@ -50,20 +52,21 @@ export default function Home() {
         .logo {
           font-size: 1.2rem;
           font-weight: 300;
-          letter-spacing: 0.08em;
+          letter-spacing: 0.1em;
         }
         
         .nav-links {
           display: flex;
-          gap: 40px;
           list-style: none;
+          gap: 2rem;
         }
         
         .nav-links a {
           color: #fff;
           text-decoration: none;
+          font-weight: 300;
           font-size: 0.9rem;
-          letter-spacing: 0.02em;
+          letter-spacing: 0.05em;
           transition: opacity 0.3s;
         }
         
@@ -80,21 +83,17 @@ export default function Home() {
         }
         
         .hero-content h1 {
-          font-size: 3rem;
-          font-weight: 100;
-          letter-spacing: 0.1em;
+          font-size: 3.5rem;
           margin-bottom: 1rem;
         }
         
         .hero-content p {
-          font-size: 1.1rem;
+          font-size: 1.2rem;
           font-weight: 300;
           opacity: 0.8;
-          max-width: 600px;
-          margin: 0 auto;
         }
       `}</style>
-      
+
       <nav className="nav">
         <div className="nav-inner">
           <div className="logo">KATHERINE TAYLOR</div>
@@ -115,13 +114,69 @@ export default function Home() {
       <div className="hero">
         <div className="hero-content">
           <h1>Katherine Taylor</h1>
-          <p>Luxury companion serving San Francisco's discerning elite</p>
+          <p>Elite companion serving Sacramento and San Francisco's discerning clientele</p>
         </div>
       </div>
     </>
   );
 }
 
-export async function getServerSideProps() {
-  return { props: {} };
-}
+export const getServerSideProps: GetServerSideProps = async () => {
+  // Server-side schema injection - Google sees this on first crawl
+  const schema = [
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Katherine Taylor",
+      "image": "https://katherinetaylorescort.com/og-image.jpg",
+      "url": "https://katherinetaylorescort.com",
+      "telephone": "+1-XXX-XXX-XXXX",
+      "priceRange": "$$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "",
+        "addressLocality": "Sacramento",
+        "addressRegion": "CA",
+        "postalCode": "95814",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 38.5816,
+        "longitude": -121.4944
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Sacramento"
+        },
+        {
+          "@type": "City",
+          "name": "San Francisco"
+        }
+      ],
+      "description": "Elite escort services in Sacramento and San Francisco. Discreet companionship for discerning clients."
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Katherine Taylor",
+      "url": "https://katherinetaylorescort.com",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://katherinetaylorescort.com/?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+  ];
+
+  return {
+    props: {
+      title: 'Katherine Taylor | Sacramento & San Francisco Elite Escort',
+      description: 'Elite escort services in Sacramento and San Francisco. Discreet companionship for discerning clients. Professional, confidential, and available for travel.',
+      canonical: 'https://katherinetaylorescort.com',
+      keywords: 'escorts near me, Sacramento escort, Sac escort, California escorts, California escort, escorting, Katherine Taylor, luxury companion, elite escort, San Francisco escort',
+      schema
+    }
+  };
+};

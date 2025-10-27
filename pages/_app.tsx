@@ -56,14 +56,22 @@ export default function MyApp({ Component, pageProps }: AppProps<PageProps>) {
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         
-        {/* Structured Data - can be single object or array */}
+        {/* Structured Data - one script tag per schema block */}
         {schema && (
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{
-              __html: JSON.stringify(Array.isArray(schema) ? schema : [schema])
-            }}
-          />
+          Array.isArray(schema)
+            ? schema.map((block, i) => (
+                <script
+                  key={i}
+                  type="application/ld+json"
+                  dangerouslySetInnerHTML={{ __html: JSON.stringify(block) }}
+                />
+              ))
+            : (
+                <script
+                  type="application/ld+json"
+                  dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+                />
+              )
         )}
       </Head>
       <Component {...pageProps} />
