@@ -42,14 +42,14 @@ export default function Contact() {
         
         .nav-links {
           display: flex;
-          gap: 40px;
+          gap: 30px;
           list-style: none;
         }
         
         .nav-links a {
           color: #fff;
           text-decoration: none;
-          font-size: 0.9rem;
+          font-size: 0.85rem;
           letter-spacing: 0.02em;
           transition: opacity 0.3s;
         }
@@ -76,6 +76,27 @@ export default function Contact() {
           font-size: 1.1rem;
           line-height: 1.8;
           opacity: 0.9;
+          margin-bottom: 1.5rem;
+        }
+        
+        .contact-section {
+          margin-top: 3rem;
+        }
+        
+        .contact-item {
+          padding: 2rem 0;
+          border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .contact-item h3 {
+          font-size: 1.2rem;
+          font-weight: 300;
+          margin-bottom: 0.5rem;
+        }
+        
+        .contact-item p {
+          opacity: 0.7;
+          font-size: 0.95rem;
         }
       `}</style>
       
@@ -84,21 +105,37 @@ export default function Contact() {
           <div className="logo">KATHERINE TAYLOR</div>
           <ul className="nav-links">
             <li><a href="/">Home</a></li>
-            <li><a href="/san-francisco">San Francisco</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/gallery">Gallery</a></li>
             <li><a href="/journal">Journal</a></li>
             <li><a href="/gifts">Gifts</a></li>
-            <li><a href="/gallery">Gallery</a></li>
             <li><a href="/rates">Rates</a></li>
             <li><a href="/faq">FAQ</a></li>
-            <li><a href="/about">About</a></li>
             <li><a href="/contact">Contact</a></li>
           </ul>
         </div>
       </nav>
       
       <div className="container">
-        <h1>Contact</h1>
-        <p>Screening required for all new clients.</p>
+        <h1>Inquire</h1>
+        <p>For serious inquiries only. Screening required for all new clients.</p>
+        
+        <div className="contact-section">
+          <div className="contact-item">
+            <h3>Screening Requirements</h3>
+            <p>LinkedIn profile or employment verification required. Two provider references may be accepted as alternative.</p>
+          </div>
+          
+          <div className="contact-item">
+            <h3>Response Time</h3>
+            <p>Allow 24-48 hours for response. Priority given to established clients.</p>
+          </div>
+          
+          <div className="contact-item">
+            <h3>Advance Notice</h3>
+            <p>Minimum 48 hours for first meetings. 24 hours for established relationships.</p>
+          </div>
+        </div>
       </div>
     </>
   );

@@ -42,14 +42,14 @@ export default function FAQ() {
         
         .nav-links {
           display: flex;
-          gap: 40px;
+          gap: 30px;
           list-style: none;
         }
         
         .nav-links a {
           color: #fff;
           text-decoration: none;
-          font-size: 0.9rem;
+          font-size: 0.85rem;
           letter-spacing: 0.02em;
           transition: opacity 0.3s;
         }
@@ -62,7 +62,6 @@ export default function FAQ() {
           max-width: 800px;
           margin: 0 auto;
           padding: 120px 20px 60px;
-          min-height: 100vh;
         }
         
         h1 {
@@ -72,23 +71,20 @@ export default function FAQ() {
           margin-bottom: 2rem;
         }
         
-        h3 {
-          font-size: 1.3rem;
-          font-weight: 300;
-          margin: 2rem 0 1rem;
-        }
-        
-        p {
-          font-size: 1.1rem;
-          line-height: 1.8;
-          opacity: 0.9;
-          margin-bottom: 1.5rem;
-        }
-        
         .faq-item {
           margin: 2rem 0;
-          padding: 2rem 0;
+          padding-bottom: 2rem;
           border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .faq-item h3 {
+          font-size: 1.2rem;
+          font-weight: 300;
+          margin-bottom: 1rem;
+        }
+        
+        .faq-item p {
+          opacity: 0.8;
         }
       `}</style>
       
@@ -97,13 +93,12 @@ export default function FAQ() {
           <div className="logo">KATHERINE TAYLOR</div>
           <ul className="nav-links">
             <li><a href="/">Home</a></li>
-            <li><a href="/san-francisco">San Francisco</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/gallery">Gallery</a></li>
             <li><a href="/journal">Journal</a></li>
             <li><a href="/gifts">Gifts</a></li>
-            <li><a href="/gallery">Gallery</a></li>
             <li><a href="/rates">Rates</a></li>
             <li><a href="/faq">FAQ</a></li>
-            <li><a href="/about">About</a></li>
             <li><a href="/contact">Contact</a></li>
           </ul>
         </div>
@@ -111,45 +106,25 @@ export default function FAQ() {
       
       <div className="container">
         <h1>Frequently Asked Questions</h1>
-        <p>After more than a decade in this practice, I answer what quick searches never cover.</p>
         
         <div className="faq-item">
-          <h3>What is an escort?</h3>
-          <p>
-            Having worked as an escort for over a decade, I can tell you it's refined companionship at its finest. 
-            As Katherine Taylor escort, I offer what the best SF escorts aspire to—cultured company that's elegant, 
-            confidential, and beautifully timed.
-          </p>
+          <h3>How do I book?</h3>
+          <p>Screening is required for all new clients. Please provide LinkedIn or employment verification.</p>
         </div>
         
         <div className="faq-item">
-          <h3>What sets Katherine Taylor apart from other escorts near me?</h3>
-          <p>
-            In my decade-plus among San Francisco escorts and Bay Area escorts, I've cultivated something rare: 
-            truly bespoke encounters. While others juggle volume, I accept only 3-4 bookings monthly. 
-            Whether you're searching 'SF escort' or 'Sacramento escorts,' you'll find I'm the outlier—immaculate 
-            preparation, genuine chemistry, and experiences that transcend transaction.
-          </p>
+          <h3>What areas do you serve?</h3>
+          <p>San Francisco, Sacramento, and the greater Bay Area including Peninsula, South Bay, and Wine Country.</p>
         </div>
         
         <div className="faq-item">
-          <h3>Is escorting legal in San Francisco and Sacramento?</h3>
-          <p>
-            Yes, with nuance. In my years as both a San Francisco escort and among Sacramento escorts, 
-            I've learned that companionship services operate legally when focused on social accompaniment. 
-            Whether you're searching 'SF escorts' or 'Sacramento escorts,' professional boundaries and 
-            mutual respect keep everything above board.
-          </p>
+          <h3>How much notice do you need?</h3>
+          <p>24-48 hours preferred for dinner dates and overnight arrangements.</p>
         </div>
         
         <div className="faq-item">
-          <h3>Are escorts safe?</h3>
-          <p>
-            In my decade-plus as an SF escort, safety has been paramount. Unlike random 'escort near me' 
-            encounters, established San Francisco escorts maintain thorough screening, clear boundaries, 
-            and mutual respect. My process, refined over years among Bay Area escorts, ensures both 
-            parties feel secure and valued.
-          </p>
+          <h3>Do you travel?</h3>
+          <p>Yes, both domestically and internationally with advance arrangements.</p>
         </div>
       </div>
     </>

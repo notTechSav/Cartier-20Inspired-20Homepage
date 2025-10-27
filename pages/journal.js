@@ -42,14 +42,14 @@ export default function Journal() {
         
         .nav-links {
           display: flex;
-          gap: 40px;
+          gap: 30px;
           list-style: none;
         }
         
         .nav-links a {
           color: #fff;
           text-decoration: none;
-          font-size: 0.9rem;
+          font-size: 0.85rem;
           letter-spacing: 0.02em;
           transition: opacity 0.3s;
         }
@@ -62,7 +62,6 @@ export default function Journal() {
           max-width: 800px;
           margin: 0 auto;
           padding: 120px 20px 60px;
-          min-height: 100vh;
         }
         
         h1 {
@@ -71,12 +70,6 @@ export default function Journal() {
           letter-spacing: 0.02em;
           margin-bottom: 2rem;
         }
-        
-        p {
-          font-size: 1.1rem;
-          line-height: 1.8;
-          opacity: 0.9;
-        }
       `}</style>
       
       <nav className="nav">
@@ -84,13 +77,12 @@ export default function Journal() {
           <div className="logo">KATHERINE TAYLOR</div>
           <ul className="nav-links">
             <li><a href="/">Home</a></li>
-            <li><a href="/san-francisco">San Francisco</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/gallery">Gallery</a></li>
             <li><a href="/journal">Journal</a></li>
             <li><a href="/gifts">Gifts</a></li>
-            <li><a href="/gallery">Gallery</a></li>
             <li><a href="/rates">Rates</a></li>
             <li><a href="/faq">FAQ</a></li>
-            <li><a href="/about">About</a></li>
             <li><a href="/contact">Contact</a></li>
           </ul>
         </div>
@@ -98,7 +90,7 @@ export default function Journal() {
       
       <div className="container">
         <h1>Journal</h1>
-        <p>Thoughts and perspectives from a decade in luxury companionship.</p>
+        <p>Thoughts and stories from San Francisco and beyond.</p>
       </div>
     </>
   );
